@@ -49,8 +49,9 @@ This project aims to:
 *   **Content Language:** Markdown
 *   **Primary Language for Tooling:** Python
 *   **GenAI Tools (Examples):**
-    *   [Specify models/APIs being tested, e.g., OpenAI API (GPT-3.5/4), Anthropic Claude API, Local LLMs via Ollama/LM Studio]
-    *   [Any custom scripts or wrappers for interacting with GenAI]
+    *   Gemini
+    *   Firebase
+    *   Vertex AI Search
 *   **CI/CD:** [e.g., GitHub Actions, GitLab CI, Jenkins]
 *   **Hosting (for testing):** [e.g., GitHub Pages, Netlify, AWS S3]
 
