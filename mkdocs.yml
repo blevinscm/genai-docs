@@ -1,0 +1,4 @@
+site_name: Gen AI Docs
+site_url: https://blevinscm.github.com/genai-docs/
+theme:
+  name: material
