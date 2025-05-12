@@ -1,5 +1,4 @@
-# MkDocs GenAI & DevOps Testbed: [Your Project Name/Focus, e.g., "Acme Product Docs POC"]
-
+# MkDocs GenAI & DevOps Testbed:
 ![MkDocs](https://img.shields.io/badge/MkDocs-Material-blue?style=flat-square&logo=markdown)
 ![Python](https://img.shields.io/badge/Python-3.7%2B-blue?style=flat-square&logo=python)
 ![GitHub Actions](https://img.shields.io/github/actions/workflow/status/[your-github-username]/[your-repo-name]/[your-workflow-file.yml]?branch=main&style=flat-square&logo=githubactions)
