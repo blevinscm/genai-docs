@@ -1,4 +1,4 @@
-site_name: Gen AI Docs
+site_name: Vertex Generative AI
 site_url: https://blevinscm.github.com/genai-docs/
 
 # Configuration
@@ -7,8 +7,8 @@ theme:
   font:
     text: Google Sans
     code: Roboto Mono
-  logo: assets/agent-development-kit.png
-  favicon: assets/agent-development-kit.png
+  logo: assets/google-cloud-vertex-ai.png
+  favicon: assets/google-cloud-vertex-ai.png
   icon:
     repo: fontawesome/brands/github
   palette:
@@ -37,6 +37,13 @@ theme:
     - navigation.top
     - navigation.tracking
     - toc.follow
+    - navigation.tabs  # For top-level navigation sections
+    - navigation.sections # Expands sections in the sidebar
+    - navigation.tracking # Adds #hash to sidebar links as you scroll
+    - navigation.top # "Back to top" button
+    - toc.integrate # Integrates page ToC into the left sidebar if space allows, otherwise right
+    - search.suggest # Autocomplete for search
+    - search.highlight # Highlights search terms on page
 
 # Extensions
 markdown_extensions:
@@ -72,6 +79,110 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-        'get-started/local-testing.md': 'get-started/testing.md'
-        'get-started/tutorial.md': 'tutorials/index.md'
-        'guides/responsible-agents.md': 'safety/index.md'
+        # 'get-started/local-testing.md': 'get-started/testing.md'
+        # 'get-started/tutorial.md': 'tutorials/index.md'
+        # 'guides/responsible-agents.md': 'safety/index.md'
+
+nav:
+  - Home: 'index.md'
+
+  - Learn:
+    - Vertex AI Generative AI Overview: 'Generative-AI-on-Vertex-AI-Cookbook.md' # A good general starting point
+    - Glossary: 'Generative-AI-glossary.md'
+    - Release Notes: 'Generative-AI-on-Vertex-AI-release-notes.md'
+    - Supported Models Overview: 'supported-models_1.md' # Or a more general models page if available
+    - Gemini Models Overview: 'model-reference/gemini.md'
+    - Imagen Models Overview: 'image/Imagen-on-Vertex-AI.md'
+    - Code Models Overview: 'code/code-models-overview.md'
+    - Open Models (Gemma, Llama): 'open-models/Use-Gemma-open-models.md' # Representative
+    - Partner Models (Claude, AI21): 'partner-models/use-partner-models.md'
+    - Introduction to Prompting: 'learn/prompts/Introduction-to-prompting.md'
+    - Prompting Strategies: 'learn/prompts/Overview-of-prompting-strategies.md'
+    - Multimodal Concepts: 'multimodal/Design-multimodal-prompts.md'
+    - Embeddings Overview: 'embeddings/Choose-an-embeddings-task-type.md'
+    - Function Calling Overview: 'multimodal/Introduction-to-function-calling.md'
+    - Grounding Overview: 'grounding/Ground-responses-using-RAG.md' # Or multimodal/Grounding-overview.md
+    - Agent Builder Overview: 'agent-builder/Vertex-AI-Agent-Builder-overview.md'
+    - Agent Engine Overview: 'agent-engine/Vertex-AI-Agent-Engine-overview.md'
+    - RAG Engine Overview: 'rag-engine/Vertex-AI-RAG-Engine-overview.md'
+    - Context Caching Overview: 'context-cache/Context-caching-overview.md'
+    - Extensions Overview: 'extensions/Extensions-overview.md'
+    - Example Store Overview: 'example-store/Example-Store-overview.md'
+    - Data Governance: 'Generative-AI-and-data-governance.md'
+    - Security & Safety: 'Security-controls-for-Generative-AI.md' # and multimodal/Safety-and-content-filters.md
+    - Deprecations & Lifecycle: 'deprecations/Model-versions-and-lifecycle.md'
+    - Getting Help: 'getting-help_1.md'
+
+  - Build:
+    - Set up Environment (Agent Engine): 'agent-engine/Set-up-the-environment.md'
+    - Develop LangChain Agent: 'agent-engine/develop/Develop-a-LangChain-agent.md'
+    - Develop ADK Agent: 'agent-engine/develop/Develop-an-Agent-Development-Kit-agent.md'
+    - Use LangChain Agent: 'agent-engine/use/Use-a-LangChain-agent.md'
+    - Use LangGraph Agent: 'agent-engine/use/Use-a-LangGraph-agent.md'
+    - Design Chat Prompts: 'chat/Design-chat-prompts.md'
+    - Generate Text with Gemini: 'multimodal/Text-generationbookmark_borderbookmark.md' # Assuming this is a "how-to"
+    - Generate Images with Imagen: 'image/Generate-images-using-text-prompts.md'
+    - Generate Images with Gemini: 'Generate-images-with-Gemini.md'
+    - Generate Video with Veo: 'video/generate-videos.md'
+    - Get Text Embeddings: 'embeddings/Get-batch-text-embeddings-predictions.md'
+    - Get Multimodal Embeddings: 'embeddings/Get-multimodal-embeddings.md'
+    - Use Function Calling: 'model-reference/Function-calling-reference.md' # Or a guide if available
+    - Use Grounding (Google Search): 'grounding/Use-Google-Search-suggestions.md'
+    - Use Grounding (Your Data): 'grounding/Grounding-with-your-data.md'
+    - Build with RAG Engine (Data Ingestion): 'rag-engine/Use-data-ingestion-with-Vertex-AI-RAG-Engine.md'
+    - Build with RAG Engine (Vector Search): 'rag-engine/use-vertexai-vector-search.md'
+    - Build with RAG Engine (Weaviate): 'Use-a-Weaviate-database-with-Vertex-AI-RAG-Engine.md'
+    - Create Context Cache: 'context-cache/Create-a-context-cache.md'
+    - Create Extensions: 'extensions/Create-and-run-extensions.md'
+    - Use Example Store: 'example-store/Retrieve-examples.md'
+    - Multimodal Audio Understanding: 'multimodal/audio-understanding.md'
+    - Multimodal Document Understanding: 'multimodal/Document-understanding.md'
+    - Multimodal Video Understanding: 'multimodal/Video-understanding.md'
+    - Prompt Gallery Samples: 'prompt-gallery/samples/summarize_summarize_video.md' # Pick one or link to a gallery overview if it exists
+
+  - Tune:
+    - Introduction to Model Tuning: 'models/Introduction-to-tuning.md'
+    - Tune Gemini Models (Supervised): 'models/About-supervised-fine-tuning-for-Gemini-models.md'
+    - Prepare Data for Gemini SFT: 'models/gemini-supervised-tuning-prepare.md'
+    - Tune Gemini for Text: 'models/tune_gemini/text_tune.md'
+    - Tune Imagen Models (Style/Subject): 'image/Style-customization.md' # and Subject-customization.md
+    - Tune Function Calling: 'models/Tune-function-calling.md'
+    - LoRA & QLoRA Recommendations: 'model-garden/LoRA-and-QLoRA-recommendations-for-LLMs.md'
+    - Fine-tune RAG Transformations: 'Fine-tune-RAG-transformations.md' # Could also be Optimize
+
+  - Deploy:
+    - Deploy Generative AI Models: 'deploy/Deploy-generative-AI-models.md'
+    - Deploy Agent (Agent Engine): 'agent-engine/deploy.md'
+    - Deployments and Endpoints: 'models/Deployments-and-endpoints.md'
+    - Use Models from Model Garden: 'model-garden/Use-models-in-Model-Garden.md' # Often involves deployment
+    - Purchase Provisioned Throughput: 'Purchase-Provisioned-Throughput.md'
+    - Use Provisioned Throughput: 'Use-Provisioned-Throughput.md'
+    - Migrate from Azure OpenAI: 'migrate/Migrate-to-the-Gemini-API-from-Azure-OpenAI.md'
+    - Use OpenAI Libraries with Vertex AI: 'migrate/openai/Using-OpenAI-libraries-with-Vertex-AI.md'
+
+  - Manage:
+    - Manage Deployed Agents: 'agent-engine/manage/Manage-deployed-agents.md'
+    - Agent Logging: 'agent-engine/manage/logging.md'
+    - Agent Monitoring: 'agent-engine/manage/monitoring.md'
+    - Manage Agent Sessions (API): 'agent-engine/sessions/Manage-sessions-using-direct-API-calls.md'
+    - Manage Agent Sessions (ADK): 'agent-engine/sessions/Manage-sessions-with-Agent-Development-Kit.md'
+    - Manage Context Cache (Get/Delete): 'context-cache/Get-information-about-a-context-cache.md' # And Delete-a-context-cache.md
+    - Manage RAG Corpus: 'Manage-your-RAG-knowledge-base-corpus.md'
+    - Model Monitoring Metrics: 'learn/Model-monitoring-metrics.md'
+    - Quotas & Limits: 'quotas.md'
+    - Troubleshoot Agent Deployment: 'agent-engine/troubleshooting/Troubleshoot-deploying-an-agent.md'
+    - Troubleshoot Agent Development: 'agent-engine/troubleshooting/Troubleshoot-developing-an-agent.md'
+
+  - Optimize:
+    - Model Evaluation Overview: 'models/evaluation-overview.md'
+    - Gen AI Evaluation Service: 'models/Gen-AI-evaluation-service-overview.md'
+    - Run AutoSxS (Pairwise Evaluation): 'models/Run-AutoSxS-pipeline-to-perform-pairwise-model-based-evaluation.md'
+    - Evaluate Agents: 'models/Evaluate-Gen-AI-agents.md' # or agent-engine/Evaluate-an-agent.md
+    - Optimize Prompts: 'learn/prompts/Optimize-promptsbookmark_borderbookmark.md' # Or a more specific guide
+    - RAG Retrieval and Ranking: 'Retrieval-and-ranking.md' # or rag-engine/Retrieval-and-ranking.md
+    - Vertex AI Model Optimizer: 'model-reference/Vertex-AI-Model-Optimizer.md'
+    - Calculate Provisioned Throughput: 'provisioned-throughput/Calculate-Provisioned-Throughput-requirements.md'
+    - Count Tokens: 'model-reference/count-tokens.md' # Useful for optimization
+    - Context Caching for Performance: 'context-cache/Context-caching-overview.md' # Reiterating its optimization aspect
+strict: false
+use_directory_urls: true

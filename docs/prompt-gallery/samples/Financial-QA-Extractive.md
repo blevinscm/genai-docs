@@ -1,0 +1,13 @@
+---
+title: Financial-QA-Extractivegoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_financial_qa_-_extractive
+date_scraped: 2025-05-12
+---
+
+# Financial QA - Extractive 
+
+Ask extractive questions about a (long) financial document.
+
+| | |
+| --- | --- |
+| You can query a model directly and test the results returned when using different parameter values with the Cloud console, or by calling the Vertex AI API directly. - For an example of using the Vertex AI API, see [Quickstart using the Vertex AI API](../../start/quickstarts/api-quickstart.md). - To view this sample in the Cloud console: [Go to Google Cloud console](https://console.cloud.google.com/vertex-ai/generative/language/prompt-examples/Financial%20QA%20-%20Extractive) | |
+| Prompt Freeform [financial\_qa\_example\_MCD\_2022\_10K.pdf](https://storage.mtls.cloud.google.com/cloud-samples-data/generative-ai/pdf/financial_qa_extractive.pdf) Using the diluted earnings per share (EPS) from FY2022 and the stock price based on the average price paid per share from November 1-30, 2022, calculate the P/E ratio for FY2022. Round answer to two decimal places. Explain the answer and point me to the evidence. Response Okay, let's calculate the P/E ratio for FY2022 based on the provided information. **1. Find the Diluted EPS for FY2022:** The document states that the diluted EPS for FY2022 was $8.33. (See page 12 of the document, under "Net Income") **2. Find the Average Stock Price:** The document provides the average price paid per share for the period of November 1-30, 2022, as $270.40. This information is found in the "Issuer Purchases of Equity Securities" table on page 26. **3. Calculate the P/E Ratio:** The P/E ratio (Price-to-Earnings ratio) is calculated as follows: P/E Ratio = Stock Price / Diluted EPS P/E Ratio = $270.40 / $8.33 P/E Ratio = 32.45 **Therefore, the P/E ratio for FY2022 is 32.45.** **Explanation:** The P/E ratio (Price-to-Earnings ratio) is a valuation metric that compares a company's current share price to its earnings per share. A higher P/E ratio generally indicates that investors are willing to pay a higher price for each dollar of earnings. In this case, the P/E ratio of 32.40 for McDonald's in FY2022 suggests that investors are willing to pay $32.45 for every $1 of earnings the company generates. **Evidence:** - **Diluted EPS:** Page 12 of the document, under "Net Income" - **Average Stock Price:** Page 26 of the document, under "Issuer Purchases of Equity Securities" table. | | | | | --- | --- | | **Model:** | gemini-1.5-flash-002 | | **Temperature:** | 0.2 | | **Max output tokens:** | 8192 | | **TopK:** | 40.0 | | **TopP:** | 0.95 | |

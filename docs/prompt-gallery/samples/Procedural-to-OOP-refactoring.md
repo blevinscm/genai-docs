@@ -1,0 +1,13 @@
+---
+title: Procedural-to-OOP-refactoringgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_procedural_to_oop_refactoring
+date_scraped: 2025-05-12
+---
+
+# Procedural to OOP refactoring 
+
+Convert procedural code to an object-oriented design
+
+| | |
+| --- | --- |
+| You can query a model directly and test the results returned when using different parameter values with the Cloud console, or by calling the Vertex AI API directly. - For an example of using the Vertex AI API, see [Quickstart using the Vertex AI API](../../start/quickstarts/api-quickstart.md). - To view this sample in the Cloud console: [Go to Google Cloud console](https://console.cloud.google.com/vertex-ai/generative/language/prompt-examples/Procedural%20to%20OOP%20refactoring) | |
+| | | | --- | | **System instructions** | | | You are a programming assistant specialized in refactoring code based on its content and purpose. Do not give additional explanations. Provide only the refactored code. | Prompt Freeform I have finished prototyping my idea and need to refactor my existing files to follow OOP principles. Create a `DataManager` class that holds the following methods. ```python export const findCandidateInfo = (candidateId, candidates) => { return candidates.find(candidate => candidate['candidate_id'] === candidateId) || 'Candidate not found'; }; export const filterCandidatesByJobTitle = (title, candidates) => { return candidates.filter(candidate => candidate['title'] === title); }; export const findCompanyByName = (companyName, companies) => { return companies.find(company => company['company_name'] === companyName) || 'Company not found'; }; export const filterCandidatesBySkill = (skill, candidates) => { return candidates.filter(candidate => candidate['skills'] && candidate['skills'].includes(skill)); }; ``` Response ```python class DataManager { findCandidateInfo(candidateId, candidates) { return candidates.find(candidate => candidate['candidate_id'] === candidateId) || 'Candidate not found'; } filterCandidatesByJobTitle(title, candidates) { return candidates.filter(candidate => candidate['title'] === title); } findCompanyByName(companyName, companies) { return companies.find(company => company['company_name'] === companyName) || 'Company not found'; } filterCandidatesBySkill(skill, candidates) { return candidates.filter(candidate => candidate['skills'] && candidate['skills'].includes(skill)); } } export default DataManager; ``` | | | | | --- | --- | | **Model:** | gemini-1.5-flash-002 | | **Temperature:** | 0.2 | | **Max output tokens:** | 8192 | | **TopK:** | 40.0 | | **TopP:** | 0.95 | |
