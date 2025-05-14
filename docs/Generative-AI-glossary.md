@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Generative Ai Glossary
+title: Generative AI Glossary
 ---
 
 # Generative AI glossary 

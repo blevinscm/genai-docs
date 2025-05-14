@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Vertex Ai Rag Engine Overview
+title: Vertex AI Rag Engine Overview
 ---
 
 # Vertex AI RAG Engine overview 

@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Use A Weaviate Database With Vertex Ai Rag Engine
+title: Use A Weaviate Database With Vertex AI Rag Engine
 ---
 
 # Use a Weaviate database with Vertex AI RAG Engine 

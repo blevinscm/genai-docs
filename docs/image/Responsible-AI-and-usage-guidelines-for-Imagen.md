@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Responsible Ai And Usage Guidelines For Imagen
+title: Responsible AI And Usage Guidelines For Imagen
 ---
 
 # Responsible AI and usage guidelines for Imagen 

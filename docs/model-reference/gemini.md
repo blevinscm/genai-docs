@@ -1,7 +1,7 @@
 ---
 date_scraped: 2025-05-12
 source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/gemini
-title: Generate Content With The Vertex Ai Gemini Apibookmark_borderbookmarkstay Organized
+title: Generate Content With The Vertex AI Gemini Apibookmark_borderbookmarkstay Organized
   With Collections
 ---
 

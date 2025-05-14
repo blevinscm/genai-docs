@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Use Embedding Models With Vertex Ai Rag Engine
+title: Use Embedding Models With Vertex AI Rag Engine
 ---
 
 # Use embedding models with Vertex AI RAG Engine 

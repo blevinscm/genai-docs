@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Use Pinecone With Vertex Ai Rag Engine
+title: Use Pinecone With Vertex AI Rag Engine
 ---
 
 # Use Pinecone with Vertex AI RAG Engine 

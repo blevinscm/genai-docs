@@ -1,7 +1,7 @@
 ---
 date_scraped: 2025-05-12
 source: https://cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/use-vertexai-search
-title: Use Vertex Ai Search As A Retrieval Backend Using Vertex Ai Rag Enginestay
+title: Use Vertex AI Search As A Retrieval Backend Using Vertex AI Rag Enginestay
   Organized With Collection
 ---
 
@@ -152,7 +152,7 @@ import vertexai
 vertexai.init(project=PROJECT_ID, location="us-central1")
 
 # Configure Search
-vertex_ai_search_config = rag.VertexAiSearchConfig(
+vertex_ai_search_config = rag.VertexAISearchConfig(
  serving_config=f"{vertex_ai_search_engine_name}/servingConfigs/default_search",
 )
 

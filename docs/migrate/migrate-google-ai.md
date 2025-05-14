@@ -1,7 +1,7 @@
 ---
 date_scraped: 2025-05-12
 source: https://cloud.google.com/vertex-ai/generative-ai/docs/migrate/migrate-google-ai
-title: Migrate From The Gemini Developer Api To The Vertex Ai Gemini Apistay Organized
+title: Migrate From The Gemini Developer Api To The Vertex AI Gemini Apistay Organized
   With Collectionssave
 ---
 

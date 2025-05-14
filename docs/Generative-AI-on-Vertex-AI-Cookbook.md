@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Generative Ai On Vertex Ai Cookbook
+title: Generative AI On Vertex AI Cookbook
 ---
 
 # Generative AI on Vertex AI Cookbook 

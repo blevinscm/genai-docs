@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Document Types For Vertex Ai Rag Engine
+title: Document Types For Vertex AI Rag Engine
 ---
 
 # Document types for Vertex AI RAG Engine 

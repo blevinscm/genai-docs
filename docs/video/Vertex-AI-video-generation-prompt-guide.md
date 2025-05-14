@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Vertex Ai Video Generation Prompt Guide
+title: Vertex AI Video Generation Prompt Guide
 ---
 
 # Vertex AI video generation prompt guide 

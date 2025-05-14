@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Generate Content With The Vertex Ai Gemini Api
+title: Generate Content With The Vertex AI Gemini Api
 ---
 
 # Generate content with the Vertex AI Gemini API 

@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Generative Ai And Data Governance
+title: Generative AI And Data Governance
 ---
 
 # Generative AI and data governance 

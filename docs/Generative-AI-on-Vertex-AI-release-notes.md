@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Generative Ai On Vertex Ai Release Notes
+title: Generative AI On Vertex AI Release Notes
 ---
 
 # Generative AI on Vertex AI release notes 

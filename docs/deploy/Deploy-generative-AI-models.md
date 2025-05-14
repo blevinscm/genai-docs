@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Deploy Generative Ai Models
+title: Deploy Generative AI Models
 ---
 
 # Deploy generative AI models 

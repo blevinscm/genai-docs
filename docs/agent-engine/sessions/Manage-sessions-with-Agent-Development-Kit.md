@@ -61,16 +61,16 @@ root_agent = adk.Agent(
 
 ## Set up the ADK runner
 
-The [ADK Runtime](https://google.github.io/adk-docs/runtime/) orchestrates the execution of your agents, tools, and callbacks, and orchestrates calls to read and write sessions. Initialize the Runner with [`VertexAiSessionService`](https://google.github.io/adk-docs/sessions/session/#sessionservice-implementations), which connects with Vertex AI Agent Engine Sessions.
+The [ADK Runtime](https://google.github.io/adk-docs/runtime/) orchestrates the execution of your agents, tools, and callbacks, and orchestrates calls to read and write sessions. Initialize the Runner with [`VertexAISessionService`](https://google.github.io/adk-docs/sessions/session/#sessionservice-implementations), which connects with Vertex AI Agent Engine Sessions.
 
 ```python
-from google.adk.sessions import VertexAiSessionService
+from google.adk.sessions import VertexAISessionService
 
 app_name="AGENT_ENGINE_ID"
 user_id="USER_ID"
 
-# Create the ADK runner with VertexAiSessionService
-session_service = VertexAiSessionService(
+# Create the ADK runner with VertexAISessionService
+session_service = VertexAISessionService(
  "PROJECT_ID", "LOCATION")
 runner = adk.Runner(
  agent=root_agent,

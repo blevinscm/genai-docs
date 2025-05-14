@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Vertex Ai Partner Models For Maas
+title: Vertex AI Partner Models For Maas
 ---
 
 # Vertex AI partner models for MaaS 

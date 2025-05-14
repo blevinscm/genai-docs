@@ -85,7 +85,7 @@ langchain_load(response['messages'][-1]).pretty_print()
 The output will look similar to the following:
 
 ```python
-================================== Ai Message ==================================
+================================== AI Message ==================================
 Tool Calls:
  get_exchange_rate (12610c50-4465-4296-b1f3-d751ec959fd5)
  Call ID: 12610c50-4465-4296-b1f3-d751ec959fd5
@@ -142,7 +142,7 @@ The response will be similar to the following sequence of outputs:
 
 ```python
 step 3: {'configurable': {'thread_id': 'human-in-the-loop-deepdive', 'checkpoint_ns': '', 'checkpoint_id': '1efa2e95-ded5-67e0-8003-2d34e04507f5'}}
-================================== Ai Message ==================================
+================================== AI Message ==================================
 
 The exchange rate from US dollars to Swedish krona is 1 USD to 11.0159 SEK.
 
@@ -159,7 +159,7 @@ Name: get_exchange_rate
 
 ```python
 step 1: {'configurable': {'thread_id': 'human-in-the-loop-deepdive', 'checkpoint_ns': '', 'checkpoint_id': '1efa2e95-cc7f-6d68-8001-1f6b5e57c456'}}
-================================== Ai Message ==================================
+================================== AI Message ==================================
 Tool Calls:
  get_exchange_rate (12610c50-4465-4296-b1f3-d751ec959fd5)
  Call ID: 12610c50-4465-4296-b1f3-d751ec959fd5
@@ -224,7 +224,7 @@ similar to the following:
 
 ```python
 step 3: {'configurable': {'thread_id': 'human-in-the-loop-deepdive', 'checkpoint_ns': '', 'checkpoint_id': '1efa2e95-ded5-67e0-8003-2d34e04507f5'}}
-================================== Ai Message ==================================
+================================== AI Message ==================================
 
 The exchange rate from US dollars to Swedish krona is 1 USD to 11.0159 SEK.
 
@@ -246,7 +246,7 @@ The output will look similar to the following:
 
 ```python
 step 1: {'configurable': {'thread_id': 'human-in-the-loop-deepdive', 'checkpoint_ns': '', 'checkpoint_id': '1efa2e95-cc7f-6d68-8001-1f6b5e57c456'}}
-================================== Ai Message ==================================
+================================== AI Message ==================================
 Tool Calls:
  get_exchange_rate (12610c50-4465-4296-b1f3-d751ec959fd5)
  Call ID: 12610c50-4465-4296-b1f3-d751ec959fd5
@@ -284,7 +284,7 @@ for state_values in agent.stream_query(
 It will result in something similar to the following sequence of outputs:
 
 ```python
-================================== Ai Message ==================================
+================================== AI Message ==================================
 Tool Calls:
  get_exchange_rate (12610c50-4465-4296-b1f3-d751ec959fd5)
  Call ID: 12610c50-4465-4296-b1f3-d751ec959fd5
@@ -303,7 +303,7 @@ Name: get_exchange_rate
 ```
 
 ```python
-================================== Ai Message ==================================
+================================== AI Message ==================================
 
 The exchange rate from US dollars to Swedish krona is 1 USD to 11.0159 SEK.
 
@@ -352,7 +352,7 @@ for state_values in agent.stream_query(
 It will result in something similar to the following sequence of outputs:
 
 ```python
-================================== Ai Message ==================================
+================================== AI Message ==================================
 Tool Calls:
  get_exchange_rate (12610c50-4465-4296-b1f3-d751ec959fd5)
  Call ID: 12610c50-4465-4296-b1f3-d751ec959fd5
@@ -372,7 +372,7 @@ Name: get_exchange_rate
 ```
 
 ```python
-================================== Ai Message ==================================
+================================== AI Message ==================================
 
 The exchange rate from US dollars to Swedish krona on 2024-08-30 was 1 USD to 10.2241 SEK.
 

@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Use Data Ingestion With Vertex Ai Rag Engine
+title: Use Data Ingestion With Vertex AI Rag Engine
 ---
 
 # Use data ingestion with Vertex AI RAG Engine 

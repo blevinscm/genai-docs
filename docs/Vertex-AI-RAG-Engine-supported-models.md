@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Vertex Ai Rag Engine Supported Models
+title: Vertex AI Rag Engine Supported Models
 ---
 
 # Vertex AI RAG Engine supported models 
