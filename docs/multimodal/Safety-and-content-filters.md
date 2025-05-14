@@ -1,6 +1,6 @@
 ---
-title: Safety-and-content-filtersgoogle.com/vertex-ai/generative-ai/docs/multimodal/configure-safety-filters
 date_scraped: 2025-05-12
+title: Safety And Content Filters
 ---
 
 # Safety and content filters 

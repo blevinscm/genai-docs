@@ -1,6 +1,6 @@
 ---
-title: Using-OpenAI-libraries-with-Vertex-AIgoogle.com/vertex-ai/generative-ai/docs/multimodal/call-gemini-using-openai-library
 date_scraped: 2025-05-12
+title: Using Openai Libraries With Vertex Ai
 ---
 
 # Using OpenAI libraries with Vertex AI 

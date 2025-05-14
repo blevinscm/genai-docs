@@ -1,6 +1,6 @@
 ---
-title: Manage-sessions-with-Agent-Development-Kitgoogle.com/vertex-ai/generative-ai/docs/agent-engine/sessions/manage-sessions-adk
 date_scraped: 2025-05-12
+title: Manage Sessions With Agent Development Kit
 ---
 
 # Manage sessions with Agent Development Kit 

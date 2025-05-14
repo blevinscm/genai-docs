@@ -1,7 +1,8 @@
 ---
-title: Count-tokens-for-Claude-modelsbookmark_borderbookmarkStay-organized-with-collectionsSave-and-categor
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude-count-tokens
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/claude-count-tokens
+title: Count Tokens For Claude Modelsbookmark_borderbookmarkstay Organized With Collectionssave
+  And Categor
 ---
 
 # Count tokens for Claude models bookmark\_borderbookmark 

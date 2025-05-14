@@ -1,6 +1,6 @@
 ---
-title: Generate-Java-classesgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_generate_java_classes
 date_scraped: 2025-05-12
+title: Generate Java Classes
 ---
 
 # Generate Java classes 

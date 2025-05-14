@@ -1,6 +1,6 @@
 ---
-title: Procedural-to-OOP-refactoringgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_procedural_to_oop_refactoring
 date_scraped: 2025-05-12
+title: Procedural To Oop Refactoring
 ---
 
 # Procedural to OOP refactoring 

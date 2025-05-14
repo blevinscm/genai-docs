@@ -1,7 +1,7 @@
 ---
-title: Python-algorithm
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_python_algorithm
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_python_algorithm
+title: Python Algorithm
 ---
 
 # Python algorithm 

@@ -1,6 +1,6 @@
 ---
-title: Generative-AI-glossarygoogle.com/vertex-ai/generative-ai/docs/glossary-genai
 date_scraped: 2025-05-12
+title: Generative Ai Glossary
 ---
 
 # Generative AI glossary 

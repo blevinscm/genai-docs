@@ -1,6 +1,6 @@
 ---
-title: Imagen-3-Fast-Generate-001google.com/vertex-ai/generative-ai/docs/models/imagen/3-0-fast-generate-001
 date_scraped: 2025-05-12
+title: Imagen 3 Fast Generate 001
 ---
 
 # Imagen 3 Fast Generate 001 

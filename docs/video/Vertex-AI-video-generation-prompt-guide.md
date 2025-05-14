@@ -1,6 +1,6 @@
 ---
-title: Vertex-AI-video-generation-prompt-guidegoogle.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide
 date_scraped: 2025-05-12
+title: Vertex Ai Video Generation Prompt Guide
 ---
 
 # Vertex AI video generation prompt guide 

@@ -1,6 +1,6 @@
 ---
-title: Retrieval-and-rankinggoogle.com/vertex-ai/generative-ai/docs/rag-engine/retrieval-and-ranking
 date_scraped: 2025-05-12
+title: Retrieval And Ranking
 ---
 
 # Retrieval and ranking 

@@ -1,7 +1,7 @@
 ---
-title: Choose an embeddings task type bookmark borderbookmark
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/choose-task-type # Assumed source
-date_scraped: 2025-05-12 # Kept original date
+date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/choose-task-type
+title: Choose An Embeddings Task Type Bookmark Borderbookmark
 ---
 
 [REST](#rest)[Vertex AI SDK for Python](#vertex-ai-sdk-for-python)

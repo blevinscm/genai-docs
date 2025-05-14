@@ -1,7 +1,7 @@
 ---
-title: Supported-models
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/provisioned-throughput/supported-models#google-models
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/provisioned-throughput/supported-models#google-models
+title: Supported Models
 ---
 
 # Supported models 

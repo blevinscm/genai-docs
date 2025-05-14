@@ -1,6 +1,6 @@
 ---
-title: Ad-copy-from-videogoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_ad_copy_from_video
 date_scraped: 2025-05-12
+title: Ad Copy From Video
 ---
 
 # Ad copy from video 

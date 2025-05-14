@@ -1,6 +1,6 @@
 ---
-title: Create-a-context-cachegoogle.com/vertex-ai/generative-ai/docs/context-cache/context-cache-create
 date_scraped: 2025-05-12
+title: Create A Context Cache
 ---
 
 # Create a context cache 

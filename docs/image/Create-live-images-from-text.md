@@ -1,6 +1,6 @@
 ---
-title: Create-live-images-from-textgoogle.com/vertex-ai/generative-ai/docs/image/text-to-live-images
 date_scraped: 2025-05-12
+title: Create Live Images From Text
 ---
 
 # Create live images from text 

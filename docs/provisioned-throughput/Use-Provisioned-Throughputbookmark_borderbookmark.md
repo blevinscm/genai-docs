@@ -1,6 +1,6 @@
 ---
-title: Use-Provisioned-Throughputbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/provisioned-throughput/use-provisioned-throughput#dashboards
 date_scraped: 2025-05-12
+title: Use Provisioned Throughputbookmark_borderbookmark
 ---
 
 # Use Provisioned Throughput bookmark\_borderbookmark 

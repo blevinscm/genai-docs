@@ -1,6 +1,6 @@
 ---
-title: Class-grounding-1920google.com/vertex-ai/generative-ai/docs/reference/python/latest/vertexai.generative_models.grounding
 date_scraped: 2025-05-12
+title: Class Grounding 1920
 ---
 
 # Class grounding (1.92.0) 

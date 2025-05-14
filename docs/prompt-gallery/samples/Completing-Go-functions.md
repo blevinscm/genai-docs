@@ -1,6 +1,6 @@
 ---
-title: Completing-Go-functionsgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_completing_go_functions
 date_scraped: 2025-05-12
+title: Completing Go Functions
 ---
 
 # Completing Go functions 

@@ -1,6 +1,6 @@
 ---
-title: Google-modelsbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/learn/models
 date_scraped: 2025-05-12
+title: Google Modelsbookmark_borderbookmark
 ---
 
 # Google models bookmark\_borderbookmark 

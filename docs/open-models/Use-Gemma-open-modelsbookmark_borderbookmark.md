@@ -1,6 +1,6 @@
 ---
-title: Use-Gemma-open-modelsbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/open-models/use-gemma
 date_scraped: 2025-05-12
+title: Use Gemma Open Modelsbookmark_borderbookmark
 ---
 
 # Use Gemma open models bookmark\_borderbookmark 

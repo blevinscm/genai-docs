@@ -1,7 +1,7 @@
 ---
-title: Upload examples
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/example-store/upload-examples
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/example-store/upload-examples
+title: Upload Examples
 ---
 
 # Upload examples 

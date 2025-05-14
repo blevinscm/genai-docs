@@ -1,6 +1,6 @@
 ---
-title: Purchase-Provisioned-Throughputgoogle.com/vertex-ai/generative-ai/docs/provisioned-throughput/purchase-provisioned-throughput
 date_scraped: 2025-05-12
+title: Purchase Provisioned Throughput
 ---
 
 # Purchase Provisioned Throughput 

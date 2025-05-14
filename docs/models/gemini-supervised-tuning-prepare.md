@@ -1,7 +1,8 @@
 ---
-title: Prepare-supervised-fine-tuning-data-for-Gemini-modelsStay-organized-with-collectionsSave-and-categor
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini-supervised-tuning-prepare#dataset-example
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini-supervised-tuning-prepare#dataset-example
+title: Prepare Supervised Fine Tuning Data For Gemini Modelsstay Organized With Collectionssave
+  And Categor
 ---
 
 # Prepare supervised fine-tuning data for Gemini models 

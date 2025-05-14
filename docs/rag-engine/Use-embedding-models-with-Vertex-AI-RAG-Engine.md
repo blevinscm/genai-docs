@@ -1,6 +1,6 @@
 ---
-title: Use-embedding-models-with-Vertex-AI-RAG-Enginegoogle.com/vertex-ai/generative-ai/docs/rag-engine/use-embedding-models
 date_scraped: 2025-05-12
+title: Use Embedding Models With Vertex Ai Rag Engine
 ---
 
 # Use embedding models with Vertex AI RAG Engine 

@@ -1,6 +1,6 @@
 ---
-title: Image-understandingbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/multimodal/image-understanding#whats_next
 date_scraped: 2025-05-12
+title: Image Understandingbookmark_borderbookmark
 ---
 
 # Image understanding bookmark\_borderbookmark 

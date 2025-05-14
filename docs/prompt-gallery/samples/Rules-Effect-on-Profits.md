@@ -1,6 +1,6 @@
 ---
-title: Rules-Effect-on-Profitsgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_rules__effect_on_profits
 date_scraped: 2025-05-12
+title: Rules Effect On Profits
 ---
 
 # Rules' Effect on Profits 

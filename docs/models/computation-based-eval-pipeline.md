@@ -1,7 +1,8 @@
 ---
-title: Run-a-computation-based-evaluation-pipelinebookmark_borderbookmarkStay-organized-with-collectionsSav
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/models/computation-based-eval-pipeline#perform_model_evaluation
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/models/computation-based-eval-pipeline#perform_model_evaluation
+title: Run A Computation Based Evaluation Pipelinebookmark_borderbookmarkstay Organized
+  With Collectionssav
 ---
 
 # Run a computation-based evaluation pipeline bookmark\_borderbookmark 

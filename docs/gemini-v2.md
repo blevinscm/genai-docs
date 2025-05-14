@@ -1,7 +1,7 @@
 ---
-title: Google models
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/gemini-v2#google-gen
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/gemini-v2#google-gen
+title: Google Models
 ---
 
 # Google models 

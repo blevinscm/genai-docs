@@ -1,6 +1,6 @@
 ---
-title: Optimize-promptsbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-optimizer
 date_scraped: 2025-05-12
+title: Optimize Promptsbookmark_borderbookmark
 ---
 
 # Optimize prompts bookmark\_borderbookmark 

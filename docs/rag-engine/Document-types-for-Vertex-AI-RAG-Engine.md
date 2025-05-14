@@ -1,6 +1,6 @@
 ---
-title: Document-types-for-Vertex-AI-RAG-Enginegoogle.com/vertex-ai/generative-ai/docs/rag-engine/supported-documents
 date_scraped: 2025-05-12
+title: Document Types For Vertex Ai Rag Engine
 ---
 
 # Document types for Vertex AI RAG Engine 

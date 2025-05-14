@@ -1,6 +1,6 @@
 ---
-title: Ground-responses-using-RAGgoogle.com/vertex-ai/generative-ai/docs/grounding/ground-responses-using-rag
 date_scraped: 2025-05-12
+title: Ground Responses Using Rag
 ---
 
 # Ground responses using RAG 

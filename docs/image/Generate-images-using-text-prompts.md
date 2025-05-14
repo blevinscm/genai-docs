@@ -1,6 +1,6 @@
 ---
-title: Generate-images-using-text-promptsgoogle.com/vertex-ai/generative-ai/docs/image/generate-images#watermark
 date_scraped: 2025-05-12
+title: Generate Images Using Text Prompts
 ---
 
 # Generate images using text prompts 

@@ -1,6 +1,6 @@
 ---
-title: Venue-Selection-Database-Toolgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_venue_selection_database_tool
 date_scraped: 2025-05-12
+title: Venue Selection Database Tool
 ---
 
 # Venue Selection Database Tool 

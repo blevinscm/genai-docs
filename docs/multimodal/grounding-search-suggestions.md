@@ -1,7 +1,8 @@
 ---
-title: Use-Google-Search-suggestionsbookmark_borderbookmarkStay-organized-with-collectionsSave-and-categori
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/grounding-search-suggestions#behavior_on_tap
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/grounding-search-suggestions#behavior_on_tap
+title: Use Google Search Suggestionsbookmark_borderbookmarkstay Organized With Collectionssave
+  And Categori
 ---
 
 # Use Google Search suggestions bookmark\_borderbookmark 

@@ -1,7 +1,8 @@
 ---
-title: Using-Spot-VMs-or-reservations-to-deploy-a-Vertex-AI-Llama-31-endpoint-on-Cloud-GPUsStay-organized-w
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/open-models/spotvm-reservations/use-spotvm-reservations
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/open-models/spotvm-reservations/use-spotvm-reservations
+title: Using Spot Vms Or Reservations To Deploy A Vertex Ai Llama 31 Endpoint On Cloud
+  Gpusstay Organized W
 ---
 
 # Using Spot VMs or reservations to deploy a Vertex AI Llama-3.1 endpoint on Cloud GPUs 

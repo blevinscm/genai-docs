@@ -1,6 +1,6 @@
 ---
-title: Retrieve-examplesgoogle.com/vertex-ai/generative-ai/docs/example-store/retrieve-examples
 date_scraped: 2025-05-12
+title: Retrieve Examples
 ---
 
 # Retrieve examples 

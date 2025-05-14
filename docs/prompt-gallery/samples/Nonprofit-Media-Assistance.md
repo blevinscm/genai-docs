@@ -1,6 +1,6 @@
 ---
-title: Nonprofit-Media-Assistancegoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_nonprofit_media_assistance
 date_scraped: 2025-05-12
+title: Nonprofit Media Assistance
 ---
 
 # Nonprofit Media Assistance 

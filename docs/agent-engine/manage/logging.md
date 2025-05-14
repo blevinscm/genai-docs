@@ -1,7 +1,7 @@
 ---
-title: Logging an agent
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/manage/logging
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/manage/logging
+title: Logging An Agent
 ---
 
 # Logging an agent 

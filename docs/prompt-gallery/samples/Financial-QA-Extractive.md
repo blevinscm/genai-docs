@@ -1,6 +1,6 @@
 ---
-title: Financial-QA-Extractivegoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_financial_qa_-_extractive
 date_scraped: 2025-05-12
+title: Financial Qa Extractive
 ---
 
 # Financial QA - Extractive 

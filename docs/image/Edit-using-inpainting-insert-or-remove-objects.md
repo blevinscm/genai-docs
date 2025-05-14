@@ -1,6 +1,6 @@
 ---
-title: Edit-using-inpainting-insert-or-remove-objectsgoogle.com/vertex-ai/generative-ai/docs/image/edit-inpainting
 date_scraped: 2025-05-12
+title: Edit Using Inpainting Insert Or Remove Objects
 ---
 
 # Edit using inpainting (insert or remove objects) 

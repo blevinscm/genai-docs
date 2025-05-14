@@ -1,6 +1,6 @@
 ---
-title: List-and-count-tokensgoogle.com/vertex-ai/generative-ai/docs/multimodal/list-token#tokens_and_the_importance_of_token_listing_and_counting
 date_scraped: 2025-05-12
+title: List And Count Tokens
 ---
 
 # List and count tokens 

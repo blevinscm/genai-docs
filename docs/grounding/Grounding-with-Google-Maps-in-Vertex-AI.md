@@ -1,6 +1,6 @@
 ---
-title: Grounding-with-Google-Maps-in-Vertex-AIgoogle.com/vertex-ai/generative-ai/docs/grounding/grounding-with-google-maps
 date_scraped: 2025-05-12
+title: Grounding With Google Maps In Vertex Ai
 ---
 
 # Grounding with Google Maps in Vertex AI 

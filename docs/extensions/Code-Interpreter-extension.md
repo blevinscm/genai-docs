@@ -1,6 +1,6 @@
 ---
-title: Code-Interpreter-extensiongoogle.com/vertex-ai/generative-ai/docs/extensions/google-extensions#register_and_query_the_code_interpreter_extension
 date_scraped: 2025-05-12
+title: Code Interpreter Extension
 ---
 
 # Code Interpreter extension 

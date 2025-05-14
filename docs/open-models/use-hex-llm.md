@@ -1,7 +1,8 @@
 ---
-title: Serve-open-models-using-Hex-LLM-premium-container-on-Cloud-TPUStay-organized-with-collectionsSave-an
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/open-models/use-hex-llm
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/open-models/use-hex-llm
+title: Serve Open Models Using Hex Llm Premium Container On Cloud Tpustay Organized
+  With Collectionssave An
 ---
 
 # Serve open models using Hex-LLM premium container on Cloud TPU 

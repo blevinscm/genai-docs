@@ -1,6 +1,6 @@
 ---
-title: Use-system-instructionsgoogle.com/vertex-ai/generative-ai/docs/learn/prompts/assign-role
 date_scraped: 2025-05-12
+title: Use System Instructions
 ---
 
 # Use system instructions 

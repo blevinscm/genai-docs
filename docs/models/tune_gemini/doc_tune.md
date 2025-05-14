@@ -1,7 +1,7 @@
 ---
-title: Document-tuning
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune_gemini/doc_tune
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune_gemini/doc_tune
+title: Document Tuning
 ---
 
 # Document tuning 

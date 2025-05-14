@@ -1,7 +1,8 @@
 ---
-title: Quickstart Generate and verify an images watermark using Imagen text to image Console
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console#generate-images
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console#generate-images
+title: Quickstart Generate And Verify An Images Watermark Using Imagen Text To Image
+  Console
 ---
 
 # Quickstart: Generate and verify an image's watermark using Imagen text-to-image (Console) 

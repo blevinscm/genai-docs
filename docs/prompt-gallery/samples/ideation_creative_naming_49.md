@@ -1,7 +1,7 @@
 ---
-title: Creative-naming
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/ideation_creative_naming_49
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/ideation_creative_naming_49
+title: Creative Naming
 ---
 
 # Creative naming 

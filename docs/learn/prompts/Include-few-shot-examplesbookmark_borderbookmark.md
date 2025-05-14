@@ -1,6 +1,6 @@
 ---
-title: Include-few-shot-examplesbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/learn/prompts/few-shot-examples
 date_scraped: 2025-05-12
+title: Include Few Shot Examplesbookmark_borderbookmark
 ---
 
 # Include few-shot examples bookmark\_borderbookmark 

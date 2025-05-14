@@ -1,7 +1,7 @@
 ---
-title: Create or reuse an Example Store instance bookmark borderbookmark
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/example-store/create-examplestore
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/example-store/create-examplestore
+title: Create Or Reuse An Example Store Instance Bookmark Borderbookmark
 ---
 
 # Create or reuse an Example Store instance bookmark\_borderbookmark 

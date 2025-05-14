@@ -1,7 +1,8 @@
 ---
-title: Audio-understanding-speech-onlybookmark_borderbookmarkStay-organized-with-collectionsSave-and-catego
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/audio-understanding#whats_next
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/audio-understanding#whats_next
+title: Audio Understanding Speech Onlybookmark_borderbookmarkstay Organized With Collectionssave
+  And Catego
 ---
 
 # Audio understanding (speech only) bookmark\_borderbookmark 

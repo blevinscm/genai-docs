@@ -1,6 +1,6 @@
 ---
-title: Style-customizationgoogle.com/vertex-ai/generative-ai/docs/image/style-customization
 date_scraped: 2025-05-12
+title: Style Customization
 ---
 
 # Style customization 

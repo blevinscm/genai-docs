@@ -1,6 +1,6 @@
 ---
-title: Text-generationbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/multimodal/send-chat-prompts-gemini
 date_scraped: 2025-05-12
+title: Text Generationbookmark_borderbookmark
 ---
 
 # Text generation bookmark\_borderbookmark 

@@ -1,6 +1,6 @@
 ---
-title: Deploy-generative-AI-modelsgoogle.com/vertex-ai/generative-ai/docs/deploy/overview
 date_scraped: 2025-05-12
+title: Deploy Generative Ai Models
 ---
 
 # Deploy generative AI models 

@@ -1,7 +1,8 @@
 ---
-title: Define-your-evaluation-metricsbookmark_borderbookmarkStay-organized-with-collectionsSave-and-categor
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/models/determine-eval
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/models/determine-eval
+title: Define Your Evaluation Metricsbookmark_borderbookmarkstay Organized With Collectionssave
+  And Categor
 ---
 
 # Define your evaluation metrics bookmark\_borderbookmark 

@@ -1,7 +1,8 @@
 ---
-title: Retrieval-and-generation-output-of-Vertex-AI-RAG-EngineStay-organized-with-collectionsSave-and-categ
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/rag-output-explained
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/rag-output-explained
+title: Retrieval And Generation Output Of Vertex Ai Rag Enginestay Organized With
+  Collectionssave And Categ
 ---
 
 # Retrieval and generation output of Vertex AI RAG Engine 

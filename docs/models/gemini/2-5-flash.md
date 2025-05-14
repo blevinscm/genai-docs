@@ -1,7 +1,7 @@
 ---
-title: Gemini-25-Flash
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-flash
+title: Gemini 25 Flash
 ---
 
 # Gemini 2.5 Flash 

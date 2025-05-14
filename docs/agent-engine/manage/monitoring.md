@@ -1,7 +1,7 @@
 ---
-title: Monitor an agent
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/manage/monitoring#user-defined-metrics
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/agent-engine/manage/monitoring#user-defined-metrics
+title: Monitor An Agent
 ---
 
 # Monitor an agent 

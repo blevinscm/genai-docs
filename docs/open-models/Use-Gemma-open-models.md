@@ -1,6 +1,6 @@
 ---
-title: Use-Gemma-open-modelsgoogle.com/vertex-ai/generative-ai/docs/open-models/use-gemma#whats_next
 date_scraped: 2025-05-12
+title: Use Gemma Open Models
 ---
 
 # Use Gemma open models 

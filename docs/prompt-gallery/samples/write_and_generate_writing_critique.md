@@ -1,7 +1,7 @@
 ---
-title: Writing-Critique
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_writing_critique
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_writing_critique
+title: Writing Critique
 ---
 
 # Writing Critique 

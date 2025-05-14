@@ -1,6 +1,6 @@
 ---
-title: Grounding-with-your-datagoogle.com/vertex-ai/generative-ai/docs/grounding/grounding-with-your-data
 date_scraped: 2025-05-12
+title: Grounding With Your Data
 ---
 
 # Grounding with your data 

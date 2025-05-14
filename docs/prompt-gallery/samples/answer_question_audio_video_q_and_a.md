@@ -1,7 +1,7 @@
 ---
-title: Audiovideo-QA
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_audio_video_q_and_a
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_audio_video_q_and_a
+title: Audiovideo Qa
 ---
 
 # Audio/video Q&A 

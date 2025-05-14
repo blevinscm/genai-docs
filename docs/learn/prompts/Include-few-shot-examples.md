@@ -1,6 +1,6 @@
 ---
-title: Include-few-shot-examplesgoogle.com/vertex-ai/generative-ai/docs/learn/prompts/few-shot-examples#zero-shot-versus-few-shot-prompts
 date_scraped: 2025-05-12
+title: Include Few Shot Examples
 ---
 
 # Include few-shot examples 

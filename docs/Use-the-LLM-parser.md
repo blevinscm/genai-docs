@@ -1,6 +1,6 @@
 ---
-title: Use-the-LLM-parsergoogle.com/vertex-ai/generative-ai/docs/llm-parser
 date_scraped: 2025-05-12
+title: Use The Llm Parser
 ---
 
 # Use the LLM parser 

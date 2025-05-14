@@ -1,6 +1,6 @@
 ---
-title: Image-understandinggoogle.com/vertex-ai/generative-ai/docs/multimodal/send-multimodal-prompts#send-images
 date_scraped: 2025-05-12
+title: Image Understanding
 ---
 
 # Image understanding 

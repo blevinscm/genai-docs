@@ -1,6 +1,6 @@
 ---
-title: Prompt-iteration-strategiesgoogle.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-iteration
 date_scraped: 2025-05-12
+title: Prompt Iteration Strategies
 ---
 
 # Prompt iteration strategies 

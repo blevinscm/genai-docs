@@ -1,6 +1,6 @@
 ---
-title: Financial-QA-Deductivegoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_financial_qa_-_deductive
 date_scraped: 2025-05-12
+title: Financial Qa Deductive
 ---
 
 # Financial QA - Deductive 

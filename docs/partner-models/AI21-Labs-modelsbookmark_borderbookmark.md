@@ -1,6 +1,6 @@
 ---
-title: AI21-Labs-modelsbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/partner-models/ai21
 date_scraped: 2025-05-12
+title: Ai21 Labs Modelsbookmark_borderbookmark
 ---
 
 # AI21 Labs models bookmark\_borderbookmark 

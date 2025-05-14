@@ -1,6 +1,6 @@
 ---
-title: Product-image-editinggoogle.com/vertex-ai/generative-ai/docs/image/edit-product-image
 date_scraped: 2025-05-12
+title: Product Image Editing
 ---
 
 # Product image editing 

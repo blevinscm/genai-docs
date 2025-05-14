@@ -1,7 +1,7 @@
 ---
-title: Abuse monitoring
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/abuse-monitoring
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/abuse-monitoring
+title: Abuse Monitoring
 ---
 
 # Abuse monitoring 

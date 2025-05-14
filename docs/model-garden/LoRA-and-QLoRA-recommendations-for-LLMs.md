@@ -1,6 +1,6 @@
 ---
-title: LoRA-and-QLoRA-recommendations-for-LLMsgoogle.com/vertex-ai/generative-ai/docs/model-garden/lora-qlora
 date_scraped: 2025-05-12
+title: Lora And Qlora Recommendations For Llms
 ---
 
 # LoRA and QLoRA recommendations for LLMs 

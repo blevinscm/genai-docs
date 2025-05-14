@@ -1,6 +1,6 @@
 ---
-title: Use-Provisioned-Throughputgoogle.com/vertex-ai/generative-ai/docs/use-provisioned-throughput#only-pay-as-you-go
 date_scraped: 2025-05-12
+title: Use Provisioned Throughput
 ---
 
 # Use Provisioned Throughput 

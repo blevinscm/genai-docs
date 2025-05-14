@@ -1,6 +1,6 @@
 ---
-title: Delete-a-context-cachegoogle.com/vertex-ai/generative-ai/docs/context-cache/context-cache-delete
 date_scraped: 2025-05-12
+title: Delete A Context Cache
 ---
 
 # Delete a context cache 

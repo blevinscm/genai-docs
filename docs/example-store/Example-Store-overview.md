@@ -1,6 +1,6 @@
 ---
-title: Example-Store-overviewgoogle.com/vertex-ai/generative-ai/docs/example-store/overview
 date_scraped: 2025-05-12
+title: Example Store Overview
 ---
 
 # Example Store overview 

@@ -1,7 +1,8 @@
 ---
-title: Try-it-Test-model-capabilities-using-demo-playgrounds-in-Model-GardenStay-organized-with-collections
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-garden/quickstart
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-garden/quickstart
+title: Try It Test Model Capabilities Using Demo Playgrounds In Model Gardenstay Organized
+  With Collections
 ---
 
 # Try it: Test model capabilities using demo playgrounds in Model Garden 

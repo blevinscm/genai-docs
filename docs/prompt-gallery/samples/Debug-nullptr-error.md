@@ -1,6 +1,6 @@
 ---
-title: Debug-nullptr-errorgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_debug_nullptr_error
 date_scraped: 2025-05-12
+title: Debug Nullptr Error
 ---
 
 # Debug nullptr error 

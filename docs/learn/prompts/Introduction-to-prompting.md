@@ -1,6 +1,6 @@
 ---
-title: Introduction-to-promptinggoogle.com/vertex-ai/generative-ai/docs/learn/prompts/introduction-prompt-design#few-shot-examples
 date_scraped: 2025-05-12
+title: Introduction To Prompting
 ---
 
 # Introduction to prompting 

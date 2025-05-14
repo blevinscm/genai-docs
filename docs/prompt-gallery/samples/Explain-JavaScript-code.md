@@ -1,6 +1,6 @@
 ---
-title: Explain-JavaScript-codegoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_explain_javascript_code
 date_scraped: 2025-05-12
+title: Explain Javascript Code
 ---
 
 # Explain JavaScript code 

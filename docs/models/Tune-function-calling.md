@@ -1,6 +1,6 @@
 ---
-title: Tune-function-callinggoogle.com/vertex-ai/generative-ai/docs/models/tune-function-calling
 date_scraped: 2025-05-12
+title: Tune Function Calling
 ---
 
 # Tune function calling 

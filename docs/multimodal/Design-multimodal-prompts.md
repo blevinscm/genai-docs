@@ -1,6 +1,6 @@
 ---
-title: Design-multimodal-promptsgoogle.com/vertex-ai/generative-ai/docs/multimodal/design-multimodal-prompts
 date_scraped: 2025-05-12
+title: Design Multimodal Prompts
 ---
 
 # Design multimodal prompts 

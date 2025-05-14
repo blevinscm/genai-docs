@@ -1,6 +1,6 @@
 ---
-title: Organize-viewpoints-and-examplesgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/extract_organize_viewpoints_and_examples
 date_scraped: 2025-05-12
+title: Organize Viewpoints And Examples
 ---
 
 # Organize viewpoints and examples 

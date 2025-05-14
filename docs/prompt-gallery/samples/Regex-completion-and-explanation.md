@@ -1,6 +1,6 @@
 ---
-title: Regex-completion-and-explanationgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_regex_completion_and_explanation
 date_scraped: 2025-05-12
+title: Regex Completion And Explanation
 ---
 
 # Regex completion and explanation 

@@ -1,7 +1,7 @@
 ---
-title: Travel-tips
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_travel_tips
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_travel_tips
+title: Travel Tips
 ---
 
 # Travel tips 

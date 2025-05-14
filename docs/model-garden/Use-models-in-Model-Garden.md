@@ -1,6 +1,6 @@
 ---
-title: Use-models-in-Model-Gardengoogle.com/vertex-ai/generative-ai/docs/model-garden/use-models#deploy_an_open_model
 date_scraped: 2025-05-12
+title: Use Models In Model Garden
 ---
 
 # Use models in Model Garden 

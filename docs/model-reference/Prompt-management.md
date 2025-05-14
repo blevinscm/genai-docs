@@ -1,6 +1,6 @@
 ---
-title: Prompt-managementgoogle.com/vertex-ai/generative-ai/docs/model-reference/prompt-classes
 date_scraped: 2025-05-12
+title: Prompt Management
 ---
 
 # Prompt management 

@@ -1,6 +1,6 @@
 ---
-title: Instruct-the-model-to-explain-its-reasoninggoogle.com/vertex-ai/generative-ai/docs/learn/prompts/explain-reasoning
 date_scraped: 2025-05-12
+title: Instruct The Model To Explain Its Reasoning
 ---
 
 # Instruct the model to explain its reasoning 

@@ -1,7 +1,8 @@
 ---
-title: Use-Vertex-AI-Vector-Search-with-Vertex-AI-RAG-EngineStay-organized-with-collectionsSave-and-categor
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/use-vertexai-vector-search
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/rag-engine/use-vertexai-vector-search
+title: Use Vertex Ai Vector Search With Vertex Ai Rag Enginestay Organized With Collectionssave
+  And Categor
 ---
 
 # Use Vertex AI Vector Search with Vertex AI RAG Engine 

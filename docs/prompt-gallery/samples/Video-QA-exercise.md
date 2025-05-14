@@ -1,6 +1,6 @@
 ---
-title: Video-QA-exercisegoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_video_qa_-_exercise
 date_scraped: 2025-05-12
+title: Video Qa Exercise
 ---
 
 # Video QA - exercise 

@@ -1,7 +1,7 @@
 ---
-title: Optimize-prompts
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-optimizer#whats_next
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-optimizer#whats_next
+title: Optimize Prompts
 ---
 
 # Optimize prompts 

@@ -1,7 +1,7 @@
 ---
-title: Text-tuning
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune_gemini/text_tune
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune_gemini/text_tune
+title: Text Tuning
 ---
 
 # Text tuning 

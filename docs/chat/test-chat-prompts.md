@@ -1,7 +1,7 @@
 ---
-title: Text generation
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/chat/test-chat-prompts
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/chat/test-chat-prompts
+title: Text Generation
 ---
 
 # Text generation 

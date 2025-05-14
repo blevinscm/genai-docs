@@ -1,6 +1,6 @@
 ---
-title: Multimodal-embeddings-APIgoogle.com/vertex-ai/generative-ai/docs/model-reference/multimodal-embeddings-api
 date_scraped: 2025-05-12
+title: Multimodal Embeddings Api
 ---
 
 # Multimodal embeddings API 

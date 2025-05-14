@@ -1,7 +1,7 @@
 ---
-title: Company-chatbot
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_company_chatbot
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_company_chatbot
+title: Company Chatbot
 ---
 
 # Company chatbot 

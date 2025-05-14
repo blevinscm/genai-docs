@@ -1,6 +1,6 @@
 ---
-title: Use-models-in-Model-Gardenbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/model-garden/use-models
 date_scraped: 2025-05-12
+title: Use Models In Model Gardenbookmark_borderbookmark
 ---
 
 # Use models in Model Garden bookmark\_borderbookmark 

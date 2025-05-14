@@ -1,6 +1,6 @@
 ---
-title: Novel-Writing-Assistancegoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_novel_writing_assistance
 date_scraped: 2025-05-12
+title: Novel Writing Assistance
 ---
 
 # Novel Writing Assistance 

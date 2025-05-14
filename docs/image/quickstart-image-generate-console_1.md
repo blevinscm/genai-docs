@@ -1,7 +1,8 @@
 ---
-title: Quickstart Generate and verify an images watermark using Imagen text to image Console bookmark border
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console#delete-the-project
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console#delete-the-project
+title: Quickstart Generate And Verify An Images Watermark Using Imagen Text To Image
+  Console Bookmark Border
 ---
 
 # Quickstart: Generate and verify an image's watermark using Imagen text-to-image (Console) bookmark\_borderbookmark 

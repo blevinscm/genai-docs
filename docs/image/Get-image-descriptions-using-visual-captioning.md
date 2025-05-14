@@ -1,6 +1,6 @@
 ---
-title: Get-image-descriptions-using-visual-captioninggoogle.com/vertex-ai/generative-ai/docs/image/image-captioning
 date_scraped: 2025-05-12
+title: Get Image Descriptions Using Visual Captioning
 ---
 
 # Get image descriptions using visual captioning 

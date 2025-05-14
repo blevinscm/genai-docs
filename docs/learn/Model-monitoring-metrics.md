@@ -1,6 +1,6 @@
 ---
-title: Model-monitoring-metricsgoogle.com/vertex-ai/generative-ai/docs/learn/model-observability#available_monitoring_metrics
 date_scraped: 2025-05-12
+title: Model Monitoring Metrics
 ---
 
 # Model monitoring metrics 

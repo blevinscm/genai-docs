@@ -1,6 +1,6 @@
 ---
-title: Give-clear-and-specific-instructionsgoogle.com/vertex-ai/generative-ai/docs/learn/prompts/clear-instructions#example
 date_scraped: 2025-05-12
+title: Give Clear And Specific Instructions
 ---
 
 # Give clear and specific instructions 

@@ -1,6 +1,6 @@
 ---
-title: Generate-Go-commit-messagegoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_generate_go_commit_message
 date_scraped: 2025-05-12
+title: Generate Go Commit Message
 ---
 
 # Generate Go commit message 

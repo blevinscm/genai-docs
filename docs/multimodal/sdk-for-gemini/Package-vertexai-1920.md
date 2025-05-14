@@ -1,6 +1,6 @@
 ---
-title: Package-vertexai-1920google.com/vertex-ai/generative-ai/docs/multimodal/sdk-for-gemini/gemini-sdk-overview
 date_scraped: 2025-05-12
+title: Package Vertexai 1920
 ---
 
 # Package vertexai (1.92.0) 

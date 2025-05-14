@@ -1,7 +1,7 @@
 ---
-title: Image-captions
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/image-captioning
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/image-captioning
+title: Image Captions
 ---
 
 # Image captions 

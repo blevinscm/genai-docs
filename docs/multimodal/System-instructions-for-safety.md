@@ -1,6 +1,6 @@
 ---
-title: System-instructions-for-safetygoogle.com/vertex-ai/generative-ai/docs/multimodal/safety-system-instructions#safety-guidelines
 date_scraped: 2025-05-12
+title: System Instructions For Safety
 ---
 
 # System instructions for safety 

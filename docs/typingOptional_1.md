@@ -1,6 +1,6 @@
 ---
-title: Class-ChatSession-1920bookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/reference/python/latest/vertexai.language_models.ChatSession
 date_scraped: 2025-05-12
+title: Class Chatsession 1920bookmark_borderbookmark
 ---
 
 # Class ChatSession (1.92.0) bookmark\_borderbookmark 

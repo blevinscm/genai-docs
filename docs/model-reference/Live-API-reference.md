@@ -1,6 +1,6 @@
 ---
-title: Live-API-referencegoogle.com/vertex-ai/generative-ai/docs/model-reference/multimodal-live#limitations
 date_scraped: 2025-05-12
+title: Live Api Reference
 ---
 
 # Live API reference 

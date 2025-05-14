@@ -1,6 +1,6 @@
 ---
-title: Supported-modelsbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/provisioned-throughput/supported-models
 date_scraped: 2025-05-12
+title: Supported Modelsbookmark_borderbookmark
 ---
 
 # Supported models bookmark\_borderbookmark 

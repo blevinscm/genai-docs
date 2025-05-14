@@ -1,6 +1,6 @@
 ---
-title: Structure-promptsgoogle.com/vertex-ai/generative-ai/docs/learn/prompts/structure-prompts
 date_scraped: 2025-05-12
+title: Structure Prompts
 ---
 
 # Structure prompts 

@@ -1,6 +1,6 @@
 ---
-title: Extract-video-chaptersgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/extract_extract_video_chapters
 date_scraped: 2025-05-12
+title: Extract Video Chapters
 ---
 
 # Extract video chapters 

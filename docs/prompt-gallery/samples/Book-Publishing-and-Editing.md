@@ -1,6 +1,6 @@
 ---
-title: Book-Publishing-and-Editinggoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_book_publishing_and_editing
 date_scraped: 2025-05-12
+title: Book Publishing And Editing
 ---
 
 # Book Publishing and Editing 

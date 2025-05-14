@@ -1,6 +1,6 @@
 ---
-title: Python-data-science-explanationgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_python__data_science_explanation
 date_scraped: 2025-05-12
+title: Python Data Science Explanation
 ---
 
 # Python/ data science explanation 

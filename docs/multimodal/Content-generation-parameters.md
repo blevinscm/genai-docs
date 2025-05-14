@@ -1,6 +1,6 @@
 ---
-title: Content-generation-parametersgoogle.com/vertex-ai/generative-ai/docs/multimodal/content-generation-parameters#max-output-tokens
 date_scraped: 2025-05-12
+title: Content Generation Parameters
 ---
 
 # Content generation parameters 

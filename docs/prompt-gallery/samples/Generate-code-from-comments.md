@@ -1,6 +1,6 @@
 ---
-title: Generate-code-from-commentsgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_generate_code_from_comments
 date_scraped: 2025-05-12
+title: Generate Code From Comments
 ---
 
 # Generate code from comments 

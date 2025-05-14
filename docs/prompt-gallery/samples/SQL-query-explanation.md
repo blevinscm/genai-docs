@@ -1,6 +1,6 @@
 ---
-title: SQL-query-explanationgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_sql_query_explanation
 date_scraped: 2025-05-12
+title: Sql Query Explanation
 ---
 
 # SQL query explanation 

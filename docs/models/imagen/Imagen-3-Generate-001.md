@@ -1,6 +1,6 @@
 ---
-title: Imagen-3-Generate-001google.com/vertex-ai/generative-ai/docs/models/imagen/3-0-generate-001
 date_scraped: 2025-05-12
+title: Imagen 3 Generate 001
 ---
 
 # Imagen 3 Generate 001 

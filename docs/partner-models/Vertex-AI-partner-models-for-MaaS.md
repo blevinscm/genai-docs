@@ -1,6 +1,6 @@
 ---
-title: Vertex-AI-partner-models-for-MaaSgoogle.com/vertex-ai/generative-ai/docs/partner-models/use-partner-models#set-organization-policy
 date_scraped: 2025-05-12
+title: Vertex Ai Partner Models For Maas
 ---
 
 # Vertex AI partner models for MaaS 

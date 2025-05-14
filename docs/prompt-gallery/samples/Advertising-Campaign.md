@@ -1,6 +1,6 @@
 ---
-title: Advertising-Campaigngoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_advertising_campaign
 date_scraped: 2025-05-12
+title: Advertising Campaign
 ---
 
 # Advertising Campaign 

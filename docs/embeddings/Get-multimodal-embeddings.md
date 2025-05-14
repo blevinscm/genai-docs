@@ -1,6 +1,6 @@
 ---
-title: Get-multimodal-embeddingsgoogle.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings
 date_scraped: 2025-05-12
+title: Get Multimodal Embeddings
 ---
 
 # Get multimodal embeddings 

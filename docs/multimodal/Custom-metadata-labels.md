@@ -1,6 +1,6 @@
 ---
-title: Custom-metadata-labelsgoogle.com/vertex-ai/generative-ai/docs/multimodal/add-labels-to-api-calls
 date_scraped: 2025-05-12
+title: Custom Metadata Labels
 ---
 
 # Custom metadata labels 

@@ -1,7 +1,7 @@
 ---
-title: Summarize-video
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/summarize_summarize_video
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/summarize_summarize_video
+title: Summarize Video
 ---
 
 # Summarize video 

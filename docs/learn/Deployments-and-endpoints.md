@@ -1,6 +1,6 @@
 ---
-title: Deployments-and-endpointsgoogle.com/vertex-ai/generative-ai/docs/learn/locations
 date_scraped: 2025-05-12
+title: Deployments And Endpoints
 ---
 
 # Deployments and endpoints 

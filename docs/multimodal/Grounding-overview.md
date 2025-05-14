@@ -1,6 +1,6 @@
 ---
-title: Grounding-overviewgoogle.com/vertex-ai/generative-ai/docs/multimodal/ground-gemini
 date_scraped: 2025-05-12
+title: Grounding Overview
 ---
 
 # Grounding overview 

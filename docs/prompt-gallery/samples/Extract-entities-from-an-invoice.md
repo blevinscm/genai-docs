@@ -1,6 +1,6 @@
 ---
-title: Extract-entities-from-an-invoicegoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/extract_extract_entities_from_an_invoice
 date_scraped: 2025-05-12
+title: Extract Entities From An Invoice
 ---
 
 # Extract entities from an invoice 

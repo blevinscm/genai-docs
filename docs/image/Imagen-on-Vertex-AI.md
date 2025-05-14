@@ -1,7 +1,7 @@
 ---
-title: Imagen on Vertex AI
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/image/overview#request-access
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/image/overview#request-access
+title: Imagen On Vertex Ai
 ---
 
 # Imagen on Vertex AI | AI Image Generator 

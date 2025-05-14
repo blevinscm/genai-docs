@@ -1,6 +1,6 @@
 ---
-title: Describe-video-contentbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_describe_video_content
 date_scraped: 2025-05-12
+title: Describe Video Contentbookmark_borderbookmark
 ---
 
 # Describe video content bookmark\_borderbookmark 

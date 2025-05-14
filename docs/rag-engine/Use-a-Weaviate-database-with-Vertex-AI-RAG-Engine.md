@@ -1,6 +1,6 @@
 ---
-title: Use-a-Weaviate-database-with-Vertex-AI-RAG-Enginegoogle.com/vertex-ai/generative-ai/docs/rag-engine/use-weaviate-db
 date_scraped: 2025-05-12
+title: Use A Weaviate Database With Vertex Ai Rag Engine
 ---
 
 # Use a Weaviate database with Vertex AI RAG Engine 

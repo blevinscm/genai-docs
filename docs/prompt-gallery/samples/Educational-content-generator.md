@@ -1,6 +1,6 @@
 ---
-title: Educational-content-generatorgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_educational_content_generator
 date_scraped: 2025-05-12
+title: Educational Content Generator
 ---
 
 # Educational content generator 

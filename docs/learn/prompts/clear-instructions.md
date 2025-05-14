@@ -1,7 +1,8 @@
 ---
-title: Give-clear-and-specific-instructionsbookmark_borderbookmarkStay-organized-with-collectionsSave-and-c
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/clear-instructions
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/clear-instructions
+title: Give Clear And Specific Instructionsbookmark_borderbookmarkstay Organized With
+  Collectionssave And C
 ---
 
 # Give clear and specific instructions bookmark\_borderbookmark 

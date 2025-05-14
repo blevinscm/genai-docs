@@ -1,6 +1,6 @@
 ---
-title: Upscale-a-generated-edited-or-existing-imagegoogle.com/vertex-ai/generative-ai/docs/image/upscale-image
 date_scraped: 2025-05-12
+title: Upscale A Generated Edited Or Existing Image
 ---
 
 # Upscale a generated, edited, or existing image 

@@ -1,6 +1,6 @@
 ---
-title: Security-controls-for-Generative-AIgoogle.com/vertex-ai/generative-ai/docs/security-controls
 date_scraped: 2025-05-12
+title: Security Controls For Generative Ai
 ---
 
 # Security controls for Generative AI 

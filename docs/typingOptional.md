@@ -1,6 +1,6 @@
 ---
-title: Class-TextGenerationModel-1920google.com/vertex-ai/generative-ai/docs/reference/python/latest/vertexai.language_models.TextGenerationModel
 date_scraped: 2025-05-12
+title: Class Textgenerationmodel 1920
 ---
 
 # Class TextGenerationModel (1.92.0) 

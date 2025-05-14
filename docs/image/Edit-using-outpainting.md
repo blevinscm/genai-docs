@@ -1,6 +1,6 @@
 ---
-title: Edit-using-outpaintinggoogle.com/vertex-ai/generative-ai/docs/image/edit-outpainting
 date_scraped: 2025-05-12
+title: Edit Using Outpainting
 ---
 
 # Edit using outpainting 

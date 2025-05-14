@@ -1,6 +1,6 @@
 ---
-title: Text-to-Live-images-prompt-guidegoogle.com/vertex-ai/generative-ai/docs/image/ttli-prompt-guide
 date_scraped: 2025-05-12
+title: Text To Live Images Prompt Guide
 ---
 
 # Text-to-Live images prompt guide 

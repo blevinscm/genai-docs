@@ -1,6 +1,6 @@
 ---
-title: Customer-Service-Assistancegoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_customer_service_assistance
 date_scraped: 2025-05-12
+title: Customer Service Assistance
 ---
 
 # Customer Service Assistance 

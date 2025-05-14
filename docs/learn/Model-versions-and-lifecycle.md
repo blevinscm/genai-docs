@@ -1,6 +1,6 @@
 ---
-title: Model-versions-and-lifecyclegoogle.com/vertex-ai/generative-ai/docs/learn/model-versioning#preview-models
 date_scraped: 2025-05-12
+title: Model Versions And Lifecycle
 ---
 
 # Model versions and lifecycle 

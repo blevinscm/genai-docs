@@ -1,7 +1,7 @@
 ---
-title: CountTokens-API
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/count-tokens
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/count-tokens
+title: Counttokens Api
 ---
 
 # CountTokens API 

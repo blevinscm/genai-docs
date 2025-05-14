@@ -1,6 +1,6 @@
 ---
-title: Code-optimization-explanationgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_code_optimization_explanation
 date_scraped: 2025-05-12
+title: Code Optimization Explanation
 ---
 
 # Code optimization explanation 

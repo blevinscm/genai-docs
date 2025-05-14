@@ -1,6 +1,6 @@
 ---
-title: Develop-an-Agent-Development-Kit-agentgoogle.com/vertex-ai/generative-ai/docs/agent-engine/develop/adk
 date_scraped: 2025-05-12
+title: Develop An Agent Development Kit Agent
 ---
 
 # Develop an Agent Development Kit agent 

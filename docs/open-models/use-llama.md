@@ -1,7 +1,7 @@
 ---
-title: Use-Llama-models
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/open-models/use-llama
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/open-models/use-llama
+title: Use Llama Models
 ---
 
 # Use Llama models 

@@ -1,6 +1,6 @@
 ---
-title: Use-Provisioned-Throughputgoogle.com/vertex-ai/generative-ai/docs/provisioned-throughput/use-provisioned-throughput#pt-quota-checking
 date_scraped: 2025-05-12
+title: Use Provisioned Throughput
 ---
 
 # Use Provisioned Throughput 

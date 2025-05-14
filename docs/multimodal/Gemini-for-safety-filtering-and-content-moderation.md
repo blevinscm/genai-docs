@@ -1,6 +1,6 @@
 ---
-title: Gemini-for-safety-filtering-and-content-moderationgoogle.com/vertex-ai/generative-ai/docs/multimodal/gemini-for-filtering-and-moderation
 date_scraped: 2025-05-12
+title: Gemini For Safety Filtering And Content Moderation
 ---
 
 # Gemini for safety filtering and content moderation 

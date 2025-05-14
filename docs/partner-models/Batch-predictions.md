@@ -1,6 +1,6 @@
 ---
-title: Batch-predictionsgoogle.com/vertex-ai/generative-ai/docs/partner-models/llama-batch
 date_scraped: 2025-05-12
+title: Batch Predictions
 ---
 
 # Batch predictions 

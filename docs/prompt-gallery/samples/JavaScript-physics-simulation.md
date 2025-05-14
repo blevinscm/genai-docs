@@ -1,6 +1,6 @@
 ---
-title: JavaScript-physics-simulationgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_javascript_physics_simulation
 date_scraped: 2025-05-12
+title: Javascript Physics Simulation
 ---
 
 # JavaScript physics simulation 

@@ -1,7 +1,7 @@
 ---
-title: Tune a custom subject model standard and instant tuning bookmark borderbookmark
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/image/fine-tune-model
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/image/fine-tune-model
+title: Tune A Custom Subject Model Standard And Instant Tuning Bookmark Borderbookmark
 ---
 
 # Tune a custom subject model (standard and instant tuning) bookmark\_borderbookmark 

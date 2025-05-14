@@ -1,6 +1,6 @@
 ---
-title: Use-a-LangChain-agentgoogle.com/vertex-ai/generative-ai/docs/agent-engine/use/langchain
 date_scraped: 2025-05-12
+title: Use A Langchain Agent
 ---
 
 # Use a LangChain agent 

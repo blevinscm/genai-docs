@@ -1,7 +1,8 @@
 ---
-title: Deploy-and-inference-Gemma-using-Model-Garden-and-Vertex-AI-TPU-backed-endpointsStay-organized-with-
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu
+title: Deploy And Inference Gemma Using Model Garden And Vertex Ai Tpu Backed Endpointsstay
+  Organized With
 ---
 
 # Deploy and inference Gemma using Model Garden and Vertex AI TPU-backed endpoints 

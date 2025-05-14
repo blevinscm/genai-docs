@@ -1,6 +1,6 @@
 ---
-title: Extract-text-from-imagesgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/extract_extract_text_from_images
 date_scraped: 2025-05-12
+title: Extract Text From Images
 ---
 
 # Extract text from images 

@@ -1,6 +1,6 @@
 ---
-title: Overview-of-self-deployed-modelsgoogle.com/vertex-ai/generative-ai/docs/model-garden/self-deployed-models
 date_scraped: 2025-05-12
+title: Overview Of Self Deployed Models
 ---
 
 # Overview of self-deployed models 

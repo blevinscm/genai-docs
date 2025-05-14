@@ -1,6 +1,6 @@
 ---
-title: List-and-count-tokensbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/multimodal/list-token#get_a_list_of_tokens_and_token_ids_for_a_prompt
 date_scraped: 2025-05-12
+title: List And Count Tokensbookmark_borderbookmark
 ---
 
 # List and count tokens bookmark\_borderbookmark 

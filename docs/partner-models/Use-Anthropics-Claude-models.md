@@ -1,6 +1,6 @@
 ---
-title: Use-Anthropics-Claude-modelsgoogle.com/vertex-ai/generative-ai/docs/partner-models/use-claude#regions
 date_scraped: 2025-05-12
+title: Use Anthropics Claude Models
 ---
 
 # Use Anthropic's Claude models 

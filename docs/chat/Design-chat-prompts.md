@@ -1,6 +1,6 @@
 ---
-title: Design-chat-promptsgoogle.com/vertex-ai/generative-ai/docs/chat/chat-prompts
 date_scraped: 2025-05-12
+title: Design Chat Prompts
 ---
 
 # Design chat prompts 

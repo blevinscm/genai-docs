@@ -1,6 +1,6 @@
 ---
-title: About-supervised-fine-tuning-for-Gemini-modelsgoogle.com/vertex-ai/generative-ai/docs/models/tune-text-models-supervised#dataset-format
 date_scraped: 2025-05-12
+title: About Supervised Fine Tuning For Gemini Models
 ---
 
 # About supervised fine-tuning for Gemini models 

@@ -1,7 +1,7 @@
 ---
-title: Generate-images
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/imagen-api
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/imagen-api
+title: Generate Images
 ---
 
 # Generate images 

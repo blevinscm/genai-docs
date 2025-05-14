@@ -1,6 +1,6 @@
 ---
-title: Legal-QA-Extractivegoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_legal_qa_-_extractive
 date_scraped: 2025-05-12
+title: Legal Qa Extractive
 ---
 
 # Legal QA - Extractive 

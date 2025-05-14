@@ -1,7 +1,7 @@
 ---
-title: Model versions and lifecycle bookmark borderbookmark
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions#legacy-stable
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions#legacy-stable
+title: Model Versions And Lifecycle Bookmark Borderbookmark
 ---
 
 # Model versions and lifecycle bookmark\_borderbookmark 

@@ -1,7 +1,8 @@
 ---
-title: About-supervised-fine-tuning-for-Translation-LLM-modelsStay-organized-with-collectionsSave-and-categ
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/models/translation-supervised-tuning
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/models/translation-supervised-tuning
+title: About Supervised Fine Tuning For Translation Llm Modelsstay Organized With
+  Collectionssave And Categ
 ---
 
 # About supervised fine-tuning for Translation LLM models 

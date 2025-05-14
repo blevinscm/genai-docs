@@ -1,6 +1,6 @@
 ---
-title: Count-tokens-for-Claude-modelsgoogle.com/vertex-ai/generative-ai/docs/partner-models/claude-count-tokens#regions
 date_scraped: 2025-05-12
+title: Count Tokens For Claude Models
 ---
 
 # Count tokens for Claude models 

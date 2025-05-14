@@ -1,7 +1,7 @@
 ---
-title: Customize-images
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/imagen-api-customization
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/imagen-api-customization
+title: Customize Images
 ---
 
 # Customize images 

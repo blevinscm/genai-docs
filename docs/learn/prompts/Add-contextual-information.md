@@ -1,6 +1,6 @@
 ---
-title: Add-contextual-informationgoogle.com/vertex-ai/generative-ai/docs/learn/prompts/contextual-information
 date_scraped: 2025-05-12
+title: Add Contextual Information
 ---
 
 # Add contextual information 

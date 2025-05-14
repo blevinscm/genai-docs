@@ -1,6 +1,6 @@
 ---
-title: Overview-of-prompting-strategiesgoogle.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-design-strategies
 date_scraped: 2025-05-12
+title: Overview Of Prompting Strategies
 ---
 
 # Overview of prompting strategies 

@@ -1,6 +1,6 @@
 ---
-title: Use-prompt-templatesbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-templates
 date_scraped: 2025-05-12
+title: Use Prompt Templatesbookmark_borderbookmark
 ---
 
 # Use prompt templates bookmark\_borderbookmark 

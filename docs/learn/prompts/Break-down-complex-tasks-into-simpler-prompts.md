@@ -1,6 +1,6 @@
 ---
-title: Break-down-complex-tasks-into-simpler-promptsgoogle.com/vertex-ai/generative-ai/docs/learn/prompts/break-down-prompts
 date_scraped: 2025-05-12
+title: Break Down Complex Tasks Into Simpler Prompts
 ---
 
 # Break down complex tasks into simpler prompts 

@@ -1,6 +1,6 @@
 ---
-title: Vector-database-choices-in-Vertex-AI-RAG-Enginegoogle.com/vertex-ai/generative-ai/docs/vector-db-choices
 date_scraped: 2025-05-12
+title: Vector Database Choices In Vertex Ai Rag Engine
 ---
 
 # Vector database choices in Vertex AI RAG Engine 

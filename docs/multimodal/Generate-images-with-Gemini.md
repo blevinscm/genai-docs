@@ -1,6 +1,6 @@
 ---
-title: Generate-images-with-Geminigoogle.com/vertex-ai/generative-ai/docs/multimodal/image-generation
 date_scraped: 2025-05-12
+title: Generate Images With Gemini
 ---
 
 # Generate images with Gemini 

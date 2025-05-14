@@ -1,7 +1,7 @@
 ---
-title: Code-execution
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/code-execution#enable_code_execution_on_the_model
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/code-execution#enable_code_execution_on_the_model
+title: Code Execution
 ---
 
 # Code execution 

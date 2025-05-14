@@ -1,6 +1,6 @@
 ---
-title: Product-Advertisement-Ideasgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_product_advertisement_ideas
 date_scraped: 2025-05-12
+title: Product Advertisement Ideas
 ---
 
 # Product Advertisement Ideas 

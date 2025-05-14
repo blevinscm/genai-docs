@@ -1,6 +1,6 @@
 ---
-title: Translate-C-to-Javagoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_translate_c++_to_java
 date_scraped: 2025-05-12
+title: Translate C To Java
 ---
 
 # Translate C++ to Java 

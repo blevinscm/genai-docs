@@ -1,6 +1,6 @@
 ---
-title: Animal-Information-Chatbotgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_animal_information_chatbot
 date_scraped: 2025-05-12
+title: Animal Information Chatbot
 ---
 
 # Animal Information Chatbot 

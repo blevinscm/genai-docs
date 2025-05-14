@@ -1,6 +1,6 @@
 ---
-title: Web-Grounding-for-Enterprisegoogle.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise
 date_scraped: 2025-05-12
+title: Web Grounding For Enterprise
 ---
 
 # Web Grounding for Enterprise 

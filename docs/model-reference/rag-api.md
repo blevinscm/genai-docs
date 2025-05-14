@@ -1,7 +1,7 @@
 ---
-title: RAG-Engine-API
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/rag-api#delete-a-rag-corpus-example-api
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/rag-api#delete-a-rag-corpus-example-api
+title: Rag Engine Api
 ---
 
 # RAG Engine API 

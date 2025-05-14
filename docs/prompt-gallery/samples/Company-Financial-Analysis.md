@@ -1,6 +1,6 @@
 ---
-title: Company-Financial-Analysisgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_company_financial_analysis
 date_scraped: 2025-05-12
+title: Company Financial Analysis
 ---
 
 # Company Financial Analysis 

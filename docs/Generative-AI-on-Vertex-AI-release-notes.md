@@ -1,6 +1,6 @@
 ---
-title: Generative-AI-on-Vertex-AI-release-notesgoogle.com/vertex-ai/generative-ai/docs/release-notes-archive
 date_scraped: 2025-05-12
+title: Generative Ai On Vertex Ai Release Notes
 ---
 
 # Generative AI on Vertex AI release notes 

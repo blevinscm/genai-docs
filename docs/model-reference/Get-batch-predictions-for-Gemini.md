@@ -1,6 +1,6 @@
 ---
-title: Get-batch-predictions-for-Geminigoogle.com/vertex-ai/generative-ai/docs/model-reference/batch-prediction-api
 date_scraped: 2025-05-12
+title: Get Batch Predictions For Gemini
 ---
 
 # Get batch predictions for Gemini 

@@ -1,6 +1,6 @@
 ---
-title: Vertex-AI-RAG-Engine-overviewgoogle.com/vertex-ai/generative-ai/docs/rag-engine/rag-overview
 date_scraped: 2025-05-12
+title: Vertex Ai Rag Engine Overview
 ---
 
 # Vertex AI RAG Engine overview 

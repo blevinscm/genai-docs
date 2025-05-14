@@ -1,7 +1,8 @@
 ---
-title: Use-Vertex-AI-Search-as-a-retrieval-backend-using-Vertex-AI-RAG-EngineStay-organized-with-collection
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/use-vertexai-search
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/use-vertexai-search
+title: Use Vertex Ai Search As A Retrieval Backend Using Vertex Ai Rag Enginestay
+  Organized With Collection
 ---
 
 # Use Vertex AI Search as a retrieval backend using Vertex AI RAG Engine 

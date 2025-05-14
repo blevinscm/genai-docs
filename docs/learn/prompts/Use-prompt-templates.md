@@ -1,6 +1,6 @@
 ---
-title: Use-prompt-templatesgoogle.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-templates#limitations
 date_scraped: 2025-05-12
+title: Use Prompt Templates
 ---
 
 # Use prompt templates 

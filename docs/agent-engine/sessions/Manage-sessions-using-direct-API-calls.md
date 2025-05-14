@@ -1,6 +1,6 @@
 ---
-title: Manage-sessions-using-direct-API-callsgoogle.com/vertex-ai/generative-ai/docs/agent-engine/sessions/manage-sessions-api
 date_scraped: 2025-05-12
+title: Manage Sessions Using Direct Api Calls
 ---
 
 # Manage sessions using direct API calls 

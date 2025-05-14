@@ -1,6 +1,6 @@
 ---
-title: E-commerce-Business-Reportgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_e-commerce_business_report
 date_scraped: 2025-05-12
+title: E Commerce Business Report
 ---
 
 # E-commerce Business Report 

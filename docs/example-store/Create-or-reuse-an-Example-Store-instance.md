@@ -1,6 +1,6 @@
 ---
-title: Create-or-reuse-an-Example-Store-instancegoogle.com/vertex-ai/generative-ai/docs/example-store/create-examplestore#whats_next
 date_scraped: 2025-05-12
+title: Create Or Reuse An Example Store Instance
 ---
 
 # Create or reuse an Example Store instance 

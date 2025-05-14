@@ -1,6 +1,6 @@
 ---
-title: Audio-summary-on-clean-energygoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/summarize_audio_summary_on_clean_energy
 date_scraped: 2025-05-12
+title: Audio Summary On Clean Energy
 ---
 
 # Audio summary on clean energy 

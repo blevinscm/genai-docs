@@ -1,6 +1,6 @@
 ---
-title: Manage-your-RAG-knowledge-base-corpusgoogle.com/vertex-ai/generative-ai/docs/manage-your-rag-corpus
 date_scraped: 2025-05-12
+title: Manage Your Rag Knowledge Base Corpus
 ---
 
 # Manage your RAG knowledge base (corpus) 

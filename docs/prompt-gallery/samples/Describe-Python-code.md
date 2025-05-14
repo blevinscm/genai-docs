@@ -1,6 +1,6 @@
 ---
-title: Describe-Python-codegoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_describe_python_code
 date_scraped: 2025-05-12
+title: Describe Python Code
 ---
 
 # Describe Python code 

@@ -1,6 +1,6 @@
 ---
-title: Skin-care-questionsgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_skin_care_questions
 date_scraped: 2025-05-12
+title: Skin Care Questions
 ---
 
 # Skin care questions 

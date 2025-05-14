@@ -1,6 +1,6 @@
 ---
-title: Use-data-ingestion-with-Vertex-AI-RAG-Enginegoogle.com/vertex-ai/generative-ai/docs/rag-engine/use-data-ingestion
 date_scraped: 2025-05-12
+title: Use Data Ingestion With Vertex Ai Rag Engine
 ---
 
 # Use data ingestion with Vertex AI RAG Engine 

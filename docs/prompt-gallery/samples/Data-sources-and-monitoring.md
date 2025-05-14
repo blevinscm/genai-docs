@@ -1,6 +1,6 @@
 ---
-title: Data-sources-and-monitoringgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_data_sources_and_monitoring
 date_scraped: 2025-05-12
+title: Data Sources And Monitoring
 ---
 
 # Data sources and monitoring 

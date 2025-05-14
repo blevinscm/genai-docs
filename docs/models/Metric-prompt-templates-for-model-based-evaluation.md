@@ -1,6 +1,6 @@
 ---
-title: Metric-prompt-templates-for-model-based-evaluationgoogle.com/vertex-ai/generative-ai/docs/models/metrics-templates#pointwise_coherence
 date_scraped: 2025-05-12
+title: Metric Prompt Templates For Model Based Evaluation
 ---
 
 # Metric prompt templates for model-based evaluation 

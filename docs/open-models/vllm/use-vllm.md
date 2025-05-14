@@ -1,7 +1,8 @@
 ---
-title: vLLM-serving-for-text-only-and-multimodal-language-models-on-Cloud-GPUsStay-organized-with-collectio
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/open-models/vllm/use-vllm
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/open-models/vllm/use-vllm
+title: Vllm Serving For Text Only And Multimodal Language Models On Cloud Gpusstay
+  Organized With Collectio
 ---
 
 # vLLM serving for text-only and multimodal language models on Cloud GPUs 

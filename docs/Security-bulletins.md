@@ -1,6 +1,6 @@
 ---
-title: Security-bulletinsgoogle.com/vertex-ai/generative-ai/docs/security-bulletins
 date_scraped: 2025-05-12
+title: Security Bulletins
 ---
 
 # Security bulletins 

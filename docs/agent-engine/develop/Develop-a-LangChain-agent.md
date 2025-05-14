@@ -1,6 +1,6 @@
 ---
-title: Develop-a-LangChain-agentgoogle.com/vertex-ai/generative-ai/docs/agent-engine/develop/langchain
 date_scraped: 2025-05-12
+title: Develop A Langchain Agent
 ---
 
 # Develop a LangChain agent 

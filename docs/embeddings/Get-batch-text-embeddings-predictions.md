@@ -1,6 +1,6 @@
 ---
-title: Get-batch-text-embeddings-predictionsgoogle.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings
 date_scraped: 2025-05-12
+title: Get Batch Text Embeddings Predictions
 ---
 
 # Get batch text embeddings predictions 

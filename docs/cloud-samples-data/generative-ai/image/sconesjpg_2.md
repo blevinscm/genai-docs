@@ -1,6 +1,6 @@
 ---
-title: Generate-content-with-the-Vertex-AI-Gemini-APIgoogle.com/vertex-ai/generative-ai/docs/model-reference/gemini#sample-requests
 date_scraped: 2025-05-12
+title: Generate Content With The Vertex Ai Gemini Api
 ---
 
 # Generate content with the Vertex AI Gemini API 

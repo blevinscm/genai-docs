@@ -1,6 +1,6 @@
 ---
-title: Video-understandinggoogle.com/vertex-ai/generative-ai/docs/multimodal/video-understanding
 date_scraped: 2025-05-12
+title: Video Understanding
 ---
 
 # Video understanding 

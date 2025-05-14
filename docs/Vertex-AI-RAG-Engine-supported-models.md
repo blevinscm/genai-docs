@@ -1,6 +1,6 @@
 ---
-title: Vertex-AI-RAG-Engine-supported-modelsgoogle.com/vertex-ai/generative-ai/docs/supported-rag-models
 date_scraped: 2025-05-12
+title: Vertex Ai Rag Engine Supported Models
 ---
 
 # Vertex AI RAG Engine supported models 

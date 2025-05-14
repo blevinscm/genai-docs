@@ -1,6 +1,6 @@
 ---
-title: Gemini-25-Probookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/models/gemini/2-5-pro
 date_scraped: 2025-05-12
+title: Gemini 25 Probookmark_borderbookmark
 ---
 
 # Gemini 2.5 Pro bookmark\_borderbookmark 

@@ -1,6 +1,6 @@
 ---
-title: Use-Google-Search-suggestionsgoogle.com/vertex-ai/generative-ai/docs/multimodal/grounding-search-suggestions#display-requirements
 date_scraped: 2025-05-12
+title: Use Google Search Suggestions
 ---
 
 # Use Google Search suggestions 

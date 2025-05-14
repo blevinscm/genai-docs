@@ -1,6 +1,6 @@
 ---
-title: Calculate-Provisioned-Throughput-requirementsgoogle.com/vertex-ai/generative-ai/docs/provisioned-throughput/measure-provisioned-throughput
 date_scraped: 2025-05-12
+title: Calculate Provisioned Throughput Requirements
 ---
 
 # Calculate Provisioned Throughput requirements 

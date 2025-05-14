@@ -1,7 +1,7 @@
 ---
-title: Title-generation
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/summarize_title_generation
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/summarize_title_generation
+title: Title Generation
 ---
 
 # Title generation 

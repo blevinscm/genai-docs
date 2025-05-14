@@ -1,6 +1,6 @@
 ---
-title: Use-Pinecone-with-Vertex-AI-RAG-Enginegoogle.com/vertex-ai/generative-ai/docs/use-pinecone#store-api-key-in-secret-manager
 date_scraped: 2025-05-12
+title: Use Pinecone With Vertex Ai Rag Engine
 ---
 
 # Use Pinecone with Vertex AI RAG Engine 

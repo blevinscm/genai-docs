@@ -1,6 +1,6 @@
 ---
-title: Generative-AI-on-Vertex-AI-Cookbookgoogle.com/vertex-ai/generative-ai/docs/cookbook
 date_scraped: 2025-05-12
+title: Generative Ai On Vertex Ai Cookbook
 ---
 
 # Generative AI on Vertex AI Cookbook 

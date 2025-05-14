@@ -1,6 +1,6 @@
 ---
-title: Model-as-a-Service-MaaS-deprecationsgoogle.com/vertex-ai/generative-ai/docs/deprecations/partner-models
 date_scraped: 2025-05-12
+title: Model As A Service Maas Deprecations
 ---
 
 # Model as a Service (MaaS) deprecations 

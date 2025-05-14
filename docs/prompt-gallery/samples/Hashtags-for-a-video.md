@@ -1,6 +1,6 @@
 ---
-title: Hashtags-for-a-videogoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/summarize_hashtags_for_a_video
 date_scraped: 2025-05-12
+title: Hashtags For A Video
 ---
 
 # Hashtags for a video 

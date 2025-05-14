@@ -1,7 +1,8 @@
 ---
-title: System-instructions-for-safetybookmark_borderbookmarkStay-organized-with-collectionsSave-and-categor
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/safety-system-instructions
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/safety-system-instructions
+title: System Instructions For Safetybookmark_borderbookmarkstay Organized With Collectionssave
+  And Categor
 ---
 
 # System instructions for safety bookmark\_borderbookmark 

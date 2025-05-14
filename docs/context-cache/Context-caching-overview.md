@@ -1,6 +1,6 @@
 ---
-title: Context-caching-overviewgoogle.com/vertex-ai/generative-ai/docs/context-cache/context-cache-overview
 date_scraped: 2025-05-12
+title: Context Caching Overview
 ---
 
 # Context caching overview 

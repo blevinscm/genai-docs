@@ -1,6 +1,6 @@
 ---
-title: Get-information-about-a-context-cachegoogle.com/vertex-ai/generative-ai/docs/context-cache/context-cache-getinfo
 date_scraped: 2025-05-12
+title: Get Information About A Context Cache
 ---
 
 # Get information about a context cache 

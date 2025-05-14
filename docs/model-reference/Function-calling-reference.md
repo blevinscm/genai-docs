@@ -1,6 +1,6 @@
 ---
-title: Function-calling-referencegoogle.com/vertex-ai/generative-ai/docs/model-reference/function-calling
 date_scraped: 2025-05-12
+title: Function Calling Reference
 ---
 
 # Function calling reference 

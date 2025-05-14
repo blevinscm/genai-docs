@@ -1,7 +1,7 @@
 ---
-title: Supported-models
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/supported-models#partner-models
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/supported-models#partner-models
+title: Supported Models
 ---
 
 # Supported models 

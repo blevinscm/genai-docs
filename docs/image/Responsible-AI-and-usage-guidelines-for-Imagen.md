@@ -1,6 +1,6 @@
 ---
-title: Responsible-AI-and-usage-guidelines-for-Imagengoogle.com/vertex-ai/generative-ai/docs/image/responsible-ai-imagen#safety-categories
 date_scraped: 2025-05-12
+title: Responsible Ai And Usage Guidelines For Imagen
 ---
 
 # Responsible AI and usage guidelines for Imagen 

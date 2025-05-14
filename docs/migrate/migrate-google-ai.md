@@ -1,7 +1,8 @@
 ---
-title: Migrate-from-the-Gemini-Developer-API-to-the-Vertex-AI-Gemini-APIStay-organized-with-collectionsSave
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/migrate/migrate-google-ai
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/migrate/migrate-google-ai
+title: Migrate From The Gemini Developer Api To The Vertex Ai Gemini Apistay Organized
+  With Collectionssave
 ---
 
 # Migrate from the Gemini Developer API to the Vertex AI Gemini API 

@@ -1,6 +1,6 @@
 ---
-title: Text-embeddings-APIgoogle.com/vertex-ai/generative-ai/docs/model-reference/text-embeddings#request_body
 date_scraped: 2025-05-12
+title: Text Embeddings Api
 ---
 
 # Text embeddings API 

@@ -1,6 +1,6 @@
 ---
-title: Generative-AI-prompt-samplesgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery
 date_scraped: 2025-05-12
+title: Generative Ai Prompt Samples
 ---
 
 # Generative AI prompt samples 

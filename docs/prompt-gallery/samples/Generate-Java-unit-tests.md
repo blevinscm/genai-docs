@@ -1,6 +1,6 @@
 ---
-title: Generate-Java-unit-testsgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_generate_java_unit_tests
 date_scraped: 2025-05-12
+title: Generate Java Unit Tests
 ---
 
 # Generate Java unit tests 

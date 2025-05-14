@@ -1,6 +1,6 @@
 ---
-title: Subject-customizationgoogle.com/vertex-ai/generative-ai/docs/image/subject-customization
 date_scraped: 2025-05-12
+title: Subject Customization
 ---
 
 # Subject customization 

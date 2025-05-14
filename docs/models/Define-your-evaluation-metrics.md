@@ -1,6 +1,6 @@
 ---
-title: Define-your-evaluation-metricsgoogle.com/vertex-ai/generative-ai/docs/models/determine-eval#computation-based-metrics
 date_scraped: 2025-05-12
+title: Define Your Evaluation Metrics
 ---
 
 # Define your evaluation metrics 

@@ -1,6 +1,6 @@
 ---
-title: Culinary-Dish-Classificationgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/extract_culinary_dish_classification
 date_scraped: 2025-05-12
+title: Culinary Dish Classification
 ---
 
 # Culinary Dish Classification 

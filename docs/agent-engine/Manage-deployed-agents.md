@@ -1,6 +1,6 @@
 ---
-title: Manage-deployed-agentsgoogle.com/vertex-ai/generative-ai/docs/agent-engine/manage#get
 date_scraped: 2025-05-12
+title: Manage Deployed Agents
 ---
 
 # Manage deployed agents 

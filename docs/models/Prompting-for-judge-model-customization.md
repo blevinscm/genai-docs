@@ -1,6 +1,6 @@
 ---
-title: Prompting-for-judge-model-customizationgoogle.com/vertex-ai/generative-ai/docs/models/prompt-judge-model
 date_scraped: 2025-05-12
+title: Prompting For Judge Model Customization
 ---
 
 # Prompting for judge model customization 

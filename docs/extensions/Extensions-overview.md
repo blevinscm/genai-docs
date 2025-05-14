@@ -1,6 +1,6 @@
 ---
-title: Extensions-overviewgoogle.com/vertex-ai/generative-ai/docs/extensions/overview
 date_scraped: 2025-05-12
+title: Extensions Overview
 ---
 
 # Extensions overview 

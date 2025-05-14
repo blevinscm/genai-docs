@@ -1,6 +1,6 @@
 ---
-title: Vocabulary-Quiz-Administrating-Botgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_vocabulary_quiz_administrating_bot
 date_scraped: 2025-05-12
+title: Vocabulary Quiz Administrating Bot
 ---
 
 # Vocabulary Quiz Administrating Bot 

@@ -1,6 +1,6 @@
 ---
-title: Document-understandinggoogle.com/vertex-ai/generative-ai/docs/multimodal/document-understanding#document-requirements
 date_scraped: 2025-05-12
+title: Document Understanding
 ---
 
 # Document understanding 

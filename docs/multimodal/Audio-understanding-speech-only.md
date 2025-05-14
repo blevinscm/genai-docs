@@ -1,6 +1,6 @@
 ---
-title: Audio-understanding-speech-onlygoogle.com/vertex-ai/generative-ai/docs/multimodal/audio-understanding#add_audio_to_a_request
 date_scraped: 2025-05-12
+title: Audio Understanding Speech Only
 ---
 
 # Audio understanding (speech only) 

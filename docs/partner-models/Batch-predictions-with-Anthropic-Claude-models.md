@@ -1,6 +1,6 @@
 ---
-title: Batch-predictions-with-Anthropic-Claude-modelsgoogle.com/vertex-ai/generative-ai/docs/partner-models/claude-batch
 date_scraped: 2025-05-12
+title: Batch Predictions With Anthropic Claude Models
 ---
 
 # Batch predictions with Anthropic Claude models 

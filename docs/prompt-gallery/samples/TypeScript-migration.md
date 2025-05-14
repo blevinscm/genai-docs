@@ -1,6 +1,6 @@
 ---
-title: TypeScript-migrationgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_typescript_migration
 date_scraped: 2025-05-12
+title: Typescript Migration
 ---
 
 # TypeScript migration 

@@ -1,6 +1,6 @@
 ---
-title: Groundingbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/model-reference/grounding
 date_scraped: 2025-05-12
+title: Groundingbookmark_borderbookmark
 ---
 
 # Grounding bookmark\_borderbookmark 

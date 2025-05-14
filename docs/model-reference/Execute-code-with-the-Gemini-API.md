@@ -1,6 +1,6 @@
 ---
-title: Execute-code-with-the-Gemini-APIgoogle.com/vertex-ai/generative-ai/docs/model-reference/code-execution-api
 date_scraped: 2025-05-12
+title: Execute Code With The Gemini Api
 ---
 
 # Execute code with the Gemini API 

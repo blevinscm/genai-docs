@@ -1,6 +1,6 @@
 ---
-title: Audio-diarizationgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/classify_audio_diarization
 date_scraped: 2025-05-12
+title: Audio Diarization
 ---
 
 # Audio diarization 

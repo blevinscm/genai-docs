@@ -1,6 +1,6 @@
 ---
-title: Fine-tune-RAG-transformationsgoogle.com/vertex-ai/generative-ai/docs/fine-tune-rag-transformations
 date_scraped: 2025-05-12
+title: Fine Tune Rag Transformations
 ---
 
 # Fine-tune RAG transformations 

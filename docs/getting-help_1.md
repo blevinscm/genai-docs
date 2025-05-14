@@ -1,7 +1,7 @@
 ---
-title: Getting help
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/getting-help
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/getting-help
+title: Getting Help
 ---
 
 # Getting help 

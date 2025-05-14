@@ -1,6 +1,6 @@
 ---
-title: Model-monitoring-metricsbookmark_borderbookmarkgoogle.com/vertex-ai/generative-ai/docs/learn/model-observability
 date_scraped: 2025-05-12
+title: Model Monitoring Metricsbookmark_borderbookmark
 ---
 
 # Model monitoring metrics bookmark\_borderbookmark 

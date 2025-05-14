@@ -1,6 +1,6 @@
 ---
-title: Optimize-uniqueness-checkgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_optimize_uniqueness_check
 date_scraped: 2025-05-12
+title: Optimize Uniqueness Check
 ---
 
 # Optimize uniqueness check 

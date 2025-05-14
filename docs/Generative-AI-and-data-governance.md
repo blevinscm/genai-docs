@@ -1,6 +1,6 @@
 ---
-title: Generative-AI-and-data-governancegoogle.com/vertex-ai/generative-ai/docs/data-governance#customer_data_retention_and_achieving_zero_data_retention
 date_scraped: 2025-05-12
+title: Generative Ai And Data Governance
 ---
 
 # Generative AI and data governance 

@@ -1,6 +1,6 @@
 ---
-title: Chatbot-recommendations-for-coursesgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_chatbot_recommendations_for_courses
 date_scraped: 2025-05-12
+title: Chatbot Recommendations For Courses
 ---
 
 # Chatbot recommendations for courses 

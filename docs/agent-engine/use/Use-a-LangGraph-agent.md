@@ -1,6 +1,6 @@
 ---
-title: Use-a-LangGraph-agentgoogle.com/vertex-ai/generative-ai/docs/agent-engine/use/langgraph
 date_scraped: 2025-05-12
+title: Use A Langgraph Agent
 ---
 
 # Use a LangGraph agent 

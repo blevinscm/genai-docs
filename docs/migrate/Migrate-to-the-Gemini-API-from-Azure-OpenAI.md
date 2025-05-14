@@ -1,6 +1,6 @@
 ---
-title: Migrate-to-the-Gemini-API-from-Azure-OpenAIgoogle.com/vertex-ai/generative-ai/docs/migrate/migrate-from-azure-to-gemini
 date_scraped: 2025-05-12
+title: Migrate To The Gemini Api From Azure Openai
 ---
 
 # Migrate to the Gemini API from Azure OpenAI 

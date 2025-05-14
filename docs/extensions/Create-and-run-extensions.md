@@ -1,6 +1,6 @@
 ---
-title: Create-and-run-extensionsgoogle.com/vertex-ai/generative-ai/docs/extensions/create-extension
 date_scraped: 2025-05-12
+title: Create And Run Extensions
 ---
 
 # Create and run extensions 

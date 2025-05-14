@@ -1,7 +1,8 @@
 ---
-title: Vertex-AI-partner-models-for-MaaSbookmark_borderbookmarkStay-organized-with-collectionsSave-and-cate
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-partner-models
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-partner-models
+title: Vertex Ai Partner Models For Maasbookmark_borderbookmarkstay Organized With
+  Collectionssave And Cate
 ---
 
 # Vertex AI partner models for MaaS bookmark\_borderbookmark 

@@ -1,7 +1,8 @@
 ---
-title: Generative-AI-on-Vertex-AI-quotas-and-system-limitsStay-organized-with-collectionsSave-and-categoriz
-source: https://cloud.google.com/vertex-ai/generative-ai/docs/quotas
 date_scraped: 2025-05-12
+source: https://cloud.google.com/vertex-ai/generative-ai/docs/quotas
+title: Generative Ai On Vertex Ai Quotas And System Limitsstay Organized With Collectionssave
+  And Categoriz
 ---
 
 # Generative AI on Vertex AI quotas and system limits 

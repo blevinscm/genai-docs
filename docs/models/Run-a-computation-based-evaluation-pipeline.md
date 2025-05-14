@@ -1,6 +1,6 @@
 ---
-title: Run-a-computation-based-evaluation-pipelinegoogle.com/vertex-ai/generative-ai/docs/models/evaluate-models#run-evaluation
 date_scraped: 2025-05-12
+title: Run A Computation Based Evaluation Pipeline
 ---
 
 # Run a computation-based evaluation pipeline 
