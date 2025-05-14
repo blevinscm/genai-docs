@@ -1,6 +1,6 @@
 ---
+title: Generative AI prompt samples
 date_scraped: 2025-05-12
-title: Generative Ai Prompt Samples
 ---
 
 # Generative AI prompt samples 

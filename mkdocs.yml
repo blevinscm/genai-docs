@@ -13,14 +13,14 @@ theme:
     repo: fontawesome/brands/github
   palette:
     - scheme: default
-      primary: light blue
-      accent: deep purple
+      primary: black
+      accent: light blue
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: light blue
-      accent: deep purple
+      primary: black
+      accent: light blue
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -41,7 +41,6 @@ theme:
     - navigation.sections # Expands sections in the sidebar
     - navigation.tracking # Adds #hash to sidebar links as you scroll
     - navigation.top # "Back to top" button
-    - toc.integrate # Integrates page ToC into the left sidebar if space allows, otherwise right
     - search.suggest # Autocomplete for search
     - search.highlight # Highlights search terms on page
 
@@ -82,6 +81,17 @@ plugins:
         # 'get-started/local-testing.md': 'get-started/testing.md'
         # 'get-started/tutorial.md': 'tutorials/index.md'
         # 'guides/responsible-agents.md': 'safety/index.md'
+  # - gemini-chat:
+  #     api_key: 
+  #     model: "gemini-2.5-pro-preview-05-06"
+  #     temperature: 0.7
+  #     max_tokens: 1000
+  #     chat_interface: true
+  #     chat_bot_name: "Vertex AI Assistant"
+  #     welcome_message: "Hello! I'm your Vertex AI documentation assistant. How can I help you?"
+  #     ui_position: bottom-right
+  #     default_language: en
+  #     chat_history_length: 10
 
 nav:
   - Home: 'index.md'
@@ -186,3 +196,6 @@ nav:
     - Context Caching for Performance: 'context-cache/Context-caching-overview.md' # Reiterating its optimization aspect
 strict: false
 use_directory_urls: true
+
+extra_css:
+  - stylesheets/extra.css
