@@ -1,0 +1,4 @@
+/* Increase the main content area width */
+.md-grid {
+  max-width: 90%; /* Or you can use a pixel value like 1400px */
+} 
