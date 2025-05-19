@@ -36,9 +36,6 @@ Prompt engineering is a test-driven and iterative process that can enhance model
 When creating prompts, it is important to clearly define the objectives and expected outcomes for
 each prompt and systematically test them to identify areas of improvement.
 
-[NEEDS REVIEW]
-
-
 The following diagram shows the prompt engineering workflow:
 
 ## How to create an effective prompt
