@@ -1,9 +1,9 @@
 ---
 date_scraped: 2025-05-12
-title: Google Modelsbookmark_borderbookmark
+title: Google Models
 ---
 
-# Google models bookmark\_borderbookmark 
+# Google models
 
 ## Featured Gemini models
 
@@ -37,22 +37,22 @@ A Gemini 2.0 Flash model optimized for cost efficiency and low latency
 ## Generally available Gemini models
 
 spark
-[Gemini 2.0 Flash](../models/gemini/2-0-flash.md)
+[Gemini 2.0 Flash](../models/gemini/2-0-flash.md)
 Our newest multimodal model, with next generation features and improved capabilities
 
-performance\_auto
-[Gemini 2.0 Flash-Lite](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-0-flash-lite)
+performance_auto
+[Gemini 2.0 Flash-Lite](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-0-flash-lite)
 A Gemini 2.0 Flash model optimized for cost efficiency and low latency
 
 ## Preview Gemini models
 
 preview
-[Gemini 2.5 Pro](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-pro)
+[Gemini 2.5 Pro](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-pro)
 Our most advanced reasoning model to date
 
 preview
-[Gemini 2.5 Flash](../models/gemini/2-5-flash.md)
-Gemini 2.5 Flash is a thinking model
+[Gemini 2.5 Flash](../models/gemini/2-5-flash.md)
+Gemini 2.5 Flash is a thinking model
 that offers great, well-rounded capabilities. It is designed to offer a balance between price and performance.
 
 ## Gemma models
@@ -81,27 +81,27 @@ Generates predictions, classifications or text based on therapeutic related data
 
 ## Embeddings models
 
-width\_normal
+width_normal
 [Embeddings for Text](https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/textembedding-gecko)
 Converts text data into vector representations for semantic search, classification, clustering, and similar tasks
 
-width\_normal
+width_normal
 [Multimodal Embeddings](https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/multimodalembedding)
 Generates vectors based on images, which can be used for downstream tasks like image classification, image search, and more
 
 ## Imagen models
 
-photo\_spark
+photo_spark
 [Imagen 3 for Generation](https://cloud.google.com/vertex-ai/generative-ai/docs/models/imagen/3-0-generate-002)
 Use text prompts to generate novel images
 
-image\_edit\_auto
+image_edit_auto
 [Imagen 3 for Editing and Customization](https://cloud.google.com/vertex-ai/generative-ai/docs/models/imagen/3-0-capability-001)
 Use text prompts to edit existing input
 images, or parts of an image with a mask or generate new images based upon
 the context provided by input reference images
 
-photo\_spark
+photo_spark
 [Imagen 3 for Fast Generation](https://cloud.google.com/vertex-ai/generative-ai/docs/models/imagen/3-0-fast-generate-001)
 Use text prompts to generate novel images
 with lower latency than our other image generation models
@@ -112,11 +112,11 @@ Use text prompts to generative novel images, edit existing ones, edit parts of a
 
 ## MedLM models
 
-medical\_information
+medical_information
 [MedLM-medium](/static/vertex-ai/generative-ai/docs/medlm/MedLM-model-card.pdf)
 HIPAA-compliant suite of medically tuned models designed to help healthcare practitioners with medical question and answer tasks, and summarization tasks for healthcare and medical documents
 
-clinical\_notes
+clinical_notes
 [MedLM-large-large](/static/vertex-ai/generative-ai/docs/medlm/MedLM-model-card.pdf)
 HIPAA-compliant suite of medically tuned models designed to help healthcare practitioners with medical question and answer tasks, and summarization tasks for healthcare and medical documents
 
@@ -137,8 +137,8 @@ Russian (ru), Serbian (sr), Slovak (sk), Slovenian (sl), Spanish (es),
 Swahili (sw), Swedish (sv), Thai (th), Turkish (tr), Ukrainian (uk),
 Vietnamese (vi)
 
-Gemini 2.0 Flash, Gemini 1.5 Pro and
-Gemini 1.5 Flash models can understand and respond in the
+Gemini 2.0 Flash, Gemini 1.5 Pro and
+Gemini 1.5 Flash models can understand and respond in the
 following additional languages:
 
 Afrikaans (af), Amharic (am), Assamese (as), Azerbaijani (az),
@@ -181,9 +181,9 @@ Spanish, Sundanese, Swahili, Swedish, Tajik, Tamil, Telugu, Thai,
 Turkish, Ukrainian, Urdu, Uzbek, Vietnamese, Welsh, West Frisian,
 Xhosa, Yiddish, Yoruba, Zulu.
 
-### Imagen 3
+### Imagen 3
 
-Imagen 3 supports the following languages:
+Imagen 3 supports the following languages:
 
 English, Chinese, Hindi, Japanese, Korean, Portuguese, and Spanish.
 
