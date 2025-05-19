@@ -1,6 +1,6 @@
 ---
 date_scraped: 2025-05-12
-title: Overview Of Prompting Strategies
+title: Overview of prompting strategies
 ---
 
 # Overview of prompting strategies 
