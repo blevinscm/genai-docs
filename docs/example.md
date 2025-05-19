@@ -41,6 +41,8 @@ each prompt and systematically test them to identify areas of improvement.
 
 The following diagram shows the prompt engineering workflow:
 
+TODO: Missing Diagram
+
 ## How to create an effective prompt
 
 There are two aspects of a prompt that ultimately affect its effectiveness:
