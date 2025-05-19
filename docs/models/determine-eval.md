@@ -232,7 +232,7 @@ Not applicable
 The following metrics help you to evaluate the model's ability to predict a
 valid [tool (function) call](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/function-calling).
 
-[Call valid](#call-valid) [Name match](#name-match) [Parameter key match](#parameter-key-match) [Parameter KV match](#parameter-kv-match) 
+[Call Validation](#call-valid) [Name Match](#name-match) [Parameter Key Match](#parameter-key-match) [Parameter Key-Value Match](#parameter-kv-match) 
 More
 
 The `tool_call_valid` metric describes the model's ability to

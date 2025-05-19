@@ -704,3 +704,23 @@ parameters = {
 - Learn about [generative AI evaluation](evaluation-overview.md).
 - Learn about online evaluation with [Gen AI Evaluation Service](evaluation-overview.md).
 - Learn how to [tune language foundation models](https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-models).
+
+### Prompt Parameters for Inference {#prompt-params-inference}
+
+// ... existing code ...
+
+### Prompt Parameters for Evaluation {#prompt-params-evaluation}
+
+// ... existing code ...
+
+### Human Metrics {#human-metrics}
+
+// ... existing code ...
+
+### Aggregate Metrics {#aggregate-metrics}
+
+// ... existing code ...
+
+### Judgments {#judgments}
+
+// ... existing code ...

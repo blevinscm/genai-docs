@@ -104,7 +104,7 @@ region, you can't start using the Vertex AI Gemini API.
 To learn how migrate to the Vertex AI Gemini API, click one of the following
 tabs, depending on your Google Cloud account status:
 
-### Already use Google Cloud
+### Already use Google Cloud {#existing-cloud-user}
 
 1. Sign in to [Google AI Studio](https://aistudio.google.com/app/waitlist/97445851).
 2. At the bottom of the left navigation pane, click **Build with Vertex AI on Google Cloud**.
@@ -119,7 +119,7 @@ tabs, depending on your Google Cloud account status:
  The Vertex AI console appears. To learn how to migrate your data
  from Google AI studio, see [Migrate Prompts](#migrate-prompts).
 
-### New to Google Cloud
+### New to Google Cloud {#new-cloud-user}
 
 1. Sign in to [Google AI Studio](https://aistudio.google.com/app/waitlist/97445851).
 2. At the bottom of the left navigation pane, click **Build with Vertex AI on Google Cloud**.
@@ -136,7 +136,7 @@ tabs, depending on your Google Cloud account status:
 6. Optional: To learn how to migrate your data from Google AI studio, see Migrate
  Prompts on this page [Migrate Prompts](#migrate-prompts).
 
-### Python: Migrate to the Vertex AI Gemini API
+### Python: Migrate to the Vertex AI Gemini API {#migrate-python}
 
 The following sections show code snippets to help you migrate your Python code to use the
 Vertex AI Gemini API.

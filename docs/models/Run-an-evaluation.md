@@ -59,7 +59,7 @@ working locally and if you're working in Colaboratory:
 
  This command opens a window where you can complete the authentication.
 
-### Understanding service accounts
+### Understanding service accounts {#service-accounts}
 
 The [service account](https://cloud.google.com/iam/docs/principals-overview#service-account) is used by the Gen AI evaluation service to get
 predictions from the [Gemini API in Vertex AI](https://cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal) for model-based evaluation
@@ -91,7 +91,7 @@ Use the `EvalTask` class to run evaluations for the following use cases:
 - [Additional metric customization](#metrics-custom)
 - [Increase rate limits and quota](#increase-quota)
 
-### `EvalTask` class
+### `EvalTask` class {#eval-task-class}
 
 The `EvalTask` class helps you evaluate models and applications based on specific tasks. To make fair comparisons between generative models, you typically need to repeatedly evaluate various models and prompt templates against a fixed evaluation dataset using specific metrics. It's also important to evaluate multiple metrics simultaneously within a single evaluation run.
 
@@ -123,7 +123,7 @@ eval_result = eval_task.evaluate(
 
 ```
 
-## Run evaluation with model-based metrics
+## Run evaluation with model-based metrics {#metrics-model-based}
 
 For [model-based metrics](determine-eval.md), use the `PointwiseMetric` and `PairwiseMetric` classes to define metrics tailored to your specific criteria. Run evaluations using the following options:
 
@@ -131,7 +131,7 @@ For [model-based metrics](determine-eval.md), use the `PointwiseMetric` and `Pai
 - [Use a templated interface](#metrics-template)
 - [Define metrics from scratch](#metrics-freeform)
 
-### Use model-based metric examples
+### Use model-based metric examples {#metrics-examples}
 
 You can directly use the built-in constant `Metric Prompt Template Examples` within Vertex AI SDK. Alternatively, modify and incorporate them in the free-form metric definition interface.
 

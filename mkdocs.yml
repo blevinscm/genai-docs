@@ -81,17 +81,6 @@ plugins:
         # 'get-started/local-testing.md': 'get-started/testing.md'
         # 'get-started/tutorial.md': 'tutorials/index.md'
         # 'guides/responsible-agents.md': 'safety/index.md'
-  # - gemini-chat:
-  #     api_key: 
-  #     model: "gemini-2.5-pro-preview-05-06"
-  #     temperature: 0.7
-  #     max_tokens: 1000
-  #     chat_interface: true
-  #     chat_bot_name: "Vertex AI Assistant"
-  #     welcome_message: "Hello! I'm your Vertex AI documentation assistant. How can I help you?"
-  #     ui_position: bottom-right
-  #     default_language: en
-  #     chat_history_length: 10
 
 nav:
   - Home: 'index.md'
@@ -197,5 +186,13 @@ nav:
 strict: false
 use_directory_urls: true
 
+# Chat widget configuration
+extra_javascript:
+  - js/chat-widget/gemini-client.js
+  - js/chat-widget/init.js
+  - js/chat-widget/setup-key.js
+  - js/chat-widget-helper.js
+
 extra_css:
   - stylesheets/extra.css
+  - js/chat-widget/chat-widget.css

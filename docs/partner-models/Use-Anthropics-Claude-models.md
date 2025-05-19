@@ -35,107 +35,107 @@ in Vertex AI Workbench user-managed notebooks](https://console.cloud.google.com/
 |
 [View on GitHub](https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/official/generative_ai/anthropic_claude_3_intro.ipynb)
 
-## Available Claude models
+## Available Claude Models {#model-list}
 
 The following models are available from Anthropic to use in Vertex AI.
 To access a Claude model, go to its Model Garden model card.
 
-### Claude 3.7 Sonnet
+### Claude 3.7 Sonnet {#claude-3-7-sonnet}
 
-Claude 3.7 Sonnet is Anthropic's most intelligent model to date
+Claude 3.7 Sonnet is Anthropic's most intelligent model to date
 and the first Claude model to offer extended thinking—the ability to solve
 complex problems with careful, step-by-step reasoning.
-Claude 3.7 Sonnet is a single model where you can balance speed
+Claude 3.7 Sonnet is a single model where you can balance speed
 and quality by choosing between standard thinking for near-instant responses or
 extended thinking for advanced reasoning.
 
 For more information about extended thinking, see Anthropic's
 [documentation](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking).
 
-Claude 3.7 Sonnet is optimized for the following use cases:
+Claude 3.7 Sonnet is optimized for the following use cases:
 
-- Agentic coding - Claude 3.7 Sonnet is state-of-the-art for
+- Agentic coding - Claude 3.7 Sonnet is state-of-the-art for
  agentic coding, and can complete tasks across the entire software development
  lifecycle—from initial planning to bug fixes, maintenance to large refactors.
  It offers strong performance in both planning and solving for complex coding
- tasks, making Claude 3.7 Sonnet an ideal choice to power
+ tasks, making Claude 3.7 Sonnet an ideal choice to power
  end-to-end software development processes.
-- Customer-facing agents - Claude 3.7 Sonnet offers superior
+- Customer-facing agents - Claude 3.7 Sonnet offers superior
  instruction following, tool selection, error correction, and advanced
  reasoning for customer-facing agents and complex AI workflows.
-- Computer use - Claude 3.7 Sonnet is our most accurate model for
+- Computer use - Claude 3.7 Sonnet is our most accurate model for
  computer use, enabling developers to direct Claude to use computers the way
  people do.
-- Content generation and analysis - Claude 3.7 Sonnet excels at
+- Content generation and analysis - Claude 3.7 Sonnet excels at
  writing and is able to understand nuance and tone in content to generate more
  compelling content and analyze content on a deeper level.
-- Visual data extraction - With Claude 3.7 Sonnet's robust vision
+- Visual data extraction - With Claude 3.7 Sonnet's robust vision
  skills, it is the right choice for teams that want to extract raw data from
  visuals like charts or graphs as part of their AI workflow.
 
-[Go to the Claude 3.7 Sonnet model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-7-sonnet)
+[Go to the Claude 3.7 Sonnet model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-7-sonnet)
 
-### Claude 3.5 Sonnet v2
+### Claude 3.5 Sonnet v2 {#claude-3-5-sonnet-v2}
 
-Claude 3.5 Sonnet v2 is a state-of-the-art model for
+Claude 3.5 Sonnet v2 is a state-of-the-art model for
 real-world software engineering tasks and agentic capabilities.
-Claude 3.5 Sonnet v2 delivers these advancements at the same
-price and speed as Claude 3.5 Sonnet.
+Claude 3.5 Sonnet v2 delivers these advancements at the same
+price and speed as Claude 3.5 Sonnet.
 
-The upgraded Claude 3.5 Sonnet model is capable of interacting
+The upgraded Claude 3.5 Sonnet model is capable of interacting
 with tools that can manipulate a computer desktop environment. For more
 information, see the [Anthropic documentation](https://docs.anthropic.com/en/docs/build-with-claude/computer-use).
 
-Claude 3.5 Sonnet is optimized for the following use cases:
+Claude 3.5 Sonnet is optimized for the following use cases:
 
-- Agentic tasks and tool use - Claude 3.5 Sonnet offers
+- Agentic tasks and tool use - Claude 3.5 Sonnet offers
  superior instruction following, tool selection, error correction, and advanced
  reasoning for agentic workflows that require tool use.
 - Coding - For software development tasks ranging from code migrations, code
- fixes, and translations, Claude 3.5 Sonnet offers strong
+ fixes, and translations, Claude 3.5 Sonnet offers strong
  performance in both planning and solving for complex coding tasks.
-- Document Q&A - Claude 3.5 Sonnet combines strong context
+- Document Q&A - Claude 3.5 Sonnet combines strong context
  comprehension, advanced reasoning, and synthesis to deliver accurate and
  human-like responses.
-- Visual data extraction - With Claude 3.5 Sonnet leading vision
- skills, Claude 3.5 Sonnet can extract raw data from visuals
+- Visual data extraction - With Claude 3.5 Sonnet leading vision
+ skills, Claude 3.5 Sonnet can extract raw data from visuals
  like charts or graphs as part of AI workflows.
-- Content generation and analysis - Claude 3.5 Sonnet can
+- Content generation and analysis - Claude 3.5 Sonnet can
  understand nuance and tone in content, generating more compelling content and
  analyzing content on a deeper level.
 
-[Go to the Claude 3.5 Sonnet v2 model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-5-sonnet-v2)
+[Go to the Claude 3.5 Sonnet v2 model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-5-sonnet-v2)
 
-### Claude 3.5 Haiku
+### Claude 3.5 Haiku {#claude-3-5-haiku}
 
-Claude 3.5 Haiku, the next generation of Anthropic's fastest and
+Claude 3.5 Haiku, the next generation of Anthropic's fastest and
 most cost-effective model, is optimal for use cases where speed and
 affordability matter. It improves on its predecessor across every skill set.
-Claude 3.5 Haiku is optimized for the following use cases:
+Claude 3.5 Haiku is optimized for the following use cases:
 
 - Code completions - With its rapid response time and understanding of
- programming patterns, Claude 3.5 Haiku excels at providing
+ programming patterns, Claude 3.5 Haiku excels at providing
  quick, accurate code suggestions and completions in real-time development
  workflows.
-- Interactive chat bots - Claude 3.5 Haiku's improved reasoning
+- Interactive chat bots - Claude 3.5 Haiku's improved reasoning
  and natural conversation abilities make it ideal for creating responsive,
  engaging chatbots that can handle high volumes of user interactions
  efficiently.
 - Data extraction and labeling - Leveraging its improved analysis skills,
- Claude 3.5 Haiku efficiently processes and categorizes data,
+ Claude 3.5 Haiku efficiently processes and categorizes data,
  making it useful for rapid data extraction and automated labeling tasks.
 - Real-time content moderation - With strong reasoning skills and content
- understanding, Claude 3.5 Haiku provides fast, reliable content
+ understanding, Claude 3.5 Haiku provides fast, reliable content
  moderation for platforms that require immediate response times at scale.
 
-[Go to the Claude 3.5 Haiku model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-5-haiku)
+[Go to the Claude 3.5 Haiku model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-5-haiku)
 
-### Claude 3 Opus
+### Claude 3 Opus
 
-Anthropic's Claude 3 Opus is a powerful AI model with top-level performance on highly
+Anthropic's Claude 3 Opus is a powerful AI model with top-level performance on highly
 complex tasks. It can navigate open-ended prompts and sight-unseen scenarios
 with remarkable fluency and human-like understanding.
-Claude 3 Opus is optimized for the following use cases:
+Claude 3 Opus is optimized for the following use cases:
 
 - Task automation, such as interactive coding and planning, or running complex
  actions across APIs and databases.
@@ -146,11 +146,11 @@ Claude 3 Opus is optimized for the following use cases:
 - Vision tasks, such as processing images to return text output. Also, analysis
  of charts, graphs, technical diagrams, reports, and other visual content.
 
-[Go to the Claude 3 Opus model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-opus)
+[Go to the Claude 3 Opus model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-opus)
 
-### Claude 3 Haiku
+### Claude 3 Haiku {#claude-3-haiku}
 
-Anthropic's Claude 3 Haiku is Anthropic's fastest vision and text model for
+Anthropic's Claude 3 Haiku is Anthropic's fastest vision and text model for
 near-instant responses to basic queries, meant for seamless AI experiences
 mimicking human interactions.
 
@@ -161,13 +161,13 @@ mimicking human interactions.
 - Vision tasks, such as processing images to return text output, analysis
  of charts, graphs, technical diagrams, reports, and other visual content.
 
-[Go to the Claude 3 Haiku model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-haiku)
+[Go to the Claude 3 Haiku model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-haiku)
 
-### Claude 3.5 Sonnet
+### Claude 3.5 Sonnet {#claude-3-5-sonnet}
 
-Anthropic's Claude 3.5 Sonnet outperforms Claude 3 Opus on a wide
+Anthropic's Claude 3.5 Sonnet outperforms Claude 3 Opus on a wide
 range of Anthropic's evaluations, with the speed and cost of Anthropic's
-mid-tier Claude 3 Sonnet. Claude 3.5 Sonnet is
+mid-tier Claude 3 Sonnet. Claude 3.5 Sonnet is
 optimized for the following use cases:
 
 - Coding, such as writing, editing, and running code with sophisticated
@@ -180,25 +180,25 @@ optimized for the following use cases:
  understanding.
 - Writing content with a more natural, human-like tone.
 
-[Go to the Claude 3.5 Sonnet model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-5-sonnet)
+[Go to the Claude 3.5 Sonnet model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-5-sonnet)
 
-## Use Claude models
+## Use Claude models {#use-claude-models}
 
 You can use Anthropic's SDK or curl commands to send requests to the
 Vertex AI endpoint using the following model names:
 
-- For Claude 3.7 Sonnet, use `claude-3-7-sonnet@20250219`.
-- For Claude 3.5 Sonnet v2, use `claude-3-5-sonnet-v2@20241022`.
-- For Claude 3.5 Haiku, use `claude-3-5-haiku@20241022`.
-- For Claude 3 Opus, use `claude-3-opus@20240229`.
-- For Claude 3.5 Sonnet, use `claude-3-5-sonnet@20240620`.
-- For Claude 3 Haiku, use `claude-3-haiku@20240307`.
+- For Claude 3.7 Sonnet, use `claude-3-7-sonnet@20250219`.
+- For Claude 3.5 Sonnet v2, use `claude-3-5-sonnet-v2@20241022`.
+- For Claude 3.5 Haiku, use `claude-3-5-haiku@20241022`.
+- For Claude 3 Opus, use `claude-3-opus@20240229`.
+- For Claude 3.5 Sonnet, use `claude-3-5-sonnet@20240620`.
+- For Claude 3 Haiku, use `claude-3-haiku@20240307`.
 
 Anthropic Claude model versions must be used with a suffix that starts with an
 `@` symbol (such as `claude-3-7-sonnet@20250219` or
 `claude-3-5-haiku@20241022`) to guarantee consistent behavior.
 
-**Note:** The maximum allowed image file size is 5 MB and you can
+**Note:** The maximum allowed image file size is 5 MB and you can
 include up to 20 images in one request.
 
 ### Before you begin
@@ -234,13 +234,13 @@ For more information, see [Grant the required permissions](use-partner-models.md
  [Enable the API](https://console.cloud.google.com/flows/enableapi?apiid=aiplatform.googleapis.com)
 1. Go to one of the following Model Garden model cards, then click
  **Enable**:
- - [Go to the Claude 3.7 Sonnet model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-7-sonnet)
- - [Go to the Claude 3.5 Sonnet v2 model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-5-sonnet-v2)
+ - [Go to the Claude 3.7 Sonnet model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-7-sonnet)
+ - [Go to the Claude 3.5 Sonnet v2 model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-5-sonnet-v2)
  - [Go to
- the Claude 3.5 Haiku model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-5-haiku)
- - [Go to the Claude 3 Opus model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-opus)
- - [Go to the Claude 3.5 Sonnet model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-5-sonnet)
- - [Go to the Claude 3 Haiku model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-haiku)
+ the Claude 3.5 Haiku model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-5-haiku)
+ - [Go to the Claude 3 Opus model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-opus)
+ - [Go to the Claude 3.5 Sonnet model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-5-sonnet)
+ - [Go to the Claude 3 Haiku model card](https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-haiku)
 
 ### Use the Anthropic SDK
 
@@ -384,13 +384,13 @@ make the following replacements:
  once.
 - CONTENT: The content, such as text, of the `user` or
  `assistant` message.
-- MAX\_TOKENS:
+- MAX_TOKENS:
  Maximum number of tokens that can be generated in the response. A token is
  approximately 3.5 characters. 100 tokens correspond to roughly 60-80 words.
 
  Specify a lower value for shorter responses and a higher value for potentially longer
  responses.
-- TOP\_P (Optional):
+- TOP_P (Optional):
  Top-P changes how the model selects tokens for output. Tokens are selected
  from the most (see top-K) to least probable until the sum of their probabilities
  equals the top-P value. For example, if tokens A, B, and C have a probability of
@@ -400,7 +400,7 @@ make the following replacements:
 
  Specify a lower value for less random responses and a higher value for more
  random responses.
-- TOP\_K(Optional):
+- TOP_K(Optional):
  Top-K changes how the model selects tokens for output. A top-K of
  `1` means the next selected token is the most probable among all
  tokens in the model's vocabulary (also called greedy decoding), while a top-K of
@@ -414,9 +414,9 @@ make the following replacements:
  Specify a lower value for less random responses and a higher value for more
  random responses.
 - TYPE: For
- Claude 3.7 Sonnet only, to enable extended thinking mode,
+ Claude 3.7 Sonnet only, to enable extended thinking mode,
  specify `enable`.
-- BUDGET\_TOKENS: If you
+- BUDGET_TOKENS: If you
  enable extended thinking, you must specify the number of tokens that the model
  can use for its internal reasoning as part of the output. Larger budgets can
  enable more thorough analysis for complex problems and improve response
@@ -644,7 +644,7 @@ make the following replacements:
  and `false` to return the response all at once.
 - CONTENT: The content, such as
  text, of the `user` or `assistant` message.
-- MAX\_TOKENS:
+- MAX_TOKENS:
  Maximum number of tokens that can be generated in the response. A token is
  approximately 3.5 characters. 100 tokens correspond to roughly 60-80 words.
 
@@ -803,6 +803,15 @@ with other supported models such as Google Gemini.
 For more information, see [Quickstart: Send text prompts to Gemini
 using Vertex AI Studio](../start/quickstarts/quickstart.md).
 
+## Available Regions {#regions}
+
+The following regions are available for using Claude models:
+
+- us-central1 (Iowa)
+- us-east4 (Northern Virginia)
+- europe-west4 (Netherlands)
+- asia-northeast1 (Tokyo)
+
 ## Anthropic Claude region availability
 
 **Important:** Machine learning (ML) processing for all available
@@ -810,31 +819,31 @@ Anthropic Claude models occurs within the US when requests are made to regionall
 in the US, or within the EU when requests are made to regionally-available APIs in Europe.**Note:** We recommend that you send API requests to
 the `us-east5` (Ohio) or `europe-west1` (Belgium) regional
 endpoints because these regions have the highest available capacity.
-Claude 3.7 Sonnet is available in the following regions:
+Claude 3.7 Sonnet is available in the following regions:
 
 - `us-east5 (Ohio)`
 - `europe-west1 (Belgium)`
 
-Claude 3.5 Sonnet v2 is available in the following regions:
+Claude 3.5 Sonnet v2 is available in the following regions:
 
 - `us-east5 (Ohio)`
 - `europe-west1 (Belgium)`
 
-Claude 3.5 Haiku is available in the following regions:
+Claude 3.5 Haiku is available in the following regions:
 
 - `us-east5 (Ohio)`
 
-Claude 3 Opus is available in the following region:
+Claude 3 Opus is available in the following region:
 
 - `us-east5 (Ohio)`
 
-Claude 3.5 Sonnet is available in the following regions:
+Claude 3.5 Sonnet is available in the following regions:
 
 - `us-east5 (Ohio)`
 - `asia-southeast1 (Singapore)`
 - `europe-west1 (Belgium)`
 
-Claude 3 Haiku is available in the following regions:
+Claude 3 Haiku is available in the following regions:
 
 - `us-east5 (Ohio)`
 - `asia-southeast1 (Singapore)`
@@ -857,48 +866,48 @@ You must also have the following quotas available:
 - `Online prediction tokens per minute per base model per minute per region per
  base_model`
 
-### Claude 3.7 Sonnet
+### Claude 3.7 Sonnet
 
 The following table shows the default quotas and supported context length for
-**Claude 3.7 Sonnet**.
+**Claude 3.7 Sonnet**.
 
 | Region | Quotas | Supported context length |
 | --- | --- | --- |
 | `us-east5 (Ohio)` | Up to 55 QPM, 500,000 TPM | 200,000 tokens |
 | `europe-west1 (Belgium)` | Up to 40 QPM, 300,000 TPM | 200,000 tokens |
 
-### Claude 3.5 Sonnet v2
+### Claude 3.5 Sonnet v2
 
 The following table shows the default quotas and supported context length for
-**Claude 3.5 Sonnet v2**.
+**Claude 3.5 Sonnet v2**.
 
 | Region | Quotas | Supported context length |
 | --- | --- | --- |
 | `us-east5 (Ohio)` | Up to 90 QPM, 540,000 TPM | 200,000 tokens |
 | `europe-west1 (Belgium)` | Up to 55 QPM, 330,000 TPM | 200,000 tokens |
 
-### Claude 3.5 Haiku
+### Claude 3.5 Haiku
 
 The following table shows the default quotas and supported context length for
-**Claude 3.5 Haiku**.
+**Claude 3.5 Haiku**.
 
 | Region | Quotas | Supported context length |
 | --- | --- | --- |
 | `us-east5 (Ohio)` | Up to 80 QPM, 350,000 TPM | 200,000 tokens |
 
-### Claude 3 Opus
+### Claude 3 Opus
 
 The following table shows the default quotas and supported context length for
-**Claude 3 Opus**.
+**Claude 3 Opus**.
 
 | Region | Quotas | Supported context length |
 | --- | --- | --- |
 | `us-east5 (Ohio)` | Up to 20 QPM, 105,000 TPM | 200,000 tokens |
 
-### Claude 3 Haiku
+### Claude 3 Haiku
 
 The following table shows the default quotas and supported context length for
-**Claude 3 Haiku**.
+**Claude 3 Haiku**.
 
 | Region | Quotas | Supported context length |
 | --- | --- | --- |
@@ -906,10 +915,10 @@ The following table shows the default quotas and supported context length for
 | `asia-southeast1 (Singapore)` | Up to 70 QPM, 174,000 TPM | 200,000 tokens |
 | `europe-west1 (Belgium)` | Up to 75 QPM, 181,000 TPM | 200,000 tokens |
 
-### Claude 3.5 Sonnet
+### Claude 3.5 Sonnet
 
 The following table shows the default quotas and supported context length for
-**Claude 3.5 Sonnet**.
+**Claude 3.5 Sonnet**.
 
 | Region | Quotas | Supported context length |
 | --- | --- | --- |

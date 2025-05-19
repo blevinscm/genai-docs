@@ -107,8 +107,7 @@ Service Account additional roles:
 | [Storage Object Viewer](https://cloud.google.com/storage/docs/access-control/iam-roles) | Project that the source file belongs to |
 | Cloud Storage file | [BigQuery Data Viewer](https://cloud.google.com/bigquery/docs/access-control#bigquery.dataViewer) | Project that runs the pipeline |
 
-[REST](#rest)[Vertex AI SDK for Python](#vertex-ai-sdk-for-python)[Console](#console)
-More
+### REST API {#rest}
 
 To create a model evaluation job, send a `POST` request by using the
 [pipelineJobs](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.pipelineJobs/create) method.
@@ -328,6 +327,8 @@ To learn how to install or update the Vertex AI SDK for Python, see [Install the
 For more information, see the
 [Vertex AI SDK for Python API reference documentation](https://cloud.google.com/python/docs/reference/aiplatform/latest).
 
+### Vertex AI SDK for Python {#vertex-ai-sdk-for-python}
+
 ```python
 import os
 
@@ -373,6 +374,8 @@ def evaluate_model() -> object:
  return eval_metrics
 
 ```
+
+### Google Cloud Console {#console}
 
 To create a model evaluation job by using the Google Cloud console, perform
 the following steps:

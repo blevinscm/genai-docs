@@ -38,19 +38,18 @@ troubleshooting and analyze model behavior.
 The following table shows you the models that support token listing and token
 counting:
 
-- [Vertex AI Model Optimizer](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/vertex-ai-model-optimizer)
-- [Gemini 2.5 Pro](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-pro)
-- [Gemini 2.5 Flash](../models/gemini/2-5-flash.md)
-- [Gemini 2.0 Flash](../models/gemini/2-0-flash.md)
-- [Gemini 2.0 Flash-Lite](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-0-flash-lite)
+- [Vertex AI Model Optimizer](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/vertex-ai-model-optimizer)
+- [Gemini 2.5 Pro](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-pro)
+- [Gemini 2.5 Flash](../models/gemini/2-5-flash.md)
+- [Gemini 2.0 Flash](../models/gemini/2-0-flash.md)
+- [Gemini 2.0 Flash-Lite](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-0-flash-lite)
 
 ## Get a list of tokens and token IDs for a prompt
 
 The following code sample shows you how to get a list of tokens and token IDs for
 a prompt. The prompt must contain only text. Multimodal prompts are not supported.
 
-[Gen AI SDK for Python](#gen-ai-sdk-for-python)[Gen AI SDK for Go](#gen-ai-sdk-for-go)
-More
+### Using the Gen AI SDK for Python {#gen-ai-sdk-for-python}
 
 #### Install
 
@@ -68,6 +67,34 @@ To learn more, see the
 [SDK reference documentation](https://googleapis.github.io/python-genai/).
 
 Set environment variables to use the Gen AI SDK with Vertex AI:
+
+See more code actions.
+
+Light code theme
+
+Dark code theme
+
+```python
+# Replace the `GOOGLE_CLOUD_PROJECT` and `GOOGLE_CLOUD_LOCATION` values
+# with appropriate values for your project.
+export GOOGLE_CLOUD_PROJECT=GOOGLE_CLOUD_PROJECT
+export GOOGLE_CLOUD_LOCATION=global
+export GOOGLE_GENAI_USE_VERTEXAI=True
+```
+
+See more code actions.
+
+[View on GitHub](https://github.com/GoogleCloudPlatform/python-docs-samples/blob/HEAD/genai/count_tokens/counttoken_compute_with_txt.py)
+
+Light code theme
+
+Dark code theme
+
+### Using the Gen AI SDK for Go {#gen-ai-sdk-for-go}
+
+More
+
+#### Install
 
 See more code actions.
 

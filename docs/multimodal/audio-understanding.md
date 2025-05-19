@@ -35,10 +35,10 @@ The following table lists the models that support audio understanding:
 
 | **Model** | **Media details** | **MIME types** |
 | --- | --- | --- |
-| [Gemini 2.5 Pro](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-pro) | - Maximum audio length per prompt: Appropximately 8.4 hours, or up to 1 million tokens - Maximum number of audio files per prompt: 1 - Speech understanding for: Audio summarization, transcription, and translation | - `audio/x-aac` - `audio/flac` - `audio/mp3` - `audio/m4a` - `audio/mpeg` - `audio/mpga` - `audio/mp4` - `audio/opus` - `audio/pcm` - `audio/wav` - `audio/webm` |
-| [Gemini 2.5 Flash](../models/gemini/2-5-flash.md) | - Maximum audio length per prompt: Appropximately 8.4 hours, or up to 1 million tokens - Maximum number of audio files per prompt: 1 - Speech understanding for: Audio summarization, transcription, and translation | - `audio/x-aac` - `audio/flac` - `audio/mp3` - `audio/m4a` - `audio/mpeg` - `audio/mpga` - `audio/mp4` - `audio/opus` - `audio/pcm` - `audio/wav` - `audio/webm` |
-| [Gemini 2.0 Flash](../models/gemini/2-0-flash.md) | - Maximum audio length per prompt: Appropximately 8.4 hours, or up to 1 million tokens - Maximum number of audio files per prompt: 1 - Speech understanding for: Audio summarization, transcription, and translation - Maximum tokens per minute (TPM): - US/Asia: 3.5 M - EU: 3.5 M | - `audio/x-aac` - `audio/flac` - `audio/mp3` - `audio/m4a` - `audio/mpeg` - `audio/mpga` - `audio/mp4` - `audio/opus` - `audio/pcm` - `audio/wav` - `audio/webm` |
-| [Gemini 2.0 Flash-Lite](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-0-flash-lite) | - Maximum audio length per prompt: Appropximately 8.4 hours, or up to 1 million tokens - Maximum number of audio files per prompt: 1 - Speech understanding for: Audio summarization, transcription, and translation - Maximum tokens per minute (TPM): - US/Asia: 3.5 M - EU: 3.5 M | - `audio/x-aac` - `audio/flac` - `audio/mp3` - `audio/m4a` - `audio/mpeg` - `audio/mpga` - `audio/mp4` - `audio/opus` - `audio/pcm` - `audio/wav` - `audio/webm` |
+| [Gemini 2.5 Pro](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-pro) | - Maximum audio length per prompt: Appropximately 8.4 hours, or up to 1 million tokens - Maximum number of audio files per prompt: 1 - Speech understanding for: Audio summarization, transcription, and translation | - `audio/x-aac` - `audio/flac` - `audio/mp3` - `audio/m4a` - `audio/mpeg` - `audio/mpga` - `audio/mp4` - `audio/opus` - `audio/pcm` - `audio/wav` - `audio/webm` |
+| [Gemini 2.5 Flash](../models/gemini/2-5-flash.md) | - Maximum audio length per prompt: Appropximately 8.4 hours, or up to 1 million tokens - Maximum number of audio files per prompt: 1 - Speech understanding for: Audio summarization, transcription, and translation | - `audio/x-aac` - `audio/flac` - `audio/mp3` - `audio/m4a` - `audio/mpeg` - `audio/mpga` - `audio/mp4` - `audio/opus` - `audio/pcm` - `audio/wav` - `audio/webm` |
+| [Gemini 2.0 Flash](../models/gemini/2-0-flash.md) | - Maximum audio length per prompt: Appropximately 8.4 hours, or up to 1 million tokens - Maximum number of audio files per prompt: 1 - Speech understanding for: Audio summarization, transcription, and translation - Maximum tokens per minute (TPM): - US/Asia: 3.5 M - EU: 3.5 M | - `audio/x-aac` - `audio/flac` - `audio/mp3` - `audio/m4a` - `audio/mpeg` - `audio/mpga` - `audio/mp4` - `audio/opus` - `audio/pcm` - `audio/wav` - `audio/webm` |
+| [Gemini 2.0 Flash-Lite](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-0-flash-lite) | - Maximum audio length per prompt: Appropximately 8.4 hours, or up to 1 million tokens - Maximum number of audio files per prompt: 1 - Speech understanding for: Audio summarization, transcription, and translation - Maximum tokens per minute (TPM): - US/Asia: 3.5 M - EU: 3.5 M | - `audio/x-aac` - `audio/flac` - `audio/mp3` - `audio/m4a` - `audio/mpeg` - `audio/mpga` - `audio/mp4` - `audio/opus` - `audio/pcm` - `audio/wav` - `audio/webm` |
 
 The quota metric is
 `generate_content_audio_input_per_base_model_id_and_resolution`.
@@ -60,8 +60,7 @@ You can add audio files in your requests to Gemini.
 
 The following shows you how to use an audio file to summarize a podcast.
 
-[Console](#console)[Gen AI SDK for Python](#gen-ai-sdk-for-python)[Gen AI SDK for Go](#gen-ai-sdk-for-go)[REST](#rest)
-More
+### Using the Console {#console}
 
 To send a multimodal prompt by using the Google Cloud console, do the
 following:
@@ -305,10 +304,10 @@ make the following replacements:
  The URI or URL of the file to include in the prompt. Acceptable values include the following:
  - **Cloud Storage bucket URI:** The object must either be publicly readable or reside in
  the same Google Cloud project that's sending the request. For `gemini-2.0-flash`
- and `gemini-2.0-flash-lite`, the size limit is 2 GB.
+ and `gemini-2.0-flash-lite`, the size limit is 2 GB.
  - **HTTP URL:** The file URL must be publicly readable. You can specify one video file, one
  audio file, and up to 10 image files per request. Audio files, video files, and documents can't
- exceed 15 MB.
+ exceed 15 MB.
  - **YouTube video URL:**The YouTube video must be either owned by the account that you used
  to sign in to the Google Cloud console or is public. Only one YouTube video URL is supported per
  request.
@@ -531,8 +530,7 @@ The following shows you how to use an audio file to transcribe an interview. To
 enable timestamp understanding for audio-only files, enable the `audioTimestamp`
 parameter in `GenerationConfig`.
 
-[Console](#console)[Gen AI SDK for Python](#gen-ai-sdk-for-python)[Gen AI SDK for Go](#gen-ai-sdk-for-go)[REST](#rest)
-More
+### Using the Console {#console}
 
 To send a multimodal prompt by using the Google Cloud console, do the
 following:
@@ -773,10 +771,10 @@ make the following replacements:
  The URI or URL of the file to include in the prompt. Acceptable values include the following:
  - **Cloud Storage bucket URI:** The object must either be publicly readable or reside in
  the same Google Cloud project that's sending the request. For `gemini-2.0-flash`
- and `gemini-2.0-flash-lite`, the size limit is 2 GB.
+ and `gemini-2.0-flash-lite`, the size limit is 2 GB.
  - **HTTP URL:** The file URL must be publicly readable. You can specify one video file, one
  audio file, and up to 10 image files per request. Audio files, video files, and documents can't
- exceed 15 MB.
+ exceed 15 MB.
  - **YouTube video URL:**The YouTube video must be either owned by the account that you used
  to sign in to the Google Cloud console or is public. Only one YouTube video URL is supported per
  request.

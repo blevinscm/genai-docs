@@ -44,7 +44,7 @@ administrator must [set the required permissions](#set-permissions) and [verify
 the organization policy allows the use of required
 APIs](#set-organization-policy).
 
-### Set required permissions to use partner models
+### Set required permissions to use partner models {#set-permissions}
 
 The following roles and permissions are required to use partner models:
 
@@ -119,7 +119,7 @@ More
  and
  [`gcloud projects add-iam-policy-binding`](https://cloud.google.com/sdk/gcloud/reference/projects/add-iam-policy-binding).
 
-### Set the organization policy for partner model access
+### Set the organization policy for partner model access {#set-organization-policy}
 
 To enable partner models, your organization policy must allow the following
 API: Cloud Commerce Consumer Procurement API - `cloudcommerceconsumerprocurement.googleapis.com`
@@ -135,7 +135,7 @@ Model Garden, the policy must allow access to partner models. For more
 information, see [Control model
 access](../control-model-access.md).
 
-### Partner model regulatory compliance
+### Partner model regulatory compliance {#regulatory-compliance}
 
 The [certifications](https://cloud.google.com/security/compliance/services-in-scope) for
 [Generative AI on Vertex AI](../code/code-models-overview.md) continue to

@@ -82,18 +82,19 @@ The following table lists Vertex AI SDK for Python notebooks for various generat
 
 The Vertex AI Gen AI evaluation service supports Google's foundation models, third party models, and open models. You can provide pre-generated predictions directly, or automatically generate candidate model responses in the following ways:
 
-- Automatically generate responses for Google's foundation models (such as Gemini 2.0 Flash) and any model deployed in Vertex AI Model Registry.
+- Automatically generate responses for Google's foundation models (such as Gemini 2.0 Flash) and any model deployed in Vertex AI Model Registry.
 - Integrate with SDK text generation APIs from other third party and open models.
 - Wrap model endpoints from other providers using the Vertex AI SDK.
 
-For Gemini model-based metrics, the Gen AI evaluation service supports all input languages that are [supported by Gemini 2.0 Flash](../learn/models.md). However, the quality of evaluations for non-English inputs may not be as high as the quality for English inputs.
+For Gemini model-based metrics, the Gen AI evaluation service supports all input languages that are [supported by Gemini 2.0 Flash](../learn/models.md). However, the quality of evaluations for non-English inputs may not be as high as the quality for English inputs.
 
 The Gen AI evaluation service supports the following languages for model-based translation metrics:
 
-[MetricX](#metricx)[COMET](#comet)
-More
+### MetricX {#metricx}
 
 **Supported languages for [MetricX](https://github.com/google-research/metricx)**: Afrikaans, Albanian, Amharic, Arabic, Armenian, Azerbaijani, Basque, Belarusian, Bengali, Bulgarian, Burmese, Catalan, Cebuano, Chichewa, Chinese, Corsican, Czech, Danish, Dutch, English, Esperanto, Estonian, Filipino, Finnish, French, Galician, Georgian, German, Greek, Gujarati, Haitian Creole, Hausa, Hawaiian, Hebrew, Hindi, Hmong, Hungarian, Icelandic, Igbo, Indonesian, Irish, Italian, Japanese, Javanese, Kannada, Kazakh, Khmer, Korean, Kurdish, Kyrgyz, Lao, Latin, Latvian, Lithuanian, Luxembourgish, Macedonian, Malagasy, Malay, Malayalam, Maltese, Maori, Marathi, Mongolian, Nepali, Norwegian, Pashto, Persian, Polish, Portuguese, Punjabi, Romanian, Russian, Samoan, Scottish Gaelic, Serbian, Shona, Sindhi, Sinhala, Slovak, Slovenian, Somali, Sotho, Spanish, Sundanese, Swahili, Swedish, Tajik, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu, Uzbek, Vietnamese, Welsh, West Frisian, Xhosa, Yiddish, Yoruba, Zulu.
+
+### COMET {#comet}
 
 **Supported languages for [COMET](https://huggingface.co/Unbabel/wmt22-comet-da#languages-covered**)**: Afrikaans, Albanian, Amharic, Arabic, Armenian, Assamese, Azerbaijani, Basque, Belarusian, Bengali, Bengali Romanized, Bosnian, Breton, Bulgarian, Burmese, Burmese, Catalan, Chinese (Simplified), Chinese (Traditional), Croatian, Czech, Danish, Dutch, English, Esperanto, Estonian, Filipino, Finnish, French, Galician, Georgian, German, Greek, Gujarati, Hausa, Hebrew, Hindi, Hindi Romanized, Hungarian, Icelandic, Indonesian, Irish, Italian, Japanese, Javanese, Kannada, Kazakh, Khmer, Korean, Kurdish (Kurmanji), Kyrgyz, Lao, Latin, Latvian, Lithuanian, Macedonian, Malagasy, Malay, Malayalam, Marathi, Mongolian, Nepali, Norwegian, Oriya, Oromo, Pashto, Persian, Polish, Portuguese, Punjabi, Romanian, Russian, Sanskrit, Scottish, Gaelic, Serbian, Sindhi, Sinhala, Slovak, Slovenian, Somali, Spanish, Sundanese, Swahili, Swedish, Tamil, Tamil Romanized, Telugu, Telugu Romanized, Thai, Turkish, Ukrainian, Urdu, Urdu Romanized, Uyghur, Uzbek, Vietnamese, Welsh, Western, Frisian, Xhosa, Yiddish.
 

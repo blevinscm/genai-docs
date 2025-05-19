@@ -26,7 +26,7 @@ You can improve your multimodal prompts by following these best practices:
  - **If your prompt results in hallucinated content:** Try dialing down the temperature setting or asking the model for shorter descriptions so that it's less likely to extrapolate additional details.
  - **Tuning the sampling parameters:** Experiment with different temperature settings and top-k selections to adjust the model's creativity.
 
-## Prompt design fundamentals
+## Prompt design fundamentals {#fundamentals}
 
 This section expands on the best practices listed in the previous section.
 
@@ -74,7 +74,7 @@ to respond in the way you want.
 
 For complex tasks like the ones that require both visual understanding and reasoning, it can be helpful
 to split the task into smaller, more straightforward steps. Alternatively, it could also be effective if you
-directly ask the model to “think step by step” in your prompt.
+directly ask the model to "think step by step" in your prompt.
 
 | Prompt | Model response |
 | --- | --- |
@@ -121,7 +121,7 @@ While Gemini can interpret image and text in any order within a prompt, placing 
 before the text prompt might lead to better results. In the following samples, you'll notice the image or video
 comes first before the text in each prompt.
 
-## Troubleshooting your multimodal prompt
+## Troubleshooting your multimodal prompt {#troubleshooting}
 
 You might need to troubleshoot your prompt if you are not getting a helpful response. Here are a few strategies you could try.
 

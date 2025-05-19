@@ -13,18 +13,18 @@ your prompts and usage.
 
 There is no cost for using the `count-tokens` endpoint.
 
-## Supported Claude models
+## Supported Claude Models {#model-list}
 
 The following models support count tokens:
 
-- Claude 3.7 Sonnet: `claude-3-7-sonnet@20250219`.
-- Claude 3.5 Sonnet v2: `claude-3-5-sonnet-v2@20241022`.
-- Claude 3.5 Haiku: `claude-3-5-haiku@20241022`.
-- Claude 3 Opus: `claude-3-opus@20240229`.
-- Claude 3.5 Sonnet: `claude-3-5-sonnet@20240620`.
-- Claude 3 Haiku: `claude-3-haiku@20240307`.
+- Claude 3.7 Sonnet: `claude-3-7-sonnet@20250219`.
+- Claude 3.5 Sonnet v2: `claude-3-5-sonnet-v2@20241022`.
+- Claude 3.5 Haiku: `claude-3-5-haiku@20241022`.
+- Claude 3 Opus: `claude-3-opus@20240229`.
+- Claude 3.5 Sonnet: `claude-3-5-sonnet@20240620`.
+- Claude 3 Haiku: `claude-3-haiku@20240307`.
 
-## Supported regions
+## Supported Regions {#regions}
 
 The following regions support count tokens:
 
@@ -40,8 +40,7 @@ To count tokens, send a `rawPredict` request to the `count-tokens` endpoint. The
 body of the request must contain the model ID of the model you want to count
 tokens against.
 
-[REST](#rest)
-More
+### Using the REST API {#rest}
 
 Before using any of the request data,
 make the following replacements:
@@ -81,8 +80,7 @@ Request JSON body:
 
 To send your request, choose one of these options:
 
-[curl](#curl)[PowerShell](#powershell)
-More
+### Using cURL {#curl}
 
 **Note:**
 The following command assumes that you have logged in to
@@ -106,6 +104,8 @@ curl -X POST \
  -d @request.json \ 
  "https://LOCATION-aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/LOCATION/publishers/anthropic/models/count-tokens:rawPredict"
 ```
+
+### Using PowerShell {#powershell}
 
 **Note:**
 The following command assumes that you have logged in to

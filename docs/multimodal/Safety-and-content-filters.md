@@ -20,7 +20,7 @@ in Vertex AI Workbench user-managed notebooks](https://console.cloud.google.com/
 |
 [View on GitHub](https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/responsible-ai/gemini_safety_ratings.ipynb)
 
-Google's generative AI models, like Gemini 2.0 Flash, are designed to
+Google's generative AI models, like Gemini 2.0 Flash, are designed to
 prioritize safety. However, they can still generate harmful responses,
 especially when they're explicitly prompted. To further enhance safety and
 minimize misuse, you can configure content filters to block potentially harmful
@@ -96,7 +96,7 @@ To learn more, see [FinishReason](https://cloud.google.com/vertex-ai/docs/refere
 If a filter blocks the response, it voids the response's `Candidate.content`
 field. It does not provide any feedback to the model.
 
-## Configurable content filters
+## Configurable Content Filters {#configurable-filters}
 
 Content filters assess content against a list
 of harms. For each harm category, the content filters assign one
@@ -265,375 +265,50 @@ blocked by the configurable content filter for containing dangerous content:
 
 ```
 
-### Examples of content filter configuration
+### Examples of Content Filter Configuration {#api-examples}
 
-The following examples demonstrate how you can configure the content filter
-using the Vertex AI Gemini API:
+Here are examples of how to configure content filters using different APIs:
 
-### Gen AI SDK for Python
-
-#### Install
+### Python Example
 
 ```python
-pip install --upgrade google-genai
-```
+from google.cloud import aiplatform
+from google.cloud.aiplatform import generative_models
 
-To learn more, see the
-[SDK reference documentation](https://googleapis.github.io/python-genai/).
-
-Set environment variables to use the Gen AI SDK with Vertex AI:
-
-```python
-# Replace the `GOOGLE_CLOUD_PROJECT` and `GOOGLE_CLOUD_LOCATION` values
-# with appropriate values for your project.
-export GOOGLE_CLOUD_PROJECT=GOOGLE_CLOUD_PROJECT
-export GOOGLE_CLOUD_LOCATION=global
-export GOOGLE_GENAI_USE_VERTEXAI=True
-```
-
-```python
-from google import genai
-from google.genai.types import (
- GenerateContentConfig,
- HarmCategory,
- HarmBlockThreshold,
- HttpOptions,
- SafetySetting,
-)
-
-client = genai.Client(http_options=HttpOptions(api_version="v1"))
-
-system_instruction = "Be as mean as possible."
-
-prompt = """
- Write a list of 5 disrespectful things that I might say to the universe after stubbing my toe in the dark.
-"""
+model = aiplatform.GenerativeModel("gemini-2.0-flash")
 
 safety_settings = [
- SafetySetting(
- category=HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
- threshold=HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
- ),
- SafetySetting(
- category=HarmCategory.HARM_CATEGORY_HARASSMENT,
- threshold=HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
- ),
- SafetySetting(
- category=HarmCategory.HARM_CATEGORY_HATE_SPEECH,
- threshold=HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
- ),
- SafetySetting(
- category=HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
- threshold=HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
- ),
+    generative_models.SafetySetting(
+        category=generative_models.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+        threshold=generative_models.HarmBlockThreshold.BLOCK_ONLY_HIGH,
+    ),
 ]
 
-response = client.models.generate_content(
- model="gemini-2.0-flash-001",
- contents=prompt,
- config=GenerateContentConfig(
- system_instruction=system_instruction,
- safety_settings=safety_settings,
- ),
+response = model.generate_content(
+    "Your prompt here",
+    safety_settings=safety_settings,
 )
-
-# Response will be `None` if it is blocked.
-print(response.text)
-# Example response:
-# None
-
-# Finish Reason will be `SAFETY` if it is blocked.
-print(response.candidates[0].finish_reason)
-# Example response:
-# FinishReason.SAFETY
-
-# For details on all the fields in the response
-for each in response.candidates[0].safety_ratings:
- print('\nCategory: ', str(each.category))
- print('Is Blocked:', True if each.blocked else False)
- print('Probability: ', each.probability)
- print('Probability Score: ', each.probability_score)
- print('Severity:', each.severity)
- print('Severity Score:', each.severity_score)
-# Example response:
-#
-# Category: HarmCategory.HARM_CATEGORY_HATE_SPEECH
-# Is Blocked: False
-# Probability: HarmProbability.NEGLIGIBLE
-# Probability Score: 2.547714e-05
-# Severity: HarmSeverity.HARM_SEVERITY_NEGLIGIBLE
-# Severity Score: None
-#
-# Category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT
-# Is Blocked: False
-# Probability: HarmProbability.NEGLIGIBLE
-# Probability Score: 3.6103818e-06
-# Severity: HarmSeverity.HARM_SEVERITY_NEGLIGIBLE
-# Severity Score: None
-#
-# Category: HarmCategory.HARM_CATEGORY_HARASSMENT
-# Is Blocked: True
-# Probability: HarmProbability.MEDIUM
-# Probability Score: 0.71599233
-# Severity: HarmSeverity.HARM_SEVERITY_MEDIUM
-# Severity Score: 0.30782545
-#
-# Category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT
-# Is Blocked: False
-# Probability: HarmProbability.NEGLIGIBLE
-# Probability Score: 1.5624657e-05
-# Severity: HarmSeverity.HARM_SEVERITY_NEGLIGIBLE
-# Severity Score: None
 ```
 
-### REST
+### Node.js Example
 
-After you
-[set up your environment](https://cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal#gemini-setup-environment-drest),
-you can use REST to test a text prompt. The following sample sends a request to the publisher
-model endpoint.
+```javascript
+const {VertexAI} = require('@google-cloud/vertexai');
 
-Before using any of the request data,
-make the following replacements:
+const vertexAI = new VertexAI();
+const model = vertexAI.getGenerativeModel('gemini-2.0-flash');
 
-- LOCATION: The region to process the request. Available
- options include the following:
+const safetySettings = [
+  {
+    category: 'HARM_CATEGORY_DANGEROUS_CONTENT',
+    threshold: 'BLOCK_ONLY_HIGH',
+  },
+];
 
- **Click to expand a partial list of available regions**
-
- - `us-central1`
- - `us-west4`
- - `northamerica-northeast1`
- - `us-east4`
- - `us-west1`
- - `asia-northeast3`
- - `asia-southeast1`
- - `asia-northeast1`
-- PROJECT\_ID: Your [project ID](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifiers).
-- MODEL\_ID: The model ID of the multimodal model
- that you want to use, like `gemini-2.0-flash`.
-- ROLE:
- The role in a conversation associated with the content. Specifying a role is required even in
- singleturn use cases.
- Acceptable values include the following:
- - `USER`: Specifies content that's sent by you.
- - `MODEL`: Specifies the model's response.
-- TEXT:
- The text instructions to include in the prompt.
-- SAFETY\_CATEGORY:
- The safety category to configure a threshold for. Acceptable values include the following:
-
- **Click to expand safety categories**
-
- - `HARM_CATEGORY_SEXUALLY_EXPLICIT`
- - `HARM_CATEGORY_HATE_SPEECH`
- - `HARM_CATEGORY_HARASSMENT`
- - `HARM_CATEGORY_DANGEROUS_CONTENT`
-- THRESHOLD:
- The threshold for blocking responses that could belong to the specified safety category based on
- probability. Acceptable values include the following:
-
- **Click to expand blocking thresholds**
-
- - `BLOCK_NONE`
- - `BLOCK_ONLY_HIGH`
- - `BLOCK_MEDIUM_AND_ABOVE` (default)
- - `BLOCK_LOW_AND_ABOVE`
- `BLOCK_LOW_AND_ABOVE` blocks the most while `BLOCK_ONLY_HIGH`
- blocks the least.
-
-HTTP method and URL:
-
-```python
-POST https://LOCATION-aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/LOCATION/publishers/google/models/MODEL_ID:streamGenerateContent
-```
-
-Request JSON body:
-
-```python
-{
- "contents": {
- "role": "ROLE",
- "parts": { "text": "TEXT" }
- },
- "safetySettings": {
- "category": "SAFETY_CATEGORY",
- "threshold": "THRESHOLD"
- },
-}
-
-```
-
-To send your request, choose one of these options:
-
-#### curl
-
-**Note:**
-The following command assumes that you have logged in to
-the `gcloud` CLI with your user account by running
-[`gcloud init`](https://cloud.google.com/sdk/gcloud/reference/init)
-or
-[`gcloud auth login`](https://cloud.google.com/sdk/gcloud/reference/auth/login)
-, or by using [Cloud Shell](https://cloud.google.com/shell/docs),
-which automatically logs you into the `gcloud` CLI
-.
-You can check the currently active account by running
-[`gcloud auth list`](https://cloud.google.com/sdk/gcloud/reference/auth/list).
-
-Save the request body in a file named `request.json`,
-and execute the following command:
-
-```python
-curl -X POST \ 
- -H "Authorization: Bearer $(gcloud auth print-access-token)" \ 
- -H "Content-Type: application/json; charset=utf-8" \ 
- -d @request.json \ 
- "https://LOCATION-aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/LOCATION/publishers/google/models/MODEL_ID:streamGenerateContent"
-```
-
-#### PowerShell
-
-**Note:**
-The following command assumes that you have logged in to
-the `gcloud` CLI with your user account by running
-[`gcloud init`](https://cloud.google.com/sdk/gcloud/reference/init)
-or
-[`gcloud auth login`](https://cloud.google.com/sdk/gcloud/reference/auth/login)
-.
-You can check the currently active account by running
-[`gcloud auth list`](https://cloud.google.com/sdk/gcloud/reference/auth/list).
-
-Save the request body in a file named `request.json`,
-and execute the following command:
-
-```python
-$cred = gcloud auth print-access-token 
-$headers = @{ "Authorization" = "Bearer $cred" } 
- 
-Invoke-WebRequest ` 
- -Method POST ` 
- -Headers $headers ` 
- -ContentType: "application/json; charset=utf-8" ` 
- -InFile request.json ` 
- -Uri "https://LOCATION-aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/LOCATION/publishers/google/models/MODEL_ID:streamGenerateContent" | Select-Object -Expand Content
-```
-
-You should receive a JSON response similar to the following.
-
-#### Response
-
-```python
-[{
- "candidates": [
- {
- "content": {
- "role": "model",
- "parts": [
- {
- "text": " The picture shows a table with a white tablecloth. On the table are two cups of coffee, a bowl of blueberries, and five scones with blueberries. There"
- }
- ]
- },
- "safetyRatings": [
- {
- "category": "HARM_CATEGORY_HARASSMENT",
- "probability": "NEGLIGIBLE"
- },
- {
- "category": "HARM_CATEGORY_HATE_SPEECH",
- "probability": "NEGLIGIBLE"
- },
- {
- "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
- "probability": "NEGLIGIBLE"
- },
- {
- "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
- "probability": "NEGLIGIBLE"
- }
- ]
- }
- ]
-}
-,
-{
- "candidates": [
- {
- "content": {
- "role": "model",
- "parts": [
- {
- "text": " are also some pink flowers on the table. The background is a dark blue color. The picture is taken from a top-down perspective."
- }
- ]
- },
- "finishReason": "STOP",
- "safetyRatings": [
- {
- "category": "HARM_CATEGORY_HARASSMENT",
- "probability": "NEGLIGIBLE"
- },
- {
- "category": "HARM_CATEGORY_HATE_SPEECH",
- "probability": "NEGLIGIBLE"
- },
- {
- "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
- "probability": "NEGLIGIBLE"
- },
- {
- "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
- "probability": "NEGLIGIBLE"
- }
- ]
- }
- ],
- "usageMetadata": {
- "promptTokenCount": 262,
- "candidatesTokenCount": 59,
- "totalTokenCount": 321
- }
-}
-
-```
-
-#### Example curl command
-
-```python
-LOCATION="us-central1"
-MODEL_ID="gemini-2.0-flash"
-PROJECT_ID="test-project"
-
-curl \
--X POST \
--H "Authorization: Bearer $(gcloud auth print-access-token)" \
--H "Content-Type: application/json" \
-https://${LOCATION}-aiplatform.googleapis.com/v1/projects/${PROJECT_ID}/locations/${LOCATION}/publishers/google/models/${MODEL_ID}:streamGenerateContent -d \
-$'{
- "contents": {
- "role": "user",
- "parts": { "text": "Hello!" }
- },
- "safety_settings": [
- {
- "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
- "threshold": "OFF"
- },
- {
- "category": "HARM_CATEGORY_HATE_SPEECH",
- "threshold": "BLOCK_LOW_AND_ABOVE"
- },
- {
- "category": "HARM_CATEGORY_HARASSMENT",
- "threshold": "BLOCK_MEDIUM_AND_ABOVE"
- },
- {
- "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
- "threshold": "BLOCK_ONLY_HIGH"
- }
- ]
-}'
-
+const response = await model.generateContent({
+  contents: [{text: 'Your prompt here'}],
+  safetySettings,
+});
 ```
 
 ## Citation filter
@@ -687,7 +362,7 @@ representative.
 
 While content filters help prevent unsafe content, they might occasionally block
 benign content or miss harmful content. Advanced models like
-Gemini 2.0 Flash are designed to generate safe responses even without
+Gemini 2.0 Flash are designed to generate safe responses even without
 filters. Test different filter settings to find the right balance between
 safety and allowing appropriate content.
 

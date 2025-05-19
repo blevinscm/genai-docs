@@ -41,7 +41,7 @@ Before you can ground model output to your data, do the following:
 
 See the [Introduction to Vertex AI Search](https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction) for more.
 
-### Enable AI Applications
+### Enable AI Applications {#enable}
 
 1. In the Google Cloud console, go to the **AI Applications** page.
 
@@ -55,7 +55,7 @@ See the [Introduction to Vertex AI Search](https://cloud.google.com/generative-a
 AI Applications is available in the `global` location, or the `eu` and `us` multi-region. To
 learn more, see [AI Applications locations](https://cloud.google.com/generative-ai-app-builder/docs/locations#multi-regions)
 
-### Create a data store in AI Applications
+### Create a Data Store in AI Applications {#create-data-store}
 
 To create a data store in AI Applications, you can choose to
 ground with website data or documents.
@@ -111,7 +111,7 @@ ground with website data or documents.
  4. Click **Create**.
 8. Click **Create**.
 
-## Generate grounded responses with your data store
+## Generate grounded responses with your data store {#generate-grounded-responses-with-data-store}
 
 Use the following instructions to ground a model with your data. A maximum
 of 10 data stores is supported.

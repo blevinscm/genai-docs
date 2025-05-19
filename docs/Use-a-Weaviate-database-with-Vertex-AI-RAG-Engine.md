@@ -89,7 +89,7 @@ following:
 4. Use your API key to provision Weaviate using `AuthN` and `AuthZ`.
 5. Provision your RAG Engine service account.
 
-### Configure and deploy your Weaviate database instance
+### Configure and deploy your Weaviate database instance {#configure-deploy}
 
 You must follow the
 [Weaviate official guide quickstart](https://weaviate.io/developers/weaviate/quickstart).
