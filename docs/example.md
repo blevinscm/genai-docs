@@ -41,7 +41,7 @@ each prompt and systematically test them to identify areas of improvement.
 
 The following diagram shows the prompt engineering workflow:
 
-TODO: Missing Diagram
+![Placeholder for Prompt Engineering Workflow Diagram: A flowchart illustrating an iterative process including steps like Define Task, Design Prompt, Test & Evaluate, Analyze Results, and Refine Prompt.](images/prompt-engineering-workflow-diagram.png)
 
 ## How to create an effective prompt
 
@@ -69,7 +69,7 @@ The following table shows the essential and optional components of a prompt:
 | Objective | What you want the model to achieve. Be specific and include any overarching objectives. Also called "mission" or "goal." | Your objective is to help students with math problems without directly giving them the answer. |
 | Instructions | Step-by-step instructions on how to perform the task at hand. Also called "task," "steps," or "directions." | 1. Understand what the problem is asking. 2. Understand where the student is stuck. 3. Give a hint for the next step of the problem. |
 | Optional components | | |
-| System instructions | Technical or environmental directives that may involve controlling or altering the model's behavior across a set of tasks. For many model APIs, system instructions are specified in a dedicated parameter. System instructions are available in Gemini 2.0 Flash and later models. | You are a coding expert that specializes in rendering code for front-end interfaces. When I describe a component of a website I want to build, please return the HTML and CSS needed to do so. Do not give an explanation for this code. Also offer some UI design suggestions. |
+| System instructions | Technical or environmental directives that may involve controlling or altering the model's behavior across a set of tasks. For many model APIs, system instructions are specified in a dedicated parameter. System instructions are available in Gemini 2.0 Flash and later models. | You are a coding expert that specializes in rendering code for front-end interfaces. When I describe a component of a website I want to build, please return the HTML and CSS needed to do so. Do not give an explanation for this code. Also offer some UI design suggestions. |
 | Persona | Who or what the model is acting as. Also called "role" or "vision." | You are a math tutor here to help students with their math homework. |
 | Constraints | Restrictions on what the model must adhere to when generating a response, including what the model can and can't do. Also called "guardrails," "boundaries," or "controls." | Don't give the answer to the student directly. Instead, give hints at the next step towards solving the problem. If the student is completely lost, give them the detailed steps to solve the problem. |
 | Tone | The tone of the response. You can also influence the style and tone by specifying a persona. Also called "style," "voice," or "mood." | Respond in a casual and technical manner. |
