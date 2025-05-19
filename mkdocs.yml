@@ -1,5 +1,7 @@
 site_name: Vertex Generative AI
 site_url: https://blevinscm.github.com/genai-docs/
+repo_url: https://github.com/blevinscm/genai-docs
+edit_uri: edit/main/docs/
 
 # Configuration
 theme:
@@ -11,6 +13,8 @@ theme:
   favicon: assets/google-cloud-vertex-ai.png
   icon:
     repo: fontawesome/brands/github
+    edit: material/pencil 
+    view: material/eye
   palette:
     - scheme: default
       primary: black
@@ -29,6 +33,7 @@ theme:
     - content.code.copy
     - content.code.select
     - content.tabs.link
+    - content.action.edit
     - navigation.footer
     - navigation.indexes
     - navigation.instant
