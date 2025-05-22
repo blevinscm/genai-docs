@@ -98,6 +98,7 @@ nav:
     - Gemini Models Overview: 'model-reference/gemini.md'
     - Imagen Models Overview: 'image/Imagen-on-Vertex-AI.md'
     - Code Models Overview: 'code/code-models-overview.md'
+    - Intelligent Code Commenter: 'intelligent-code-commenter.md'
     - Open Models (Gemma, Llama): 'open-models/Use-Gemma-open-models.md' # Representative
     - Partner Models (Claude, AI21): 'partner-models/use-partner-models.md'
     - Introduction to Prompting: 'learn/prompts/Introduction-to-prompting.md'
