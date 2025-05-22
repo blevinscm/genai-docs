@@ -1,0 +1,4069 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://blevinscm.github.com/genai-docs/model-garden/deploy-and-inference-tutorial-tpu/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/google-cloud-vertex-ai.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Deploy And Inference Gemma Using Model Garden And Vertex AI Tpu Backed Endpointsstay Organized With - Vertex Generative AI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Google Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../js/chat-widget/chat-widget.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#deploy-and-inference-gemma-using-model-garden-and-vertex-ai-tpu-backed-endpoints" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vertex Generative AI" class="md-header__button md-logo" aria-label="Vertex Generative AI" data-md-component="logo">
+      
+  <img src="../../assets/google-cloud-vertex-ai.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vertex Generative AI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deploy And Inference Gemma Using Model Garden And Vertex AI Tpu Backed Endpointsstay Organized With
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/blevinscm/genai-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Generative-AI-on-Vertex-AI-Cookbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learn
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../agent-engine/Set-up-the-environment/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Build
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../models/Introduction-to-tuning/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tune
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../deploy/Deploy-generative-AI-models/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Deploy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../agent-engine/manage/Manage-deployed-agents/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Manage
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../models/evaluation-overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Optimize
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vertex Generative AI" class="md-nav__button md-logo" aria-label="Vertex Generative AI" data-md-component="logo">
+      
+  <img src="../../assets/google-cloud-vertex-ai.png" alt="logo">
+
+    </a>
+    Vertex Generative AI
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/blevinscm/genai-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Learn
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Learn
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Generative-AI-on-Vertex-AI-Cookbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vertex AI Generative AI Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Generative-AI-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Generative-AI-on-Vertex-AI-release-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Release Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supported-models_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Supported Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model-reference/gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gemini Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../image/Imagen-on-Vertex-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Imagen Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code/code-models-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intelligent-code-commenter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intelligent Code Commenter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open-models/Use-Gemma-open-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open Models (Gemma, Llama)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partner-models/use-partner-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Partner Models (Claude, AI21)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/prompts/Introduction-to-prompting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Prompting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/prompts/Overview-of-prompting-strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompting Strategies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multimodal/Design-multimodal-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../embeddings/Choose-an-embeddings-task-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Embeddings Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multimodal/Introduction-to-function-calling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function Calling Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grounding/Ground-responses-using-RAG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grounding Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-builder/Vertex-AI-Agent-Builder-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Builder Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/Vertex-AI-Agent-Engine-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Engine Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rag-engine/Vertex-AI-RAG-Engine-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG Engine Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context-cache/Context-caching-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Caching Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/Extensions-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extensions Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../example-store/Example-Store-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Example Store Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Generative-AI-and-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security-controls-for-Generative-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security & Safety
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deprecations/Model-versions-and-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deprecations & Lifecycle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-help_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Help
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Build
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Build
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/Set-up-the-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Set up Environment (Agent Engine)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/develop/Develop-a-LangChain-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Develop LangChain Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/develop/Develop-an-Agent-Development-Kit-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Develop ADK Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/use/Use-a-LangChain-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use LangChain Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/use/Use-a-LangGraph-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use LangGraph Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chat/Design-chat-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design Chat Prompts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multimodal/Text-generationbookmark_borderbookmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Text with Gemini
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../image/Generate-images-using-text-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Images with Imagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Generate-images-with-Gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Images with Gemini
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../video/generate-videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Video with Veo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../embeddings/Get-batch-text-embeddings-predictions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Text Embeddings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../embeddings/Get-multimodal-embeddings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Multimodal Embeddings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model-reference/Function-calling-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Function Calling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grounding/Use-Google-Search-suggestions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Grounding (Google Search)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grounding/Grounding-with-your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Grounding (Your Data)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rag-engine/Use-data-ingestion-with-Vertex-AI-RAG-Engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Data Ingestion)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rag-engine/use-vertexai-vector-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Vector Search)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Use-a-Weaviate-database-with-Vertex-AI-RAG-Engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Weaviate)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context-cache/Create-a-context-cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create Context Cache
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/Create-and-run-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create Extensions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../example-store/Retrieve-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Example Store
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multimodal/audio-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Audio Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multimodal/Document-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Document Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multimodal/Video-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Video Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prompt-gallery/samples/summarize_summarize_video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Gallery Samples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tune
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tune
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/Introduction-to-tuning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Model Tuning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/About-supervised-fine-tuning-for-Gemini-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Gemini Models (Supervised)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/gemini-supervised-tuning-prepare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prepare Data for Gemini SFT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/tune_gemini/text_tune/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Gemini for Text
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../image/Style-customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Imagen Models (Style/Subject)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/Tune-function-calling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Function Calling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LoRA-and-QLoRA-recommendations-for-LLMs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LoRA & QLoRA Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fine-tune-RAG-transformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fine-tune RAG Transformations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deploy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Deploy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deploy/Deploy-generative-AI-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Generative AI Models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/deploy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Agent (Agent Engine)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/Deployments-and-endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deployments and Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use-models-in-Model-Garden/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Models from Model Garden
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Purchase-Provisioned-Throughput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Purchase Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Use-Provisioned-Throughput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../migrate/Migrate-to-the-Gemini-API-from-Azure-OpenAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrate from Azure OpenAI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../migrate/openai/Using-OpenAI-libraries-with-Vertex-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use OpenAI Libraries with Vertex AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Manage
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Manage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/manage/Manage-deployed-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Deployed Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/manage/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Logging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/manage/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Monitoring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/sessions/Manage-sessions-using-direct-API-calls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Agent Sessions (API)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/sessions/Manage-sessions-with-Agent-Development-Kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Agent Sessions (ADK)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context-cache/Get-information-about-a-context-cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Context Cache (Get/Delete)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Manage-your-RAG-knowledge-base-corpus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage RAG Corpus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/Model-monitoring-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Monitoring Metrics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quotas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quotas & Limits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/troubleshooting/Troubleshoot-deploying-an-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot Agent Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/troubleshooting/Troubleshoot-developing-an-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot Agent Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Optimize
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Optimize
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/evaluation-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Evaluation Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/Gen-AI-evaluation-service-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gen AI Evaluation Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/Run-AutoSxS-pipeline-to-perform-pairwise-model-based-evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Run AutoSxS (Pairwise Evaluation)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../models/Evaluate-Gen-AI-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluate Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/prompts/Optimize-promptsbookmark_borderbookmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimize Prompts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Retrieval-and-ranking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG Retrieval and Ranking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model-reference/Vertex-AI-Model-Optimizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vertex AI Model Optimizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../provisioned-throughput/Calculate-Provisioned-Throughput-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Calculate Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model-reference/count-tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Count Tokens
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context-cache/Context-caching-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Caching Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Costs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you begin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Before you begin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-a-google-cloud-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up a Google Cloud project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-the-google-cloud-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up the Google Cloud CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-the-sdk-for-your-programming-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up the SDK for your programming language
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven-with-bom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maven with BOM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven-without-bom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maven without BOM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle-without-bom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradle without BOM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#go" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-gemma-using-model-garden" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy Gemma using Model Garden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference-gemma-2b-with-the-predictionserviceclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inference Gemma 2B with the PredictionServiceClient
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inference Gemma 2B with the PredictionServiceClient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex-ai-sdk-for-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI SDK for Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodejs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Node.js
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#go_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clean-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clean up
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clean up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete-the-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete the project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-individual-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete individual resources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Delete individual resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#undeploy-the-model-and-delete-the-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Undeploy the model and delete the endpoint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console" class="md-nav__link">
+    <span class="md-ellipsis">
+      Console
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      gcloud
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="gcloud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete-the-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete the model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Console
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gcloud_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      gcloud
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's next
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/blevinscm/genai-docs/edit/main/docs/model-garden/deploy-and-inference-tutorial-tpu.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="deploy-and-inference-gemma-using-model-garden-and-vertex-ai-tpu-backed-endpoints">Deploy and inference Gemma using Model Garden and Vertex AI TPU-backed endpoints<a class="headerlink" href="#deploy-and-inference-gemma-using-model-garden-and-vertex-ai-tpu-backed-endpoints" title="Permanent link">&para;</a></h1>
+<hr />
+<p>In this tutorial, you use Model Garden to deploy the
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/open-models/use-gemma">Gemma 2B</a> open model to a TPU-backed Vertex AI
+endpoint. You must <a href="https://cloud.google.com/vertex-ai/docs/general/deployment">deploy a model to an endpoint</a> before that model can
+be used to serve online predictions. Deploying a model associates physical
+resources with the model so it can serve online predictions with low latency.</p>
+<p>After you deploy the Gemma 2B model, you inference the trained
+model by using the <a href="https://cloud.google.com/python/docs/reference/aiplatform/1.18.2/google.cloud.aiplatform_v1beta1.services.prediction_service.PredictionServiceClient"><code>PredictionServiceClient</code></a> to get <a href="https://cloud.google.com/vertex-ai/docs/predictions/get-online-predictions">online
+predictions</a>. Online predictions are synchronous requests made to a
+model that is deployed to an endpoint.</p>
+<h2 id="objectives">Objectives<a class="headerlink" href="#objectives" title="Permanent link">&para;</a></h2>
+<p>This tutorial shows you how to perform the following tasks:</p>
+<ul>
+<li>Deploy the Gemma 2B open model to a TPU backed endpoint by
+ using Model Garden</li>
+<li>Use the <code>PredictionServiceClient</code> to get online predictions</li>
+</ul>
+<h2 id="costs">Costs<a class="headerlink" href="#costs" title="Permanent link">&para;</a></h2>
+<p>In this document, you use the following billable components of Google Cloud:</p>
+<ul>
+<li><a href="https://cloud.google.com/vertex-ai/pricing#custom-trained_models">A <code>ct5lp-hightpu-1t</code> machine type</a> with one TPU_V5 accelerator</li>
+<li><a href="https://cloud.google.com/vertex-ai/pricing#prediction-prices">Vertex AI prediction and explanation</a></li>
+</ul>
+<p>To generate a cost estimate based on your projected usage,
+use the <a href="https://cloud.google.com/products/calculator">pricing calculator</a>.</p>
+<p>New Google Cloud users might be eligible for a <a href="../samples/Edit-image-content-using-mask-free-editing-with-Imagen-v002.md">free trial</a>.</p>
+<p>When you finish the tasks that are described in this document, you can avoid
+continued billing by deleting the resources that you created. For more information, see
+<a href="#clean-up">Clean up</a>.</p>
+<h2 id="before-you-begin">Before you begin<a class="headerlink" href="#before-you-begin" title="Permanent link">&para;</a></h2>
+<p>This tutorial requires you to:</p>
+<ul>
+<li>Set up a Google Cloud project and enable the Vertex AI API</li>
+<li>On your local machine:</li>
+<li>Install, initialize, and authenticate with the Google Cloud CLI</li>
+<li>Install the SDK for your language</li>
+</ul>
+<h3 id="set-up-a-google-cloud-project">Set up a Google Cloud project<a class="headerlink" href="#set-up-a-google-cloud-project" title="Permanent link">&para;</a></h3>
+<p>Set up your Google Cloud project and enable the Vertex AI API.</p>
+<ul>
+<li>Sign in to your Google Cloud account. If you're new to
+ Google Cloud, <a href="https://console.cloud.google.com/freetrial">create an account</a> to evaluate how our products perform in
+ real-world scenarios. New customers also get $300 in free credits to
+ run, test, and deploy workloads.</li>
+<li>In the Google Cloud console, on the project selector page,
+ select or create a Google Cloud project.</li>
+</ul>
+<p><strong>Note</strong>: If you don't plan to keep the
+ resources that you create in this procedure, create a project instead of
+ selecting an existing project. After you finish these steps, you can
+ delete the project, removing all resources associated with the project.</p>
+<p><a href="https://console.cloud.google.com/projectselector2/home/dashboard">Go to project selector</a>
+- <a href="https://cloud.google.com/billing/docs/how-to/verify-billing-enabled#confirm_billing_is_enabled_on_a_project">Make sure that billing is enabled for your Google Cloud project</a>.
+- Enable the Vertex AI API.</p>
+<p><a href="https://console.cloud.google.com/flows/enableapi?apiid=aiplatform.googleapis.com">Enable the API</a>
+- In the Google Cloud console, on the project selector page,
+ select or create a Google Cloud project.</p>
+<p><strong>Note</strong>: If you don't plan to keep the
+ resources that you create in this procedure, create a project instead of
+ selecting an existing project. After you finish these steps, you can
+ delete the project, removing all resources associated with the project.</p>
+<p><a href="https://console.cloud.google.com/projectselector2/home/dashboard">Go to project selector</a>
+- <a href="https://cloud.google.com/billing/docs/how-to/verify-billing-enabled#confirm_billing_is_enabled_on_a_project">Make sure that billing is enabled for your Google Cloud project</a>.
+- Enable the Vertex AI API.</p>
+<p><a href="https://console.cloud.google.com/flows/enableapi?apiid=aiplatform.googleapis.com">Enable the API</a></p>
+<h3 id="set-up-the-google-cloud-cli">Set up the Google Cloud CLI<a class="headerlink" href="#set-up-the-google-cloud-cli" title="Permanent link">&para;</a></h3>
+<p>On your local machine, set up the Google Cloud CLI.</p>
+<ol>
+<li><a href="https://cloud.google.com/sdk/docs/install">Install and initialize</a> the Google Cloud CLI.</li>
+<li>If you previously installed the gcloud CLI, ensure your
+ <code>gcloud</code> components are updated by running this command.</li>
+</ol>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">gcloud</span> <span class="n">components</span> <span class="n">update</span>
+</span></code></pre></div>
+3. To authenticate with the gcloud CLI, generate a local
+ Application Default Credentials (ADC) file by running this command. The web
+ flow launched by the command is used to provide your user credentials.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">gcloud</span> <span class="n">auth</span> <span class="n">application</span><span class="o">-</span><span class="n">default</span> <span class="n">login</span>
+</span></code></pre></div>
+<p>For more information, see <a href="https://cloud.google.com/docs/authentication/gcloud#gcloud-credentials">gcloud CLI authentication configuration and ADC configuration</a>.</p>
+<p><strong>Note:</strong> To avoid providing your project ID and region to the Google Cloud CLI, you
+can use the <a href="https://cloud.google.com/sdk/gcloud/reference/config/set"><code>gcloud config set</code></a> command to set a default project
+and region.</p>
+<h3 id="set-up-the-sdk-for-your-programming-language">Set up the SDK for your programming language<a class="headerlink" href="#set-up-the-sdk-for-your-programming-language" title="Permanent link">&para;</a></h3>
+<p>To set up the environment used in this tutorial, you install the Vertex AI
+SDK for your language and the Protocol Buffers library. The code samples use
+functions from the Protocol Buffers library to convert the input dictionary to
+the JSON format that is expected by the API.</p>
+<p>On your local machine, click one of the following tabs to install the SDK for
+your programming language.</p>
+<h3 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
+<p>On your local machine, click one of the following tabs to install the SDK
+for your programming language.</p>
+<ul>
+<li>Install and update the Vertex AI SDK for Python by running this command.</li>
+</ul>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">pip3</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="s2">&quot;google-cloud-aiplatform&gt;=1.64&quot;</span>
+</span></code></pre></div>
+- Install the Protocol Buffers library for Python by running this command.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">pip3</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="s2">&quot;protobuf&gt;=5.28&quot;</span>
+</span></code></pre></div>
+<h3 id="nodejs">Node.js<a class="headerlink" href="#nodejs" title="Permanent link">&para;</a></h3>
+<p>Install or update the <code>aiplatform</code> SDK for Node.js by running the following
+command.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">npm</span> <span class="n">install</span> <span class="nd">@google</span><span class="o">-</span><span class="n">cloud</span><span class="o">/</span><span class="n">aiplatform</span>
+</span></code></pre></div>
+<h3 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
+<p>To add <code>google-cloud-aiplatform</code> as a dependency, add the appropriate code for
+your environment.</p>
+<h3 id="maven-with-bom">Maven with BOM<a class="headerlink" href="#maven-with-bom" title="Permanent link">&para;</a></h3>
+<p>Add the following HTML to your <a href="https://github.com/GoogleCloudPlatform/java-docs-samples/blob/main/aiplatform/pom.xml"><code>pom.xml</code></a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">&lt;</span><span class="n">dependencyManagement</span><span class="o">&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="o">&lt;</span><span class="n">dependencies</span><span class="o">&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a> <span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a> <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">libraries</span><span class="o">-</span><span class="n">bom</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a> <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">com</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">cloud</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a> <span class="o">&lt;</span><span class="n">scope</span><span class="o">&gt;</span><span class="n">import</span><span class="o">&lt;/</span><span class="n">scope</span><span class="o">&gt;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a> <span class="o">&lt;</span><span class="nb">type</span><span class="o">&gt;</span><span class="n">pom</span><span class="o">&lt;/</span><span class="nb">type</span><span class="o">&gt;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a> <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">26.34.0</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a> <span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="o">&lt;/</span><span class="n">dependencies</span><span class="o">&gt;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="o">&lt;/</span><span class="n">dependencyManagement</span><span class="o">&gt;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="o">&lt;</span><span class="n">dependencies</span><span class="o">&gt;</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a> <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">com</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">cloud</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a> <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">google</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">aiplatform</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a> <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">com</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">protobuf</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a> <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">protobuf</span><span class="o">-</span><span class="n">java</span><span class="o">-</span><span class="n">util</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a> <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">com</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">gson</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a> <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">gson</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="o">&lt;/</span><span class="n">dependencies</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<h3 id="maven-without-bom">Maven without BOM<a class="headerlink" href="#maven-without-bom" title="Permanent link">&para;</a></h3>
+<p>Add the following to your
+<a href="https://github.com/GoogleCloudPlatform/java-docs-samples/blob/main/aiplatform/pom.xml"><code>pom.xml</code></a>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a> <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">com</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">cloud</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a> <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">google</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">aiplatform</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a> <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.1.0</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a> <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">com</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">protobuf</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a> <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">protobuf</span><span class="o">-</span><span class="n">java</span><span class="o">-</span><span class="n">util</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a> <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">5.28</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a> <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">com</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">code</span><span class="o">.</span><span class="n">gson</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a> <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">gson</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a> <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">2.11.0</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<h3 id="gradle-without-bom">Gradle without BOM<a class="headerlink" href="#gradle-without-bom" title="Permanent link">&para;</a></h3>
+<p>Add the following to your <code>build.gradle</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">implementation</span> <span class="s1">&#39;com.google.cloud:google-cloud-aiplatform:1.1.0&#39;</span>
+</span></code></pre></div>
+<h3 id="go">Go<a class="headerlink" href="#go" title="Permanent link">&para;</a></h3>
+<p>Install these Go packages by running the following commands.</p>
+<ul>
+<li>The <a href="https://pkg.go.dev/cloud.google.com/go/aiplatform"><code>aiplatform</code> Go client library</a></li>
+<li><a href="https://pkg.go.dev/google.golang.org/protobuf#section-readme">Go support for Protocol Buffers</a></li>
+<li><a href="https://github.com/googleapis/gax-go">Google API Extensions for Go (gax-go)</a></li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">go</span> <span class="n">get</span> <span class="n">cloud</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">go</span><span class="o">/</span><span class="n">aiplatform</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">go</span> <span class="n">get</span> <span class="n">google</span><span class="o">.</span><span class="n">golang</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">protobuf</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">go</span> <span class="n">get</span> <span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">googleapis</span><span class="o">/</span><span class="n">gax</span><span class="o">-</span><span class="n">go</span><span class="o">/</span><span class="n">v2</span>
+</span></code></pre></div>
+<h2 id="deploy-gemma-using-model-garden">Deploy Gemma using Model Garden<a class="headerlink" href="#deploy-gemma-using-model-garden" title="Permanent link">&para;</a></h2>
+<p>You deploy the Gemma 2B model to a <a href="https://cloud.google.com/vertex-ai/docs/training/configure-compute#tpu_v5e"><code>ct5lp-hightpu-1t</code></a> Compute Engine
+machine type that is optimized for small to medium scale training. This machine
+has one <a href="https://cloud.google.com/tpu/docs/v5e">TPU v5e</a> accelerator. For more information on training models
+using TPUs, see <a href="https://cloud.google.com/tpu/docs/v5e-training">Cloud TPU v5e training</a>.</p>
+<p>In this tutorial, you deploy the instruction-tuned Gemma 2B open
+model by using the model card in Model Garden. The specific model
+version is <code>gemma2-2b-it</code> — <code>-it</code> stands for <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/open-models/use-gemma#gem-model-sizes">instruction-tuned</a>.</p>
+<p>The Gemma 2B model has a lower parameter size which means lower
+resource requirements and more deployment flexibility.</p>
+<ol>
+<li>In the Google Cloud console, go to the <strong>Model Garden</strong> page.</li>
+</ol>
+<p><a href="https://console.cloud.google.com/vertex-ai/model-garden">Go to Model Garden</a>
+2. Click the <strong>Gemma 2</strong> model card.</p>
+<p><a href="https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemma2">Go to Gemma 2</a>
+3. Click <strong>Deploy</strong> to open the <strong>Deploy model</strong> pane.
+4. In the <strong>Deploy model</strong> pane, specify these details.</p>
+<ol>
+<li>For <strong>Deployment environment</strong> click <strong>Vertex AI</strong>.</li>
+<li>
+<p>In the <strong>Deploy model</strong> section:</p>
+</li>
+<li>
+<p>For <strong>Resource ID</strong>, choose <code>gemma-2b-it</code>.</p>
+</li>
+<li>
+<p>For <strong>Model name</strong> and <strong>Endpoint name</strong>, accept the default
+ values. For example:</p>
+</li>
+<li>
+<p>Model name: <code>gemma2-2b-it-1234567891234</code></p>
+</li>
+<li>Endpoint name: <code>gemma2-2b-it-mg-one-click-deploy</code></li>
+</ol>
+<p>Make a note of the endpoint name. You'll need it to find the
+ endpoint ID used in the code samples.
+ 3. In the <strong>Deployment settings</strong> section:</p>
+<ol>
+<li>Accept the default option for <strong>Basic</strong> settings.</li>
+<li>For <strong>Region</strong>, accept the default value or choose a region from the
+ list. Make a note of the region. You'll need it for the code
+ samples.</li>
+<li>For <strong>Machine spec</strong>, choose the TPU backed instance:
+ <code>ct5lp-hightpu-1t (1 TPU_V5_LITEPOD; ct5lp-hightpu-1t)</code>.</li>
+<li>Click <strong>Deploy</strong>. When the deployment is finished, receive an email that
+ contains details about your new endpoint. You can also view the endpoint
+ details by clicking <strong>Online prediction &gt; Endpoints</strong> and selecting your
+ region.</li>
+</ol>
+<p><a href="https://console.cloud.google.com/vertex-ai/online-prediction/endpoints">Go to Endpoints</a></p>
+<h2 id="inference-gemma-2b-with-the-predictionserviceclient">Inference Gemma 2B with the PredictionServiceClient<a class="headerlink" href="#inference-gemma-2b-with-the-predictionserviceclient" title="Permanent link">&para;</a></h2>
+<p>After you deploy Gemma 2B, you use the <code>PredictionServiceClient</code> to
+get online <a href="https://cloud.google.com/vertex-ai/docs/predictions/get-predictions">predictions</a> for the prompt: "Why is the sky blue?"</p>
+<h3 id="code-parameters">Code parameters<a class="headerlink" href="#code-parameters" title="Permanent link">&para;</a></h3>
+<p>The <code>PredictionServiceClient</code> code samples require you to update the following.</p>
+<ul>
+<li>
+<p><code>PROJECT_ID</code>: To <a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects">find your project ID</a> follow these steps.</p>
+</li>
+<li>
+<p>Go to the <strong>Welcome</strong> page in the Google Cloud console.</p>
+</li>
+</ul>
+<p><a href="https://console.cloud.google.com/welcome">Go to Welcome</a>
+ 2. From the project picker at the top of the page, select your project.</p>
+<p>The project name, project number, and project ID appear after the
+ <strong>Welcome</strong> heading.
+- <code>ENDPOINT_REGION</code>: This is the region where you <a href="#deploy-gemma">deployed the endpoint</a>.
+- <code>ENDPOINT_ID</code>: To find your endpoint ID, view it in the console or run the
+ <code>gcloud ai endpoints list</code> command. You'll need the endpoint name and region
+ from the <a href="#deploy-gemma"><strong>Deploy model</strong></a> pane.</p>
+<p>### Console</p>
+<p>You can view the endpoint details by clicking <strong>Online prediction &gt;
+ Endpoints</strong> and selecting your region. Note the number that appears in the
+ <code>ID</code> column.</p>
+<p><a href="https://console.cloud.google.com/vertex-ai/online-prediction/endpoints">Go to Endpoints</a></p>
+<p>### gcloud</p>
+<p>You can view the endpoint details by running the <a href="https://cloud.google.com/sdk/gcloud/reference/ai/endpoints/list"><code>gcloud ai endpoints
+ list</code></a> command.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">gcloud</span> <span class="n">ai</span> <span class="n">endpoints</span> <span class="nb">list</span> \
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="o">--</span><span class="n">region</span><span class="o">=</span><span class="n">ENDPOINT_REGION</span> \
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="o">--</span><span class="nb">filter</span><span class="o">=</span><span class="n">display_name</span><span class="o">=</span><span class="n">ENDPOINT_NAME</span>
+</span></code></pre></div>
+<p>The output looks like this.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">Using</span> <span class="n">endpoint</span> <span class="p">[</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">us</span><span class="o">-</span><span class="n">central1</span><span class="o">-</span><span class="n">aiplatform</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="p">]</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">ENDPOINT_ID</span><span class="p">:</span> <span class="mi">1234567891234567891</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">DISPLAY_NAME</span><span class="p">:</span> <span class="n">gemma2</span><span class="o">-</span><span class="mi">2</span><span class="n">b</span><span class="o">-</span><span class="n">it</span><span class="o">-</span><span class="n">mg</span><span class="o">-</span><span class="n">one</span><span class="o">-</span><span class="n">click</span><span class="o">-</span><span class="n">deploy</span>
+</span></code></pre></div>
+<h3 id="sample-code">Sample code<a class="headerlink" href="#sample-code" title="Permanent link">&para;</a></h3>
+<p>In the sample code for your language, update the <code>PROJECT_ID</code>,
+<code>ENDPOINT_REGION</code>, and <code>ENDPOINT_ID</code>. Then run your code.</p>
+<h3 id="vertex-ai-sdk-for-python">Vertex AI SDK for Python<a class="headerlink" href="#vertex-ai-sdk-for-python" title="Permanent link">&para;</a></h3>
+<p>To learn how to install or update the Vertex AI SDK for Python, see <a href="https://cloud.google.com/vertex-ai/docs/start/use-vertex-ai-python-sdk">Install the Vertex AI SDK for Python</a>.
+For more information, see the
+<a href="https://cloud.google.com/python/docs/reference/aiplatform/latest">Vertex AI SDK for Python API reference documentation</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="sd">Sample to run inference on a Gemma2 model deployed to a Vertex AI endpoint with TPU accellerators.</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">google.cloud</span><span class="w"> </span><span class="kn">import</span> <span class="n">aiplatform</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">google.protobuf</span><span class="w"> </span><span class="kn">import</span> <span class="n">json_format</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">google.protobuf.struct_pb2</span><span class="w"> </span><span class="kn">import</span> <span class="n">Value</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="c1"># TODO(developer): Update &amp; uncomment lines below</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="c1"># PROJECT_ID = &quot;your-project-id&quot;</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="c1"># ENDPOINT_REGION = &quot;your-vertex-endpoint-region&quot;</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="c1"># ENDPOINT_ID = &quot;your-vertex-endpoint-id&quot;</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="c1"># Default configuration</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="n">config</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;max_tokens&quot;</span><span class="p">:</span> <span class="mi">1024</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span> <span class="s2">&quot;top_p&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s2">&quot;top_k&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="c1"># Prompt used in the prediction</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;Why is the sky blue?&quot;</span>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="c1"># Encapsulate the prompt in a correct format for TPUs</span>
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a><span class="c1"># Example format: [{&#39;prompt&#39;: &#39;Why is the sky blue?&#39;, &#39;temperature&#39;: 0.9}]</span>
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="nb">input</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;prompt&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}</span>
+</span><span id="__span-11-23"><a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="nb">input</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</span><span id="__span-11-24"><a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>
+</span><span id="__span-11-25"><a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="c1"># Convert input message to a list of GAPIC instances for model input</span>
+</span><span id="__span-11-26"><a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="n">instances</span> <span class="o">=</span> <span class="p">[</span><span class="n">json_format</span><span class="o">.</span><span class="n">ParseDict</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">Value</span><span class="p">())]</span>
+</span><span id="__span-11-27"><a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>
+</span><span id="__span-11-28"><a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="c1"># Create a client</span>
+</span><span id="__span-11-29"><a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a><span class="n">api_endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ENDPOINT_REGION</span><span class="si">}</span><span class="s2">-aiplatform.googleapis.com&quot;</span>
+</span><span id="__span-11-30"><a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="n">client</span> <span class="o">=</span> <span class="n">aiplatform</span><span class="o">.</span><span class="n">gapic</span><span class="o">.</span><span class="n">PredictionServiceClient</span><span class="p">(</span>
+</span><span id="__span-11-31"><a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a> <span class="n">client_options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;api_endpoint&quot;</span><span class="p">:</span> <span class="n">api_endpoint</span><span class="p">}</span>
+</span><span id="__span-11-32"><a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a><span class="p">)</span>
+</span><span id="__span-11-33"><a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a>
+</span><span id="__span-11-34"><a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a><span class="c1"># Call the Gemma2 endpoint</span>
+</span><span id="__span-11-35"><a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a><span class="n">gemma2_end_point</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="__span-11-36"><a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a> <span class="sa">f</span><span class="s2">&quot;projects/</span><span class="si">{</span><span class="n">PROJECT_ID</span><span class="si">}</span><span class="s2">/locations/</span><span class="si">{</span><span class="n">ENDPOINT_REGION</span><span class="si">}</span><span class="s2">/endpoints/</span><span class="si">{</span><span class="n">ENDPOINT_ID</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-11-37"><a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a><span class="p">)</span>
+</span><span id="__span-11-38"><a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
+</span><span id="__span-11-39"><a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a> <span class="n">endpoint</span><span class="o">=</span><span class="n">gemma2_end_point</span><span class="p">,</span>
+</span><span id="__span-11-40"><a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a> <span class="n">instances</span><span class="o">=</span><span class="n">instances</span><span class="p">,</span>
+</span><span id="__span-11-41"><a id="__codelineno-11-41" name="__codelineno-11-41" href="#__codelineno-11-41"></a><span class="p">)</span>
+</span><span id="__span-11-42"><a id="__codelineno-11-42" name="__codelineno-11-42" href="#__codelineno-11-42"></a><span class="n">text_responses</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">predictions</span>
+</span><span id="__span-11-43"><a id="__codelineno-11-43" name="__codelineno-11-43" href="#__codelineno-11-43"></a><span class="nb">print</span><span class="p">(</span><span class="n">text_responses</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></code></pre></div>
+<h3 id="nodejs_1">Node.js<a class="headerlink" href="#nodejs_1" title="Permanent link">&para;</a></h3>
+<p>Before trying this sample, follow the Node.js setup instructions in the
+<a href="https://cloud.google.com/vertex-ai/docs/start/client-libraries">Vertex AI quickstart using
+client libraries</a>.
+For more information, see the
+<a href="/nodejs/docs/reference/aiplatform/latest">Vertex AI Node.js API
+reference documentation</a>.</p>
+<p>To authenticate to Vertex AI, set up Application Default Credentials.
+For more information, see
+<a href="https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment">Set up authentication for a local development environment</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">//</span> <span class="n">Imports</span> <span class="n">the</span> <span class="n">Google</span> <span class="n">Cloud</span> <span class="n">Prediction</span> <span class="n">Service</span> <span class="n">Client</span> <span class="n">library</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">const</span> <span class="p">{</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a> <span class="o">//</span> <span class="n">TODO</span><span class="p">(</span><span class="n">developer</span><span class="p">):</span> <span class="n">Uncomment</span> <span class="n">PredictionServiceClient</span> <span class="n">before</span> <span class="n">running</span> <span class="n">the</span> <span class="n">sample</span><span class="o">.</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a> <span class="o">//</span> <span class="n">PredictionServiceClient</span><span class="p">,</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a> <span class="n">helpers</span><span class="p">,</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">}</span> <span class="o">=</span> <span class="n">require</span><span class="p">(</span><span class="s1">&#39;@google-cloud/aiplatform&#39;</span><span class="p">);</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="o">/**</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a> <span class="o">*</span> <span class="n">TODO</span><span class="p">(</span><span class="n">developer</span><span class="p">):</span> <span class="n">Update</span> <span class="n">these</span> <span class="n">variables</span> <span class="n">before</span> <span class="n">running</span> <span class="n">the</span> <span class="n">sample</span><span class="o">.</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a> <span class="o">*/</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="n">const</span> <span class="n">projectId</span> <span class="o">=</span> <span class="s1">&#39;your-project-id&#39;</span><span class="p">;</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="n">const</span> <span class="n">endpointRegion</span> <span class="o">=</span> <span class="s1">&#39;your-vertex-endpoint-region&#39;</span><span class="p">;</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="n">const</span> <span class="n">endpointId</span> <span class="o">=</span> <span class="s1">&#39;your-vertex-endpoint-id&#39;</span><span class="p">;</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="o">//</span> <span class="n">Prompt</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">prediction</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="n">const</span> <span class="n">prompt</span> <span class="o">=</span> <span class="s1">&#39;Why is the sky blue?&#39;</span><span class="p">;</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="o">//</span> <span class="n">Encapsulate</span> <span class="n">the</span> <span class="n">prompt</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">correct</span> <span class="nb">format</span> <span class="k">for</span> <span class="n">TPUs</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="o">//</span> <span class="n">Example</span> <span class="nb">format</span><span class="p">:</span> <span class="p">[{</span><span class="n">prompt</span><span class="p">:</span> <span class="s1">&#39;Why is the sky blue?&#39;</span><span class="p">,</span> <span class="n">temperature</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">}]</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="n">const</span> <span class="nb">input</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a> <span class="n">prompt</span><span class="p">,</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a> <span class="o">//</span> <span class="n">Parameters</span> <span class="k">for</span> <span class="n">default</span> <span class="n">configuration</span>
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a> <span class="n">maxOutputTokens</span><span class="p">:</span> <span class="mi">1024</span><span class="p">,</span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a> <span class="n">temperature</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a> <span class="n">topP</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a> <span class="n">topK</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="p">};</span>
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="o">//</span> <span class="n">Convert</span> <span class="nb">input</span> <span class="n">message</span> <span class="n">to</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">GAPIC</span> <span class="n">instances</span> <span class="k">for</span> <span class="n">model</span> <span class="nb">input</span>
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="n">const</span> <span class="n">instances</span> <span class="o">=</span> <span class="p">[</span><span class="n">helpers</span><span class="o">.</span><span class="n">toValue</span><span class="p">(</span><span class="nb">input</span><span class="p">)];</span>
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a>
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a><span class="o">//</span> <span class="n">TODO</span><span class="p">(</span><span class="n">developer</span><span class="p">):</span> <span class="n">Uncomment</span> <span class="n">apiEndpoint</span> <span class="ow">and</span> <span class="n">predictionServiceClient</span> <span class="n">before</span> <span class="n">running</span> <span class="n">the</span> <span class="n">sample</span><span class="o">.</span>
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a><span class="o">//</span> <span class="n">const</span> <span class="n">apiEndpoint</span> <span class="o">=</span> <span class="err">`$</span><span class="p">{</span><span class="n">endpointRegion</span><span class="p">}</span><span class="o">-</span><span class="n">aiplatform</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="err">`</span><span class="p">;</span>
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a>
+</span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a><span class="o">//</span> <span class="n">Create</span> <span class="n">a</span> <span class="n">client</span>
+</span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a><span class="o">//</span> <span class="n">predictionServiceClient</span> <span class="o">=</span> <span class="n">new</span> <span class="n">PredictionServiceClient</span><span class="p">({</span><span class="n">apiEndpoint</span><span class="p">});</span>
+</span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a>
+</span><span id="__span-12-37"><a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a><span class="o">//</span> <span class="n">Call</span> <span class="n">the</span> <span class="n">Gemma2</span> <span class="n">endpoint</span>
+</span><span id="__span-12-38"><a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a><span class="n">const</span> <span class="n">gemma2Endpoint</span> <span class="o">=</span> <span class="err">`</span><span class="n">projects</span><span class="o">/</span><span class="err">$</span><span class="p">{</span><span class="n">projectId</span><span class="p">}</span><span class="o">/</span><span class="n">locations</span><span class="o">/</span><span class="err">$</span><span class="p">{</span><span class="n">endpointRegion</span><span class="p">}</span><span class="o">/</span><span class="n">endpoints</span><span class="o">/</span><span class="err">$</span><span class="p">{</span><span class="n">endpointId</span><span class="p">}</span><span class="err">`</span><span class="p">;</span>
+</span><span id="__span-12-39"><a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a>
+</span><span id="__span-12-40"><a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a><span class="n">const</span> <span class="p">[</span><span class="n">response</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">predictionServiceClient</span><span class="o">.</span><span class="n">predict</span><span class="p">({</span>
+</span><span id="__span-12-41"><a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a> <span class="n">endpoint</span><span class="p">:</span> <span class="n">gemma2Endpoint</span><span class="p">,</span>
+</span><span id="__span-12-42"><a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a> <span class="n">instances</span><span class="p">,</span>
+</span><span id="__span-12-43"><a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a><span class="p">});</span>
+</span><span id="__span-12-44"><a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a>
+</span><span id="__span-12-45"><a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a><span class="n">const</span> <span class="n">predictions</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">predictions</span><span class="p">;</span>
+</span><span id="__span-12-46"><a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a><span class="n">const</span> <span class="n">text</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stringValue</span><span class="p">;</span>
+</span><span id="__span-12-47"><a id="__codelineno-12-47" name="__codelineno-12-47" href="#__codelineno-12-47"></a>
+</span><span id="__span-12-48"><a id="__codelineno-12-48" name="__codelineno-12-48" href="#__codelineno-12-48"></a><span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;Predictions:&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">);</span>
+</span></code></pre></div>
+<h3 id="java_1">Java<a class="headerlink" href="#java_1" title="Permanent link">&para;</a></h3>
+<p>Before trying this sample, follow the Java setup instructions in the
+<a href="https://cloud.google.com/vertex-ai/docs/start/client-libraries">Vertex AI quickstart using
+client libraries</a>.
+For more information, see the
+<a href="/java/docs/reference/google-cloud-aiplatform/latest/com.google.cloud.aiplatform.v1">Vertex AI Java API
+reference documentation</a>.</p>
+<p>To authenticate to Vertex AI, set up Application Default Credentials.
+For more information, see
+<a href="https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment">Set up authentication for a local development environment</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.cloud.aiplatform.v1.EndpointName</span><span class="p">;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.cloud.aiplatform.v1.PredictResponse</span><span class="p">;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.cloud.aiplatform.v1.PredictionServiceClient</span><span class="p">;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.cloud.aiplatform.v1.PredictionServiceSettings</span><span class="p">;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.gson.Gson</span><span class="p">;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.protobuf.InvalidProtocolBufferException</span><span class="p">;</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.protobuf.Value</span><span class="p">;</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.google.protobuf.util.JsonFormat</span><span class="p">;</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashMap</span><span class="p">;</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="n">public</span> <span class="k">class</span><span class="w"> </span><span class="nc">Gemma2PredictTpu</span> <span class="p">{</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a> <span class="n">private</span> <span class="n">final</span> <span class="n">PredictionServiceClient</span> <span class="n">predictionServiceClient</span><span class="p">;</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a> <span class="o">//</span> <span class="n">Constructor</span> <span class="n">to</span> <span class="n">inject</span> <span class="n">the</span> <span class="n">PredictionServiceClient</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a> <span class="n">public</span> <span class="n">Gemma2PredictTpu</span><span class="p">(</span><span class="n">PredictionServiceClient</span> <span class="n">predictionServiceClient</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a> <span class="n">this</span><span class="o">.</span><span class="n">predictionServiceClient</span> <span class="o">=</span> <span class="n">predictionServiceClient</span><span class="p">;</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a> <span class="p">}</span>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a> <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="n">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a> <span class="o">//</span> <span class="n">TODO</span><span class="p">(</span><span class="n">developer</span><span class="p">):</span> <span class="n">Replace</span> <span class="n">these</span> <span class="n">variables</span> <span class="n">before</span> <span class="n">running</span> <span class="n">the</span> <span class="n">sample</span><span class="o">.</span>
+</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a> <span class="n">String</span> <span class="n">projectId</span> <span class="o">=</span> <span class="s2">&quot;YOUR_PROJECT_ID&quot;</span><span class="p">;</span>
+</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a> <span class="n">String</span> <span class="n">endpointRegion</span> <span class="o">=</span> <span class="s2">&quot;us-west1&quot;</span><span class="p">;</span>
+</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a> <span class="n">String</span> <span class="n">endpointId</span> <span class="o">=</span> <span class="s2">&quot;YOUR_ENDPOINT_ID&quot;</span><span class="p">;</span>
+</span><span id="__span-13-28"><a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>
+</span><span id="__span-13-29"><a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a> <span class="n">PredictionServiceSettings</span> <span class="n">predictionServiceSettings</span> <span class="o">=</span>
+</span><span id="__span-13-30"><a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a> <span class="n">PredictionServiceSettings</span><span class="o">.</span><span class="n">newBuilder</span><span class="p">()</span>
+</span><span id="__span-13-31"><a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a> <span class="o">.</span><span class="n">setEndpoint</span><span class="p">(</span><span class="n">String</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">-aiplatform.googleapis.com:443&quot;</span><span class="p">,</span> <span class="n">endpointRegion</span><span class="p">))</span>
+</span><span id="__span-13-32"><a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a> <span class="o">.</span><span class="n">build</span><span class="p">();</span>
+</span><span id="__span-13-33"><a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a> <span class="n">PredictionServiceClient</span> <span class="n">predictionServiceClient</span> <span class="o">=</span>
+</span><span id="__span-13-34"><a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a> <span class="n">PredictionServiceClient</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">predictionServiceSettings</span><span class="p">);</span>
+</span><span id="__span-13-35"><a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a> <span class="n">Gemma2PredictTpu</span> <span class="n">creator</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Gemma2PredictTpu</span><span class="p">(</span><span class="n">predictionServiceClient</span><span class="p">);</span>
+</span><span id="__span-13-36"><a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>
+</span><span id="__span-13-37"><a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a> <span class="n">creator</span><span class="o">.</span><span class="n">gemma2PredictTpu</span><span class="p">(</span><span class="n">projectId</span><span class="p">,</span> <span class="n">endpointRegion</span><span class="p">,</span> <span class="n">endpointId</span><span class="p">);</span>
+</span><span id="__span-13-38"><a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a> <span class="p">}</span>
+</span><span id="__span-13-39"><a id="__codelineno-13-39" name="__codelineno-13-39" href="#__codelineno-13-39"></a>
+</span><span id="__span-13-40"><a id="__codelineno-13-40" name="__codelineno-13-40" href="#__codelineno-13-40"></a> <span class="o">//</span> <span class="n">Demonstrates</span> <span class="n">how</span> <span class="n">to</span> <span class="n">run</span> <span class="n">inference</span> <span class="n">on</span> <span class="n">a</span> <span class="n">Gemma2</span> <span class="n">model</span>
+</span><span id="__span-13-41"><a id="__codelineno-13-41" name="__codelineno-13-41" href="#__codelineno-13-41"></a> <span class="o">//</span> <span class="n">deployed</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Vertex</span> <span class="n">AI</span> <span class="n">endpoint</span> <span class="k">with</span> <span class="n">TPU</span> <span class="n">accelerators</span><span class="o">.</span>
+</span><span id="__span-13-42"><a id="__codelineno-13-42" name="__codelineno-13-42" href="#__codelineno-13-42"></a> <span class="n">public</span> <span class="n">String</span> <span class="n">gemma2PredictTpu</span><span class="p">(</span><span class="n">String</span> <span class="n">projectId</span><span class="p">,</span> <span class="n">String</span> <span class="n">region</span><span class="p">,</span>
+</span><span id="__span-13-43"><a id="__codelineno-13-43" name="__codelineno-13-43" href="#__codelineno-13-43"></a> <span class="n">String</span> <span class="n">endpointId</span><span class="p">)</span> <span class="n">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+</span><span id="__span-13-44"><a id="__codelineno-13-44" name="__codelineno-13-44" href="#__codelineno-13-44"></a> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">paramsMap</span> <span class="o">=</span> <span class="n">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-13-45"><a id="__codelineno-13-45" name="__codelineno-13-45" href="#__codelineno-13-45"></a> <span class="n">paramsMap</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">);</span>
+</span><span id="__span-13-46"><a id="__codelineno-13-46" name="__codelineno-13-46" href="#__codelineno-13-46"></a> <span class="n">paramsMap</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;maxOutputTokens&quot;</span><span class="p">,</span> <span class="mi">1024</span><span class="p">);</span>
+</span><span id="__span-13-47"><a id="__codelineno-13-47" name="__codelineno-13-47" href="#__codelineno-13-47"></a> <span class="n">paramsMap</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;topP&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">);</span>
+</span><span id="__span-13-48"><a id="__codelineno-13-48" name="__codelineno-13-48" href="#__codelineno-13-48"></a> <span class="n">paramsMap</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;topK&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-13-49"><a id="__codelineno-13-49" name="__codelineno-13-49" href="#__codelineno-13-49"></a> <span class="n">Value</span> <span class="n">parameters</span> <span class="o">=</span> <span class="n">mapToValue</span><span class="p">(</span><span class="n">paramsMap</span><span class="p">);</span>
+</span><span id="__span-13-50"><a id="__codelineno-13-50" name="__codelineno-13-50" href="#__codelineno-13-50"></a> <span class="o">//</span> <span class="n">Prompt</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">prediction</span>
+</span><span id="__span-13-51"><a id="__codelineno-13-51" name="__codelineno-13-51" href="#__codelineno-13-51"></a> <span class="n">String</span> <span class="n">instance</span> <span class="o">=</span> <span class="s2">&quot;{ </span><span class="se">\&quot;</span><span class="s2">prompt</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">Why is the sky blue?</span><span class="se">\&quot;</span><span class="s2">}&quot;</span><span class="p">;</span>
+</span><span id="__span-13-52"><a id="__codelineno-13-52" name="__codelineno-13-52" href="#__codelineno-13-52"></a> <span class="n">Value</span><span class="o">.</span><span class="n">Builder</span> <span class="n">instanceValue</span> <span class="o">=</span> <span class="n">Value</span><span class="o">.</span><span class="n">newBuilder</span><span class="p">();</span>
+</span><span id="__span-13-53"><a id="__codelineno-13-53" name="__codelineno-13-53" href="#__codelineno-13-53"></a> <span class="n">JsonFormat</span><span class="o">.</span><span class="n">parser</span><span class="p">()</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">instanceValue</span><span class="p">);</span>
+</span><span id="__span-13-54"><a id="__codelineno-13-54" name="__codelineno-13-54" href="#__codelineno-13-54"></a> <span class="o">//</span> <span class="n">Encapsulate</span> <span class="n">the</span> <span class="n">prompt</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">correct</span> <span class="nb">format</span> <span class="k">for</span> <span class="n">TPUs</span>
+</span><span id="__span-13-55"><a id="__codelineno-13-55" name="__codelineno-13-55" href="#__codelineno-13-55"></a> <span class="o">//</span> <span class="n">Example</span> <span class="nb">format</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;prompt&#39;</span><span class="p">:</span> <span class="s1">&#39;Why is the sky blue?&#39;</span><span class="p">,</span> <span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">}]</span>
+</span><span id="__span-13-56"><a id="__codelineno-13-56" name="__codelineno-13-56" href="#__codelineno-13-56"></a> <span class="n">List</span><span class="o">&lt;</span><span class="n">Value</span><span class="o">&gt;</span> <span class="n">instances</span> <span class="o">=</span> <span class="n">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-13-57"><a id="__codelineno-13-57" name="__codelineno-13-57" href="#__codelineno-13-57"></a> <span class="n">instances</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">instanceValue</span><span class="o">.</span><span class="n">build</span><span class="p">());</span>
+</span><span id="__span-13-58"><a id="__codelineno-13-58" name="__codelineno-13-58" href="#__codelineno-13-58"></a>
+</span><span id="__span-13-59"><a id="__codelineno-13-59" name="__codelineno-13-59" href="#__codelineno-13-59"></a> <span class="n">EndpointName</span> <span class="n">endpointName</span> <span class="o">=</span> <span class="n">EndpointName</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="n">projectId</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">endpointId</span><span class="p">);</span>
+</span><span id="__span-13-60"><a id="__codelineno-13-60" name="__codelineno-13-60" href="#__codelineno-13-60"></a>
+</span><span id="__span-13-61"><a id="__codelineno-13-61" name="__codelineno-13-61" href="#__codelineno-13-61"></a> <span class="n">PredictResponse</span> <span class="n">predictResponse</span> <span class="o">=</span> <span class="n">this</span><span class="o">.</span><span class="n">predictionServiceClient</span>
+</span><span id="__span-13-62"><a id="__codelineno-13-62" name="__codelineno-13-62" href="#__codelineno-13-62"></a> <span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">endpointName</span><span class="p">,</span> <span class="n">instances</span><span class="p">,</span> <span class="n">parameters</span><span class="p">);</span>
+</span><span id="__span-13-63"><a id="__codelineno-13-63" name="__codelineno-13-63" href="#__codelineno-13-63"></a> <span class="n">String</span> <span class="n">textResponse</span> <span class="o">=</span> <span class="n">predictResponse</span><span class="o">.</span><span class="n">getPredictions</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">getStringValue</span><span class="p">();</span>
+</span><span id="__span-13-64"><a id="__codelineno-13-64" name="__codelineno-13-64" href="#__codelineno-13-64"></a> <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="n">textResponse</span><span class="p">);</span>
+</span><span id="__span-13-65"><a id="__codelineno-13-65" name="__codelineno-13-65" href="#__codelineno-13-65"></a> <span class="k">return</span> <span class="n">textResponse</span><span class="p">;</span>
+</span><span id="__span-13-66"><a id="__codelineno-13-66" name="__codelineno-13-66" href="#__codelineno-13-66"></a> <span class="p">}</span>
+</span><span id="__span-13-67"><a id="__codelineno-13-67" name="__codelineno-13-67" href="#__codelineno-13-67"></a>
+</span><span id="__span-13-68"><a id="__codelineno-13-68" name="__codelineno-13-68" href="#__codelineno-13-68"></a> <span class="n">private</span> <span class="n">static</span> <span class="n">Value</span> <span class="n">mapToValue</span><span class="p">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="nb">map</span><span class="p">)</span> <span class="n">throws</span> <span class="n">InvalidProtocolBufferException</span> <span class="p">{</span>
+</span><span id="__span-13-69"><a id="__codelineno-13-69" name="__codelineno-13-69" href="#__codelineno-13-69"></a> <span class="n">Gson</span> <span class="n">gson</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Gson</span><span class="p">();</span>
+</span><span id="__span-13-70"><a id="__codelineno-13-70" name="__codelineno-13-70" href="#__codelineno-13-70"></a> <span class="n">String</span> <span class="n">json</span> <span class="o">=</span> <span class="n">gson</span><span class="o">.</span><span class="n">toJson</span><span class="p">(</span><span class="nb">map</span><span class="p">);</span>
+</span><span id="__span-13-71"><a id="__codelineno-13-71" name="__codelineno-13-71" href="#__codelineno-13-71"></a> <span class="n">Value</span><span class="o">.</span><span class="n">Builder</span> <span class="n">builder</span> <span class="o">=</span> <span class="n">Value</span><span class="o">.</span><span class="n">newBuilder</span><span class="p">();</span>
+</span><span id="__span-13-72"><a id="__codelineno-13-72" name="__codelineno-13-72" href="#__codelineno-13-72"></a> <span class="n">JsonFormat</span><span class="o">.</span><span class="n">parser</span><span class="p">()</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">builder</span><span class="p">);</span>
+</span><span id="__span-13-73"><a id="__codelineno-13-73" name="__codelineno-13-73" href="#__codelineno-13-73"></a> <span class="k">return</span> <span class="n">builder</span><span class="o">.</span><span class="n">build</span><span class="p">();</span>
+</span><span id="__span-13-74"><a id="__codelineno-13-74" name="__codelineno-13-74" href="#__codelineno-13-74"></a> <span class="p">}</span>
+</span><span id="__span-13-75"><a id="__codelineno-13-75" name="__codelineno-13-75" href="#__codelineno-13-75"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="go_1">Go<a class="headerlink" href="#go_1" title="Permanent link">&para;</a></h3>
+<p>Before trying this sample, follow the Go setup instructions in the
+<a href="https://cloud.google.com/vertex-ai/docs/start/client-libraries">Vertex AI quickstart using
+client libraries</a>.
+For more information, see the
+<a href="/go/docs/reference/cloud.google.com/go/aiplatform/latest/apiv1">Vertex AI Go API
+reference documentation</a>.</p>
+<p>To authenticate to Vertex AI, set up Application Default Credentials.
+For more information, see
+<a href="https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment">Set up authentication for a local development environment</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a> <span class="s2">&quot;context&quot;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a> <span class="s2">&quot;fmt&quot;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a> <span class="s2">&quot;io&quot;</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a> <span class="s2">&quot;cloud.google.com/go/aiplatform/apiv1/aiplatformpb&quot;</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a> <span class="s2">&quot;google.golang.org/protobuf/types/known/structpb&quot;</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="p">)</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="o">//</span> <span class="n">predictTPU</span> <span class="n">demonstrates</span> <span class="n">how</span> <span class="n">to</span> <span class="n">run</span> <span class="n">interference</span> <span class="n">on</span> <span class="n">a</span> <span class="n">Gemma2</span> <span class="n">model</span> <span class="n">deployed</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Vertex</span> <span class="n">AI</span> <span class="n">endpoint</span> <span class="k">with</span> <span class="n">TPU</span> <span class="n">accelerators</span><span class="o">.</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="n">func</span> <span class="n">predictTPU</span><span class="p">(</span><span class="n">w</span> <span class="n">io</span><span class="o">.</span><span class="n">Writer</span><span class="p">,</span> <span class="n">client</span> <span class="n">PredictionsClient</span><span class="p">,</span> <span class="n">projectID</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">endpointID</span> <span class="n">string</span><span class="p">)</span> <span class="n">error</span> <span class="p">{</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a> <span class="n">ctx</span> <span class="o">:=</span> <span class="n">context</span><span class="o">.</span><span class="n">Background</span><span class="p">()</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a> <span class="o">//</span> <span class="n">Note</span><span class="p">:</span> <span class="n">client</span> <span class="n">can</span> <span class="n">be</span> <span class="n">initialized</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">following</span> <span class="n">way</span><span class="p">:</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a> <span class="o">//</span> <span class="n">apiEndpoint</span> <span class="o">:=</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Sprintf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">-aiplatform.googleapis.com:443&quot;</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a> <span class="o">//</span> <span class="n">client</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">aiplatform</span><span class="o">.</span><span class="n">NewPredictionClient</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">option</span><span class="o">.</span><span class="n">WithEndpoint</span><span class="p">(</span><span class="n">apiEndpoint</span><span class="p">))</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a> <span class="o">//</span> <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="n">nil</span> <span class="p">{</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a> <span class="o">//</span> <span class="k">return</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Errorf</span><span class="p">(</span><span class="s2">&quot;unable to create prediction client: %v&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a> <span class="o">//</span> <span class="p">}</span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a> <span class="o">//</span> <span class="n">defer</span> <span class="n">client</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a> <span class="n">gemma2Endpoint</span> <span class="o">:=</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Sprintf</span><span class="p">(</span><span class="s2">&quot;projects/</span><span class="si">%s</span><span class="s2">/locations/</span><span class="si">%s</span><span class="s2">/endpoints/</span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">projectID</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">endpointID</span><span class="p">)</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a> <span class="n">prompt</span> <span class="o">:=</span> <span class="s2">&quot;Why is the sky blue?&quot;</span>
+</span><span id="__span-14-25"><a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a> <span class="n">parameters</span> <span class="o">:=</span> <span class="nb">map</span><span class="p">[</span><span class="n">string</span><span class="p">]</span><span class="n">interface</span><span class="p">{}{</span>
+</span><span id="__span-14-26"><a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a> <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+</span><span id="__span-14-27"><a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a> <span class="s2">&quot;maxOutputTokens&quot;</span><span class="p">:</span> <span class="mi">1024</span><span class="p">,</span>
+</span><span id="__span-14-28"><a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a> <span class="s2">&quot;topP&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+</span><span id="__span-14-29"><a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a> <span class="s2">&quot;topK&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-14-30"><a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a> <span class="p">}</span>
+</span><span id="__span-14-31"><a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>
+</span><span id="__span-14-32"><a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a> <span class="o">//</span> <span class="n">Encapsulate</span> <span class="n">the</span> <span class="n">prompt</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">correct</span> <span class="nb">format</span> <span class="k">for</span> <span class="n">TPUs</span><span class="o">.</span>
+</span><span id="__span-14-33"><a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a> <span class="o">//</span> <span class="n">Example</span> <span class="nb">format</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;prompt&#39;</span><span class="p">:</span> <span class="s1">&#39;Why is the sky blue?&#39;</span><span class="p">,</span> <span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">}]</span>
+</span><span id="__span-14-34"><a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a> <span class="n">promptValue</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">structpb</span><span class="o">.</span><span class="n">NewValue</span><span class="p">(</span><span class="nb">map</span><span class="p">[</span><span class="n">string</span><span class="p">]</span><span class="n">interface</span><span class="p">{}{</span>
+</span><span id="__span-14-35"><a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a> <span class="s2">&quot;prompt&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">,</span>
+</span><span id="__span-14-36"><a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a> <span class="s2">&quot;parameters&quot;</span><span class="p">:</span> <span class="n">parameters</span><span class="p">,</span>
+</span><span id="__span-14-37"><a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a> <span class="p">})</span>
+</span><span id="__span-14-38"><a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a> <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="n">nil</span> <span class="p">{</span>
+</span><span id="__span-14-39"><a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a> <span class="n">fmt</span><span class="o">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="s2">&quot;unable to convert prompt to Value: %v&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+</span><span id="__span-14-40"><a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a> <span class="k">return</span> <span class="n">err</span>
+</span><span id="__span-14-41"><a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a> <span class="p">}</span>
+</span><span id="__span-14-42"><a id="__codelineno-14-42" name="__codelineno-14-42" href="#__codelineno-14-42"></a>
+</span><span id="__span-14-43"><a id="__codelineno-14-43" name="__codelineno-14-43" href="#__codelineno-14-43"></a> <span class="n">req</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">aiplatformpb</span><span class="o">.</span><span class="n">PredictRequest</span><span class="p">{</span>
+</span><span id="__span-14-44"><a id="__codelineno-14-44" name="__codelineno-14-44" href="#__codelineno-14-44"></a> <span class="n">Endpoint</span><span class="p">:</span> <span class="n">gemma2Endpoint</span><span class="p">,</span>
+</span><span id="__span-14-45"><a id="__codelineno-14-45" name="__codelineno-14-45" href="#__codelineno-14-45"></a> <span class="n">Instances</span><span class="p">:</span> <span class="p">[]</span><span class="o">*</span><span class="n">structpb</span><span class="o">.</span><span class="n">Value</span><span class="p">{</span><span class="n">promptValue</span><span class="p">},</span>
+</span><span id="__span-14-46"><a id="__codelineno-14-46" name="__codelineno-14-46" href="#__codelineno-14-46"></a> <span class="p">}</span>
+</span><span id="__span-14-47"><a id="__codelineno-14-47" name="__codelineno-14-47" href="#__codelineno-14-47"></a>
+</span><span id="__span-14-48"><a id="__codelineno-14-48" name="__codelineno-14-48" href="#__codelineno-14-48"></a> <span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Predict</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">req</span><span class="p">)</span>
+</span><span id="__span-14-49"><a id="__codelineno-14-49" name="__codelineno-14-49" href="#__codelineno-14-49"></a> <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="n">nil</span> <span class="p">{</span>
+</span><span id="__span-14-50"><a id="__codelineno-14-50" name="__codelineno-14-50" href="#__codelineno-14-50"></a> <span class="k">return</span> <span class="n">err</span>
+</span><span id="__span-14-51"><a id="__codelineno-14-51" name="__codelineno-14-51" href="#__codelineno-14-51"></a> <span class="p">}</span>
+</span><span id="__span-14-52"><a id="__codelineno-14-52" name="__codelineno-14-52" href="#__codelineno-14-52"></a>
+</span><span id="__span-14-53"><a id="__codelineno-14-53" name="__codelineno-14-53" href="#__codelineno-14-53"></a> <span class="n">prediction</span> <span class="o">:=</span> <span class="n">resp</span><span class="o">.</span><span class="n">GetPredictions</span><span class="p">()</span>
+</span><span id="__span-14-54"><a id="__codelineno-14-54" name="__codelineno-14-54" href="#__codelineno-14-54"></a> <span class="n">value</span> <span class="o">:=</span> <span class="n">prediction</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">GetStringValue</span><span class="p">()</span>
+</span><span id="__span-14-55"><a id="__codelineno-14-55" name="__codelineno-14-55" href="#__codelineno-14-55"></a> <span class="n">fmt</span><span class="o">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="s2">&quot;%v&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</span><span id="__span-14-56"><a id="__codelineno-14-56" name="__codelineno-14-56" href="#__codelineno-14-56"></a>
+</span><span id="__span-14-57"><a id="__codelineno-14-57" name="__codelineno-14-57" href="#__codelineno-14-57"></a> <span class="k">return</span> <span class="n">nil</span>
+</span><span id="__span-14-58"><a id="__codelineno-14-58" name="__codelineno-14-58" href="#__codelineno-14-58"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="clean-up">Clean up<a class="headerlink" href="#clean-up" title="Permanent link">&para;</a></h2>
+<p>To avoid incurring charges to your Google Cloud account for the resources used in this
+tutorial, either delete the project that contains the resources, or keep the project and
+delete the individual resources.</p>
+<h3 id="delete-the-project">Delete the project<a class="headerlink" href="#delete-the-project" title="Permanent link">&para;</a></h3>
+<p><strong>Caution</strong>: Deleting a project has the following effects:</p>
+<ul>
+<li><strong>Everything in the project is deleted.</strong> If you used an existing project for
+ the tasks in this document, when you delete it, you also delete any other work you've
+ done in the project.</li>
+<li><strong>Custom project IDs are lost.</strong>
+ When you created this project, you might have created a custom project ID that you want to use in
+ the future. To preserve the URLs that use the project ID, such as an <code>appspot.com</code>
+ URL, delete selected resources inside the project instead of deleting the whole project.</li>
+</ul>
+<p>If you plan to explore multiple architectures, tutorials, or quickstarts, reusing projects
+can help you avoid exceeding project quota limits.</p>
+<ol>
+<li>In the Google Cloud console, go to the <strong>Manage resources</strong> page.</li>
+</ol>
+<p><a href="https://console.cloud.google.com/iam-admin/projects">Go to Manage resources</a>
+2. In the project list, select the project that you
+ want to delete, and then click <strong>Delete</strong>.
+3. In the dialog, type the project ID, and then click
+ <strong>Shut down</strong> to delete the project.</p>
+<h3 id="delete-individual-resources">Delete individual resources<a class="headerlink" href="#delete-individual-resources" title="Permanent link">&para;</a></h3>
+<p>If you're keeping your project, delete the resources used in this tutorial:</p>
+<ul>
+<li>Undeploy the model and delete the endpoint</li>
+<li>Delete the model from Model Registry</li>
+</ul>
+<h4 id="undeploy-the-model-and-delete-the-endpoint">Undeploy the model and delete the endpoint<a class="headerlink" href="#undeploy-the-model-and-delete-the-endpoint" title="Permanent link">&para;</a></h4>
+<p>Use one of the following methods to undeploy a model and delete the endpoint.</p>
+<p><strong>Note:</strong> You can only delete the endpoint after all models have been undeployed
+from it.</p>
+<h3 id="console">Console<a class="headerlink" href="#console" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In the Google Cloud console, click <strong>Online prediction</strong> and then
+ click <strong>Endpoints</strong>.</li>
+</ol>
+<p><a href="https://console.cloud.google.com/vertex-ai/endpoints">Go to the Endpoints page</a>
+2. In the <strong>Region</strong> drop-down list, choose the region where you deployed
+ your endpoint.
+3. Click the endpoint name to open the details page. For example:
+ <code>gemma2-2b-it-mg-one-click-deploy</code>.
+4. On the row for the <code>Gemma 2 (Version 1)</code> model, click
+ more_vert <strong>Actions</strong>, and then
+ click <strong>Undeploy model from endpoint</strong>.
+5. In the <strong>Undeploy model from endpoint</strong> dialog, click <strong>Undeploy</strong>.
+6. Click the <strong>Back</strong> button to return to the <strong>Endpoints</strong> page.</p>
+<p><a href="https://console.cloud.google.com/vertex-ai/online-prediction/endpoints">Go to the Endpoints page</a>
+7. At the end of the <code>gemma2-2b-it-mg-one-click-deploy</code> row, click
+ more_vert <strong>Actions</strong>, and then
+ select <strong>Delete endpoint</strong>.
+8. In the confirmation prompt, click <strong>Confirm</strong>.</p>
+<h3 id="gcloud">gcloud<a class="headerlink" href="#gcloud" title="Permanent link">&para;</a></h3>
+<p>To undeploy the model and delete the endpoint using the Google Cloud CLI,
+follow these steps.</p>
+<p>In these commands, replace:</p>
+<ul>
+<li>PROJECT_ID with your project name</li>
+<li>LOCATION_ID with the region where you deployed the model and
+ endpoint</li>
+<li>ENDPOINT_ID with the endpoint ID</li>
+<li>DEPLOYED_MODEL_NAME with the model's display name</li>
+<li>
+<p>DEPLOYED_MODEL_ID with the model ID</p>
+</li>
+<li>
+<p>Get the endpoint ID by running the <a href="https://cloud.google.com/sdk/gcloud/reference/ai/endpoints/list"><code>gcloud ai endpoints list</code></a>
+ command. This command lists the endpoint IDs for all endpoints in your
+ project. Make a note of the ID of the endpoint used in this tutorial.</p>
+</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">gcloud</span> <span class="n">ai</span> <span class="n">endpoints</span> <span class="nb">list</span> \
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="o">--</span><span class="n">project</span><span class="o">=</span><span class="n">PROJECT_ID</span> \
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="o">--</span><span class="n">region</span><span class="o">=</span><span class="n">LOCATION_ID</span>
+</span></code></pre></div>
+<p>The output looks like this. In the output, the ID is called
+ <code>ENDPOINT_ID</code>.</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">Using</span> <span class="n">endpoint</span> <span class="p">[</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">us</span><span class="o">-</span><span class="n">central1</span><span class="o">-</span><span class="n">aiplatform</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="p">]</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">ENDPOINT_ID</span><span class="p">:</span> <span class="mi">1234567891234567891</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">DISPLAY_NAME</span><span class="p">:</span> <span class="n">gemma2</span><span class="o">-</span><span class="mi">2</span><span class="n">b</span><span class="o">-</span><span class="n">it</span><span class="o">-</span><span class="n">mg</span><span class="o">-</span><span class="n">one</span><span class="o">-</span><span class="n">click</span><span class="o">-</span><span class="n">deploy</span>
+</span></code></pre></div>
+2. Get the model ID by running the <a href="https://cloud.google.com/sdk/gcloud/reference/ai/models/describe"><code>gcloud ai models describe</code></a>
+ command. Make a note of the ID of the model you deployed in this
+ tutorial.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">gcloud</span> <span class="n">ai</span> <span class="n">models</span> <span class="n">describe</span> <span class="n">DEPLOYED_MODEL_NAME</span> \
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="o">--</span><span class="n">project</span><span class="o">=</span><span class="n">PROJECT_ID</span> \
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="o">--</span><span class="n">region</span><span class="o">=</span><span class="n">LOCATION_ID</span>
+</span></code></pre></div>
+<p>The abbreviated output looks like this. In the output, the ID is called
+ <code>deployedModelId</code>.</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">Using</span> <span class="n">endpoint</span> <span class="p">[</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">us</span><span class="o">-</span><span class="n">central1</span><span class="o">-</span><span class="n">aiplatform</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="p">]</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">artifactUri</span><span class="p">:</span> <span class="p">[</span><span class="n">URI</span> <span class="n">removed</span><span class="p">]</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">baseModelSource</span><span class="p">:</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">modelGardenSource</span><span class="p">:</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="n">publicModelName</span><span class="p">:</span> <span class="n">publishers</span><span class="o">/</span><span class="n">google</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="n">gemma2</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="o">...</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="n">deployedModels</span><span class="p">:</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="o">-</span> <span class="n">deployedModelId</span><span class="p">:</span> <span class="s1">&#39;1234567891234567891&#39;</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="n">endpoint</span><span class="p">:</span> <span class="n">projects</span><span class="o">/</span><span class="mi">12345678912</span><span class="o">/</span><span class="n">locations</span><span class="o">/</span><span class="n">us</span><span class="o">-</span><span class="n">central1</span><span class="o">/</span><span class="n">endpoints</span><span class="o">/</span><span class="mi">12345678912345</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="n">displayName</span><span class="p">:</span> <span class="n">gemma2</span><span class="o">-</span><span class="mi">2</span><span class="n">b</span><span class="o">-</span><span class="n">it</span><span class="o">-</span><span class="mi">12345678912345</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="n">etag</span><span class="p">:</span> <span class="p">[</span><span class="n">ETag</span> <span class="n">removed</span><span class="p">]</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="n">modelSourceInfo</span><span class="p">:</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="n">sourceType</span><span class="p">:</span> <span class="n">MODEL_GARDEN</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="n">name</span><span class="p">:</span> <span class="n">projects</span><span class="o">/</span><span class="mi">123456789123</span><span class="o">/</span><span class="n">locations</span><span class="o">/</span><span class="n">us</span><span class="o">-</span><span class="n">central1</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="n">gemma2</span><span class="o">-</span><span class="mi">2</span><span class="n">b</span><span class="o">-</span><span class="n">it</span><span class="o">-</span><span class="mi">12345678912345</span>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="o">...</span>
+</span></code></pre></div>
+3. Undeploy the model from the endpoint. You'll need the endpoint ID and
+ model ID from the previous commands.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">gcloud</span> <span class="n">ai</span> <span class="n">endpoints</span> <span class="n">undeploy</span><span class="o">-</span><span class="n">model</span> <span class="n">ENDPOINT_ID</span> \
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="o">--</span><span class="n">project</span><span class="o">=</span><span class="n">PROJECT_ID</span> \
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="o">--</span><span class="n">region</span><span class="o">=</span><span class="n">LOCATION_ID</span> \
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="o">--</span><span class="n">deployed</span><span class="o">-</span><span class="n">model</span><span class="o">-</span><span class="nb">id</span><span class="o">=</span><span class="n">DEPLOYED_MODEL_ID</span>
+</span></code></pre></div>
+<p>This command produces no output.
+4. Run the <a href="https://cloud.google.com/sdk/gcloud/reference/ai/endpoints/delete"><code>gcloud ai endpoints delete</code></a> command to delete
+ the endpoint.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">gcloud</span> <span class="n">ai</span> <span class="n">endpoints</span> <span class="n">delete</span> <span class="n">ENDPOINT_ID</span> \
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="o">--</span><span class="n">project</span><span class="o">=</span><span class="n">PROJECT_ID</span> \
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="o">--</span><span class="n">region</span><span class="o">=</span><span class="n">LOCATION_ID</span>
+</span></code></pre></div>
+<p>When promted, type <code>y</code> to confirm. This command produces no output.</p>
+<h4 id="delete-the-model">Delete the model<a class="headerlink" href="#delete-the-model" title="Permanent link">&para;</a></h4>
+<h3 id="console_1">Console<a class="headerlink" href="#console_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Go to the <strong>Model Registry</strong> page from the Vertex AI section
+ in the Google Cloud console.</li>
+</ol>
+<p><a href="https://console.cloud.google.com/vertex-ai/models">Go to the Model Registry page</a>
+2. In the <strong>Region</strong> drop-down list, choose the region where you deployed
+ your model.
+3. At the end of the <code>gemma2-2b-it-1234567891234</code> row, click
+ more_vert <strong>Actions</strong>.
+4. Select <strong>Delete model</strong>.</p>
+<p>When you delete the model, all associated model versions and evaluations
+ are deleted from your Google Cloud project.
+5. In the confirmation prompt, click <strong>Delete</strong>.</p>
+<h3 id="gcloud_1">gcloud<a class="headerlink" href="#gcloud_1" title="Permanent link">&para;</a></h3>
+<p>To delete the model using the Google Cloud CLI, provide the model's display
+name and region to the <a href="https://cloud.google.com/sdk/gcloud/reference/ai/models/delete"><code>gcloud ai models delete</code></a> command.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">gcloud</span> <span class="n">ai</span> <span class="n">models</span> <span class="n">delete</span> <span class="n">DEPLOYED_MODEL_NAME</span> \
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a> <span class="o">--</span><span class="n">project</span><span class="o">=</span><span class="n">PROJECT_ID</span> \
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a> <span class="o">--</span><span class="n">region</span><span class="o">=</span><span class="n">LOCATION_ID</span>
+</span></code></pre></div>
+<p>Replace DEPLOYED_MODEL_NAME with the model's display name.
+Replace PROJECT_ID with your project name. Replace
+LOCATION_ID with the region where you deployed the model.</p>
+<h2 id="whats-next">What's next<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Learn more about <a href="https://ai.google.dev/gemma/docs">Gemma open models</a>.</li>
+<li>Read the <a href="https://ai.google.dev/gemma/terms">Gemma Terms of Use</a>.</li>
+<li>Learn more about <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/open-models/use-open-models">open models</a>.</li>
+<li>Learn how to <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview#deploy_a_tuned_model">deploy a tuned model</a>.</li>
+<li>Learn how to <a href="https://cloud.google.com/kubernetes-engine/docs/tutorials/serve-gemma-gpu-tgi">deploy Gemma 2 to Google Kubernetes Engine using HuggingFace Textgen Inference (TGI)</a>.</li>
+<li>Learn more about the <code>PredictionServiceClient</code> in your preferred language:
+ <a href="https://cloud.google.com/python/docs/reference/aiplatform/1.18.2/google.cloud.aiplatform_v1beta1.services.prediction_service.PredictionServiceClient">Python</a>, <a href="/nodejs/docs/reference/aiplatform/3.13.0/aiplatform/v1.predictionserviceclient">Node.js</a>, <a href="/java/docs/reference/google-cloud-aiplatform/latest/com.google.cloud.aiplatform.v1.PredictionServiceClient">Java</a>, or
+ <a href="/go/docs/reference/cloud.google.com/go/aiplatform/1.0.0/apiv1#cloud_google_com_go_aiplatform_apiv1_PredictionClient_Predict">Go</a>.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.action.edit", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.top", "navigation.tracking", "toc.follow", "navigation.tabs", "navigation.sections", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../js/chat-widget/gemini-client.js"></script>
+      
+        <script src="../../js/chat-widget/init.js"></script>
+      
+        <script src="../../js/chat-widget/setup-key.js"></script>
+      
+        <script src="../../js/chat-widget-helper.js"></script>
+      
+    
+  </body>
+</html>

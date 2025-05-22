@@ -1,0 +1,13 @@
+add js folder to docs directory
+
+
+add to yaml:
+# Chat widget configuration
+extra_javascript:
+  - js/chat-widget/gemini-client.js
+  - js/chat-widget/init.js
+  - js/chat-widget/setup-key.js
+  - js/chat-widget-helper.js
+
+extra_css:
+  - js/chat-widget/chat-widget.css

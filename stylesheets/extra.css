@@ -1,0 +1,23 @@
+.md-tabs {
+  background-color: #262c31;
+}
+
+.md-grid {
+  max-width: 90%; /* Adjust this value to control the overall width */
+}
+
+/* Control the width of the main content area */
+.md-content { width: 80%; margin: 0 auto; }
+
+/* Ensure the navigation drawer and content work well together */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    left: calc(25% - 720px); /* Half of max-width minus sidebar width */
+  }
+  .md-sidebar--secondary {
+    right: calc(25% - 720px);  /* Half of max-width minus sidebar width */
+    margin-left: 0;
+    -webkit-transform: none;
+    transform: none;
+  }
+}

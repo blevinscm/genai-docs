@@ -1,0 +1,13 @@
+---
+title: Regex-completion-and-explanationgoogle.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_regex_completion_and_explanation
+date_scraped: 2025-05-12
+---
+
+# Regex completion and explanation 
+
+Implement regex-based sentence splitting for function completion.
+
+| | |
+| --- | --- |
+| You can query a model directly and test the results returned when using different parameter values with the Cloud console, or by calling the Vertex AI API directly. - For an example of using the Vertex AI API, see [Quickstart using the Vertex AI API](../../start/quickstarts/api-quickstart.md). - To view this sample in the Cloud console: [Go to Google Cloud console](https://console.cloud.google.com/vertex-ai/generative/language/prompt-examples/Regex%20completion%20and%20explanation) | |
+| | | | --- | | **System instructions** | | | Include a TLDR of what the code does and what fixes you made at the end of your response. Each explanation shouldn't be more than two sentences long. | Prompt Freeform I've been asked to finish work on this function that splits sentences into a list. Unfortunately, I've been specifically told to use regex for this, with extra requirements explained in the function's docstring. Regex is a pain in the butt at the best of times - could you complete this code for me? Everything you need should be inside the snippet. ```python import re def splitSentences(sentences): """ Splits a string of sentences into a list. Each sentence is period-separated, save for cases where the phrases "Mr." or "Ms." are used, since those don't end a sentence. """ sentenceList = [] # missing code here return sentenceList ``` Response ```python import re def splitSentences(sentences): """ Splits a string of sentences into a list. Each sentence is period-separated, save for cases where the phrases "Mr." or "Ms." are used, since those don't end a sentence. """ sentenceList = [] sentenceEnders = r'(?<!Mr)\.(?<![A-Z][a-z]\.)(?<![A-Z][a-z][a-z]\.)(?<=\.|\?)\s' sentenceList = re.split(sentenceEnders, sentences) return sentenceList ``` TLDR: The code splits a string into a list of sentences using regex. The regex was corrected to accurately identify sentence endings while excluding abbreviations like "Mr." and "Ms.". | | | | | --- | --- | | **Model:** | gemini-1.5-flash-002 | | **Temperature:** | 0.2 | | **Max output tokens:** | 8192 | | **TopK:** | 40.0 | | **TopP:** | 0.95 | |
