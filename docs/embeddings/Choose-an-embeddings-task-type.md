@@ -1,5 +1,4 @@
 ---
-date_scraped: 2025-05-12
 source: https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/choose-task-type
 title: Choose An Embeddings Task Type
 ---
@@ -7,21 +6,14 @@ title: Choose An Embeddings Task Type
 ### REST
 
 ```python
-PROJECT_ID=PROJECT_ID
+PROJECT_ID="your-project-id"
 
 curl \
 -X POST \
 -H "Authorization: Bearer $(gcloud auth print-access-token)" \
 -H "Content-Type: application/json" \
-https://us-central1-aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/us-central1/publishers/google/models/text-embedding-005:predict -d \
-$'{
- "instances": [
- {
- "task_type": "CODE_RETRIEVAL_QUERY",
- "content": "Function to add two numbers"
- }
- ],
-}'
+https://us-central1-aiplatform.googleapis.com/v1/projects/$PROJECT_ID/locations/us-central1/publishers/google/models/text-embedding-005:predict -d \
+$'{\n "instances": [\n {\n "task_type": "CODE_RETRIEVAL_QUERY",\n "content": "Function to add two numbers"\n }\n ],\n}'
 
 ```
 
@@ -53,25 +45,25 @@ def embed_text(
  return [embedding.values for embedding in embeddings]
 
 if __name__ == "__main__":
- # Embeds code block with a pre-trained, foundational model.
- # Using this function to calculate the embedding for corpus.
- texts = ["Retrieve a function that adds two numbers"]
- task = "CODE_RETRIEVAL_QUERY"
- code_block_embeddings = embed_text(
- texts=texts, task=task, model_name=MODEL_NAME, dimensionality=DIMENSIONALITY
- )
+    # Example for embedding a code retrieval query
+    query_texts = ["Retrieve a function that adds two numbers"]
+    query_task = "CODE_RETRIEVAL_QUERY"
+    retrieval_query_embeddings = embed_text(
+        texts=query_texts, task=query_task, model_name=MODEL_NAME, dimensionality=DIMENSIONALITY
+    )
+    print(f"Calculated {len(retrieval_query_embeddings)} embedding(s) for the query.")
 
- # Embeds code retrieval with a pre-trained, foundational model.
- # Using this function to calculate the embedding for query.
- texts = [
- "def func(a, b): return a + b",
- "def func(a, b): return a - b",
- "def func(a, b): return (a ** 2 + b ** 2) ** 0.5",
- ]
- task = "RETRIEVAL_DOCUMENT"
- code_query_embeddings = embed_text(
- texts=texts, task=task, model_name=MODEL_NAME, dimensionality=DIMENSIONALITY
- )
+    # Example for embedding code documents (for a corpus)
+    document_texts = [
+        "def func(a, b): return a + b",
+        "def func(a, b): return a - b",
+        "def func(a, b): return (a ** 2 + b ** 2) ** 0.5",
+    ]
+    document_task = "RETRIEVAL_DOCUMENT"
+    retrieval_document_embeddings = embed_text(
+        texts=document_texts, task=document_task, model_name=MODEL_NAME, dimensionality=DIMENSIONALITY
+    )
+    print(f"Calculated {len(retrieval_document_embeddings)} embedding(s) for the documents.")
 
 ```
 
