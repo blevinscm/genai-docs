@@ -72,12 +72,12 @@ model = FastLanguageModel.get_peft_model(
     target_modules = ["q_proj", "k_proj", "v_proj", "o_proj",
                       "gate_proj", "up_proj", "down_proj",], # Modules to apply LoRA to
     lora_alpha = 16,
-    lora_dropout = 0, # Supports any dropout value, but 0 is an optimized setting for Unsloth.
-    bias = "none",    # Supports "all" or "lora_only". Using "none" is an optimized setting for Unsloth.
+    lora_dropout = 0, # Supports any value, but 0 is an optimized setting for Unsloth
+    bias = "none",    # Supports any, but using 'none' is an optimized setting for Unsloth
     use_gradient_checkpointing = True,
     random_state = 3407,
-    use_rslora = False,  # Set to True to enable Rank-Stabilized LoRA (Unsloth supports this). False is used in this example.
-    loftq_config = None, # Set to a LoftQ configuration object to enable LoftQ initialization (Unsloth supports this). None means LoftQ is not used in this example.
+    use_rslora = False,  # Set to `True` to enable Rank-Stabilized LoRA (Unsloth supports this). `False` is used in this example.
+    loftq_config = None, # Set to a LoftQ configuration object to enable LoftQ initialization (Unsloth supports this). `None` means LoftQ is not used in this example.
 )
 ```
 
@@ -96,8 +96,6 @@ dataset = load_dataset(dataset_name, split = "train")
 # def formatting_prompts_func(examples):
 #     texts = []
 #     for instruction, output in zip(examples["instruction"], examples["output"]):
-#         # Create a prompt string in the desired format (e.g., Alpaca)
-#         # Ensure this matches the format the base model was aligned with if applicable
 #         text = f"### Instruction:
 {instruction}
 
@@ -196,15 +194,15 @@ model, tokenizer = FastLanguageModel.from_pretrained(
 
 # Load the LoRA adapters to make them active for inference
 model.load_adapter("gemma_unsloth_tuned_lora")
-# The tokenizer was saved in Step 7 and reloaded with the base model above.
+# The tokenizer is already loaded with the base model.
 
 # Optional: To potentially improve inference speed (at the cost of higher VRAM and loss of adapter flexibility),
-# you can merge the LoRA weights directly into the base model.
-# After this, the model behaves like a standard fine-tuned model and adapters cannot be separately managed.
-# model.merge_and_unload() 
+# you can merge the LoRA weights directly into the base model:
+# model.merge_and_unload()
+# After this, the model behaves like a standard fine-tuned model.
 
 # Example inference (simple prompt)
-prompt = "What is the capital of France?" 
+prompt = "What is the capital of France?" # Or use a proper instruction format if needed
 inputs = tokenizer(prompt, return_tensors="pt").to("cuda") # Ensure model and inputs are on the same device
 
 outputs = model.generate(**inputs, max_new_tokens=50)
@@ -213,52 +211,41 @@ decoded_output = tokenizer.decode(outputs[0], skip_special_tokens=True)
 print(f"Prompt: {prompt}")
 print(f"Generated Response: {decoded_output}")
 ```
-For instruction-tuned models like Gemma-IT, you’ll get better results if you format your prompt according to its template. Unsloth's Gemma models use the ChatML format.
+For instruction-tuned models like Gemma-IT, you'll get better results if you format your prompt according to its template. Unsloth's Gemma models often use the ChatML format. The most robust way to apply this format is by using the `tokenizer.apply_chat_template` method, assuming the tokenizer is correctly configured with a ChatML template.
+
+If `apply_chat_template` is not set up or you need to manually format, a ChatML turn for a user query typically looks like:
+`<|im_start|>user
+Your instruction here<|im_end|>
+<|im_start|>assistant
+` (The model will generate the response after `assistant
+`)
 
 ```python
-# For instruction-tuned models, format your prompt using ChatML:
-# Reference: https://huggingface.co/docs/transformers/main/en/chat_templating
-# Unsloth models (like unsloth/gemma-2b-it-bnb-4bit) are fine-tuned with ChatML.
-# The tokenizer.apply_chat_template method handles this automatically.
+# For instruction-tuned models, format your prompt using the tokenizer's chat template:
 
-chat = [
-    { "role": "user", "content": "What is the capital of France?" },
-    # You can add more turns to the conversation if needed:
-    # { "role": "assistant", "content": "The capital of France is Paris." },
-    # { "role": "user", "content": "What is its population?" },
+# Prepare the messages in a list of dictionaries format
+messages = [
+    {"role": "user", "content": "What is the capital of France?"}
 ]
 
-# Ensure the tokenizer has a chat template defined.
-# Unsloth's tokenizers for instruction-tuned models should have this pre-configured.
-# If not, you might need to set it or load a tokenizer that has one, for example:
-# if tokenizer.chat_template is None:
-#    tokenizer.chat_template = "{% for message in messages %}{% if message['role'] == 'user' %}{{ '<|im_start|>user
-' + message['content'] + '<|im_end|>
-' }}{% elif message['role'] == 'assistant' %}{{ '<|im_start|>assistant
-' + message['content'] + '<|im_end|>
-' }}{% endif %}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant
-' }}{% endif %}"
+# Use the tokenizer's apply_chat_template method
+# This requires the tokenizer to have a chat_template defined (often pre-configured for Unsloth models).
+# If not, you might need to set tokenizer.chat_template manually or ensure you're using a
+# tokenizer version that includes it for your chosen Unsloth model.
+inputs = tokenizer.apply_chat_template(
+    messages,
+    tokenize=True,
+    add_generation_prompt=True, # Ensures the prompt ends with the turn for the assistant to speak
+    return_tensors="pt"
+).to("cuda") # Ensure model and inputs are on the same device
 
-inputs = tokenizer.apply_chat_template(chat, tokenize=True, add_generation_prompt=True, return_tensors="pt").to("cuda")
 
-# Generate the response
 outputs = model.generate(inputs, max_new_tokens = 64, use_cache = True)
-
-# Decode the full output (includes prompt + response)
-full_decoded_output = tokenizer.batch_decode(outputs)[0]
-print(f"Full output (ChatML format):
-{full_decoded_output}")
-
-# To get only the newly generated response part:
-# This can be tricky as it depends on the exact chat template and special tokens.
-# One common way is to decode only the tokens generated after the input_ids length.
-prompt_length = inputs.shape[1]
-assistant_response_ids = outputs[0][prompt_length:]
-decoded_assistant_response = tokenizer.decode(assistant_response_ids, skip_special_tokens=True)
-
-print(f"
-Generated Assistant Response:
-{decoded_assistant_response}")
+# Using batch_decode for safety, even with one input.
+# The output will likely contain the full chat, including the prompt.
+# You might need to parse the assistant's response from decoded_output[0].
+decoded_output = tokenizer.batch_decode(outputs)
+print(decoded_output[0])
 ```
 
 ## Conclusion
