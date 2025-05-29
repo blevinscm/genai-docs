@@ -1,0 +1,3273 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://blevinscm.github.com/genai-docs/Generative-AI-prompt-samples/">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/google-cloud-vertex-ai.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Generative AI prompt samples - Vertex Generative AI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Google Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../js/chat-widget/chat-widget.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#generative-ai-prompt-samples" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Vertex Generative AI" class="md-header__button md-logo" aria-label="Vertex Generative AI" data-md-component="logo">
+      
+  <img src="../assets/google-cloud-vertex-ai.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vertex Generative AI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Generative AI prompt samples
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/blevinscm/genai-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Generative-AI-on-Vertex-AI-Cookbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learn
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../agent-engine/Set-up-the-environment/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Build
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../models/Introduction-to-tuning/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tune
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../deploy/Deploy-generative-AI-models/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Deploy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../agent-engine/manage/Manage-deployed-agents/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Manage
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../models/evaluation-overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Optimize
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Vertex Generative AI" class="md-nav__button md-logo" aria-label="Vertex Generative AI" data-md-component="logo">
+      
+  <img src="../assets/google-cloud-vertex-ai.png" alt="logo">
+
+    </a>
+    Vertex Generative AI
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/blevinscm/genai-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Learn
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Learn
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Generative-AI-on-Vertex-AI-Cookbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vertex AI Generative AI Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Generative-AI-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Generative-AI-on-Vertex-AI-release-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Release Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supported-models_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Supported Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-reference/gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gemini Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image/Imagen-on-Vertex-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Imagen Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code/code-models-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intelligent-code-commenter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intelligent Code Commenter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-models/Use-Gemma-open-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open Models (Gemma, Llama)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../partner-models/use-partner-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Partner Models (Claude, AI21)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn/prompts/Introduction-to-prompting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Prompting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn/prompts/Overview-of-prompting-strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompting Strategies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Design-multimodal-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embeddings/Choose-an-embeddings-task-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Embeddings Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Introduction-to-function-calling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function Calling Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grounding/Ground-responses-using-RAG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grounding Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-builder/Vertex-AI-Agent-Builder-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Builder Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/Vertex-AI-Agent-Engine-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Engine Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag-engine/Vertex-AI-RAG-Engine-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG Engine Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-cache/Context-caching-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Caching Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/Extensions-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extensions Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example-store/Example-Store-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Example Store Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Generative-AI-and-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Security-controls-for-Generative-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security & Safety
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deprecations/Model-versions-and-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deprecations & Lifecycle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-help_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Help
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Build
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Build
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/Set-up-the-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Set up Environment (Agent Engine)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/develop/Develop-a-LangChain-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Develop LangChain Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/develop/Develop-an-Agent-Development-Kit-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Develop ADK Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/use/Use-a-LangChain-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use LangChain Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/use/Use-a-LangGraph-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use LangGraph Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat/Design-chat-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design Chat Prompts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Text-generationbookmark_borderbookmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Text with Gemini
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image/Generate-images-using-text-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Images with Imagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Generate-images-with-Gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Images with Gemini
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video/generate-videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Video with Veo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embeddings/Get-batch-text-embeddings-predictions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Text Embeddings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embeddings/Get-multimodal-embeddings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Multimodal Embeddings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-reference/Function-calling-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Function Calling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grounding/Use-Google-Search-suggestions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Grounding (Google Search)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grounding/Grounding-with-your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Grounding (Your Data)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag-engine/Use-data-ingestion-with-Vertex-AI-RAG-Engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Data Ingestion)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag-engine/use-vertexai-vector-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Vector Search)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use-a-Weaviate-database-with-Vertex-AI-RAG-Engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Weaviate)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-cache/Create-a-context-cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create Context Cache
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/Create-and-run-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create Extensions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example-store/Retrieve-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Example Store
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/audio-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Audio Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Document-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Document Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Video-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Video Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompt-gallery/samples/summarize_summarize_video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Gallery Samples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tune
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tune
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Introduction-to-tuning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Model Tuning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/About-supervised-fine-tuning-for-Gemini-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Gemini Models (Supervised)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/gemini-supervised-tuning-prepare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prepare Data for Gemini SFT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/tune_gemini/text_tune/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Gemini for Text
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image/Style-customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Imagen Models (Style/Subject)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Tune-function-calling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Function Calling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-garden/LoRA-and-QLoRA-recommendations-for-LLMs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LoRA & QLoRA Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fine-tune-RAG-transformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fine-tune RAG Transformations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deploy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Deploy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy/Deploy-generative-AI-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Generative AI Models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/deploy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Agent (Agent Engine)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Deployments-and-endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deployments and Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-garden/Use-models-in-Model-Garden/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Models from Model Garden
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Purchase-Provisioned-Throughput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Purchase Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use-Provisioned-Throughput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrate/Migrate-to-the-Gemini-API-from-Azure-OpenAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrate from Azure OpenAI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrate/openai/Using-OpenAI-libraries-with-Vertex-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use OpenAI Libraries with Vertex AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Manage
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Manage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/manage/Manage-deployed-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Deployed Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/manage/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Logging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/manage/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Monitoring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/sessions/Manage-sessions-using-direct-API-calls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Agent Sessions (API)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/sessions/Manage-sessions-with-Agent-Development-Kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Agent Sessions (ADK)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-cache/Get-information-about-a-context-cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Context Cache (Get/Delete)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Manage-your-RAG-knowledge-base-corpus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage RAG Corpus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn/Model-monitoring-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Monitoring Metrics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quotas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quotas & Limits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/troubleshooting/Troubleshoot-deploying-an-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot Agent Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/troubleshooting/Troubleshoot-developing-an-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot Agent Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Optimize
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Optimize
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/evaluation-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Evaluation Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Gen-AI-evaluation-service-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gen AI Evaluation Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Run-AutoSxS-pipeline-to-perform-pairwise-model-based-evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Run AutoSxS (Pairwise Evaluation)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Evaluate-Gen-AI-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluate Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn/prompts/Optimize-promptsbookmark_borderbookmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimize Prompts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Retrieval-and-ranking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG Retrieval and Ranking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-reference/Vertex-AI-Model-Optimizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vertex AI Model Optimizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provisioned-throughput/Calculate-Provisioned-Throughput-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Calculate Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-reference/count-tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Count Tokens
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-cache/Context-caching-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Caching Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/blevinscm/genai-docs/edit/main/docs/Generative-AI-prompt-samples.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="generative-ai-prompt-samples">Generative AI prompt samples<a class="headerlink" href="#generative-ai-prompt-samples" title="Permanent link">&para;</a></h1>
+<p>Choose a sample to view an example of a prompt and a response from one of
+Google's generative AI models. Alternatively, you can view and test prompts in
+the Google Cloud console if you have a Google Cloud account:</p>
+<p><a href="https://console.cloud.google.com/vertex-ai/generative/prompt-gallery">Go to Prompt gallery</a></p>
+<p>For details on how to query a model with different parameter values and compare
+results, see one of the following topics based on your use case:
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/image-understanding">image understanding</a>,
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/video-understanding">video understanding</a>,
+<a href="../multimodal/audio-understanding/">audio understanding</a>, or
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/document-understanding">document understanding</a>.</p>
+<p><strong>Use case:</strong></p>
+<p>Answer Question
+Classify
+Code
+Extract
+Summarize
+Transform
+Write / Generate</p>
+<ul>
+<li><strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_ad_copy_from_video">Ad copy from video</a></strong></li>
+</ul>
+<p><strong>Write / Generate:</strong> Write a creative ad copy based on a video.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/classify_audio_diarization">Audio diarization</a></strong></p>
+<p><strong>Classify:</strong> Segment an audio record by speaker labels.
+- <strong><a href="../prompt-gallery/samples/write_and_generate_airline_reviews/">Airline reviews</a></strong></p>
+<p><strong>Write / Generate:</strong> The prompt asks the model to write a summary based on customer reviews of an airline company called GoWhereYouLike.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_advertising_campaign">Advertising Campaign</a></strong></p>
+<p><strong>Write / Generate:</strong> The AI is tasked to create advertising campaigns for its clients.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/extract_culinary_dish_classification">Culinary Dish Classification</a></strong></p>
+<p><strong>Extract:</strong> Analyze popular Italian pasta by sorting them, identifying key ingredients, and presenting in a requested format.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/extract_user_query_assistance">User query assistance</a></strong></p>
+<p><strong>Extract:</strong> This prompt uses website help center text to help users find answers to questions.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/summarize_audio_summarization">Audio Summarization</a></strong></p>
+<p><strong>Summarize:</strong> Summarize an audio file
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_video_qa_-_exercise">Video QA - exercise</a></strong></p>
+<p><strong>Answer Question:</strong> Get the activity that's being performed in an exercise video by asking a question.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/summarize_audio_summary_on_clean_energy">Audio summary on clean energy</a></strong></p>
+<p><strong>Summarize:</strong> Summarize a piece of audio recording.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_chatbot_recommendations_for_courses">Chatbot recommendations for courses</a></strong></p>
+<p><strong>Write / Generate:</strong> A chatbot suggests courses for a performing arts program.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/extract_audio_transcription">Audio transcription</a></strong></p>
+<p><strong>Extract:</strong> Generate the transcription for a piece of audio recording.
+- <strong><a href="../prompt-gallery/samples/answer_question_audio_video_q_and_a/">Audio/video Q&amp;A</a></strong></p>
+<p><strong>Answer Question:</strong> Audio/video Q&amp;A
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/summarize_hashtags_for_a_video">Hashtags for a video</a></strong></p>
+<p><strong>Summarize:</strong> Generate hashtags for a video ad
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_blog_post_creator">Blog post creator</a></strong></p>
+<p><strong>Write / Generate:</strong> Create a blog post
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/classify_classify_headlines">Classify headlines</a></strong></p>
+<p><strong>Classify:</strong> Label news headlines with custom topics using examples.
+- <strong><a href="../prompt-gallery/samples/write_and_generate_beach_vacation/">Beach vacation</a></strong></p>
+<p><strong>Write / Generate:</strong> The prompt asks the model to write a summary based on customer reviews of a beach in California.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_book_publishing_and_editing">Book Publishing and Editing</a></strong></p>
+<p><strong>Write / Generate:</strong> Take a verbose, subjective excerpt and distill it into a concise, objective list of facts
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_animal_information_chatbot">Animal Information Chatbot</a></strong></p>
+<p><strong>Write / Generate:</strong> The animal assistant chatbot answers questions about animals.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_business_development_writing">Business Development Writing</a></strong></p>
+<p><strong>Write / Generate:</strong> Extract relevant information from the user input that can be used in business development initiatives.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_venue_selection_database_tool">Venue Selection Database Tool</a></strong></p>
+<p><strong>Write / Generate:</strong> Take information about a touring band and find the best venues for the group from a database of venues.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_code_optimization_explanation">Code optimization explanation</a></strong></p>
+<p><strong>Code:</strong> Optimize and explain C++ code, focusing on time complexity.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_optimize_uniqueness_check">Optimize uniqueness check</a></strong></p>
+<p><strong>Code:</strong> Optimize the generation of unique identifiers.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_predicting_revenue">Predicting revenue</a></strong></p>
+<p><strong>Code:</strong> Train and evaluate a Random Forest model using sales data.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_company_financial_analysis">Company Financial Analysis</a></strong></p>
+<p><strong>Answer Question:</strong> Company Financial Analysis
+- <strong><a href="../prompt-gallery/samples/answer_question_company_chatbot/">Company chatbot</a></strong></p>
+<p><strong>Answer Question:</strong> Create a chatbot for customers with basic company information.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_describe_video_content">Describe video content</a></strong></p>
+<p><strong>Write / Generate:</strong> Get a description of the contents of a rock climbing video.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_completing_go_functions">Completing Go functions</a></strong></p>
+<p><strong>Code:</strong> Generate SQL scripts based on a CSV file using Go
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/summarize_document_comparison">Document comparison</a></strong></p>
+<p><strong>Summarize:</strong> Compare the contents of 2 documents
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_customer_service_assistance">Customer Service Assistance</a></strong></p>
+<p><strong>Answer Question:</strong> The prompt works to extract the main issues out from customer service complaints and suggest ways to resolve them.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_novel_writing_assistance">Novel Writing Assistance</a></strong></p>
+<p><strong>Write / Generate:</strong> Generate a scene for a book a writer is writing in order to help the writer get through writer's block.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_data_sources_and_monitoring">Data sources and monitoring</a></strong></p>
+<p><strong>Code:</strong> Specify different training data and add monitoring.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_debug_nullptr_error">Debug nullptr error</a></strong></p>
+<p><strong>Code:</strong> Debug C++ code with explanations.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_describe_python_code">Describe Python code</a></strong></p>
+<p><strong>Code:</strong> Provide a detailed description of Python timer code.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_django_form_debugging">Django form debugging</a></strong></p>
+<p><strong>Code:</strong> Evaluating Django form-handling code to identify bugs, inefficiencies, and security issues.
+- <strong><a href="../prompt-gallery/samples/code_python_algorithm/">Python algorithm</a></strong></p>
+<p><strong>Code:</strong> Generate codes for algorithm using context clues.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_explain_javascript_code">Explain JavaScript code</a></strong></p>
+<p><strong>Code:</strong> Walking through Javascript code block
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/extract_extract_entities_from_an_invoice">Extract entities from an invoice</a></strong></p>
+<p><strong>Extract:</strong> Extract entities from an invoice document and return them in JSON.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_document_question_answering">Document question answering</a></strong></p>
+<p><strong>Answer Question:</strong> Answer question(s) over a document.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_e-commerce_business_report">E-commerce Business Report</a></strong></p>
+<p><strong>Write / Generate:</strong> Analyze the product information provided to generate a report based on the category or categories input by the user.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_video_q_and_a">Video Q&amp;A</a></strong></p>
+<p><strong>Answer Question:</strong> Answer questions about the key moments in the video.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_legal_qa_-_extractive">Legal QA - Extractive</a></strong></p>
+<p><strong>Answer Question:</strong> Ask extractive questions about a (long) legal document.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/transform_french_text_sample">French text sample</a></strong></p>
+<p><strong>Transform:</strong> French text sample
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_educational_content_generator">Educational content generator</a></strong></p>
+<p><strong>Write / Generate:</strong> This model is helping teachers with generating topics, open-ended and closed-ended multiple choice questions.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_product_advertisement_ideas">Product Advertisement Ideas</a></strong></p>
+<p><strong>Write / Generate:</strong> Decide on the best advertising method for the user-input product/company
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_speech_writing">Speech Writing</a></strong></p>
+<p><strong>Write / Generate:</strong> A speech must be written adhering to the information input by the user.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_educational_lesson_planning">Educational Lesson Planning</a></strong></p>
+<p><strong>Write / Generate:</strong> The prompt creates an engaging and grade level appropriate lesson plan for teachers.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_european_travel_itinerary">European Travel Itinerary</a></strong></p>
+<p><strong>Write / Generate:</strong> The prompt guides the model to create a European travel itinerary with requests from the user.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/extract_extract_text_from_images">Extract text from images</a></strong></p>
+<p><strong>Extract:</strong> Transcribe text from a handwritten note.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/extract_extract_video_chapters">Extract video chapters</a></strong></p>
+<p><strong>Extract:</strong> Extract the chapters in a video as structured JSON
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_fill_an_empty_form">Fill an empty form</a></strong></p>
+<p><strong>Write / Generate:</strong> Automatically fill a form field in a target form from a source document.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_financial_qa_-_extractive">Financial QA - Extractive</a></strong></p>
+<p><strong>Answer Question:</strong> Ask extractive questions about a (long) financial document.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_financial_qa_-_deductive">Financial QA - Deductive</a></strong></p>
+<p><strong>Answer Question:</strong> Ask deductive questions about a (long) financial document.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_generate_c++_test_cases">Generate C++ test cases</a></strong></p>
+<p><strong>Code:</strong> Validate the behavior of a C++ class using varied assertions
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_generate_code_from_comments">Generate code from comments</a></strong></p>
+<p><strong>Code:</strong> Generate Java code from natural-language comments
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_generate_go_commit_message">Generate Go commit message</a></strong></p>
+<p><strong>Code:</strong> Create a conventional commit message for Golang changes.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_generate_java_classes">Generate Java classes</a></strong></p>
+<p><strong>Code:</strong> Create an interface and class implementation in Java.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_generate_search_tree_tests">Generate search tree tests</a></strong></p>
+<p><strong>Code:</strong> Create unit tests with edge cases for binary search trees
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_generate_java_unit_tests">Generate Java unit tests</a></strong></p>
+<p><strong>Code:</strong> Generate unit tests for legacy Java code
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_image_question_answering">Image question answering</a></strong></p>
+<p><strong>Answer Question:</strong> Show the model an image of a fruit and find the price from another image.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_javascript_physics_simulation">JavaScript physics simulation</a></strong></p>
+<p><strong>Code:</strong> Modifying and explaining a JavaScript marble simulation.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_marketing_content_generator">Marketing content generator</a></strong></p>
+<p><strong>Write / Generate:</strong> This prompt generates an article promoting a brand using a famous person and a pet.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_nonprofit_media_assistance">Nonprofit Media Assistance</a></strong></p>
+<p><strong>Answer Question:</strong> A media relations bot provides talking points extracted from a year-end report.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_interview_prep_qa">Interview Prep QA</a></strong></p>
+<p><strong>Answer Question:</strong> This model helps prepare interviewers for various different interviews.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/extract_organize_viewpoints_and_examples">Organize viewpoints and examples</a></strong></p>
+<p><strong>Extract:</strong> Extract main viewpoints and examples into a table, given the provided template and user input.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_python__data_science_explanation">Python/ data science explanation</a></strong></p>
+<p><strong>Code:</strong> Describe how Python code retrieves and visualizes data.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_pet_animal_needs">Pet/animal needs</a></strong></p>
+<p><strong>Write / Generate:</strong> Help pet owners with their pets
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_procedural_to_oop_refactoring">Procedural to OOP refactoring</a></strong></p>
+<p><strong>Code:</strong> Convert procedural code to an object-oriented design
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_vacation_planning">Vacation Planning</a></strong></p>
+<p><strong>Write / Generate:</strong> The model's goal is helping a client plan a family vacation.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_question_answering_about_a_chart">Question answering about a chart</a></strong></p>
+<p><strong>Answer Question:</strong> Answer questions by analyzing a simple line chart.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_question_answering_about_an_image">Question answering about an image</a></strong></p>
+<p><strong>Answer Question:</strong> Answer knowledge-extensive questions about an image
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_refactoring_python_code">Refactoring Python code</a></strong></p>
+<p><strong>Code:</strong> Refactor Python code for better modularity and add functionality.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_learn_about_dataset_transformations">Learn about dataset transformations</a></strong></p>
+<p><strong>Code:</strong> Understand preprocessing, balancing, stratification, and dataset suitability for machine learning.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_regex_completion_and_explanation">Regex completion and explanation</a></strong></p>
+<p><strong>Code:</strong> Implement regex-based sentence splitting for function completion.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_scene_improvement_for_scriptwriting">Scene Improvement for Scriptwriting</a></strong></p>
+<p><strong>Write / Generate:</strong> The model acts as a chatbot that helps improve scripts for television and film.
+- <strong><a href="../prompt-gallery/samples/write_and_generate_screenwriting/">Screenwriting</a></strong></p>
+<p><strong>Write / Generate:</strong> The prompt instructs the model to outline a movie plot and generate character ideas.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_typescript_migration">TypeScript migration</a></strong></p>
+<p><strong>Code:</strong> Translate JavaScript to TypeScript.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/transform_translation">Translation</a></strong></p>
+<p><strong>Transform:</strong> Translate an audio file
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_video_ad_script_writer">Video Ad script writer</a></strong></p>
+<p><strong>Write / Generate:</strong> Write social media style video ad scripts
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/classify_sentiment_analysis">Sentiment analysis</a></strong></p>
+<p><strong>Classify:</strong> Assign a positive or negative sentiment to text.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_skin_care_questions">Skin care questions</a></strong></p>
+<p><strong>Answer Question:</strong> Use only the provided sources to answer questions without citations.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_rules__effect_on_profits">Rules' Effect on Profits</a></strong></p>
+<p><strong>Write / Generate:</strong> Generate content for a section of a college sports management textbook.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_summarization_of_reviews">Summarization of reviews</a></strong></p>
+<p><strong>Write / Generate:</strong> Summarize reviews to understand pros and cons of businesses and provide relevant advice.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_sql_query_explanation">SQL query explanation</a></strong></p>
+<p><strong>Code:</strong> Explain the components of two SQL queries, compare outputs, and assess efficiency.
+- <strong><a href="../prompt-gallery/samples/summarize_summarize_video/">Summarize video</a></strong></p>
+<p><strong>Summarize:</strong> Summarize a video and extract important dialogue.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/answer_question_swimming_q_and_a">Swimming Q&amp;A</a></strong></p>
+<p><strong>Answer Question:</strong> Questions &amp; answers about learning swimming.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_translate_c++_to_java">Translate C++ to Java</a></strong></p>
+<p><strong>Code:</strong> Convert C++ code to Java while preserving functionality
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_vocabulary_quiz_administrating_bot">Vocabulary Quiz Administrating Bot</a></strong></p>
+<p><strong>Write / Generate:</strong> Generate quizzes about vocabulary words.
+- <strong><a href="../prompt-gallery/samples/write_and_generate_travel_tips/">Travel tips</a></strong></p>
+<p><strong>Write / Generate:</strong> The user wants the model to help a new traveler with travel tips for traveling.
+- <strong><a href="../prompt-gallery/samples/summarize_title_generation/">Title generation</a></strong></p>
+<p><strong>Summarize:</strong> Create a title for an article using examples.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/code_teaching_python_decorators">Teaching Python decorators</a></strong></p>
+<p><strong>Code:</strong> Identify and explain the decorators in code.
+- <strong><a href="../prompt-gallery/samples/write_and_generate_writing_critique/">Writing Critique</a></strong></p>
+<p><strong>Write / Generate:</strong> Help improve the quality of a presentation.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/write_and_generate_writing_assistant">Writing Assistant</a></strong></p>
+<p><strong>Write / Generate:</strong> Help turn a document into an engaging presentation.
+- <strong><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery/samples/classify_video_game_categories">Video game categories</a></strong></p>
+<p><strong>Classify:</strong> This is a multi-use prompt for generating terms and definitions and then placing them into categories.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.action.edit", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.top", "navigation.tracking", "toc.follow", "navigation.tabs", "navigation.sections", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../js/chat-widget/gemini-client.js"></script>
+      
+        <script src="../js/chat-widget/init.js"></script>
+      
+        <script src="../js/chat-widget/setup-key.js"></script>
+      
+        <script src="../js/chat-widget-helper.js"></script>
+      
+    
+  </body>
+</html>

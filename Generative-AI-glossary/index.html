@@ -1,0 +1,6338 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://blevinscm.github.com/genai-docs/Generative-AI-glossary/">
+      
+      
+        <link rel="prev" href="../Generative-AI-on-Vertex-AI-Cookbook/">
+      
+      
+        <link rel="next" href="../Generative-AI-on-Vertex-AI-release-notes/">
+      
+      
+      <link rel="icon" href="../assets/google-cloud-vertex-ai.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Generative AI Glossary - Vertex Generative AI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Google Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../js/chat-widget/chat-widget.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#generative-ai-glossary" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Vertex Generative AI" class="md-header__button md-logo" aria-label="Vertex Generative AI" data-md-component="logo">
+      
+  <img src="../assets/google-cloud-vertex-ai.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vertex Generative AI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Generative AI Glossary
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/blevinscm/genai-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Generative-AI-on-Vertex-AI-Cookbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learn
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../agent-engine/Set-up-the-environment/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Build
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../models/Introduction-to-tuning/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tune
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../deploy/Deploy-generative-AI-models/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Deploy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../agent-engine/manage/Manage-deployed-agents/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Manage
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../models/evaluation-overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Optimize
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Vertex Generative AI" class="md-nav__button md-logo" aria-label="Vertex Generative AI" data-md-component="logo">
+      
+  <img src="../assets/google-cloud-vertex-ai.png" alt="logo">
+
+    </a>
+    Vertex Generative AI
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/blevinscm/genai-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Learn
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Learn
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Generative-AI-on-Vertex-AI-Cookbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vertex AI Generative AI Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      API endpoint
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-default-credentials-adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Default Credentials (ADC)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approximate-nearest-neighbor-ann" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approximate Nearest Neighbor (ANN)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      artifact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifact-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Artifact Registry
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artificial-intelligence-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Artificial Intelligence (AI)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#augmented-reality-ar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Augmented Reality (AR)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-side-by-side-autosxs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic side-by-side (AutoSxS)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-speech-recognition-asrspeech-to-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Speech Recognition (ASR,Speech to Text)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automl" class="md-nav__link">
+    <span class="md-ellipsis">
+      AutoML
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autorater" class="md-nav__link">
+    <span class="md-ellipsis">
+      autorater
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      baseline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      batch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      batch size
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      batch prediction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      bias
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bidrectional" class="md-nav__link">
+    <span class="md-ellipsis">
+      bidrectional
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bidirectional-encoder-representations-from-transformers-bert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bidirectional Encoder Representations from Transformers (BERT)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bilingual-evaluation-understudy-bleu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bilingual Evaluation Understudy (BLEU)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      boosting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bounding-box" class="md-nav__link">
+    <span class="md-ellipsis">
+      bounding box
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      bucket
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chain-of-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chain-of-Thought
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      chat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      checkpoint
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      classification model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      classification metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-tpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud TPU
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      clustering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      container image
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      context cache
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      context window
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customer-managed-encryption-keys-cmek" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customer-managed encryption keys (cmek)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      data analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-augmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      data augmentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataFrame
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      data indexing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-ingestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      data ingestion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      data parallelism
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataset-data-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      dataset (data set)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      data transformation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      decoder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-neural-network-dnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      deep neural network (DNN)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      depth
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      DevOps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#early-stopping" class="md-nav__link">
+    <span class="md-ellipsis">
+      early stopping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      embedding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedding-space-latent-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      embedding space (latent space)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedding-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      embedding vector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      encoder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ensemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      ensemble
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      environment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-eval" class="md-nav__link">
+    <span class="md-ellipsis">
+      evaluation (eval)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      execution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f1-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      F1 Score
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      feature
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      feature extraction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-serving" class="md-nav__link">
+    <span class="md-ellipsis">
+      feature serving
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      feature view
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#few-shot-prompt-few-shot" class="md-nav__link">
+    <span class="md-ellipsis">
+      few-shot prompt (few-shot)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foundation-model-fm" class="md-nav__link">
+    <span class="md-ellipsis">
+      foundation model (FM)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foundation-model-operations-fmops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foundation Model Operations (FMOPs)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gemini" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gemini
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      generalization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      generation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generative-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      generative model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-embedded-modem-system-gems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Embedded Modem System (GEMS)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gradient" class="md-nav__link">
+    <span class="md-ellipsis">
+      gradient
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      graph
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ground-truth-gt" class="md-nav__link">
+    <span class="md-ellipsis">
+      ground truth (GT)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hallucination" class="md-nav__link">
+    <span class="md-ellipsis">
+      hallucination
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heuristic" class="md-nav__link">
+    <span class="md-ellipsis">
+      heuristic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hidden-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      hidden layer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#histogram" class="md-nav__link">
+    <span class="md-ellipsis">
+      histogram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperparameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      hyperparameter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imagen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      image recognition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    <span class="md-ellipsis">
+      index
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      inference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#information-retrieval-ir" class="md-nav__link">
+    <span class="md-ellipsis">
+      information retrieval (IR)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-rate-step-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      learning rate (step size)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loss-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      loss (cost)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managed-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      managed dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-distillation-knowledge-distillation-teacher-student-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      model distillation (knowledge distillation, teacher-student models)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Monitoring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-resource-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      model resource name
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-file-system-nfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network File System (NFS)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-hot-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      one-hot encoding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-shot-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      one-shot prompt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      parameter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perplexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      perplexity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      pipeline job
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      pipeline run
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-services-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      private services access
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      prompt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-engineering-prompt-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      prompt engineering (prompt design)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      prompt tuning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provisioned-throughput-pt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provisioned Throughput (PT)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      quantization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-forest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random Forest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ray-cluster-on-vertex-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ray cluster on Vertex AI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ray-on-vertex-ai-rov" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ray on Vertex AI (RoV)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ray-on-vertex-ai-sdk-for-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ray on Vertex AI SDK for Python
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recall" class="md-nav__link">
+    <span class="md-ellipsis">
+      recall
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendation-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      recommendation system
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regularization" class="md-nav__link">
+    <span class="md-ellipsis">
+      regularization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      service account
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      service agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      summary metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tensorboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      TensorBoard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tensorboard-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      TensorBoard instance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tensorboard-resource-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      TensorBoard Resource name
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-offset" class="md-nav__link">
+    <span class="md-ellipsis">
+      time offset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-series-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      time series metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    <span class="md-ellipsis">
+      token
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      trajectory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#true-positive" class="md-nav__link">
+    <span class="md-ellipsis">
+      true positive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      validation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      vector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vertex-ai-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI Experiments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vertex-ai-model-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI Model Registry
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      video segment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-private-cloud-vpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      virtual private cloud (VPC)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      word embedding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zero-shot-prompt-direct-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      zero-shot prompt (direct prompting)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Generative-AI-on-Vertex-AI-release-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Release Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supported-models_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Supported Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-reference/gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gemini Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image/Imagen-on-Vertex-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Imagen Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code/code-models-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intelligent-code-commenter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intelligent Code Commenter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-models/Use-Gemma-open-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open Models (Gemma, Llama)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../partner-models/use-partner-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Partner Models (Claude, AI21)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn/prompts/Introduction-to-prompting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Prompting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn/prompts/Overview-of-prompting-strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompting Strategies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Design-multimodal-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embeddings/Choose-an-embeddings-task-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Embeddings Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Introduction-to-function-calling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function Calling Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grounding/Ground-responses-using-RAG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grounding Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-builder/Vertex-AI-Agent-Builder-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Builder Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/Vertex-AI-Agent-Engine-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Engine Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag-engine/Vertex-AI-RAG-Engine-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG Engine Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-cache/Context-caching-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Caching Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/Extensions-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extensions Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example-store/Example-Store-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Example Store Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Generative-AI-and-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Security-controls-for-Generative-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security & Safety
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deprecations/Model-versions-and-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deprecations & Lifecycle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-help_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Help
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Build
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Build
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/Set-up-the-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Set up Environment (Agent Engine)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/develop/Develop-a-LangChain-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Develop LangChain Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/develop/Develop-an-Agent-Development-Kit-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Develop ADK Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/use/Use-a-LangChain-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use LangChain Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/use/Use-a-LangGraph-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use LangGraph Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat/Design-chat-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design Chat Prompts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Text-generationbookmark_borderbookmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Text with Gemini
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image/Generate-images-using-text-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Images with Imagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Generate-images-with-Gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Images with Gemini
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video/generate-videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Video with Veo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embeddings/Get-batch-text-embeddings-predictions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Text Embeddings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embeddings/Get-multimodal-embeddings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Multimodal Embeddings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-reference/Function-calling-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Function Calling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grounding/Use-Google-Search-suggestions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Grounding (Google Search)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grounding/Grounding-with-your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Grounding (Your Data)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag-engine/Use-data-ingestion-with-Vertex-AI-RAG-Engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Data Ingestion)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag-engine/use-vertexai-vector-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Vector Search)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use-a-Weaviate-database-with-Vertex-AI-RAG-Engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Weaviate)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-cache/Create-a-context-cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create Context Cache
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/Create-and-run-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create Extensions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example-store/Retrieve-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Example Store
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/audio-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Audio Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Document-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Document Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Video-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Video Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompt-gallery/samples/summarize_summarize_video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Gallery Samples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tune
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tune
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Introduction-to-tuning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Model Tuning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/About-supervised-fine-tuning-for-Gemini-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Gemini Models (Supervised)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/gemini-supervised-tuning-prepare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prepare Data for Gemini SFT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/tune_gemini/text_tune/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Gemini for Text
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image/Style-customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Imagen Models (Style/Subject)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Tune-function-calling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Function Calling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-garden/LoRA-and-QLoRA-recommendations-for-LLMs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LoRA & QLoRA Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fine-tune-RAG-transformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fine-tune RAG Transformations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deploy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Deploy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy/Deploy-generative-AI-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Generative AI Models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/deploy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Agent (Agent Engine)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Deployments-and-endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deployments and Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-garden/Use-models-in-Model-Garden/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Models from Model Garden
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Purchase-Provisioned-Throughput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Purchase Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use-Provisioned-Throughput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrate/Migrate-to-the-Gemini-API-from-Azure-OpenAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrate from Azure OpenAI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrate/openai/Using-OpenAI-libraries-with-Vertex-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use OpenAI Libraries with Vertex AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Manage
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Manage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/manage/Manage-deployed-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Deployed Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/manage/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Logging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/manage/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Monitoring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/sessions/Manage-sessions-using-direct-API-calls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Agent Sessions (API)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/sessions/Manage-sessions-with-Agent-Development-Kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Agent Sessions (ADK)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-cache/Get-information-about-a-context-cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Context Cache (Get/Delete)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Manage-your-RAG-knowledge-base-corpus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage RAG Corpus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn/Model-monitoring-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Monitoring Metrics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quotas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quotas & Limits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/troubleshooting/Troubleshoot-deploying-an-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot Agent Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/troubleshooting/Troubleshoot-developing-an-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot Agent Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Optimize
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Optimize
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/evaluation-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Evaluation Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Gen-AI-evaluation-service-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gen AI Evaluation Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Run-AutoSxS-pipeline-to-perform-pairwise-model-based-evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Run AutoSxS (Pairwise Evaluation)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Evaluate-Gen-AI-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluate Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn/prompts/Optimize-promptsbookmark_borderbookmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimize Prompts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Retrieval-and-ranking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG Retrieval and Ranking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-reference/Vertex-AI-Model-Optimizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vertex AI Model Optimizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provisioned-throughput/Calculate-Provisioned-Throughput-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Calculate Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-reference/count-tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Count Tokens
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-cache/Context-caching-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Caching Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      API endpoint
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-default-credentials-adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application Default Credentials (ADC)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approximate-nearest-neighbor-ann" class="md-nav__link">
+    <span class="md-ellipsis">
+      Approximate Nearest Neighbor (ANN)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      artifact
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifact-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Artifact Registry
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artificial-intelligence-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Artificial Intelligence (AI)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#augmented-reality-ar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Augmented Reality (AR)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-side-by-side-autosxs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic side-by-side (AutoSxS)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-speech-recognition-asrspeech-to-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Speech Recognition (ASR,Speech to Text)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automl" class="md-nav__link">
+    <span class="md-ellipsis">
+      AutoML
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autorater" class="md-nav__link">
+    <span class="md-ellipsis">
+      autorater
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baseline" class="md-nav__link">
+    <span class="md-ellipsis">
+      baseline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch" class="md-nav__link">
+    <span class="md-ellipsis">
+      batch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      batch size
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-prediction" class="md-nav__link">
+    <span class="md-ellipsis">
+      batch prediction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      bias
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bidrectional" class="md-nav__link">
+    <span class="md-ellipsis">
+      bidrectional
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bidirectional-encoder-representations-from-transformers-bert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bidirectional Encoder Representations from Transformers (BERT)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bilingual-evaluation-understudy-bleu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bilingual Evaluation Understudy (BLEU)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      boosting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bounding-box" class="md-nav__link">
+    <span class="md-ellipsis">
+      bounding box
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      bucket
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chain-of-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chain-of-Thought
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      chat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      checkpoint
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      classification model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      classification metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cloud-tpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud TPU
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      clustering
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      container image
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context" class="md-nav__link">
+    <span class="md-ellipsis">
+      context
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      context cache
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      context window
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customer-managed-encryption-keys-cmek" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customer-managed encryption keys (cmek)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      data analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-augmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      data augmentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataFrame
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-indexing" class="md-nav__link">
+    <span class="md-ellipsis">
+      data indexing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-ingestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      data ingestion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      data parallelism
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataset-data-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      dataset (data set)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-transformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      data transformation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      decoder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deep-neural-network-dnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      deep neural network (DNN)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      depth
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      DevOps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#early-stopping" class="md-nav__link">
+    <span class="md-ellipsis">
+      early stopping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      embedding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedding-space-latent-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      embedding space (latent space)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#embedding-vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      embedding vector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoder" class="md-nav__link">
+    <span class="md-ellipsis">
+      encoder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ensemble" class="md-nav__link">
+    <span class="md-ellipsis">
+      ensemble
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      environment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-eval" class="md-nav__link">
+    <span class="md-ellipsis">
+      evaluation (eval)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      execution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f1-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      F1 Score
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      feature
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      feature extraction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-serving" class="md-nav__link">
+    <span class="md-ellipsis">
+      feature serving
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      feature view
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#few-shot-prompt-few-shot" class="md-nav__link">
+    <span class="md-ellipsis">
+      few-shot prompt (few-shot)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foundation-model-fm" class="md-nav__link">
+    <span class="md-ellipsis">
+      foundation model (FM)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foundation-model-operations-fmops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foundation Model Operations (FMOPs)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gemini" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gemini
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      generalization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      generation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generative-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      generative model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#google-embedded-modem-system-gems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Embedded Modem System (GEMS)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gradient" class="md-nav__link">
+    <span class="md-ellipsis">
+      gradient
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      graph
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ground-truth-gt" class="md-nav__link">
+    <span class="md-ellipsis">
+      ground truth (GT)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hallucination" class="md-nav__link">
+    <span class="md-ellipsis">
+      hallucination
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heuristic" class="md-nav__link">
+    <span class="md-ellipsis">
+      heuristic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hidden-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      hidden layer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#histogram" class="md-nav__link">
+    <span class="md-ellipsis">
+      histogram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hyperparameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      hyperparameter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imagen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-recognition" class="md-nav__link">
+    <span class="md-ellipsis">
+      image recognition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    <span class="md-ellipsis">
+      index
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      inference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#information-retrieval-ir" class="md-nav__link">
+    <span class="md-ellipsis">
+      information retrieval (IR)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-rate-step-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      learning rate (step size)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loss-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      loss (cost)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managed-dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      managed dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model" class="md-nav__link">
+    <span class="md-ellipsis">
+      model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-distillation-knowledge-distillation-teacher-student-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      model distillation (knowledge distillation, teacher-student models)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Monitoring
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-resource-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      model resource name
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-file-system-nfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network File System (NFS)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-hot-encoding" class="md-nav__link">
+    <span class="md-ellipsis">
+      one-hot encoding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-shot-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      one-shot prompt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      parameter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perplexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      perplexity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      pipeline job
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      pipeline run
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-services-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      private services access
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      prompt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-engineering-prompt-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      prompt engineering (prompt design)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      prompt tuning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provisioned-throughput-pt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Provisioned Throughput (PT)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantization" class="md-nav__link">
+    <span class="md-ellipsis">
+      quantization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-forest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random Forest
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ray-cluster-on-vertex-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ray cluster on Vertex AI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ray-on-vertex-ai-rov" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ray on Vertex AI (RoV)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ray-on-vertex-ai-sdk-for-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ray on Vertex AI SDK for Python
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recall" class="md-nav__link">
+    <span class="md-ellipsis">
+      recall
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendation-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      recommendation system
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regularization" class="md-nav__link">
+    <span class="md-ellipsis">
+      regularization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      service account
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      service agent
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      summary metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tensorboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      TensorBoard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tensorboard-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      TensorBoard instance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tensorboard-resource-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      TensorBoard Resource name
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-offset" class="md-nav__link">
+    <span class="md-ellipsis">
+      time offset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-series-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      time series metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#token" class="md-nav__link">
+    <span class="md-ellipsis">
+      token
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trajectory" class="md-nav__link">
+    <span class="md-ellipsis">
+      trajectory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-reinforcement-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformer Reinforcement Learning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#true-positive" class="md-nav__link">
+    <span class="md-ellipsis">
+      true positive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      validation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      vector
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vertex-ai-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI Experiments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vertex-ai-model-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI Model Registry
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      video segment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual-private-cloud-vpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      virtual private cloud (VPC)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      word embedding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zero-shot-prompt-direct-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      zero-shot prompt (direct prompting)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/blevinscm/genai-docs/edit/main/docs/Generative-AI-glossary.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="generative-ai-glossary">Generative AI glossary<a class="headerlink" href="#generative-ai-glossary" title="Permanent link">&para;</a></h1>
+<ul>
+<li>
+<h5 id="agent"><strong>agent</strong><a class="headerlink" href="#agent" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In the context of generative AI, an agent is software that autonomously plans and executes a series of actions in pursuit of a goal, potentially in novel situations. Agents can be used in various applications, such as natural language processing, machine learning, and robotics. For example, an LLM agent uses a language model to evaluate the environment and choose an action to help it achieve its goal. LLM agents can be used to generate text, translate languages, and answer questions.</p>
+</li>
+<li>
+<h5 id="api-endpoint"><strong>API endpoint</strong><a class="headerlink" href="#api-endpoint" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>API Endpoints is a service config aspect that specifies the network addresses, also known as service endpoints (for example, aiplatform.googleapis.com).</p>
+</li>
+<li>
+<h5 id="application-default-credentials-adc"><strong>Application Default Credentials (ADC)</strong><a class="headerlink" href="#application-default-credentials-adc" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>The Application Default Credentials (ADC) provide a simple way to get authorization credentials for use in calling Google APIs. They are best suited for cases when the call needs to have the same identity and authorization level for the application independent of the user. This is the recommended approach to authorize calls to Google Cloud APIs, particularly when you're building an application that is deployed to Google App Engine (GAE) or Compute Engine virtual machines. For more information, see <a href="https://cloud.google.com/docs/authentication/application-default-credentials">How Application Default Credentials works</a>.</p>
+</li>
+<li>
+<h5 id="approximate-nearest-neighbor-ann"><strong>Approximate Nearest Neighbor (ANN)</strong><a class="headerlink" href="#approximate-nearest-neighbor-ann" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>The Approximate Nearest Neighbor (ANN) service is a high scale, low latency solution, to find similar vectors (or more specifically, "embeddings") for a large corpus. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/vector-search/overview#how_to_use_for_semantic_matching">How to use Vector Search for semantic matching</a>.</p>
+</li>
+<li>
+<h5 id="artifact"><strong>artifact</strong><a class="headerlink" href="#artifact" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>An artifact is a discrete entity or piece of data produced and consumed by a machine learning workflow. Examples of artifacts include datasets, models, input files, and training logs.</p>
+</li>
+<li>
+<h5 id="artifact-registry"><strong>Artifact Registry</strong><a class="headerlink" href="#artifact-registry" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Artifact Registry is a universal artifact management service. It is the recommended service for managing containers and other artifacts on Google Cloud. For more information, see <a href="https://cloud.google.com/artifact-registry/docs/overview">Artifact Registry</a>.</p>
+</li>
+<li>
+<h5 id="artificial-intelligence-ai"><strong>Artificial Intelligence (AI)</strong><a class="headerlink" href="#artificial-intelligence-ai" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Artificial intelligence (or AI) is the study and design of machines that appear to be "intelligent", meaning one which mimics human or intellectual functions such as mechanical movement, reasoning or problem solving. One of the most popular subfields of AI is machine learning, which uses a statistical and data-driven approach to create AI. However, some people use these two terms interchangeably.</p>
+</li>
+<li>
+<h5 id="augmented-reality-ar"><strong>Augmented Reality (AR)</strong><a class="headerlink" href="#augmented-reality-ar" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Blending rendered digital content with real-world content, either via a display such as in a phone or as an overlay to the world seen through optics like glasses. The digital content should be tracked to the movement of the camera or glasses (depending on how the scene is rendered) so that it appears as if it is part of the real world.</p>
+</li>
+<li>
+<h5 id="authentication"><strong>authentication</strong><a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>The process of verifying the identity of a client (which might be a user or another process) for the purposes of gaining access to a secured system. A client that has proven its identity is said to be authenticated. For more information, see <a href="https://cloud.google.com/docs/authentication">Authentication methods at Google</a>.</p>
+</li>
+<li>
+<h5 id="automatic-side-by-side-autosxs"><strong>Automatic side-by-side (AutoSxS)</strong><a class="headerlink" href="#automatic-side-by-side-autosxs" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Automatic side-by-side (AutoSxS) is a model-assisted evaluation tool that compares two large language models (LLMs) side by side. It can be used to evaluate the performance of either generative AI models in Vertex AI Model Registry or pre-generated predictions. AutoSxS uses an autorater to decide which model gives the better response to a prompt. AutoSxS is available on demand and evaluates language models with comparable performance to human raters.</p>
+</li>
+<li>
+<h5 id="automatic-speech-recognition-asrspeech-to-text"><strong>Automatic Speech Recognition (ASR,Speech to Text)</strong><a class="headerlink" href="#automatic-speech-recognition-asrspeech-to-text" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Automatic transcription of spoken language (speech) to text.</p>
+</li>
+<li>
+<h5 id="automl"><strong>AutoML</strong><a class="headerlink" href="#automl" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Machine learning algorithms that "learn to learn" through black-box optimization. For more information, see <a href="https://developers.google.com/machine-learning/glossary#automl">ML Glossary</a>.</p>
+</li>
+<li>
+<h5 id="autorater"><strong>autorater</strong><a class="headerlink" href="#autorater" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>An autorater is a language model that evaluates the quality of model responses given an original inference prompt. It's used in the AutoSxS pipeline to compare the predictions of two models and determine which model performed the best. For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/side-by-side-eval#autorater">The autorater</a>.</p>
+</li>
+<li>
+<h5 id="baseline"><strong>baseline</strong><a class="headerlink" href="#baseline" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A model used as a reference point for comparing how well another model (typically, a more complex one) is performing. For example, a logistic regression model might serve as a good baseline for a deep model. For a particular problem, the baseline helps model developers quantify the minimal expected performance that a new model must achieve for the new model to be useful. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/model-monitoring/set-up-model-monitoring#baseline_and_target_datasets">Baseline and target datasets</a>.</p>
+</li>
+<li>
+<h5 id="batch"><strong>batch</strong><a class="headerlink" href="#batch" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>The set of examples used in one training iteration. The batch size determines the number of examples in a batch.</p>
+</li>
+<li>
+<h5 id="batch-size"><strong>batch size</strong><a class="headerlink" href="#batch-size" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>The number of examples in a batch. For example, the batch size of SGD is 1, while the batch size of a mini-batch is usually between 10 and 1000. Batch size is usually fixed during training and inference; however, TensorFlow does permit dynamic batch sizes.</p>
+</li>
+<li>
+<h5 id="batch-prediction"><strong>batch prediction</strong><a class="headerlink" href="#batch-prediction" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Batch prediction takes a group of prediction requests and outputs the results in one file. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/predictions/overview#batch-prediction">Overview of getting predictions on Vertex AI</a>.</p>
+</li>
+<li>
+<h5 id="bias"><strong>bias</strong><a class="headerlink" href="#bias" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<ol>
+<li>Stereotyping, prejudice or favoritism towards some things, people, or groups over others. These biases can affect collection and interpretation of data, the design of a system, and how users interact with a system. 2. Systematic error introduced by a sampling or reporting procedure.</li>
+</ol>
+</li>
+<li>
+<h5 id="bidrectional"><strong>bidrectional</strong><a class="headerlink" href="#bidrectional" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A term used to describe a system that evaluates the text that both precedes and follows a target section of text. In contrast, a unidirectional system only evaluates the text that precedes a target section of text.</p>
+</li>
+<li>
+<h5 id="bidirectional-encoder-representations-from-transformers-bert"><strong>Bidirectional Encoder Representations from Transformers (BERT)</strong><a class="headerlink" href="#bidirectional-encoder-representations-from-transformers-bert" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>BERT is a method of pre-training language representations, meaning that we train a general-purpose "language understanding" model on a large text corpus (like Wikipedia), and then use that model for downstream NLP tasks that we care about (like question answering). BERT outperforms previous methods because it is the first unsupervised, deeply bidirectional system for pre-training NLP.</p>
+</li>
+<li>
+<h5 id="bilingual-evaluation-understudy-bleu"><strong>Bilingual Evaluation Understudy (BLEU)</strong><a class="headerlink" href="#bilingual-evaluation-understudy-bleu" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A popular measure for evaluating the quality of a machine-translation algorithm by comparing its output to that of one or more human translations.</p>
+</li>
+<li>
+<h5 id="boosting"><strong>boosting</strong><a class="headerlink" href="#boosting" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In model training: Boosting can refer to data augmentation techniques used to increase the size and diversity of training datasets. This is done by transforming existing examples to create additional, varied examples, which can improve model performance, especially when the original dataset is limited.</p>
+</li>
+<li>
+<h5 id="bounding-box"><strong>bounding box</strong><a class="headerlink" href="#bounding-box" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A bounding box for an object in the video frame can be specified in either of two ways (i) Using 2 vertices consisting of a set of x,y coordinates if they are diagonally opposite points of the rectangle. For example: x_relative_min, y_relative_min,,,x_relative_max,y_relative_max,, (ii) Use all 4 vertices. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/video-data/object-tracking/prepare-data#csv">Prepare video data</a>.</p>
+</li>
+<li>
+<h5 id="bucket"><strong>bucket</strong><a class="headerlink" href="#bucket" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Top-level folder for Cloud Storage. Bucket names must be unique across all users of Cloud Storage. Buckets contain files. For more information, see <a href="https://cloud.google.com/storage/docs/introduction">Product overview of Cloud Storage</a>.</p>
+</li>
+<li>
+<h5 id="chain-of-thought"><strong>Chain-of-Thought</strong><a class="headerlink" href="#chain-of-thought" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In generative AI, Chain-of-Thought (CoT) is a prompting technique that encourages the large language model (LLM) to explicitly detail its reasoning process before arriving at a conclusion. This involves prompting the model to show the intermediate steps it takes to solve a problem, rather than just providing the final answer. This method can significantly improve the LLM's performance on complex reasoning tasks.</p>
+</li>
+<li>
+<h5 id="chat"><strong>chat</strong><a class="headerlink" href="#chat" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>The contents of a back-and-forth dialogue with an ML system, typically a large language model. The previous interaction in a chat (what you typed and how the large language model responded) becomes the context for subsequent parts of the chat. A chatbot is an application of a large language model.</p>
+</li>
+<li>
+<h5 id="checkpoint"><strong>checkpoint</strong><a class="headerlink" href="#checkpoint" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Data that captures the state of a model's parameters either during training or after training is completed. For example, during training, you can: 1. Stop training, perhaps intentionally or perhaps as the result of certain errors. 2. Capture the checkpoint. 3. Later, reload the checkpoint, possibly on different hardware. 4. Restart training. Within Gemini, a checkpoint refers to a specific version of a Gemini model trained on a specific dataset.</p>
+</li>
+<li>
+<h5 id="classification-model"><strong>classification model</strong><a class="headerlink" href="#classification-model" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A model whose prediction is a class. For example, the following are all classification models: A model that predicts an input sentence's language (French? Spanish? Italian?). A model that predicts tree species (Maple? Oak? Baobab?). A model that predicts the positive or negative class for a particular medical condition.</p>
+</li>
+<li>
+<h5 id="classification-metrics"><strong>classification metrics</strong><a class="headerlink" href="#classification-metrics" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Supported classification metrics in the Vertex AI SDK for Python are confusion matrix and ROC curve.</p>
+</li>
+<li>
+<h5 id="cloud-tpu"><strong>Cloud TPU</strong><a class="headerlink" href="#cloud-tpu" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A specialized hardware accelerator designed to speed up machine learning workloads on Google Cloud.</p>
+</li>
+<li>
+<h5 id="clustering"><strong>clustering</strong><a class="headerlink" href="#clustering" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In the context of generative AI, clustering is an unsupervised machine learning technique used to group similar data points together based on their characteristics. This is achieved by defining a similarity measure (or metric) to compare data points, and grouping those with high similarity into the same cluster. In generative AI applications, this might involve clustering embeddings (numerical representations of text, images, or other data) to perform tasks like search, classification, or outlier detection. For example, customer segmentation can be achieved by clustering customer data to identify groups with similar behaviors or characteristics. For more information, see <a href="https://developers.google.com/machine-learning/clustering/overview">What is clustering?</a>.</p>
+</li>
+<li>
+<h5 id="container-image"><strong>container image</strong><a class="headerlink" href="#container-image" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A container image is a package that includes the component's executable code and a definition of the environment that the code runs in. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/training/overview">Custom training overview</a>.</p>
+</li>
+<li>
+<h5 id="context"><strong>context</strong><a class="headerlink" href="#context" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A context is used to group artifacts and executions together under a single, queryable, and typed category. Contexts can be used to represent sets of metadata. An example of a Context would be a run of a machine learning pipeline.</p>
+</li>
+<li>
+<h5 id="context-cache"><strong>context cache</strong><a class="headerlink" href="#context-cache" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A context cache in Vertex AI is a large amount of data that can be used in multiple requests to a Gemini model. The cached content is stored in the region where the request to create the cache is made. It can be any MIME type supported by Gemini multimodal models, such as text, audio, or video. For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-overview">Context caching overview</a>.</p>
+</li>
+<li>
+<h5 id="context-window"><strong>context window</strong><a class="headerlink" href="#context-window" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>The number of tokens a model can process in a given prompt. The larger the context window, the more information the model can use to provide coherent and consistent responses to the prompt.</p>
+</li>
+<li>
+<h5 id="customer-managed-encryption-keys-cmek"><strong>Customer-managed encryption keys (cmek)</strong><a class="headerlink" href="#customer-managed-encryption-keys-cmek" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Customer-managed encryption keys (CMEK) are integrations that allow customers to encrypt data in existing Google services using a key they manage in Cloud KMS (also known as Storky). The key in Cloud KMS is the key encryption key protecting their data. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/general/cmek">Customer-managed encryption keys (CMEK)</a>.</p>
+</li>
+<li>
+<h5 id="data-analysis"><strong>data analysis</strong><a class="headerlink" href="#data-analysis" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Obtaining an understanding of data by considering samples, measurement, and visualization. Data analysis can be particularly useful when a dataset is first received, before one builds the first model. It is also crucial in understanding experiments and debugging problems with the system.</p>
+</li>
+<li>
+<h5 id="data-augmentation"><strong>data augmentation</strong><a class="headerlink" href="#data-augmentation" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Artificially boosting the range and number of training examples by transforming existing examples to create additional examples. For example, suppose images are one of your features, but your dataset doesn't contain enough image examples for the model to learn useful associations. Ideally, you'd add enough labeled images to your dataset to enable your model to train properly. If that's not possible, data augmentation can rotate, stretch, and reflect each image to produce many variants of the original picture, possibly yielding enough labeled data to enable excellent training.</p>
+</li>
+<li>
+<h5 id="dataframe"><strong>DataFrame</strong><a class="headerlink" href="#dataframe" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A popular pandas data type for representing datasets in memory. A DataFrame is analogous to a table or a spreadsheet. Each column of a DataFrame has a name (a header), and each row is identified by a unique number. Each column in a DataFrame is structured like a 2D array, except that each column can be assigned its own data type.</p>
+</li>
+<li>
+<h5 id="data-indexing"><strong>data indexing</strong><a class="headerlink" href="#data-indexing" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In the context of generative AI, data indexing is the process of structuring and organizing a knowledge base to optimize search and retrieval. This involves creating an index, often called a corpus, which allows for efficient searching of the data. The process is separate from corpus creation, and the indexed data can be used to enrich the context of large language models (LLMs), reducing hallucinations and improving the accuracy of responses. For example, in a website context, data indexing might involve adding metadata like datePublished and dateModified to improve search functionality. Different methods exist for indexing data, including using vector search for similarity search in applications like retrieving relevant information for LLMs at query time. For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/rag-overview">RAG Engine overview</a> .</p>
+</li>
+<li>
+<h5 id="data-ingestion"><strong>data ingestion</strong><a class="headerlink" href="#data-ingestion" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Data ingestion is the process of extracting data from various sources and integrating it into a central location for further processing and analysis. In the context of generative AI, data ingestion involves extracting information from different data sources, such as clinical forms, patient records, or unstructured text, to train and fine-tune generative AI models. The ingested data is typically processed and transformed to ensure its quality and consistency before it is used to train the generative AI models. This process may involve data cleaning, feature engineering, and data augmentation techniques to improve the model's performance and generalization capabilities. For more information, see <a href="https://cloud.google.com/architecture/use-generative-ai-utilization-management">Use generative AI for utilization management</a>.</p>
+</li>
+<li>
+<h5 id="data-parallelism"><strong>data parallelism</strong><a class="headerlink" href="#data-parallelism" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A way of scaling training or inference that replicates an entire model onto multiple devices and then passes a subset of the input data to each device. Data parallelism can enable training and inference on very large batch sizes; however, data parallelism requires that the model be small enough to fit on all devices. Data parallelism typically speeds training and inference.</p>
+</li>
+<li>
+<h5 id="dataset-data-set"><strong>dataset (data set)</strong><a class="headerlink" href="#dataset-data-set" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A dataset is broadly defined as a collection of structured or unstructured data records. A collection of raw data, commonly (but not exclusively) organized in one of the following formats: a spreadsheet a file in CSV (comma-separated values) format. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/samples/aiplatform-create-dataset-sample">Create a dataset</a>.</p>
+</li>
+<li>
+<h5 id="data-transformation"><strong>data transformation</strong><a class="headerlink" href="#data-transformation" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In the context of Retrieval Augmented Generation (RAG), data transformation refers to the conversion of data into a format suitable for indexing and processing by an LLM. This often involves splitting data into smaller chunks to make it manageable for embedding and indexing. Other transformations might include cleaning and validation steps to ensure data quality. For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/rag-overview">RAG Engine overview</a>.</p>
+</li>
+<li>
+<h5 id="decoder"><strong>decoder</strong><a class="headerlink" href="#decoder" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In general, any ML system that converts from a processed, dense, or internal representation to a more raw, sparse, or external representation. Decoders are often a component of a larger model, where they are frequently paired with an encoder. In sequence-to-sequence tasks, a decoder starts with the internal state generated by the encoder to predict the next sequence.</p>
+</li>
+<li>
+<h5 id="deep-neural-network-dnn"><strong>deep neural network (DNN)</strong><a class="headerlink" href="#deep-neural-network-dnn" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A neural network with multiple hidden layers, typically programmed through deep learning techniques.</p>
+</li>
+<li>
+<h5 id="depth"><strong>depth</strong><a class="headerlink" href="#depth" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>The sum of the following in a neural network: 1. the number of hidden layers 2. the number of output layers, which is typically one 3. the number of any embedding layers. For example, a neural network with five hidden layers and one output layer has a depth of 6. Notice that the input layer doesn't influence depth.</p>
+</li>
+<li>
+<h5 id="devops"><strong>DevOps</strong><a class="headerlink" href="#devops" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>DevOps is a suite of Google Cloud Platform products, for example, Artifact Registry, Cloud Deploy.</p>
+</li>
+<li>
+<h5 id="early-stopping"><strong>early stopping</strong><a class="headerlink" href="#early-stopping" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A method for regularization that involves ending training before training loss finishes decreasing. In early stopping, you intentionally stop training the model when the loss on a validation dataset starts to increase; that is, when generalization performance worsens.</p>
+</li>
+<li>
+<h5 id="embedding"><strong>embedding</strong><a class="headerlink" href="#embedding" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Numerical representations of words or pieces of text. These numbers capture the semantic meaning and context of the text. Similar or related words or text tend to have similar embeddings, which means they are closer together in the high-dimensional vector space.</p>
+</li>
+<li>
+<h5 id="embedding-space-latent-space"><strong>embedding space (latent space)</strong><a class="headerlink" href="#embedding-space-latent-space" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In Generative AI, embedding space refers to a numerical representation of text, images, or videos that captures relationships between inputs. Machine learning models, particularly generative AI models, are adept at creating these embeddings by identifying patterns within large datasets. Applications can utilize embeddings to process and generate language, recognizing complex meanings and semantic relationships specific to the content.</p>
+</li>
+<li>
+<h5 id="embedding-vector"><strong>embedding vector</strong><a class="headerlink" href="#embedding-vector" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A dense, often low-dimensional, vector representation of an item such that, if two items are semantically similar, their respective embeddings are located near each other in the embedding vector space.</p>
+</li>
+<li>
+<h5 id="encoder"><strong>encoder</strong><a class="headerlink" href="#encoder" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In general, any ML system that converts from a raw, sparse, or external representation into a more processed, denser, or more internal representation. Encoders are often a component of a larger model, where they are frequently paired with a decoder. Some transformers pair encoders with decoders, though other transformers use only the encoder or only the decoder. Some systems use the encoder's output as the input to a classification or regression network. In sequence-to-sequence tasks, an encoder takes an input sequence and returns an internal state (a vector). Then, the decoder uses that internal state to predict the next sequence.</p>
+</li>
+<li>
+<h5 id="ensemble"><strong>ensemble</strong><a class="headerlink" href="#ensemble" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A collection of models trained independently whose predictions are averaged or aggregated. In many cases, an ensemble produces better predictions than a single model. For example, a random forest is an ensemble built from multiple decision trees. Note that not all decision forests are ensembles.</p>
+</li>
+<li>
+<h5 id="environment"><strong>environment</strong><a class="headerlink" href="#environment" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In reinforcement learning, the world that contains the agent and allows the agent to observe that world's state. For example, the represented world can be a game like chess, or a physical world like a maze. When the agent applies an action to the environment, then the environment transitions between states.</p>
+</li>
+<li>
+<h5 id="evaluation-eval"><strong>evaluation (eval)</strong><a class="headerlink" href="#evaluation-eval" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>An eval, short for "evaluation", is a type of experiment in which logged or synthetic queries are sent through two Search stacks--an experimental stack that includes your change and a base stack without your change. Evals produce diffs and metrics that let you evaluate the impact, quality, and other effects of your change on search results and other parts of the Google user experience. Evals are used during tuning, or iterations, on your change. They are also used as part of launching a change to live user traffic.</p>
+</li>
+<li>
+<h5 id="execution"><strong>execution</strong><a class="headerlink" href="#execution" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>An execution is a record of an individual machine learning workflow step, typically annotated with its runtime parameters. Examples of executions include data ingestion, data validation, model training, model evaluation, and model deployment.</p>
+</li>
+<li>
+<h5 id="f1-score"><strong>F1 Score</strong><a class="headerlink" href="#f1-score" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>The F1 score is a metric used to evaluate the accuracy of a model's output. It's particularly useful for assessing the performance of models on tasks where both precision and recall are important, such as information extraction. For generative AI models, the F1 score can be used to compare the model's predictions with ground truth data to determine the model's accuracy. However, for generative tasks like summarization and text generation, other metrics like Rough-L score might be more appropriate.</p>
+</li>
+<li>
+<h5 id="feature"><strong>feature</strong><a class="headerlink" href="#feature" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In machine learning (ML), a feature is a characteristic or attribute of an instance or entity that's used as an input to train an ML model or to make predictions.</p>
+</li>
+<li>
+<h5 id="feature-extraction"><strong>feature extraction</strong><a class="headerlink" href="#feature-extraction" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In the context of generative AI, feature extraction refers to the process of identifying and selecting relevant features from input data to be used in model training. These features are then used to generate new data that resembles the original input. For example, in image generation, feature extraction might involve identifying edges, textures, and colors. In natural language processing, it could involve extracting keywords, phrases, and grammatical structures. The extracted features are then used by the generative model to create new content.</p>
+</li>
+<li>
+<h5 id="feature-serving"><strong>feature serving</strong><a class="headerlink" href="#feature-serving" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Feature serving is the process of exporting or fetching feature values for training or inference. In Vertex AI, there are two types of feature serving—online serving and offline serving. Online serving retrieves the latest feature values of a subset of the feature data source for online predictions. Offline or batch serving exports high volumes of feature data—including historical data—for offline processing, such as ML model training.</p>
+</li>
+<li>
+<h5 id="feature-view"><strong>feature view</strong><a class="headerlink" href="#feature-view" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A feature view is a logical collection of features materialized from a BigQuery data source to an online store instance. A feature view stores and periodically refreshes the customer's feature data, which is refreshed periodically from the BigQuery source. A feature view is associated with the feature data storage either directly or through associations to feature registry resources.</p>
+</li>
+<li>
+<h5 id="few-shot-prompt-few-shot"><strong>few-shot prompt (few-shot)</strong><a class="headerlink" href="#few-shot-prompt-few-shot" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In generative AI, "few-shot" refers to a type of prompt that includes a small number of examples to guide the model's response. These examples help the model understand the desired output format, phrasing, scope, or general patterning of the response. Few-shot prompts are often used to regulate the output of language models, ensuring that they generate responses that are accurate, high-quality, and consistent with the user's expectations. By providing the model with a few relevant examples, the user can influence the model's behavior and obtain more satisfactory results. For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/few-shot-examples">Include few-shot examples</a>.</p>
+</li>
+<li>
+<h5 id="foundation-model-fm"><strong>foundation model (FM)</strong><a class="headerlink" href="#foundation-model-fm" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Models trained on broad data such that they can be adapted (for example, fine-tuned) to a wide range of downstream tasks.</p>
+</li>
+<li>
+<h5 id="foundation-model-operations-fmops"><strong>Foundation Model Operations (FMOPs)</strong><a class="headerlink" href="#foundation-model-operations-fmops" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>FMOps expands upon the capabilities of MLOps and focuses on the efficient productionization of pre-trained (trained from scratch) or customized (fine-tuned) FMs.</p>
+</li>
+<li>
+<h5 id="gemini"><strong>Gemini</strong><a class="headerlink" href="#gemini" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Gemini is a set of Google's large sequence-based multimodal models. This means that they can accept inputs and produce outputs in more than one medium at once, including text, audio, and visual media. They are designed to integrate with agents capable of performing various tasks. For more information, see <a href="../learn/models/">Google models</a>.</p>
+</li>
+<li>
+<h5 id="generalization"><strong>generalization</strong><a class="headerlink" href="#generalization" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A model's ability to make correct predictions on new, previously unseen data. A model that can generalize is the opposite of a model that is overfitting.</p>
+</li>
+<li>
+<h5 id="generation"><strong>generation</strong><a class="headerlink" href="#generation" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In the context of generative AI, "generation" refers to the process of creating new data or content from existing data or information. Generative AI models are trained on large datasets and can learn patterns and relationships within the data. They can then use this knowledge to generate new and unique content that is similar to the training data but not an exact replica. For more information, see <a href="https://cloud.google.com/docs/ai-ml/generative-ai/generative-ai-or-traditional-ai">When to use generative AI or traditional AI</a>.</p>
+</li>
+<li>
+<h5 id="generative-model"><strong>generative model</strong><a class="headerlink" href="#generative-model" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A type of machine learning model that can create novel outputs based on its training data. At its simplest, the model generates new data that looks like a certain set of categories that it was trained on. Usually associated with large language models, but other types of models can be generative as well.</p>
+</li>
+<li>
+<h5 id="google-embedded-modem-system-gems"><strong>Google Embedded Modem System (GEMS)</strong><a class="headerlink" href="#google-embedded-modem-system-gems" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>GEMS is an embedded software framework targeting modems, and an accompanying set of development workflows and infrastructure. The core vision of GEMS is to provide high quality modem system code with high reusability across many Google devices that contain modems. To achieve this broad vision, GEMS provides a comprehensive environment for developers, comprised of the major building blocks depicted below.</p>
+</li>
+<li>
+<h5 id="gradient"><strong>gradient</strong><a class="headerlink" href="#gradient" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>The vector of partial derivatives with respect to all of the independent variables. In machine learning, the gradient is the vector of partial derivatives of the model function. The gradient points in the direction of steepest ascent.</p>
+</li>
+<li>
+<h5 id="graph"><strong>graph</strong><a class="headerlink" href="#graph" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In the context of generative AI, a graph refers to a structured representation of information that organizes and connects data as a network of nodes and edges. These graphs are often used to represent knowledge and relationships between entities, making them particularly useful for generative AI systems that require a deep understanding of the context and relationships within data. GenAI systems that leverage knowledge graphs can utilize them to enhance the performance of retrieval models. By incorporating knowledge graphs into the system, generative AI can access context-rich data and traverse the graph to retrieve relevant subgraphs based on user queries. This lets the system provide more accurate and informative responses by generating contextually relevant content.</p>
+</li>
+<li>
+<h5 id="ground-truth-gt"><strong>ground truth (GT)</strong><a class="headerlink" href="#ground-truth-gt" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Ground truth is a term used in various fields to refer to the absolute truth of some decision or measurement problem, as opposed to some system's estimate. In machine learning, the term "ground truth" refers to the training set for supervised learning techniques.</p>
+</li>
+<li>
+<h5 id="hallucination"><strong>hallucination</strong><a class="headerlink" href="#hallucination" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A hallucination in generative AI is a confident response by an AI that cannot be grounded by its training data. It may be factually incorrect. In the context of text generation, it's plausible-sounding random falsehoods within its generated text content.</p>
+</li>
+<li>
+<h5 id="heuristic"><strong>heuristic</strong><a class="headerlink" href="#heuristic" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A simple and quickly implemented solution to a problem. For example, "With a heuristic, we achieved 86% accuracy. When we switched to a deep neural network, accuracy went up to 98%".</p>
+</li>
+<li>
+<h5 id="hidden-layer"><strong>hidden layer</strong><a class="headerlink" href="#hidden-layer" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A layer in a neural network between the input layer (the features) and the output layer (the prediction). Each hidden layer consists of one or more neurons. A deep neural network contains more than one hidden layer.</p>
+</li>
+<li>
+<h5 id="histogram"><strong>histogram</strong><a class="headerlink" href="#histogram" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A graphical display of the variation in a set of data using bars. A histogram visualizes patterns that are difficult to detect in a simple table of numbers.</p>
+</li>
+<li>
+<h5 id="hyperparameter"><strong>hyperparameter</strong><a class="headerlink" href="#hyperparameter" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A hyperparameter refers to a variable that governs the training process of a machine learning model. These variables can include learning rates, momentum values in the optimizer, and the number of units in the last hidden layer of a model. Hyperparameter tuning in Vertex AI involves running multiple trials of a training application with different values for the chosen hyperparameters, set within specified limits. The goal is to optimize the hyperparameter settings to maximize the model's predictive accuracy. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/training/hyperparameter-tuning-overview">Hyperparameter tuning overview</a>.</p>
+</li>
+<li>
+<h5 id="imagen"><strong>Imagen</strong><a class="headerlink" href="#imagen" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Imagen is a text-to-image generative AI service available through the Vertex AI platform. It allows users to generate novel images, edit images, fine-tune style or subject models, caption images, or get answers to questions about image content. For more information, see <a href="../image/Imagen-on-Vertex-AI/">Imagen on Vertex AI overview</a>.</p>
+</li>
+<li>
+<h5 id="image-recognition"><strong>image recognition</strong><a class="headerlink" href="#image-recognition" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Image recognition is the process of classifying objects, patterns, or concepts in an image. It is also known as image classification. Image recognition is a subfield of machine learning and computer vision.</p>
+</li>
+<li>
+<h5 id="index"><strong>index</strong><a class="headerlink" href="#index" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A collection of vectors deployed together for similarity search. Vectors can be added to an index or removed from an index. Similarity search queries are issued to a specific index and will search over the vectors in that index.</p>
+</li>
+<li>
+<h5 id="inference"><strong>inference</strong><a class="headerlink" href="#inference" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In the context of the Vertex AI platform, inference refers to the process of running data points through a machine learning model to calculate an output, such as a single numerical score. This process is also known as "operationalizing a machine learning model" or "putting a machine learning model into production." Inference is an important step in the machine learning workflow, since it enables models to be used to make predictions on new data. In Vertex AI, inference can be performed in various ways, including batch prediction and online prediction. Batch prediction involves running a group of prediction requests and outputting the results in one file, while online prediction allows for real-time predictions on individual data points.</p>
+</li>
+<li>
+<h5 id="information-retrieval-ir"><strong>information retrieval (IR)</strong><a class="headerlink" href="#information-retrieval-ir" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Information retrieval (IR) is a key component of Vertex AI Search. It is the process of finding and retrieving relevant information from a large collection of data. In the context of Vertex AI, IR is used to retrieve documents from a corpus based on a user's query. Vertex AI offers a suite of APIs to help you build your own Retrieval Augmented Generation (RAG) applications or to build your own Search engine. For more information, see <a href="../use-vertexai-search/">Use Vertex AI Search as a retrieval backend using RAG Engine</a>.</p>
+</li>
+<li>
+<h5 id="learning-rate-step-size"><strong>learning rate (step size)</strong><a class="headerlink" href="#learning-rate-step-size" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Learning rate is a hyperparameter used to tune the optimization process of a machine learning model. It determines the step size at which the model updates its weights during training. A higher learning rate can lead to faster convergence but may result in instability or overfitting. Conversely, a lower learning rate may lead to slower convergence but can help prevent overfitting, no sources. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/training/hyperparameter-tuning-overview">Overview of hyperparameter tuning</a>.</p>
+</li>
+<li>
+<h5 id="loss-cost"><strong>loss (cost)</strong><a class="headerlink" href="#loss-cost" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>During the training of a supervised model, a measure of how far a model's prediction is from its label. A loss function calculates the loss.</p>
+</li>
+<li>
+<h5 id="managed-dataset"><strong>managed dataset</strong><a class="headerlink" href="#managed-dataset" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A dataset object created in and hosted by Vertex AI.</p>
+</li>
+<li>
+<h5 id="model"><strong>model</strong><a class="headerlink" href="#model" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Any model pre-trained or not. In general, any mathematical construct that processes input data and returns output. Phrased differently, a model is the set of parameters and structure needed for a system to make predictions.</p>
+</li>
+<li>
+<h5 id="model-distillation-knowledge-distillation-teacher-student-models"><strong>model distillation (knowledge distillation, teacher-student models)</strong><a class="headerlink" href="#model-distillation-knowledge-distillation-teacher-student-models" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Model distillation is a technique that allows a smaller student model to learn from a larger teacher model. The student model is trained to mimic the output of the teacher model, and it can then be used to generate new data or make predictions. Model distillation is often used to make large models more efficient or to make them more accessible to devices with limited resources. It can also be used to improve the generalization of models by reducing overfitting.</p>
+</li>
+<li>
+<h5 id="model-monitoring"><strong>Model Monitoring</strong><a class="headerlink" href="#model-monitoring" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Model Monitoring is a service for tracking the quality and behavior of deployed models. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/model-monitoring/overview">Introduction to Vertex AI Model Monitoring</a>.</p>
+</li>
+<li>
+<h5 id="model-resource-name"><strong>model resource name</strong><a class="headerlink" href="#model-resource-name" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>The resource name for a <a href="https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.models"><code>model</code></a> is as follows: <code>projects/&lt;PROJECT_ID&gt;/locations/&lt;LOCATION_ID&gt;/models/&lt;MODEL_ID&gt;</code>. You can find the model's ID in the Cloud console on the Model Registry page.</p>
+</li>
+<li>
+<h5 id="network-file-system-nfs"><strong>Network File System (NFS)</strong><a class="headerlink" href="#network-file-system-nfs" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A client/server system that lets users access files across a network and treat them as if they resided in a local file directory. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/training/train-nfs-share">Mount an NFS share for custom training</a>.</p>
+</li>
+<li>
+<h5 id="one-hot-encoding"><strong>one-hot encoding</strong><a class="headerlink" href="#one-hot-encoding" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>One-hot encoding represents each category as a vector of N elements (where N is the number of categories) with exactly one element having a value of 1.0 and all remaining elements having a value of 0.0. For more information, see <a href="https://developers.google.com/machine-learning/crash-course/categorical-data/one-hot-encoding#one-hot_encoding">One-hot encoding</a>.</p>
+</li>
+<li>
+<h5 id="one-shot-prompt"><strong>one-shot prompt</strong><a class="headerlink" href="#one-shot-prompt" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A prompt that contains one example demonstrating how the large language model should respond. For more information, see <a href="https://ai.google.dev/gemini-api/docs/models/generative-models#one-shot-prompts">one-shot prompt</a>.</p>
+</li>
+<li>
+<h5 id="parameter"><strong>parameter</strong><a class="headerlink" href="#parameter" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Parameters are keyed input values that configure a run, regulate the behavior of the run, and affect the results of the run. Examples include learning rate, dropout rate, and number of training steps.</p>
+</li>
+<li>
+<h5 id="perplexity"><strong>perplexity</strong><a class="headerlink" href="#perplexity" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Perplexity is a metric used to evaluate the performance of language models. It measures how likely the model is to generate a given text sequence based on the distribution of the text it was trained on. Perplexity is a commonly used metric for evaluating language models and is often used to compare the performance of different models or to track the progress of a model during training.</p>
+</li>
+<li>
+<h5 id="pipeline"><strong>pipeline</strong><a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>ML pipelines are portable and scalable ML workflows that are based on containers. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/pipelines/introduction">Introduction to Vertex AI Pipelines</a>.</p>
+</li>
+<li>
+<h5 id="pipeline-job"><strong>pipeline job</strong><a class="headerlink" href="#pipeline-job" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A pipeline job or a pipeline run corresponds to the PipelineJob resource in the Vertex AI API. It's an execution instance of your ML pipeline definition, which is defined as a set of ML tasks interconnected by input-output dependencies.</p>
+</li>
+<li>
+<h5 id="pipeline-run"><strong>pipeline run</strong><a class="headerlink" href="#pipeline-run" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>One or more Vertex PipelineJobs can be associated with an experiment where each PipelineJob is represented as a single run. In this context, the parameters of the run are inferred by the parameters of the PipelineJob. The metrics are inferred from the system.Metric artifacts produced by that PipelineJob. The artifacts of the run are inferred from artifacts produced by that PipelineJob.</p>
+</li>
+<li>
+<h5 id="private-services-access"><strong>private services access</strong><a class="headerlink" href="#private-services-access" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Private services access is a private connection between your Virtual Private Cloud (VPC) network and networks owned by Google or third-party service providers. It allows virtual machine (VM) instances in your VPC network to communicate with these services using internal IP addresses, avoiding exposure to the public internet. For more information, see <a href="https://cloud.google.com/vpc/docs/private-services-access">Private services access</a>.</p>
+</li>
+<li>
+<h5 id="prompt"><strong>prompt</strong><a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A prompt is a natural language request submitted to a language model to receive a response back. Prompts can contain questions, instructions, contextual information, few-shot examples, and partial input for the model to complete or continue. After the model receives a prompt, depending on the type of model being used, it can generate text, embeddings, code, images, videos, music, and more. For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-design-strategies">Overview of prompting strategies</a>.</p>
+</li>
+<li>
+<h5 id="prompt-engineering-prompt-design"><strong>prompt engineering (prompt design)</strong><a class="headerlink" href="#prompt-engineering-prompt-design" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Prompt engineering in generative AI is the process of crafting effective prompts to elicit desired outputs from large language models (LLMs). It's an iterative, test-driven process focused on refining inputs to achieve specific outcomes. This involves considering both the content and structure of the prompt to ensure accurate and high-quality responses. Effective prompt engineering is crucial for complex tasks, even though simpler tasks may not require it. The goal is to rapidly prototype LLM-based applications. For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/introduction-prompt-design">Introduction to prompt engineering</a>.</p>
+</li>
+<li>
+<h5 id="prompt-tuning"><strong>prompt tuning</strong><a class="headerlink" href="#prompt-tuning" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Prompt tuning is a parameter-efficient fine-tuning method used to improve a generative AI model's performance on a specific task. It involves learning a "prefix" that is prepended to the actual prompt, sometimes at every layer. This approach is considered cheaper and faster than other tuning methods, often yielding good results. Prompt tuning is particularly effective when you have a specific task and want the model to perform it in a certain way. It's also sometimes referred to as prompt learning or parameter-efficient (fine) tuning. For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/introduction-prompt-design">Introduction to prompt engineering</a>.</p>
+</li>
+<li>
+<h5 id="provisioned-throughput-pt"><strong>Provisioned Throughput (PT)</strong><a class="headerlink" href="#provisioned-throughput-pt" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Provisioned Throughput (PT) is a premium service for Vertex AI's generative AI models that offers a guaranteed experience through capacity assurance and predictable pricing. Unlike the pay-as-you-go (on-demand) option, PT lets customers purchase a dedicated quota, ensuring their requests don't compete with others for model capacity. PT is a fixed-cost monthly or weekly subscription that reserves throughput for specified models and locations For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/provisioned-throughput">Provisioned Throughput overview</a>.</p>
+</li>
+<li>
+<h5 id="quantization"><strong>quantization</strong><a class="headerlink" href="#quantization" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Quantization is a model optimization technique used to reduce the precision of the numbers used to represent a model's parameters. This can lead to smaller models, lower power consumption, and reduced inference latency.</p>
+</li>
+<li>
+<h5 id="random-forest"><strong>Random Forest</strong><a class="headerlink" href="#random-forest" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Random Forest is a machine learning algorithm used for both classification and regression. It's not directly a generative AI model itself, but it's a component that can be used within a larger generative AI system. A random forest consists of multiple decision trees, and its prediction is an aggregation of the predictions from these individual trees. For example, in a classification task, each tree "votes" for a class, and the final prediction is the class with the most votes For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/prompt-design-strategies">Decision forest</a>.</p>
+</li>
+<li>
+<h5 id="ray-cluster-on-vertex-ai"><strong>Ray cluster on Vertex AI</strong><a class="headerlink" href="#ray-cluster-on-vertex-ai" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A Ray cluster on Vertex AI is a managed cluster of compute nodes that can be used to run distributed machine learning (ML) and Python applications. It provides the infrastructure to perform distributed computing and parallel processing for your ML workflow. Ray clusters are built into Vertex AI to ensure capacity availability for critical ML workloads or during peak seasons. Unlike custom jobs, where the training service releases the resource after job completion, Ray clusters remain available until deleted. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/open-source/ray-on-vertex-ai/overview">Ray on Vertex AI overview</a>.</p>
+</li>
+<li>
+<h5 id="ray-on-vertex-ai-rov"><strong>Ray on Vertex AI (RoV)</strong><a class="headerlink" href="#ray-on-vertex-ai-rov" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Ray on Vertex AI is designed so you can use the same open source Ray code to write programs and develop applications on Vertex AI with minimal changes. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/open-source/ray-on-vertex-ai/overview">Ray on Vertex AI overview</a>.</p>
+</li>
+<li>
+<h5 id="ray-on-vertex-ai-sdk-for-python"><strong>Ray on Vertex AI SDK for Python</strong><a class="headerlink" href="#ray-on-vertex-ai-sdk-for-python" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Ray on Vertex AI SDK for Python is a version of the Vertex AI SDK for Python that includes the functionality of the Ray Client, Ray BigQuery connector, Ray cluster management on Vertex AI, and predictions on Vertex AI. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk-ref">Introduction to the Vertex AI SDK for Python</a>.</p>
+</li>
+<li>
+<h5 id="recall"><strong>recall</strong><a class="headerlink" href="#recall" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>The percentage of true nearest neighbors returned by the index. For example, if a nearest neighbor query for 20 nearest neighbors returned 19 of the "ground truth" nearest neighbors, the recall is 19/20x100 = 95%.</p>
+</li>
+<li>
+<h5 id="recommendation-system"><strong>recommendation system</strong><a class="headerlink" href="#recommendation-system" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A recommendation system is a machine learning-based system that helps users find compelling content in a large corpus. It generates a smaller subset of candidates from a potentially huge corpus, scores and ranks the candidates, and re-ranks the final ranking to take into account additional constraints. For more information, see <a href="https://developers.google.com/machine-learning/recommendation/overview/types">Recommendation systems overview</a>.</p>
+</li>
+<li>
+<h5 id="regularization"><strong>regularization</strong><a class="headerlink" href="#regularization" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Regularization is a technique used to prevent overfitting in machine learning models. Overfitting occurs when a model learns the training data too well, resulting in poor performance on unseen data. One specific type of regularization mentioned is early stopping, where training is halted before the loss on a validation dataset begins to increase, indicating a decline in generalization performance. For more information, see <a href="https://developers.google.com/machine-learning/crash-course/overfitting/regularization">Overfitting: L2 regularization</a>.</p>
+</li>
+<li>
+<h5 id="service-account"><strong>service account</strong><a class="headerlink" href="#service-account" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In Google Cloud, a service account is a special kind of account used by an application or a virtual machine (VM) instance, not a person. Applications use service accounts to make authorized API calls.</p>
+</li>
+<li>
+<h5 id="service-agent"><strong>service agent</strong><a class="headerlink" href="#service-agent" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A service agent refers to a Google-managed service account. It's utilized when a service requires access to resources created by a different service. For instance, when Dataflow or Dataproc services need to create instances during runtime or when a Cloud Function wants to use the Key Management Service (KMS) to protect the Cloud Function. Service agents are created automatically by Google Cloud when a service requires them. They are typically used to manage access to resources and perform various tasks on behalf of the service. For more information, see <a href="access-control_1.md">Service agents</a>.</p>
+</li>
+<li>
+<h5 id="summary-metrics"><strong>summary metrics</strong><a class="headerlink" href="#summary-metrics" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Summary metrics are a single value for each metric key in an experiment run. For example, the test accuracy of an experiment is the accuracy calculated against a test dataset at the end of training that can be captured as a single value summary metric.</p>
+</li>
+<li>
+<h5 id="tensorboard"><strong>TensorBoard</strong><a class="headerlink" href="#tensorboard" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>TensorBoard is a suite of web applications for visualizing and understanding TensorFlow runs and models. For more information, see <a href="https://www.tensorflow.org/tensorboard/get_started">TensorBoard</a>.</p>
+</li>
+<li>
+<h5 id="tensorboard-instance"><strong>TensorBoard instance</strong><a class="headerlink" href="#tensorboard-instance" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A TensorBoard instance is a regionalized resource that stores Vertex AI TensorBoard Experiments associated with a Project. You can create multiple TensorBoard instances in a project if, for example, you want multiple CMEK enabled instances. This is the same as the TensorBoard resource in the API.</p>
+</li>
+<li>
+<h5 id="tensorboard-resource-name"><strong>TensorBoard Resource name</strong><a class="headerlink" href="#tensorboard-resource-name" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A TensorBoard Resource name is used to fully identify a Vertex AI TensorBoard instance. The format is as follows: projects/PROJECT_ID_OR_NUMBER/locations/REGION/tensorboards/TENSORBOARD_INSTANCE_ID.</p>
+</li>
+<li>
+<h5 id="time-offset"><strong>time offset</strong><a class="headerlink" href="#time-offset" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Time offset is relative to the beginning of a video.</p>
+</li>
+<li>
+<h5 id="time-series-metrics"><strong>time series metrics</strong><a class="headerlink" href="#time-series-metrics" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Time series metrics are longitudinal metric values where each value represents a step in the training routine portion of a run. Time series metrics are stored in Vertex AI TensorBoard. Vertex AI Experiments stores a reference to the Vertex TensorBoard resource.</p>
+</li>
+<li>
+<h5 id="token"><strong>token</strong><a class="headerlink" href="#token" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A token in a language model is the atomic unit that the model is training and making predictions on, namely words, morphemes, and characters. In domains outside of language models, tokens can represent other kinds of atomic units. For example, in computer vision, a token might be a subset of an image. For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/list-token">List and count tokens</a>.</p>
+</li>
+<li>
+<h5 id="trajectory"><strong>trajectory</strong><a class="headerlink" href="#trajectory" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A "trajectory" refers to a sequence of steps or actions taken by an agent or model. It's often used in the evaluation of generative models, where the model's ability to generate text, code, or other content is assessed. There are several types of trajectory metrics that can be used to evaluate generative models, including trajectory exact match, trajectory in-order match, trajectory any order match, and trajectory precision. These metrics measure the similarity between the model's output and a set of human-generated reference outputs.</p>
+</li>
+<li>
+<h5 id="transformer"><strong>Transformer</strong><a class="headerlink" href="#transformer" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A "Transformer" is a neural network architecture that underlies most state-of-the-art generative models. It's used in various language model applications, including translation. Transformers consist of an encoder and a decoder; the encoder converts input text into an intermediate representation, and the decoder converts this into useful output. They utilize a self-attention mechanism to gather context from words surrounding the word being processed. While training a Transformer requires significant resources, fine-tuning a pre-trained Transformer for specific applications is more efficient.</p>
+</li>
+<li>
+<h5 id="transformer-reinforcement-learning"><strong>Transformer Reinforcement Learning</strong><a class="headerlink" href="#transformer-reinforcement-learning" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Transformer Reinforcement Learning (TRL) refers to the application of reinforcement learning (RL) techniques to train transformer-based models for generative tasks. This approach addresses limitations of traditional generative models, which are often trained on next-token prediction without explicit optimization for desirable qualities like coherence, safety, and sensibility. TRL directly optimizes the language model on complex objectives by using RL, often incorporating human feedback (RLHF) to guide the learning process. Examples include fine-tuning models to generate less toxic content using reward models and using TRL to fine-tune Gemma, a generative model. For more information, see <a href="https://github.com/GoogleCloudPlatform/generative-ai/blob/main/open-models/fine-tuning/vertex_ai_trl_fine_tuning_gemma.ipynb">Hugging Face DLCs: Fine-tuning Gemma with Transformer Reinforcement Learning (TRL) on Vertex AI</a>.</p>
+</li>
+<li>
+<h5 id="true-positive"><strong>true positive</strong><a class="headerlink" href="#true-positive" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A "true positive" refers to a prediction where the model correctly identifies a positive class. For example, if a model is trained to identify customers who will purchase a jacket, a true positive would be correctly predicting that a customer will make such a purchase.</p>
+</li>
+<li>
+<h5 id="validation"><strong>validation</strong><a class="headerlink" href="#validation" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Validation checks the quality of a model's predictions against the validation set. This involves defining metrics to measure the generated content's quality, speed, adherence to instructions, and safety. Validation often uses labeled data (input prompts and expected outputs) to compare the model's predictions with the ground truth. Metrics like F1 score (for classification) and ROUGE-L score (for summarization) might be used. The process also includes testing edge cases and unusual scenarios to ensure robustness. For deployed models, continuous monitoring and capturing of common data points and edge cases help improve future validation efforts.</p>
+</li>
+<li>
+<h5 id="vector"><strong>vector</strong><a class="headerlink" href="#vector" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A vector refers to a numerical representation of text, images, or videos that captures relationships between inputs. Machine learning models are suited for creating embeddings by identifying patterns within large datasets. Applications can use embeddings to process and produce language, recognizing complex meanings and semantic relationships specific to the content. For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings">Embeddings APIs overview</a>.</p>
+</li>
+<li>
+<h5 id="vertex-ai-experiments"><strong>Vertex AI Experiments</strong><a class="headerlink" href="#vertex-ai-experiments" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Vertex AI Experiments lets users track the following: 1. Steps of an experiment run (for example, preprocessing and training). 2. Inputs (for example, algorithm, parameters, and datasets). 3. Outputs of those steps (for example, models, checkpoints, and metrics).</p>
+</li>
+<li>
+<h5 id="vertex-ai-model-registry"><strong>Vertex AI Model Registry</strong><a class="headerlink" href="#vertex-ai-model-registry" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>The Vertex AI Model Registry is a central repository where you can manage the lifecycle of your ML models. From the Vertex AI Model Registry, you have an overview of your models so you can better organize, track, and train new versions. When you have a model version you would like to deploy, you can assign it to an endpoint directly from the registry, or using aliases, deploy models to an endpoint. For more information, see <a href="https://cloud.google.com/vertex-ai/docs/model-registry/introduction">Introduction to the Vertex AI Model Registry</a>.</p>
+</li>
+<li>
+<h5 id="video-segment"><strong>video segment</strong><a class="headerlink" href="#video-segment" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>A video segment is identified by beginning and ending time offset of a video.</p>
+</li>
+<li>
+<h5 id="virtual-private-cloud-vpc"><strong>virtual private cloud (VPC)</strong><a class="headerlink" href="#virtual-private-cloud-vpc" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Virtual private cloud is an on-demand, configurable pool of shared computing resources that's allocated in a public cloud environment and provides a level of isolation between different organizations using those resources.</p>
+</li>
+<li>
+<h5 id="word-embedding"><strong>word embedding</strong><a class="headerlink" href="#word-embedding" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>Word embeddings are a way to represent words as dense vectors of floating-point values. This allows similar words to have similar encodings. Word embeddings are often used in generative AI to capture the relationships between words and generate new text or code, no sources. In generative AI, word embeddings can be used to train models that can generate new text or code. By understanding the relationships between words, generative AI models can create new content that is both coherent and relevant.</p>
+</li>
+<li>
+<h5 id="zero-shot-prompt-direct-prompting"><strong>zero-shot prompt (direct prompting)</strong><a class="headerlink" href="#zero-shot-prompt-direct-prompting" title="Permanent link">&para;</a></h5>
+</li>
+<li>
+<p>In generative AI, a zero-shot prompt is a prompt that enables a large language model (LLM) to perform a task without any additional training or examples. This contrasts with methods like few-shot prompting, which provides the model with example inputs and outputs. A zero-shot prompt relies solely on the model's pre-existing knowledge to generate a response. For more information, see <a href="https://ai.google.dev/gemini-api/docs/models/generative-models#zero-shot-prompts">zero-shot prompt</a>.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Generative-AI-on-Vertex-AI-Cookbook/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Vertex AI Generative AI Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Vertex AI Generative AI Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Generative-AI-on-Vertex-AI-release-notes/" class="md-footer__link md-footer__link--next" aria-label="Next: Release Notes">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Release Notes
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.action.edit", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.top", "navigation.tracking", "toc.follow", "navigation.tabs", "navigation.sections", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../js/chat-widget/gemini-client.js"></script>
+      
+        <script src="../js/chat-widget/init.js"></script>
+      
+        <script src="../js/chat-widget/setup-key.js"></script>
+      
+        <script src="../js/chat-widget-helper.js"></script>
+      
+    
+  </body>
+</html>

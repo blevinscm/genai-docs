@@ -1,0 +1,5518 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://blevinscm.github.com/genai-docs/Generative-AI-on-Vertex-AI-release-notes/">
+      
+      
+        <link rel="prev" href="../Generative-AI-glossary/">
+      
+      
+        <link rel="next" href="../supported-models_1/">
+      
+      
+      <link rel="icon" href="../assets/google-cloud-vertex-ai.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Generative AI On Vertex AI Release Notes - Vertex Generative AI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Google Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../js/chat-widget/chat-widget.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#generative-ai-on-vertex-ai-release-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Vertex Generative AI" class="md-header__button md-logo" aria-label="Vertex Generative AI" data-md-component="logo">
+      
+  <img src="../assets/google-cloud-vertex-ai.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vertex Generative AI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Generative AI On Vertex AI Release Notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/blevinscm/genai-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Generative-AI-on-Vertex-AI-Cookbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learn
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../agent-engine/Set-up-the-environment/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Build
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../models/Introduction-to-tuning/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tune
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../deploy/Deploy-generative-AI-models/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Deploy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../agent-engine/manage/Manage-deployed-agents/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Manage
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../models/evaluation-overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Optimize
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Vertex Generative AI" class="md-nav__button md-logo" aria-label="Vertex Generative AI" data-md-component="logo">
+      
+  <img src="../assets/google-cloud-vertex-ai.png" alt="logo">
+
+    </a>
+    Vertex Generative AI
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/blevinscm/genai-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Learn
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Learn
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Generative-AI-on-Vertex-AI-Cookbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vertex AI Generative AI Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Generative-AI-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Release Notes
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Release Notes
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#march-29-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      March 29, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#march-22-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      March 22, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#march-19-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      March 19, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#february-21-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      February 21, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#february-15-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      February 15, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#february-9-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      February 9, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#february-7-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      February 7, 2024
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="February 7, 2024">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#january-12-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      January 12, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#january-8-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      January 8, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#january-5-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      January 5, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#december-18-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      December 18, 2023
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#december-13-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      December 13, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="December 13, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vertex-ai-gemini-pro-and-gemini-pro-vision-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI Gemini Pro and Gemini Pro Vision models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagen-2-general-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imagen 2 General Availability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#december-12-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      December 12, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="December 12, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-embedding-model-003-textembedding-gecko003-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text embedding model 003 (textembedding-gecko@003) available
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#december-8-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      December 8, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="December 8, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generative-ai-on-vertex-ai-security-control-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative AI on Vertex AI security control update
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#december-6-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      December 6, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="December 6, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updated-text-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updated text models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#december-5-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      December 5, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="December 5, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#december-1-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      December 1, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="December 1, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#november-30-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      November 30, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="November 30, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#november-17th-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      November 17th, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="November 17th, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computetoken-api-is-available-in-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      ComputeToken API is available in Preview
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#november-10-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      November 10, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="November 10, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generative-ai-on-vertex-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative AI on Vertex AI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#november-3-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      November 3, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="November 3, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-garden-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Garden updates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Garden updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-textembedding-gecko-and-textembedding-gecko-multilingual-stable-model-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      New textembedding-gecko and textembedding-gecko-multilingual stable model versions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#november-2-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      November 2, 2023
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#november-3-2023_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      November 3, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="November 3, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-tuning-for-chat-bison001-is-generally-available-ga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model tuning for chat-bison@001 is generally available (GA).
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#october-4-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      October 4, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="October 4, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-tuning-for-textembedding-gecko-is-available-in-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model tuning for textembedding-gecko is available in Preview
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#september-1-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      September 1, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="September 1, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pricing-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pricing update
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#august-29-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      August 29, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="August 29, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-generative-ai-on-vertex-ai-models-and-expanded-language-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Generative AI on Vertex AI models and expanded language support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream-responses-from-generative-ai-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stream responses from Generative AI models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supervised-tuning-for-the-text-bison-model-is-generally-available-ga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supervised tuning for the text-bison model is Generally Available (GA)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-tuning-for-the-chat-bison-model-is-available-in-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model tuning for the chat-bison model is available in Preview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-embedding-model-available-in-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      New embedding model available in Preview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagen-subject-tuning-and-style-tuning-is-generally-available-ga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imagen subject tuning and style tuning is Generally Available (GA)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinforcement-learning-from-human-feedback-rlhf-tuning-for-text-bison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reinforcement learning from human feedback (RLHF) tuning for text-bison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex-ai-codey-apis-language-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI Codey APIs language support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex-ai-codey-apis-support-supervised-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI Codey APIs support supervised tuning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-based-model-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metrics-based model evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counttoken-api-available-in-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      CountToken API available in Preview
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#august-9-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      August 9, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="August 9, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imagen-multimodal-embeddings-available-in-ga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imagen Multimodal embeddings available in GA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#august-21-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      August 21, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="August 21, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-tuning-parameter-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model tuning parameter update
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#july-28-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      July 28, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="July 28, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-tuning-parameter-update_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model tuning parameter update
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#july-18-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      July 18, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="July 18, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-tuning-updates-for-text-bison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model tuning updates for text-bison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chirp-ga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chirp GA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#july-17-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      July 17, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="July 17, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imagen-on-vertex-ai-generally-available-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imagen on Vertex AI Generally Available features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#human-face-generation-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      Human face generation supported
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-language-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional language support
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#july-13-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      July 13, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="July 13, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-support-for-palm-2-for-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch support for PaLM 2 for Text
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#july-10-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      July 10, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="July 10, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#palm-2-for-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaLM 2 for Chat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#june-29-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      June 29, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="June 29, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vertex-ai-codey-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI Codey APIs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#june-15-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      June 15, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="June 15, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#palm-2-for-chat_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaLM 2 for Chat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#june-7-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      June 7, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="June 7, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#palm-text-and-embeddings-apis-and-vertex-ai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaLM Text and Embeddings APIs, and Vertex AI Studio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-garden" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Garden
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex-ai-codey-apis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI Codey APIs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#may-10-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      May 10, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="May 10, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generative-ai-on-vertex-ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative AI on Vertex AI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-garden_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Garden
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supported-models_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Supported Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-reference/gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gemini Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image/Imagen-on-Vertex-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Imagen Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code/code-models-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intelligent-code-commenter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intelligent Code Commenter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-models/Use-Gemma-open-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open Models (Gemma, Llama)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../partner-models/use-partner-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Partner Models (Claude, AI21)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn/prompts/Introduction-to-prompting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Prompting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn/prompts/Overview-of-prompting-strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompting Strategies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Design-multimodal-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embeddings/Choose-an-embeddings-task-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Embeddings Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Introduction-to-function-calling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function Calling Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grounding/Ground-responses-using-RAG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grounding Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-builder/Vertex-AI-Agent-Builder-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Builder Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/Vertex-AI-Agent-Engine-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Engine Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag-engine/Vertex-AI-RAG-Engine-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG Engine Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-cache/Context-caching-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Caching Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/Extensions-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extensions Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example-store/Example-Store-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Example Store Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Generative-AI-and-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Security-controls-for-Generative-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security & Safety
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deprecations/Model-versions-and-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deprecations & Lifecycle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-help_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Help
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Build
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Build
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/Set-up-the-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Set up Environment (Agent Engine)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/develop/Develop-a-LangChain-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Develop LangChain Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/develop/Develop-an-Agent-Development-Kit-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Develop ADK Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/use/Use-a-LangChain-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use LangChain Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/use/Use-a-LangGraph-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use LangGraph Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat/Design-chat-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design Chat Prompts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Text-generationbookmark_borderbookmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Text with Gemini
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image/Generate-images-using-text-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Images with Imagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Generate-images-with-Gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Images with Gemini
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video/generate-videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Video with Veo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embeddings/Get-batch-text-embeddings-predictions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Text Embeddings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../embeddings/Get-multimodal-embeddings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Multimodal Embeddings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-reference/Function-calling-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Function Calling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grounding/Use-Google-Search-suggestions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Grounding (Google Search)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../grounding/Grounding-with-your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Grounding (Your Data)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag-engine/Use-data-ingestion-with-Vertex-AI-RAG-Engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Data Ingestion)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rag-engine/use-vertexai-vector-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Vector Search)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use-a-Weaviate-database-with-Vertex-AI-RAG-Engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Weaviate)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-cache/Create-a-context-cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create Context Cache
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/Create-and-run-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create Extensions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../example-store/Retrieve-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Example Store
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/audio-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Audio Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Document-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Document Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multimodal/Video-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Video Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompt-gallery/samples/summarize_summarize_video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Gallery Samples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tune
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tune
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Introduction-to-tuning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Model Tuning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/About-supervised-fine-tuning-for-Gemini-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Gemini Models (Supervised)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/gemini-supervised-tuning-prepare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prepare Data for Gemini SFT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/tune_gemini/text_tune/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Gemini for Text
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image/Style-customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Imagen Models (Style/Subject)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Tune-function-calling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Function Calling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-garden/LoRA-and-QLoRA-recommendations-for-LLMs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LoRA & QLoRA Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Fine-tune-RAG-transformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fine-tune RAG Transformations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deploy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Deploy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy/Deploy-generative-AI-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Generative AI Models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/deploy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Agent (Agent Engine)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Deployments-and-endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deployments and Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-garden/Use-models-in-Model-Garden/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Models from Model Garden
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Purchase-Provisioned-Throughput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Purchase Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Use-Provisioned-Throughput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrate/Migrate-to-the-Gemini-API-from-Azure-OpenAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrate from Azure OpenAI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migrate/openai/Using-OpenAI-libraries-with-Vertex-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use OpenAI Libraries with Vertex AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Manage
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Manage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/manage/Manage-deployed-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Deployed Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/manage/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Logging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/manage/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Monitoring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/sessions/Manage-sessions-using-direct-API-calls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Agent Sessions (API)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/sessions/Manage-sessions-with-Agent-Development-Kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Agent Sessions (ADK)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-cache/Get-information-about-a-context-cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Context Cache (Get/Delete)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Manage-your-RAG-knowledge-base-corpus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage RAG Corpus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn/Model-monitoring-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Monitoring Metrics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quotas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quotas & Limits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/troubleshooting/Troubleshoot-deploying-an-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot Agent Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-engine/troubleshooting/Troubleshoot-developing-an-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot Agent Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Optimize
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Optimize
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/evaluation-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Evaluation Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Gen-AI-evaluation-service-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gen AI Evaluation Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Run-AutoSxS-pipeline-to-perform-pairwise-model-based-evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Run AutoSxS (Pairwise Evaluation)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/Evaluate-Gen-AI-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluate Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../learn/prompts/Optimize-promptsbookmark_borderbookmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimize Prompts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Retrieval-and-ranking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG Retrieval and Ranking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-reference/Vertex-AI-Model-Optimizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vertex AI Model Optimizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provisioned-throughput/Calculate-Provisioned-Throughput-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Calculate Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model-reference/count-tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Count Tokens
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-cache/Context-caching-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Caching Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#march-29-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      March 29, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#march-22-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      March 22, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#march-19-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      March 19, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#february-21-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      February 21, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#february-15-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      February 15, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#february-9-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      February 9, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#february-7-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      February 7, 2024
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="February 7, 2024">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#january-12-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      January 12, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#january-8-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      January 8, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#january-5-2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      January 5, 2024
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#december-18-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      December 18, 2023
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#december-13-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      December 13, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="December 13, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vertex-ai-gemini-pro-and-gemini-pro-vision-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI Gemini Pro and Gemini Pro Vision models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagen-2-general-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imagen 2 General Availability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#december-12-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      December 12, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="December 12, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-embedding-model-003-textembedding-gecko003-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text embedding model 003 (textembedding-gecko@003) available
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#december-8-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      December 8, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="December 8, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generative-ai-on-vertex-ai-security-control-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative AI on Vertex AI security control update
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#december-6-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      December 6, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="December 6, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updated-text-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updated text models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#december-5-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      December 5, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="December 5, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#december-1-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      December 1, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="December 1, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#november-30-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      November 30, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="November 30, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#november-17th-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      November 17th, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="November 17th, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computetoken-api-is-available-in-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      ComputeToken API is available in Preview
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#november-10-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      November 10, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="November 10, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generative-ai-on-vertex-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative AI on Vertex AI
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#november-3-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      November 3, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="November 3, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-garden-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Garden updates
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Garden updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feature_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feature
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changed_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-textembedding-gecko-and-textembedding-gecko-multilingual-stable-model-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      New textembedding-gecko and textembedding-gecko-multilingual stable model versions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#november-2-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      November 2, 2023
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#november-3-2023_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      November 3, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="November 3, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-tuning-for-chat-bison001-is-generally-available-ga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model tuning for chat-bison@001 is generally available (GA).
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#october-4-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      October 4, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="October 4, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-tuning-for-textembedding-gecko-is-available-in-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model tuning for textembedding-gecko is available in Preview
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#september-1-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      September 1, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="September 1, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pricing-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pricing update
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#august-29-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      August 29, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="August 29, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-generative-ai-on-vertex-ai-models-and-expanded-language-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Generative AI on Vertex AI models and expanded language support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream-responses-from-generative-ai-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stream responses from Generative AI models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supervised-tuning-for-the-text-bison-model-is-generally-available-ga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supervised tuning for the text-bison model is Generally Available (GA)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-tuning-for-the-chat-bison-model-is-available-in-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model tuning for the chat-bison model is available in Preview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-embedding-model-available-in-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      New embedding model available in Preview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagen-subject-tuning-and-style-tuning-is-generally-available-ga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imagen subject tuning and style tuning is Generally Available (GA)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reinforcement-learning-from-human-feedback-rlhf-tuning-for-text-bison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reinforcement learning from human feedback (RLHF) tuning for text-bison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex-ai-codey-apis-language-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI Codey APIs language support
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex-ai-codey-apis-support-supervised-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI Codey APIs support supervised tuning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-based-model-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metrics-based model evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counttoken-api-available-in-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      CountToken API available in Preview
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#august-9-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      August 9, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="August 9, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imagen-multimodal-embeddings-available-in-ga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imagen Multimodal embeddings available in GA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#august-21-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      August 21, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="August 21, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-tuning-parameter-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model tuning parameter update
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#july-28-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      July 28, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="July 28, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-tuning-parameter-update_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model tuning parameter update
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#july-18-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      July 18, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="July 18, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-tuning-updates-for-text-bison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model tuning updates for text-bison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chirp-ga" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chirp GA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#july-17-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      July 17, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="July 17, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imagen-on-vertex-ai-generally-available-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Imagen on Vertex AI Generally Available features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#human-face-generation-supported" class="md-nav__link">
+    <span class="md-ellipsis">
+      Human face generation supported
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-language-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional language support
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#july-13-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      July 13, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="July 13, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#batch-support-for-palm-2-for-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Batch support for PaLM 2 for Text
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#july-10-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      July 10, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="July 10, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#palm-2-for-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaLM 2 for Chat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#june-29-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      June 29, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="June 29, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vertex-ai-codey-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI Codey APIs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#june-15-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      June 15, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="June 15, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#palm-2-for-chat_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaLM 2 for Chat
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#june-7-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      June 7, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="June 7, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#palm-text-and-embeddings-apis-and-vertex-ai-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      PaLM Text and Embeddings APIs, and Vertex AI Studio
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-garden" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Garden
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertex-ai-codey-apis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertex AI Codey APIs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#may-10-2023" class="md-nav__link">
+    <span class="md-ellipsis">
+      May 10, 2023
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="May 10, 2023">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generative-ai-on-vertex-ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generative AI on Vertex AI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-garden_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Garden
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/blevinscm/genai-docs/edit/main/docs/Generative-AI-on-Vertex-AI-release-notes.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="generative-ai-on-vertex-ai-release-notes">Generative AI on Vertex AI release notes<a class="headerlink" href="#generative-ai-on-vertex-ai-release-notes" title="Permanent link">&para;</a></h1>
+<p>This page documents production updates to Generative AI on Vertex AI and
+Vertex AI Model Garden. You can periodically check this page for
+announcements about new or updated features, bug fixes, known issues, and
+deprecated functionality.</p>
+<h2 id="march-29-2024">March 29, 2024<a class="headerlink" href="#march-29-2024" title="Permanent link">&para;</a></h2>
+<p>The MedLM-large model infrastructure has been upgraded to improve
+latency and stability. Responses from the model might be slightly different.</p>
+<h2 id="march-22-2024">March 22, 2024<a class="headerlink" href="#march-22-2024" title="Permanent link">&para;</a></h2>
+<p>PDFs are now supported as an input to Gemini 1.0 Pro Vision multimodal
+language model. You can call the APIs with PDFs directly or try it out in the Vertex AI Studio. To learn
+more, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/send-multimodal-prompts#send-images">Send multimodal prompt requests with images or PDF</a>.</p>
+<h2 id="march-19-2024">March 19, 2024<a class="headerlink" href="#march-19-2024" title="Permanent link">&para;</a></h2>
+<p><strong>Anthropic's Claude 3 Sonnet and Claude 3 Haiku models on
+Vertex AI are generally available in Vertex AI.</strong></p>
+<p>The managed models Claude 3 Haiku and Claude 3 Sonnet
+from Anthropic are available on Vertex AI. To use a Claude model on
+Vertex AI, send a request directly to the Vertex AI
+API endpoint. For more information, see
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude">Use the Claude models from Anthropic</a>
+and the Claude model cards in Model Garden:</p>
+<ul>
+<li><a href="https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-haiku">Claude 3 Haiku model card</a></li>
+<li><a href="https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-sonnet">Claude 3 Sonnet model card</a></li>
+</ul>
+<h2 id="february-21-2024">February 21, 2024<a class="headerlink" href="#february-21-2024" title="Permanent link">&para;</a></h2>
+<p><strong>Gemma open models are available.</strong></p>
+<p>Gemma models, a family of lightweight, open models built from the
+same research and technology used to create the Gemini models, are available to
+run on your hardware, mobile devices, or hosted services. To learn more, see
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/open-models/use-gemma">Use Gemma open models</a> and
+the <a href="https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/335">Gemma Model Garden card</a>.</p>
+<h2 id="february-15-2024">February 15, 2024<a class="headerlink" href="#february-15-2024" title="Permanent link">&para;</a></h2>
+<p><strong>Vertex AI Gemini 1.0 Pro and Gemini 1.0 Pro Vision models</strong></p>
+<p>The Vertex AI Gemini 1.0 Pro and
+Gemini 1.0 Pro Vision multimodal language models are
+Generally Available (GA). They have also been made available in the following
+regions: europe-west1, europe-west2, europe-west3, europe-west4, and
+europe-west9.</p>
+<p>For more information, see the following topics:</p>
+<ul>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/overview">Overview of the Gemini API</a></li>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/design-multimodal-prompts">Multimodal prompt design</a></li>
+<li><a href="../model-reference/gemini/">Vertex AI Gemini API reference</a></li>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/sdk-for-gemini/gemini-sdk-overview">Gemini Python SDK reference</a></li>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/migrate/migrate-palm-to-gemini">Migrate from PaLM API to Gemini API</a></li>
+</ul>
+<h2 id="february-9-2024">February 9, 2024<a class="headerlink" href="#february-9-2024" title="Permanent link">&para;</a></h2>
+<p><strong>Multimodal embeddings video support is Generally Available</strong></p>
+<p>Embeddings for video data is now Generally available using the multimodal
+embedding model (<code>multimodalembedding</code>). For more information, see the
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings#vid-img-txt-request">product documentation</a>.</p>
+<p>This features incurs pricing based on the mode you use. For more information,
+see <a href="https://cloud.google.com/vertex-ai/pricing#generative_ai_models">pricing</a>.</p>
+<h2 id="february-7-2024">February 7, 2024<a class="headerlink" href="#february-7-2024" title="Permanent link">&para;</a></h2>
+<p><strong><a href="https://console.cloud.google.com/vertex-ai/model-garden">Model Garden</a> updates:</strong></p>
+<h4 id="feature">Feature<a class="headerlink" href="#feature" title="Permanent link">&para;</a></h4>
+<p>The following models have been added:</p>
+<ul>
+<li>Stable Diffusion XL LCM: The Latent Consistency Model (LCM) enhances
+ text-to-image generation in Latent Diffusion Models by enabling faster
+ and high-quality image creation with fewer steps.</li>
+<li>LLaVA 1.5: Deploy LLaVA 1.5 models.</li>
+<li>PyTorch-ZipNeRF: The Pytorch-ZipNeRF model is a state-of-the-art
+ implementation of the ZipNeRF algorithm in the Pytorch framework,
+ designed for efficient and accurate 3D reconstruction from 2D images.</li>
+<li>LLaMA 2 (Quantized): A quantized version of Meta's Llama 2 models.</li>
+<li>WizardLM: WizardLM is a large language model (LLM) developed by Microsoft,
+ fine-tuned on complex instructions by adapting the Evol-Instruct method.</li>
+<li>WizardCoder: WizardCoder is a large language model (LLM) developed by
+ Microsoft, fine-tuned on complex instructions by adapting the Evol-Instruct
+ method to the domain of code.</li>
+<li>AutoGluon: With AutoGluon you can train and deploy high-accuracy machine
+ learning and deep learning models for tabular data.</li>
+<li>Lama (Large mask inpainting): Use Large Mask Inpainting with fast Fourier
+ convolutions (FFCs), a high receptive field perceptual loss, and large
+ training masks for resolution-robust image inpainting.</li>
+</ul>
+<h4 id="changed">Changed<a class="headerlink" href="#changed" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Added one-click tuning button, and dedicated
+ deployment, tuning, quantization, and evaluation notebooks for Llama 2.</li>
+<li>Added one-click deployment button for more than 20 models with pre-trained
+ OSS artifacts, including <code>Salesforce/blip-image-captioning-base</code> and
+ <code>timbrooks/instruct-pix2pix</code>.</li>
+<li>Supported CodeLlaMA70b with notebooks and the one-click deployment button.</li>
+<li>Added tuning notebooks for Mistral models.</li>
+<li>Added serving notebooks for Stable Video Diffusion Img2Vid XT
+ (for research purposes).</li>
+</ul>
+<h2 id="january-12-2024">January 12, 2024<a class="headerlink" href="#january-12-2024" title="Permanent link">&para;</a></h2>
+<p>Model tuning for the <code>textembedding-gecko</code> and <code>textembedding-gecko-multilingual</code>
+models is available in <a href="https://cloud.google.com/products#product-launch-stages">GA</a>.
+You can use supervised fine-tuning to tune the <code>textembedding-gecko</code> model.
+For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-embeddings">Tune text embeddings</a>.</p>
+<h2 id="january-8-2024">January 8, 2024<a class="headerlink" href="#january-8-2024" title="Permanent link">&para;</a></h2>
+<p><strong>AutoSxS evaluates LLMs side by side</strong></p>
+<p>The <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/side-by-side-eval">automatic side-by-side (AutoSxS) evaluation
+tool</a>
+is available in Preview to A/B test the performance of your LLMs or pre-generated
+predictions. It's comparable to human evaluators, yet faster, available
+on-demand, and more cost-efficient.</p>
+<h2 id="january-5-2024">January 5, 2024<a class="headerlink" href="#january-5-2024" title="Permanent link">&para;</a></h2>
+<p><strong>Generative AI on Vertex AI regional expansion</strong></p>
+<p>Generative AI on Vertex AI features for Batch Prediction and Model Evaluation are
+available in
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/locations#available-regions">12 additional Google Cloud regions</a>.</p>
+<h2 id="december-18-2023">December 18, 2023<a class="headerlink" href="#december-18-2023" title="Permanent link">&para;</a></h2>
+<p><strong><a href="https://console.cloud.google.com/vertex-ai/model-garden">Model Garden</a> updates:</strong></p>
+<ul>
+<li>Support for <a href="https://cloud.google.com/vertex-ai/docs/training/hyperparameter-tuning-overview">hyperparameter tuning</a> and customized datasets for <a href="https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/model_garden_pytorch_openllama_peft.ipynb">OpenLLaMA models</a> using the <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-text-models-supervised#dataset-format">dataset format used by supervised tuning</a> in Vertex AI.</li>
+<li>Support for GPTQ conversions for <a href="https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/model_garden_pytorch_falcon_instruct_peft.ipynb">falcon-instruct models</a>.</li>
+<li>Add <a href="https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/model_garden_pytorch_stable_diffusion_xl_lcm.ipynb">Latent Consistent Models</a>, and <a href="https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/model_garden_pytorch_stable_diffusion_xl_1_0.ipynb">research purpose only SDXL-Turbo models</a> to stable diffusion XL notebooks.</li>
+<li>Add Mixtral 8x7B models in the <a href="https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/model_garden_pytorch_mistral_deployment.ipynb">Mistral notebook</a>.</li>
+</ul>
+<h2 id="december-13-2023">December 13, 2023<a class="headerlink" href="#december-13-2023" title="Permanent link">&para;</a></h2>
+<h3 id="vertex-ai-gemini-pro-and-gemini-pro-vision-models">Vertex AI Gemini Pro and Gemini Pro Vision models<a class="headerlink" href="#vertex-ai-gemini-pro-and-gemini-pro-vision-models" title="Permanent link">&para;</a></h3>
+<p>The Vertex AI Gemini Pro and Gemini Pro Vision multimodal language models are available in
+<a href="https://cloud.google.com/products#product-launch-stages">Preview</a>. For more
+information, see the following topics:</p>
+<ul>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/overview">Overview of the Gemini API</a></li>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/design-multimodal-prompts">Multimodal prompt design</a></li>
+<li><a href="../model-reference/gemini/">Vertex AI Gemini API reference</a></li>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/sdk-for-gemini/gemini-sdk-overview">Gemini Python SDK reference</a></li>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/migrate/migrate-palm-to-gemini">Migrate from PaLM API to Gemini API</a></li>
+</ul>
+<h3 id="imagen-2-general-availability">Imagen 2 General Availability<a class="headerlink" href="#imagen-2-general-availability" title="Permanent link">&para;</a></h3>
+<p>The 005 version of Imagen's image generation model (<code>imagegeneration@005</code>) is
+generally available for image generation tasks. This model version is the
+default for image generation tasks. For more information, see the <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/image/generate-images">product
+documentation</a>.</p>
+<p>For general information about Imagen models and versions, see <a href="../image/model-versioning/">Imagen model
+versions and lifecycle</a>.</p>
+<h2 id="december-12-2023">December 12, 2023<a class="headerlink" href="#december-12-2023" title="Permanent link">&para;</a></h2>
+<h3 id="text-embedding-model-003-textembedding-gecko003-available">Text embedding model 003 (<code>textembedding-gecko@003</code>) available<a class="headerlink" href="#text-embedding-model-003-textembedding-gecko003-available" title="Permanent link">&para;</a></h3>
+<p>The updated stable version of the text embedding foundation model,
+<code>textembedding-gecko@003</code>, is available. <code>textembedding-gecko@003</code>
+features improved quality compared to the previous stable versions,
+<code>textembedding-gecko@001</code> and <code>textembedding-gecko@002</code>.
+For more information on model versions, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versioning">Model versions and lifecycle</a>.</p>
+<h2 id="december-8-2023">December 8, 2023<a class="headerlink" href="#december-8-2023" title="Permanent link">&para;</a></h2>
+<h3 id="generative-ai-on-vertex-ai-security-control-update">Generative AI on Vertex AI security control update<a class="headerlink" href="#generative-ai-on-vertex-ai-security-control-update" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/genai-security-controls">Access Transparency (AXT) security control</a>
+is available for the following features:</p>
+<ul>
+<li>Embeddings for Multimodal online prediction</li>
+<li>Imagen on Vertex AI online prediction</li>
+<li>Imagen on Vertex AI tuning</li>
+</ul>
+<h2 id="december-6-2023">December 6, 2023<a class="headerlink" href="#december-6-2023" title="Permanent link">&para;</a></h2>
+<h3 id="updated-text-models">Updated text models<a class="headerlink" href="#updated-text-models" title="Permanent link">&para;</a></h3>
+<p>Version <code>@002</code> of the models for text, chat, code, and code chat are
+available. The <code>@002</code> model versions include improved prompt responses.
+The <code>@002</code> models are:</p>
+<ul>
+<li><code>text-bison@002</code></li>
+<li><code>chat-bison@002</code></li>
+<li><code>code-bison@002</code></li>
+<li><code>codechat-bison@002</code></li>
+</ul>
+<p>To ensure that you always use the <em>stable</em> model version, specify the model
+identifier with the version number. For example, <code>text-bison@002</code>. For more
+information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versioning">Model versions and lifecycle</a>.</p>
+<h2 id="december-5-2023">December 5, 2023<a class="headerlink" href="#december-5-2023" title="Permanent link">&para;</a></h2>
+<h3 id="feature_1">Feature<a class="headerlink" href="#feature_1" title="Permanent link">&para;</a></h3>
+<p>Model grounding is available in <a href="https://cloud.google.com/products#product-launch-stages">Preview</a>. Use grounding to
+connect the <code>text-bison</code> and <code>chat-bison</code> models to unstructured data stores in Vertex AI Search.
+Grounding lets models access and use the information in the data repositories to generate more enhanced and nuanced responses.
+For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/grounding/overview">Grounding Overview</a>.</p>
+<h2 id="december-1-2023">December 1, 2023<a class="headerlink" href="#december-1-2023" title="Permanent link">&para;</a></h2>
+<h3 id="change">Change<a class="headerlink" href="#change" title="Permanent link">&para;</a></h3>
+<p>The following
+<a href="https://console.cloud.google.com/vertex-ai/model-garden">model_garden_name</a> updates
+are available:</p>
+<ul>
+<li>Updated default model deployment settings with L4 GPUs, such as LLaMA2,
+ falcon-instruct, openllama, Stable Diffusion 1.5, 2.1, and XL models.</li>
+<li>Support for
+ <a href="https://cloud.google.com/vertex-ai/docs/training/hyperparameter-tuning-overview">hyperparameter tuning</a>
+ and customized datasets for LLaMA2 models using the
+ <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-text-models-supervised#dataset-format">dataset format used by supervised tuning</a>
+ in Vertex AI.</li>
+<li>Recommended LoRA and QLoRA settings for large language model tuning in
+ Vertex AI. For details, see <a href="https://cloud.google.com/vertex-ai/docs/model-garden/lora-qlora">LoRA and QLoRA recommendations for
+ LLMs</a>.</li>
+<li>Support for AWQ and GPTQ conversions for LLaMA2 and OpenLLaMA models.</li>
+<li>Benchmark reports for
+ <a href="https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/benchmarking_reports/jax_vit_benchmarking_report.md">ViT pytorch and JAX training</a>,
+ <a href="https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/benchmarking_reports/pytorch_openllama_hyperparameter_tuning_benchmark_report.md">OpenLLaMA 3b/7b/13b hyperparameter tuning</a>, and
+ <a href="https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model_garden/benchmarking_reports/stable_diffusion_v1-5_benchmarking_report.md">Stable Diffusion 1.5 tuning and serving</a>.</li>
+</ul>
+<h2 id="november-30-2023">November 30, 2023<a class="headerlink" href="#november-30-2023" title="Permanent link">&para;</a></h2>
+<h3 id="feature_2">Feature<a class="headerlink" href="#feature_2" title="Permanent link">&para;</a></h3>
+<p>A model size for PaLM 2 for Text is generally available
+(<a href="https://cloud.google.com/products#product-launch-stages">GA</a>). The <code>text-unicorn</code> model provides
+improved response quality for a set of complex reasoning tasks compared to
+the <code>text-bison</code> model. For details, see
+<a href="../learn/models/">Model information</a>.</p>
+<h2 id="november-17th-2023">November 17th, 2023<a class="headerlink" href="#november-17th-2023" title="Permanent link">&para;</a></h2>
+<h3 id="computetoken-api-is-available-in-preview">ComputeToken API is available in Preview<a class="headerlink" href="#computetoken-api-is-available-in-preview" title="Permanent link">&para;</a></h3>
+<p>The ComputeToken API is available in (<a href="https://cloud.google.com/products#product-launch-stages">Preview</a>).
+You can use this API to get a list of tokens for a given prompt. A token is a
+way to represent a common sequence of characters found in a text input. To
+learn more, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/compute-token">Get a list of tokens</a>.</p>
+<h2 id="november-10-2023">November 10, 2023<a class="headerlink" href="#november-10-2023" title="Permanent link">&para;</a></h2>
+<h4 id="generative-ai-on-vertex-ai">Generative AI on Vertex AI<a class="headerlink" href="#generative-ai-on-vertex-ai" title="Permanent link">&para;</a></h4>
+<p><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/genai-security-controls">Security controls</a> are available
+for additional Generative AI on Vertex AI features.</p>
+<h2 id="november-3-2023">November 3, 2023<a class="headerlink" href="#november-3-2023" title="Permanent link">&para;</a></h2>
+<h3 id="model-garden-updates">Model Garden updates<a class="headerlink" href="#model-garden-updates" title="Permanent link">&para;</a></h3>
+<h4 id="feature_3">Feature<a class="headerlink" href="#feature_3" title="Permanent link">&para;</a></h4>
+<p>The following models have been added to <a href="https://console.cloud.google.com/vertex-ai/model-garden">Model Garden</a>:</p>
+<ul>
+<li>ImageBind: Multimodal embedding model.</li>
+<li>Vicuna v1.5: LLM finetuned based on llama2.</li>
+<li>OWL-ViT v2: SoTA Open Vocabulary Object Detection model.</li>
+<li>DITO: SoTA Open Vocabulary Object Detection model.</li>
+<li>NLLB: Multi-language translation model.</li>
+<li>Mistral-7B: SoTA LLM at small size.</li>
+<li>BioGPT: LLM finetuned for biomedical domain.</li>
+<li>BiomedCILP: Multimodal foundational model finetuned for biomedical domain.</li>
+</ul>
+<p>To see a list of all available models, see <a href="https://cloud.google.com/vertex-ai/docs/start/explore-models">Explore models in Model Garden</a>.</p>
+<h4 id="changed_1">Changed<a class="headerlink" href="#changed_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Improved language model serving throughput. For details, see
+ <a href="/blog/products/ai-machine-learning/serve-open-source-llms-on-google-cloud">Serving open source large language models efficiently on Model Garden</a>.
+ Notebooks in the relevant model cards have been updated accordingly.</li>
+<li>Inference speed up to 2 times faster compared with original implementation
+ for Stable Diffusion 1.5, 2.1, and XL models.</li>
+<li>Improved the workflow of the <strong>Deploy</strong> button in all supported model cards.</li>
+<li>Updated notebooks for Llama2, OpenLlama, and Falcon Instruct with suggested
+ machine specs for model serving, and
+ <a href="https://github.com/EleutherAI/lm-evaluation-harness">EleutherAI's evaluation harness</a>
+ dockers for model evaluation.</li>
+</ul>
+<h3 id="new-textembedding-gecko-and-textembedding-gecko-multilingual-stable-model-versions">New <code>textembedding-gecko</code> and <code>textembedding-gecko-multilingual</code> stable model versions<a class="headerlink" href="#new-textembedding-gecko-and-textembedding-gecko-multilingual-stable-model-versions" title="Permanent link">&para;</a></h3>
+<p>The following stable model versions are available in Generative AI on Vertex AI:</p>
+<ul>
+<li><code>textembedding-gecko@002</code></li>
+<li><code>textembedding-gecko-multilingual@001</code></li>
+</ul>
+<p>For more information on model versions, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versioning">Model versions and lifecycle</a>.</p>
+<h2 id="november-2-2023">November 2, 2023<a class="headerlink" href="#november-2-2023" title="Permanent link">&para;</a></h2>
+<p>Generative AI on Vertex AI can be accessed through <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/locations-genai">12 regional
+APIs</a> in North America,
+Europe, and Asia. Regional APIs let customers control where data
+is stored at-rest.</p>
+<h2 id="november-3-2023_1">November 3, 2023<a class="headerlink" href="#november-3-2023_1" title="Permanent link">&para;</a></h2>
+<h3 id="model-tuning-for-chat-bison001-is-generally-available-ga">Model tuning for <code>chat-bison@001</code> is generally available (<a href="https://cloud.google.com/products#product-launch-stages">GA</a>).<a class="headerlink" href="#model-tuning-for-chat-bison001-is-generally-available-ga" title="Permanent link">&para;</a></h3>
+<p>Tuning <code>chat-bison@001</code> supports tensorboard metrics visualizations. For
+details, see
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-text-models-supervised#tuning-and-evaluation-metrics">Tuning and evaluation metrics</a>.</p>
+<h2 id="october-4-2023">October 4, 2023<a class="headerlink" href="#october-4-2023" title="Permanent link">&para;</a></h2>
+<h3 id="model-tuning-for-textembedding-gecko-is-available-in-preview">Model tuning for <code>textembedding-gecko</code> is available in Preview<a class="headerlink" href="#model-tuning-for-textembedding-gecko-is-available-in-preview" title="Permanent link">&para;</a></h3>
+<p>You can use supervised tuning to tune the <code>textembedding-gecko</code> model. This feature is in (<a href="https://cloud.google.com/products#product-launch-stages">Preview</a>).
+For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-embeddings">Tune text embeddings</a>.</p>
+<h2 id="september-1-2023">September 1, 2023<a class="headerlink" href="#september-1-2023" title="Permanent link">&para;</a></h2>
+<h3 id="pricing-update">Pricing update<a class="headerlink" href="#pricing-update" title="Permanent link">&para;</a></h3>
+<p>The pricing for <code>text-bison</code> has been reduced to $0.0005 per 1,000 input and
+output characters. For details, see <a href="https://cloud.google.com/vertex-ai/pricing#generative_ai_models">Vertex AI pricing</a>.</p>
+<h2 id="august-29-2023">August 29, 2023<a class="headerlink" href="#august-29-2023" title="Permanent link">&para;</a></h2>
+<h3 id="new-generative-ai-on-vertex-ai-models-and-expanded-language-support">New Generative AI on Vertex AI models and expanded language support<a class="headerlink" href="#new-generative-ai-on-vertex-ai-models-and-expanded-language-support" title="Permanent link">&para;</a></h3>
+<p>Generative AI on Vertex AI has been updated to include new language
+model candidates (<em>latest</em> models), language models that support input and
+output tokens up to 32k, and more supported languages. For details,
+see <a href="../learn/models/">Available models</a>
+and <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versioning">Model versions and lifecycle</a>.</p>
+<h3 id="stream-responses-from-generative-ai-models">Stream responses from Generative AI models<a class="headerlink" href="#stream-responses-from-generative-ai-models" title="Permanent link">&para;</a></h3>
+<p>Generative AI model streaming support is Generally Available (<a href="https://cloud.google.com/products#product-launch-stages">GA</a>).
+After you send a prompt, the model returns response tokens as they're generated
+instead of waiting for the entire output to be available.</p>
+<p>Supported models are:</p>
+<ul>
+<li><code>text-bison</code></li>
+<li><code>chat-bison</code></li>
+<li><code>code-bison</code></li>
+<li><code>codechat-bison</code></li>
+</ul>
+<p>To learn more, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/streaming">Stream responses from Generative AI models</a>.</p>
+<h3 id="supervised-tuning-for-the-text-bison-model-is-generally-available-ga">Supervised tuning for the <code>text-bison</code> model is Generally Available (GA)<a class="headerlink" href="#supervised-tuning-for-the-text-bison-model-is-generally-available-ga" title="Permanent link">&para;</a></h3>
+<p><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-text-models-supervised">Supervised tuning for the <code>text-bison</code> model</a>
+is Generally Available (<a href="https://cloud.google.com/products#product-launch-stages">GA</a>).</p>
+<h3 id="model-tuning-for-the-chat-bison-model-is-available-in-preview">Model tuning for the <code>chat-bison</code> model is available in Preview<a class="headerlink" href="#model-tuning-for-the-chat-bison-model-is-available-in-preview" title="Permanent link">&para;</a></h3>
+<p>You can use supervised tuning to tune the <code>chat-bison</code> model. This feature is in (<a href="https://cloud.google.com/products#product-launch-stages">Preview</a>).
+For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-text-models">Tune text models</a>.</p>
+<h3 id="new-embedding-model-available-in-preview">New embedding model available in Preview<a class="headerlink" href="#new-embedding-model-available-in-preview" title="Permanent link">&para;</a></h3>
+<p>Generative AI on Vertex AI users can create embeddings using a new model trained on a wide
+range of non-English languages. The model is in (<a href="https://cloud.google.com/products#product-launch-stages">Preview</a>).</p>
+<ul>
+<li><code>textembedding-gecko-multilingual</code></li>
+</ul>
+<p>To learn more, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings">Get text embeddings</a>.</p>
+<h3 id="imagen-subject-tuning-and-style-tuning-is-generally-available-ga">Imagen subject tuning and style tuning is Generally Available (GA)<a class="headerlink" href="#imagen-subject-tuning-and-style-tuning-is-generally-available-ga" title="Permanent link">&para;</a></h3>
+<p>Imagen on Vertex AI offers the following <a href="https://cloud.google.com/products#product-launch-stages">GA</a> features:</p>
+<ul>
+<li>Subject model tuning (standard tuning)*</li>
+<li>Style model tuning*</li>
+</ul>
+<p>* Restricted access feature.</p>
+<p>For more information about Imagen on Vertex AI or how to get access to restricted GA,
+see the <a href="../image/Imagen-on-Vertex-AI/">Imagen on Vertex AI overview</a>.</p>
+<h3 id="reinforcement-learning-from-human-feedback-rlhf-tuning-for-text-bison">Reinforcement learning from human feedback (RLHF) tuning for <code>text-bison</code><a class="headerlink" href="#reinforcement-learning-from-human-feedback-rlhf-tuning-for-text-bison" title="Permanent link">&para;</a></h3>
+<p>The Generative AI on Vertex AI text generation foundation model (<code>text-bison</code>) supports RLHF
+tuning. The RLHF tuning feature is in (<a href="https://cloud.google.com/products#product-launch-stages">Preview</a>).
+For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-models#genai-rlhf-tuning">Use RLHF model tuning</a>.</p>
+<h3 id="vertex-ai-codey-apis-language-support">Vertex AI Codey APIs language support<a class="headerlink" href="#vertex-ai-codey-apis-language-support" title="Permanent link">&para;</a></h3>
+<p>Vertex AI Codey APIs support additional programming languages. For more
+information, see <a href="../code/code-models-overview/">Supported coding languages</a>.</p>
+<h3 id="vertex-ai-codey-apis-support-supervised-tuning">Vertex AI Codey APIs support supervised tuning<a class="headerlink" href="#vertex-ai-codey-apis-support-supervised-tuning" title="Permanent link">&para;</a></h3>
+<p>The code chat (<code>codechat-bison</code>) and code generation (<code>code-bison</code>)
+Vertex AI Codey APIs models support supervised tuning. The supervised tuning
+for Vertex AI Codey APIs models feature is in
+(<a href="https://cloud.google.com/products#product-launch-stages">Preview</a>). For more information, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-code-models">Tune
+code models</a>.</p>
+<h3 id="metrics-based-model-evaluation">Metrics-based model evaluation<a class="headerlink" href="#metrics-based-model-evaluation" title="Permanent link">&para;</a></h3>
+<p>You can evaluate the performance of foundation models and tuned models
+against an evaluation dataset for classification, summarization, question answering,
+and general text generation. This feature is available in (<a href="https://cloud.google.com/products#product-launch-stages">Preview</a>)</p>
+<p>To learn more, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/evaluate-models">Evaluate model performance</a>.</p>
+<h3 id="counttoken-api-available-in-preview">CountToken API available in Preview<a class="headerlink" href="#counttoken-api-available-in-preview" title="Permanent link">&para;</a></h3>
+<p>The CountToken API is available in (<a href="https://cloud.google.com/products#product-launch-stages">Preview</a>).
+You can use this API to get the token count and the number of
+billable characters for a prompt. To learn more, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/get-token-count">Get token count</a>.</p>
+<h2 id="august-9-2023">August 9, 2023<a class="headerlink" href="#august-9-2023" title="Permanent link">&para;</a></h2>
+<h3 id="imagen-multimodal-embeddings-available-in-ga">Imagen Multimodal embeddings available in GA<a class="headerlink" href="#imagen-multimodal-embeddings-available-in-ga" title="Permanent link">&para;</a></h3>
+<p>Imagen on Vertex AI offers the following
+<a href="https://cloud.google.com/products#product-launch-stages">GA</a> feature:</p>
+<ul>
+<li>Multimodal embeddings</li>
+</ul>
+<p>This feature incurs different <a href="https://cloud.google.com/vertex-ai/pricing#generative_ai_models">pricing</a>
+based on if you use image input or text input. For more information, see the
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings">multimodal embeddings</a>
+feature page.</p>
+<h2 id="august-21-2023">August 21, 2023<a class="headerlink" href="#august-21-2023" title="Permanent link">&para;</a></h2>
+<h3 id="model-tuning-parameter-update">Model tuning parameter update<a class="headerlink" href="#model-tuning-parameter-update" title="Permanent link">&para;</a></h3>
+<p>Model tuning jobs accept optional parameters for model evaluation and
+<a href="https://cloud.google.com/vertex-ai/docs/experiments/tensorboard-overview">Vertex AI TensorBoard</a>
+integration. This lets you evaluate your model and generate visualizations with
+a single command. For more information, see
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-models#create_a_model_tuning_job">Create a model tuning job</a>.</p>
+<h2 id="july-28-2023">July 28, 2023<a class="headerlink" href="#july-28-2023" title="Permanent link">&para;</a></h2>
+<h3 id="model-tuning-parameter-update_1">Model tuning parameter update<a class="headerlink" href="#model-tuning-parameter-update_1" title="Permanent link">&para;</a></h3>
+<p>The <code>learning_rate</code> parameter in model tuning is <code>learning_rate_multiplier</code>.
+To use the model's or tuning method's default learning rate, use the default
+<code>learning_rate_multiplier</code> value of <code>1.0</code>.</p>
+<p>If you haven't configured <code>learning_rate</code> before, no action is needed.
+If using <code>tuning_method=tune_v2</code> with the v2.0.0 pipeline template
+(Python SDK v1.28.1+), the recommended learning rate is 0.0002. To convert your
+custom <code>learning_rate</code> to <code>learning_rate_multiplier</code>, calculate as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">learing_rate_multiplier</span> <span class="o">=</span> <span class="n">custom_learning_rate_value</span> <span class="o">/</span> <span class="mf">0.0002</span>
+</span></code></pre></div>
+<h2 id="july-18-2023">July 18, 2023<a class="headerlink" href="#july-18-2023" title="Permanent link">&para;</a></h2>
+<h3 id="model-tuning-updates-for-text-bison">Model tuning updates for text-bison<a class="headerlink" href="#model-tuning-updates-for-text-bison" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Upgraded tuning pipeline offers more efficient tuning and better
+ performance on text-bison.</li>
+<li>New tuning region (<code>us-central1</code>) available with GPU support.</li>
+<li>New <code>learning_rate</code> parameter lets you adjust the step size at each
+ iteration.</li>
+</ul>
+<p>For details, see
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-models">Tune language foundation models</a>.</p>
+<h3 id="chirp-ga">Chirp GA<a class="headerlink" href="#chirp-ga" title="Permanent link">&para;</a></h3>
+<p>Chirp is <a href="https://cloud.google.com/products#product-launch-stages">Generally Available (GA)</a>. For
+details, see the following pages:</p>
+<ul>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/speech/text-to-speech">Convert text to speech</a></li>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/speech/speech-to-text">Convert speech to text</a></li>
+</ul>
+<h2 id="july-17-2023">July 17, 2023<a class="headerlink" href="#july-17-2023" title="Permanent link">&para;</a></h2>
+<h3 id="imagen-on-vertex-ai-generally-available-features">Imagen on Vertex AI Generally Available features<a class="headerlink" href="#imagen-on-vertex-ai-generally-available-features" title="Permanent link">&para;</a></h3>
+<p>Imagen on Vertex AI offers the following
+<a href="https://cloud.google.com/products#product-launch-stages">GA</a> features:</p>
+<ul>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/image/generate-images">Image generation (text-to-image generation)</a>*</li>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/image/edit-images">Image editing</a>*</li>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/image/image-captioning">Image visual captioning</a></li>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/image/visual-question-answering">Visual Question Answering (VQA)</a></li>
+</ul>
+<p>* Restricted access feature.</p>
+<p>For more information about Imagen or how to get access to
+restricted GA or Preview features, see the
+<a href="../image/Imagen-on-Vertex-AI/">Imagen on Vertex AI overview</a>.</p>
+<h3 id="human-face-generation-supported">Human face generation supported<a class="headerlink" href="#human-face-generation-supported" title="Permanent link">&para;</a></h3>
+<p>Imagen supports human face generation for the following
+features:</p>
+<ul>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/image/generate-images">Image generation (text-to-image generation)</a>*</li>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/image/edit-images">Image editing</a>*</li>
+</ul>
+<p>* Restricted access feature.</p>
+<p>Human face generation is enabled by default, except for images with children
+or celebrities. For more information, see the
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/image/usage-guidelines">usage guidelines</a>.</p>
+<h3 id="additional-language-support">Additional language support<a class="headerlink" href="#additional-language-support" title="Permanent link">&para;</a></h3>
+<p>The Vertex AI PaLM API has added support for the following languages:</p>
+<ul>
+<li>Spanish (es)</li>
+<li>Korean (ko)</li>
+<li>Hindi (hi)</li>
+<li>Chinese (zh)</li>
+</ul>
+<p>For the complete list of supported languages, see
+<a href="../learn/models/">Supported languages</a>.</p>
+<h2 id="july-13-2023">July 13, 2023<a class="headerlink" href="#july-13-2023" title="Permanent link">&para;</a></h2>
+<h3 id="batch-support-for-palm-2-for-text">Batch support for PaLM 2 for Text<a class="headerlink" href="#batch-support-for-palm-2-for-text" title="Permanent link">&para;</a></h3>
+<p>Support for <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/text/batch-prediction-genai">batch text (<code>text-bison</code>) requests</a>
+is available in (<a href="https://cloud.google.com/products#product-launch-stages">GA</a>).
+You can review pricing for the <code>chat-bison</code> model at
+<a href="https://cloud.google.com/vertex-ai/pricing#generative_ai_models">Vertex AI pricing page</a>.</p>
+<h2 id="july-10-2023">July 10, 2023<a class="headerlink" href="#july-10-2023" title="Permanent link">&para;</a></h2>
+<h3 id="palm-2-for-chat">PaLM 2 for Chat<a class="headerlink" href="#palm-2-for-chat" title="Permanent link">&para;</a></h3>
+<p>Support for <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/chat/chat-prompts">Chat (<code>chat-bison</code>)</a>
+is available in (<a href="https://cloud.google.com/products#product-launch-stages">GA</a>).
+You can review pricing for the <code>chat-bison</code> model at
+<a href="https://cloud.google.com/vertex-ai/pricing#generative_ai_models">Vertex AI pricing page</a>.</p>
+<h2 id="june-29-2023">June 29, 2023<a class="headerlink" href="#june-29-2023" title="Permanent link">&para;</a></h2>
+<h3 id="vertex-ai-codey-apis">Vertex AI Codey APIs<a class="headerlink" href="#vertex-ai-codey-apis" title="Permanent link">&para;</a></h3>
+<p>Vertex AI Codey APIs are generally available
+(<a href="https://cloud.google.com/products#product-launch-stages">GA</a>). Use the Vertex AI Codey APIs to create
+solutions with code generation, code completion, and code chat. Because the
+Vertex AI Codey APIs are GA, you incur usage costs if you use them. To learn about
+pricing, see
+the <a href="https://cloud.google.com/vertex-ai/pricing#generative_ai_models">Generative AI on Vertex AI pricing page</a>.</p>
+<p>The models in this release include:</p>
+<ul>
+<li><code>code-bison</code> (code generation)</li>
+<li><code>codechat-bison</code> (code chat)</li>
+<li><code>code-gecko</code> (code completion)</li>
+</ul>
+<p>The maximum tokens for input was increased from 4,096 to 6,144 tokens for
+<code>code-bison</code> and <code>codechat-bison</code> to allow longer prompts and chat history. The
+maximum tokens for output was increased from 1,024 to 2,048 for <code>code-bison</code> and
+<code>codechat-bison</code> to allow for longer responses.</p>
+<p>Additional programming languages are supported. For more information, see
+<a href="../code/code-models-overview/">Supported coding languages</a>.</p>
+<p>Several fine-tuning datasets were removed from the <code>code-bison</code> and
+<code>codechat-bison</code> models to implement the following improvements:</p>
+<ul>
+<li>Excessive chattiness.</li>
+<li>Artifacting, such as NBSP (non-breaking space) characters.</li>
+<li>Low quality code responses.</li>
+</ul>
+<p>To learn about cloud horizontals, see
+<a href="https://cloud.google.com/vertex-ai/docs/general/vertexai-compliance">Vertex AI certifications</a>.</p>
+<h2 id="june-15-2023">June 15, 2023<a class="headerlink" href="#june-15-2023" title="Permanent link">&para;</a></h2>
+<h3 id="palm-2-for-chat_1">PaLM 2 for Chat<a class="headerlink" href="#palm-2-for-chat_1" title="Permanent link">&para;</a></h3>
+<p>The <code>chat-bison</code> model has been updated to better follow instructions in the
+<code>context</code> field. For details, on how to create chat prompts for
+<code>chat-bison</code>, see
+<a href="https://cloud.google.com/vertex-ai/generative-ai/docs/chat/chat-prompts">Design chat prompts</a>.</p>
+<h2 id="june-7-2023">June 7, 2023<a class="headerlink" href="#june-7-2023" title="Permanent link">&para;</a></h2>
+<h3 id="palm-text-and-embeddings-apis-and-vertex-ai-studio">PaLM Text and Embeddings APIs, and Vertex AI Studio<a class="headerlink" href="#palm-text-and-embeddings-apis-and-vertex-ai-studio" title="Permanent link">&para;</a></h3>
+<p>Generative AI on Vertex AI is available in (<a href="https://cloud.google.com/products#product-launch-stages">GA</a>).
+With this feature launch, you can use the Vertex AI PaLM API to generate
+AI models that you can test, tune, and deploy in your AI-powered applications.
+Because these features are GA, you incur usage costs if you use the
+<code>text-bison</code> and <code>textembedding-gecko</code> PaLM API. To learn about pricing, see
+the <a href="https://cloud.google.com/vertex-ai/pricing#generative_ai_models">Vertex AI pricing page</a>.</p>
+<p>Features and models in this release include:</p>
+<ul>
+<li>PaLM 2 for Text: <code>text-bison</code></li>
+<li>Embedding for Text: <code>textembedding-gecko</code></li>
+<li>Vertex AI Studio for Language</li>
+</ul>
+<p><strong>Important:</strong> With this GA launch, standard security and compliance for
+Vertex AI is not yet available to Generative AI on Vertex AI. To learn more, see
+<a href="https://cloud.google.com/vertex-ai/docs/general/vertexai-compliance">Vertex AI certifications</a>.</p>
+<h3 id="model-garden">Model Garden<a class="headerlink" href="#model-garden" title="Permanent link">&para;</a></h3>
+<p>Model Garden is is available in (<a href="https://cloud.google.com/products#product-launch-stages">GA</a>).
+Model Garden is a platform that helps you discover, test, customize,
+and deploy Vertex AI and select OSS models. These models range from tunable
+to task-specific and are all available on Model Garden page in the
+Google Cloud console.</p>
+<p>To get started, see <a href="https://cloud.google.com/vertex-ai/docs/start/explore-models">Explore AI models and APIs in Model Garden</a>.</p>
+<h3 id="vertex-ai-codey-apis_1">Vertex AI Codey APIs<a class="headerlink" href="#vertex-ai-codey-apis_1" title="Permanent link">&para;</a></h3>
+<p>The Vertex AI Codey APIs are in (<a href="https://cloud.google.com/products#product-launch-stages">Preview</a>).
+With the Codey APIs, code generation, code completion, and code chat APIs can be used from any
+Google Cloud project without allowlisting. The APIs can be accessed from the
+<code>us-central1</code> region. The Codey APIs can be used in the Vertex AI Studio or
+programmatically in REST commands.</p>
+<p>To get started, see the <a href="../code/code-models-overview/">Code models overview</a>.</p>
+<h2 id="may-10-2023">May 10, 2023<a class="headerlink" href="#may-10-2023" title="Permanent link">&para;</a></h2>
+<h3 id="generative-ai-on-vertex-ai_1">Generative AI on Vertex AI<a class="headerlink" href="#generative-ai-on-vertex-ai_1" title="Permanent link">&para;</a></h3>
+<p>Generative AI on Vertex AI is available in
+(<a href="https://cloud.google.com/products#product-launch-stages">Preview</a>). With this feature launch, you can
+use the Vertex AI PaLM API to generate AI models that you can test, tune,
+and deploy in your AI-powered applications.</p>
+<p>Features and models in this release include:</p>
+<ul>
+<li>PaLM 2 for Text: <code>text-bison</code></li>
+<li>PaLM 2 for Chat: <code>chat-bison</code></li>
+<li>Embedding for Text: <code>textembedding-gecko</code></li>
+<li>Vertex AI Studio for Language</li>
+<li>Tuning for PaLM 2</li>
+<li>Vertex AI SDK v1.25, which includes new features, such as
+ TextGenerationModel (<code>text-bison</code>), ChatModel (<code>chat-bison</code>),
+ TextEmbeddingModel (<code>textembedding-gecko@001</code>)</li>
+</ul>
+<p>You can interact with the generative AI features on Vertex AI by using
+Vertex AI Studio in the Google Cloud console, the Vertex AI API, and the
+Vertex AI SDK for Python.</p>
+<ul>
+<li>Learn more about <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview">Generative AI on Vertex AI</a>.</li>
+<li>See an <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/learn/overview#gen-ai-studio">Introduction to Vertex AI Studio</a>.</li>
+<li>Get started with a <a href="start/quickstarts/quickstart.md">Vertex AI Studio quickstart</a>.</li>
+</ul>
+<h3 id="model-garden_1">Model Garden<a class="headerlink" href="#model-garden_1" title="Permanent link">&para;</a></h3>
+<p>Model Garden is available in
+(<a href="https://cloud.google.com/products#product-launch-stages">Preview</a>). The Model Garden
+is a platform that helps you discover, test, customize, and deploy
+Vertex AI and select OSS models. These models range from tunable to
+task-specific - all available on the Model Garden page in the
+Google Cloud console.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Generative-AI-glossary/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Glossary">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Glossary
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../supported-models_1/" class="md-footer__link md-footer__link--next" aria-label="Next: Supported Models Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Supported Models Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.action.edit", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.top", "navigation.tracking", "toc.follow", "navigation.tabs", "navigation.sections", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../js/chat-widget/gemini-client.js"></script>
+      
+        <script src="../js/chat-widget/init.js"></script>
+      
+        <script src="../js/chat-widget/setup-key.js"></script>
+      
+        <script src="../js/chat-widget-helper.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3734 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://blevinscm.github.com/genai-docs/models/Run-an-evaluation/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/google-cloud-vertex-ai.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Run An Evaluation - Vertex Generative AI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Google Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../js/chat-widget/chat-widget.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#run-an-evaluation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vertex Generative AI" class="md-header__button md-logo" aria-label="Vertex Generative AI" data-md-component="logo">
+      
+  <img src="../../assets/google-cloud-vertex-ai.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vertex Generative AI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Run An Evaluation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/blevinscm/genai-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Generative-AI-on-Vertex-AI-Cookbook/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learn
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../agent-engine/Set-up-the-environment/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Build
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../Introduction-to-tuning/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tune
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../deploy/Deploy-generative-AI-models/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Deploy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../agent-engine/manage/Manage-deployed-agents/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Manage
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../evaluation-overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Optimize
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vertex Generative AI" class="md-nav__button md-logo" aria-label="Vertex Generative AI" data-md-component="logo">
+      
+  <img src="../../assets/google-cloud-vertex-ai.png" alt="logo">
+
+    </a>
+    Vertex Generative AI
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/blevinscm/genai-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Learn
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Learn
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Generative-AI-on-Vertex-AI-Cookbook/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vertex AI Generative AI Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Generative-AI-glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Generative-AI-on-Vertex-AI-release-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Release Notes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supported-models_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Supported Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model-reference/gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gemini Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../image/Imagen-on-Vertex-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Imagen Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code/code-models-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code Models Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intelligent-code-commenter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intelligent Code Commenter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open-models/Use-Gemma-open-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Open Models (Gemma, Llama)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../partner-models/use-partner-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Partner Models (Claude, AI21)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/prompts/Introduction-to-prompting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Prompting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/prompts/Overview-of-prompting-strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompting Strategies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multimodal/Design-multimodal-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../embeddings/Choose-an-embeddings-task-type/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Embeddings Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multimodal/Introduction-to-function-calling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Function Calling Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grounding/Ground-responses-using-RAG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grounding Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-builder/Vertex-AI-Agent-Builder-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Builder Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/Vertex-AI-Agent-Engine-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Engine Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rag-engine/Vertex-AI-RAG-Engine-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG Engine Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context-cache/Context-caching-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Caching Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/Extensions-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extensions Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../example-store/Example-Store-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Example Store Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Generative-AI-and-data-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Governance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Security-controls-for-Generative-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Security & Safety
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deprecations/Model-versions-and-lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deprecations & Lifecycle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-help_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Help
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Build
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Build
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/Set-up-the-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Set up Environment (Agent Engine)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/develop/Develop-a-LangChain-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Develop LangChain Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/develop/Develop-an-Agent-Development-Kit-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Develop ADK Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/use/Use-a-LangChain-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use LangChain Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/use/Use-a-LangGraph-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use LangGraph Agent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chat/Design-chat-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design Chat Prompts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multimodal/Text-generationbookmark_borderbookmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Text with Gemini
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../image/Generate-images-using-text-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Images with Imagen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Generate-images-with-Gemini/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Images with Gemini
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../video/generate-videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generate Video with Veo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../embeddings/Get-batch-text-embeddings-predictions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Text Embeddings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../embeddings/Get-multimodal-embeddings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Get Multimodal Embeddings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model-reference/Function-calling-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Function Calling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grounding/Use-Google-Search-suggestions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Grounding (Google Search)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grounding/Grounding-with-your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Grounding (Your Data)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rag-engine/Use-data-ingestion-with-Vertex-AI-RAG-Engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Data Ingestion)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rag-engine/use-vertexai-vector-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Vector Search)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Use-a-Weaviate-database-with-Vertex-AI-RAG-Engine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build with RAG Engine (Weaviate)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context-cache/Create-a-context-cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create Context Cache
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/Create-and-run-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Create Extensions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../example-store/Retrieve-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Example Store
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multimodal/audio-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Audio Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multimodal/Document-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Document Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multimodal/Video-understanding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multimodal Video Understanding
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prompt-gallery/samples/summarize_summarize_video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Gallery Samples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tune
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tune
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Introduction-to-tuning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction to Model Tuning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About-supervised-fine-tuning-for-Gemini-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Gemini Models (Supervised)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gemini-supervised-tuning-prepare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prepare Data for Gemini SFT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tune_gemini/text_tune/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Gemini for Text
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../image/Style-customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Imagen Models (Style/Subject)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tune-function-calling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tune Function Calling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model-garden/LoRA-and-QLoRA-recommendations-for-LLMs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    LoRA & QLoRA Recommendations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fine-tune-RAG-transformations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fine-tune RAG Transformations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Deploy
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Deploy
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deploy/Deploy-generative-AI-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Generative AI Models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/deploy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Agent (Agent Engine)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Deployments-and-endpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deployments and Endpoints
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model-garden/Use-models-in-Model-Garden/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Models from Model Garden
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Purchase-Provisioned-Throughput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Purchase Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Use-Provisioned-Throughput/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../migrate/Migrate-to-the-Gemini-API-from-Azure-OpenAI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Migrate from Azure OpenAI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../migrate/openai/Using-OpenAI-libraries-with-Vertex-AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Use OpenAI Libraries with Vertex AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Manage
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Manage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/manage/Manage-deployed-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Deployed Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/manage/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Logging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/manage/monitoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Monitoring
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/sessions/Manage-sessions-using-direct-API-calls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Agent Sessions (API)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/sessions/Manage-sessions-with-Agent-Development-Kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Agent Sessions (ADK)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context-cache/Get-information-about-a-context-cache/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Context Cache (Get/Delete)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Manage-your-RAG-knowledge-base-corpus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage RAG Corpus
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/Model-monitoring-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Monitoring Metrics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quotas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quotas & Limits
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/troubleshooting/Troubleshoot-deploying-an-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot Agent Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-engine/troubleshooting/Troubleshoot-developing-an-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshoot Agent Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Optimize
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Optimize
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../evaluation-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Model Evaluation Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Gen-AI-evaluation-service-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gen AI Evaluation Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Run-AutoSxS-pipeline-to-perform-pairwise-model-based-evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Run AutoSxS (Pairwise Evaluation)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Evaluate-Gen-AI-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluate Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../learn/prompts/Optimize-promptsbookmark_borderbookmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimize Prompts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Retrieval-and-ranking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    RAG Retrieval and Ranking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model-reference/Vertex-AI-Model-Optimizer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Vertex AI Model Optimizer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../provisioned-throughput/Calculate-Provisioned-Throughput-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Calculate Provisioned Throughput
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model-reference/count-tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Count Tokens
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context-cache/Context-caching-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Context Caching Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you begin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Before you begin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-the-vertex-ai-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install the Vertex AI SDK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authenticate-the-vertex-ai-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authenticate the Vertex AI SDK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding service accounts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-your-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run your evaluation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run your evaluation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eval-task-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      EvalTask class
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics-model-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run evaluation with model-based metrics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run evaluation with model-based metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metrics-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use model-based metric examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-a-model-based-metric-templated-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use a model-based metric templated interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-the-model-based-metric-free-form-sdk-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use the model-based metric free-form SDK interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate-a-translation-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluate a translation model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-evaluation-with-computation-based-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run evaluation with computation-based metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-evaluations-at-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run evaluations at scale
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Run evaluations at scale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      curl
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerShell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-metric-customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional metric customization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-model-based-evaluation-with-increased-rate-limits-and-quota" class="md-nav__link">
+    <span class="md-ellipsis">
+      Run model-based evaluation with increased rate limits and quota
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's next
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/blevinscm/genai-docs/edit/main/docs/models/Run-an-evaluation.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="run-an-evaluation">Run an evaluation<a class="headerlink" href="#run-an-evaluation" title="Permanent link">&para;</a></h1>
+<p>You can use the <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/reference/python/latest/vertexai.evaluation">Gen AI Evaluation module</a> of the <a href="https://cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk">Vertex AI SDK for Python</a> to programmatically evaluate your generative language models and applications with the Gen AI evaluation service API. This page shows you how to run evaluations with the Vertex AI SDK. Note that evaluations at scale are only available using the REST API.</p>
+<h2 id="before-you-begin">Before you begin<a class="headerlink" href="#before-you-begin" title="Permanent link">&para;</a></h2>
+<h3 id="install-the-vertex-ai-sdk">Install the Vertex AI SDK<a class="headerlink" href="#install-the-vertex-ai-sdk" title="Permanent link">&para;</a></h3>
+<p>To install the Gen AI Evaluation module from the Vertex AI SDK for Python, run the following command:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">q</span> <span class="n">google</span><span class="o">-</span><span class="n">cloud</span><span class="o">-</span><span class="n">aiplatform</span><span class="p">[</span><span class="n">evaluation</span><span class="p">]</span>
+</span></code></pre></div>
+<p>For more information, see
+<a href="https://cloud.google.com/vertex-ai/docs/start/install-sdk">Install the Vertex AI SDK for Python</a>.</p>
+<h3 id="authenticate-the-vertex-ai-sdk">Authenticate the Vertex AI SDK<a class="headerlink" href="#authenticate-the-vertex-ai-sdk" title="Permanent link">&para;</a></h3>
+<p>After you install the Vertex AI SDK for Python, you need to authenticate. The following
+topics explain how to authenticate with the Vertex AI SDK if you're
+working locally and if you're working in Colaboratory:</p>
+<ul>
+<li>
+<p>If you're developing locally, set up
+ <a href="https://cloud.google.com/docs/authentication/application-default-credentials">Application Default Credentials (ADC)</a>
+ in your local environment:</p>
+</li>
+<li>
+<p><a href="https://cloud.google.com/sdk/docs/install">Install</a> the Google Cloud CLI, then
+ <a href="https://cloud.google.com/sdk/docs/initializing">initialize</a> it by running the following command:</p>
+</li>
+</ul>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">gcloud</span> <span class="n">init</span>
+</span></code></pre></div>
+ 2. Create local authentication credentials for your Google Account:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">gcloud</span> <span class="n">auth</span> <span class="n">application</span><span class="o">-</span><span class="n">default</span> <span class="n">login</span>
+</span></code></pre></div>
+<p>A login screen is displayed. After you sign in, your credentials are stored
+ in the local credential file used by ADC. For more information, see
+ <a href="https://cloud.google.com/docs/authentication/set-up-adc-local-dev-environment">Set up ADC for a local development environment</a>.
+- If you're working in Colaboratory, run the following command in a
+ Colab cell to authenticate:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">auth</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">auth</span><span class="o">.</span><span class="n">authenticate_user</span><span class="p">()</span>
+</span></code></pre></div>
+<p>This command opens a window where you can complete the authentication.</p>
+<h3 id="service-accounts">Understanding service accounts<a class="headerlink" href="#service-accounts" title="Permanent link">&para;</a></h3>
+<p>The <a href="https://cloud.google.com/iam/docs/principals-overview#service-account">service account</a> is used by the Gen AI evaluation service to get
+predictions from the <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal">Gemini API in Vertex AI</a> for model-based evaluation
+metrics. This service account is automatically provisioned on the first request
+to the Gen AI evaluation service.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Email address</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vertex AI Rapid Eval Service Agent</td>
+<td>The service account used to get predictions for model based evaluation.</td>
+<td><code>service-PROJECT_NUMBER@gcp-sa-vertex-eval.iam.gserviceaccount.com</code></td>
+<td><code>roles/aiplatform.rapidevalServiceAgent</code></td>
+</tr>
+</tbody>
+</table>
+<p>The permissions associated to the rapid evaluation service agent are:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Permissions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vertex AI Rapid Eval Service Agent (roles/aiplatform.rapidevalServiceAgent)</td>
+<td><code>aiplatform.endpoints.predict</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="run-your-evaluation">Run your evaluation<a class="headerlink" href="#run-your-evaluation" title="Permanent link">&para;</a></h2>
+<p>Use the <code>EvalTask</code> class to run evaluations for the following use cases:</p>
+<ul>
+<li>
+<p><a href="#metrics-model-based">Model-based metrics</a></p>
+</li>
+<li>
+<p><a href="#metrics-examples">Use existing examples</a></p>
+</li>
+<li><a href="#metrics-template">Use a templated interface</a></li>
+<li><a href="#metrics-freeform">Define metrics from scratch</a></li>
+<li><a href="#translation">Evaluate a translation model</a> (preview)</li>
+<li><a href="#metrics-computation">Computation-based metrics</a></li>
+<li><a href="#batch-eval">Run evaluations at scale</a> (preview)</li>
+<li><a href="#metrics-custom">Additional metric customization</a></li>
+<li><a href="#increase-quota">Increase rate limits and quota</a></li>
+</ul>
+<h3 id="eval-task-class"><code>EvalTask</code> class<a class="headerlink" href="#eval-task-class" title="Permanent link">&para;</a></h3>
+<p>The <code>EvalTask</code> class helps you evaluate models and applications based on specific tasks. To make fair comparisons between generative models, you typically need to repeatedly evaluate various models and prompt templates against a fixed evaluation dataset using specific metrics. It's also important to evaluate multiple metrics simultaneously within a single evaluation run.</p>
+<p><code>EvalTask</code> also integrates with <a href="https://cloud.google.com/vertex-ai/docs/experiments/intro-vertex-ai-experiments">Vertex AI Experiments</a> to help you track configurations and results for each evaluation run. Vertex AI Experiments aids in managing and interpreting evaluation results, empowering you to make informed decisions.</p>
+<p>The following example demonstrates how to instantiate the <code>EvalTask</code> class and run an evaluation:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">vertexai.evaluation</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a> <span class="n">EvalTask</span><span class="p">,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a> <span class="n">PairwiseMetric</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a> <span class="n">PairwiseMetricPromptTemplate</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a> <span class="n">PointwiseMetric</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a> <span class="n">PointwiseMetricPromptTemplate</span><span class="p">,</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a> <span class="n">MetricPromptTemplateExamples</span><span class="err">，</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">eval_task</span> <span class="o">=</span> <span class="n">EvalTask</span><span class="p">(</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a> <span class="n">dataset</span><span class="o">=</span><span class="n">DATASET</span><span class="p">,</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="n">METRIC_1</span><span class="p">,</span> <span class="n">METRIC_2</span><span class="p">,</span> <span class="n">METRIC_3</span><span class="p">],</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a> <span class="n">experiment</span><span class="o">=</span><span class="n">EXPERIMENT_NAME</span><span class="p">,</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">)</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="n">eval_result</span> <span class="o">=</span> <span class="n">eval_task</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a> <span class="n">model</span><span class="o">=</span><span class="n">MODEL</span><span class="p">,</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a> <span class="n">prompt_template</span><span class="o">=</span><span class="n">PROMPT_TEMPLATE</span><span class="p">,</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a> <span class="n">experiment_run</span><span class="o">=</span><span class="n">EXPERIMENT_RUN</span><span class="p">,</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="metrics-model-based">Run evaluation with model-based metrics<a class="headerlink" href="#metrics-model-based" title="Permanent link">&para;</a></h2>
+<p>For <a href="../determine-eval/">model-based metrics</a>, use the <code>PointwiseMetric</code> and <code>PairwiseMetric</code> classes to define metrics tailored to your specific criteria. Run evaluations using the following options:</p>
+<ul>
+<li><a href="#metrics-examples">Use existing examples</a></li>
+<li><a href="#metrics-template">Use a templated interface</a></li>
+<li><a href="#metrics-freeform">Define metrics from scratch</a></li>
+</ul>
+<h3 id="metrics-examples">Use model-based metric examples<a class="headerlink" href="#metrics-examples" title="Permanent link">&para;</a></h3>
+<p>You can directly use the built-in constant <code>Metric Prompt Template Examples</code> within Vertex AI SDK. Alternatively, modify and incorporate them in the free-form metric definition interface.</p>
+<p>For the full list of Metric Prompt Template Examples covering most key use cases, see <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/metrics-templates">Metric prompt templates</a>.</p>
+<p>The following Vertex AI SDK example shows how to use <code>MetricPromptTemplateExamples</code> class to define your metrics:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># View all the available examples of model-based metrics</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">MetricPromptTemplateExamples</span><span class="o">.</span><span class="n">list_example_metric_names</span><span class="p">()</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Display the metric prompt template of a specific example metric</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">MetricPromptTemplateExamples</span><span class="o">.</span><span class="n">get_prompt_template</span><span class="p">(</span><span class="s1">&#39;fluency&#39;</span><span class="p">))</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Use the pre-defined model-based metrics directly</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">eval_task</span> <span class="o">=</span> <span class="n">EvalTask</span><span class="p">(</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a> <span class="n">dataset</span><span class="o">=</span><span class="n">EVAL_DATASET</span><span class="p">,</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="n">MetricPromptTemplateExamples</span><span class="o">.</span><span class="n">Pointwise</span><span class="o">.</span><span class="n">FLUENCY</span><span class="p">],</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">)</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="n">eval_result</span> <span class="o">=</span> <span class="n">eval_task</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a> <span class="n">model</span><span class="o">=</span><span class="n">MODEL</span><span class="p">,</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="use-a-model-based-metric-templated-interface">Use a model-based metric templated interface<a class="headerlink" href="#use-a-model-based-metric-templated-interface" title="Permanent link">&para;</a></h3>
+<p>Customize your metrics by populating fields like <code>Criteria</code> and <code>Rating Rubrics</code> using the <code>PointwiseMetricPromptTemplate</code> and <code>PairwiseMetricPromptTemplate</code> classes within Vertex AI SDK. Certain fields, such as <code>Instruction</code>, are assigned a default value if you don't provide input.</p>
+<p>Optionally, you can specify <code>input_variables</code>, which is a list of input fields used by the metric prompt template to generate model-based evaluation results. By default, the model's <code>response</code> column is included for pointwise metrics, and both the candidate model's <code>response</code> and <code>baseline_model_response</code> columns are included for pairwise metrics.</p>
+<p>For additional information, refer to the "Structure a metric prompt template" section in <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/metrics-templates#structure-template">Metric prompt templates</a>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Define a pointwise metric with two custom criteria</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">custom_text_quality</span> <span class="o">=</span> <span class="n">PointwiseMetric</span><span class="p">(</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;custom_text_quality&quot;</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a> <span class="n">metric_prompt_template</span><span class="o">=</span><span class="n">PointwiseMetricPromptTemplate</span><span class="p">(</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a> <span class="n">criteria</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a> <span class="s2">&quot;fluency&quot;</span><span class="p">:</span> <span class="s2">&quot;Sentences flow smoothly and are easy to read, avoiding awkward phrasing or run-on sentences. Ideas and sentences connect logically, using transitions effectively where needed.&quot;</span><span class="p">,</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a> <span class="s2">&quot;entertaining&quot;</span><span class="p">:</span> <span class="s2">&quot;Short, amusing text that incorporates emojis, exclamations and questions to convey quick and spontaneous communication and diversion.&quot;</span><span class="p">,</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a> <span class="p">},</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a> <span class="n">rating_rubric</span><span class="o">=</span><span class="p">{</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a> <span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="s2">&quot;The response performs well on both criteria.&quot;</span><span class="p">,</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a> <span class="s2">&quot;0&quot;</span><span class="p">:</span> <span class="s2">&quot;The response is somewhat aligned with both criteria&quot;</span><span class="p">,</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a> <span class="s2">&quot;-1&quot;</span><span class="p">:</span> <span class="s2">&quot;The response falls short on both criteria&quot;</span><span class="p">,</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a> <span class="p">},</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a> <span class="n">input_variables</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;prompt&quot;</span><span class="p">],</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a> <span class="p">),</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="p">)</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="c1"># Display the serialized metric prompt template</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">custom_text_quality</span><span class="o">.</span><span class="n">metric_prompt_template</span><span class="p">)</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="c1"># Run evaluation using the custom_text_quality metric</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="n">eval_task</span> <span class="o">=</span> <span class="n">EvalTask</span><span class="p">(</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a> <span class="n">dataset</span><span class="o">=</span><span class="n">EVAL_DATASET</span><span class="p">,</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="n">custom_text_quality</span><span class="p">],</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="p">)</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="n">eval_result</span> <span class="o">=</span> <span class="n">eval_task</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a> <span class="n">model</span><span class="o">=</span><span class="n">MODEL</span><span class="p">,</span>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="use-the-model-based-metric-free-form-sdk-interface">Use the model-based metric free-form SDK interface<a class="headerlink" href="#use-the-model-based-metric-free-form-sdk-interface" title="Permanent link">&para;</a></h3>
+<p>For more flexibility in customizing the metric prompt template, you can define a metric directly using the free-form interface, which accepts a direct string input.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Define a pointwise multi-turn chat quality metric</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">pointwise_chat_quality_metric_prompt</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Evaluate the AI&#39;s contribution to a meaningful conversation, considering coherence, fluency, groundedness, and conciseness.</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="s2"> Review the chat history for context. Rate the response on a 1-5 scale, with explanations for each criterion and its overall impact.</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="s2"># Conversation History</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="si">{history}</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="s2"># Current User Prompt</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="si">{prompt}</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="s2"># AI-generated Response</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="si">{response}</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="n">freeform_multi_turn_chat_quality_metric</span> <span class="o">=</span> <span class="n">PointwiseMetric</span><span class="p">(</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;multi_turn_chat_quality_metric&quot;</span><span class="p">,</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a> <span class="n">metric_prompt_template</span><span class="o">=</span><span class="n">pointwise_chat_quality_metric_prompt</span><span class="p">,</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="p">)</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="c1"># Run evaluation using the freeform_multi_turn_chat_quality_metric metric</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="n">eval_task</span> <span class="o">=</span> <span class="n">EvalTask</span><span class="p">(</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a> <span class="n">dataset</span><span class="o">=</span><span class="n">EVAL_DATASET</span><span class="p">,</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="n">freeform_multi_turn_chat_quality_metric</span><span class="p">],</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="p">)</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="n">eval_result</span> <span class="o">=</span> <span class="n">eval_task</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a> <span class="n">model</span><span class="o">=</span><span class="n">MODEL</span><span class="p">,</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="evaluate-a-translation-model">Evaluate a translation model<a class="headerlink" href="#evaluate-a-translation-model" title="Permanent link">&para;</a></h2>
+<p><strong>Preview</strong></p>
+<p>This product or feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section
+of the <a href="https://cloud.google.com/terms/service-terms#1">Service Specific Terms</a>.
+Pre-GA products and features are available "as is" and might have limited support.
+For more information, see the
+<a href="https://cloud.google.com/products#product-launch-stages">launch stage descriptions</a>.</p>
+<p>To evaluate your translation model, you can specify <a href="../determine-eval/">BLEU</a>, <a href="https://github.com/google-research/metricx">MetricX</a>, or <a href="https://huggingface.co/Unbabel/wmt22-comet-da">COMET</a> as evaluation metrics when using the Vertex AI SDK.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">#Prepare the dataset for evaluation.</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">sources</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a> <span class="s2">&quot;Dem Feuer konnte Einhalt geboten werden&quot;</span><span class="p">,</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a> <span class="s2">&quot;Schulen und Kindergärten wurden eröffnet.&quot;</span><span class="p">,</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">]</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="n">responses</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a> <span class="s2">&quot;The fire could be stopped&quot;</span><span class="p">,</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a> <span class="s2">&quot;Schools and kindergartens were open&quot;</span><span class="p">,</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="p">]</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="n">references</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a> <span class="s2">&quot;They were able to control the fire.&quot;</span><span class="p">,</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a> <span class="s2">&quot;Schools and kindergartens opened&quot;</span><span class="p">,</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="p">]</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="n">eval_dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a> <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">sources</span><span class="p">,</span>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a> <span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="n">responses</span><span class="p">,</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a> <span class="s2">&quot;reference&quot;</span><span class="p">:</span> <span class="n">references</span><span class="p">,</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="p">})</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="c1"># Set the metrics.</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a> <span class="s2">&quot;bleu&quot;</span><span class="p">,</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a> <span class="n">pointwise_metric</span><span class="o">.</span><span class="n">Comet</span><span class="p">(),</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a> <span class="n">pointwise_metric</span><span class="o">.</span><span class="n">MetricX</span><span class="p">(),</span>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="p">]</span>
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>
+</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="n">eval_task</span> <span class="o">=</span> <span class="n">evaluation</span><span class="o">.</span><span class="n">EvalTask</span><span class="p">(</span>
+</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a> <span class="n">dataset</span><span class="o">=</span><span class="n">eval_dataset</span><span class="p">,</span>
+</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a> <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">,</span>
+</span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a><span class="p">)</span>
+</span><span id="__span-8-35"><a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a><span class="n">eval_result</span> <span class="o">=</span> <span class="n">eval_task</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()</span>
+</span></code></pre></div>
+<h2 id="run-evaluation-with-computation-based-metrics">Run evaluation with computation-based metrics<a class="headerlink" href="#run-evaluation-with-computation-based-metrics" title="Permanent link">&para;</a></h2>
+<p>You can use <a href="../determine-eval/">computation-based metrics</a> standalone, or together with model-based metrics.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Combine computation-based metrics &quot;ROUGE&quot; and &quot;BLEU&quot; with model-based metrics</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">eval_task</span> <span class="o">=</span> <span class="n">EvalTask</span><span class="p">(</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a> <span class="n">dataset</span><span class="o">=</span><span class="n">EVAL_DATASET</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;rouge_l_sum&quot;</span><span class="p">,</span> <span class="s2">&quot;bleu&quot;</span><span class="p">,</span> <span class="n">custom_text_quality</span><span class="p">],</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">)</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">eval_result</span> <span class="o">=</span> <span class="n">eval_task</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a> <span class="n">model</span><span class="o">=</span><span class="n">MODEL</span><span class="p">,</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="run-evaluations-at-scale">Run evaluations at scale<a class="headerlink" href="#run-evaluations-at-scale" title="Permanent link">&para;</a></h2>
+<p><strong>Preview</strong></p>
+<p>This feature is subject to the "Pre-GA Offerings Terms" in the General Service Terms section
+of the <a href="https://cloud.google.com/terms/service-terms#1">Service Specific Terms</a>.
+Pre-GA features are available "as is" and might have limited support.
+For more information, see the
+<a href="https://cloud.google.com/products#product-launch-stages">launch stage descriptions</a>.</p>
+<p>If you have large evaluation datasets or periodically run evaluations in a production environment, you can use the <code>EvaluateDataset</code> API in the Gen AI evaluation service to run evaluations at scale.</p>
+<p>Before using any of the request data,
+make the following replacements:</p>
+<ul>
+<li>PROJECT_NUMBER: Your
+ <a href="https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifiers">project number</a>.</li>
+<li>DATASET_URI: The Cloud Storage path to a JSONL file
+ that contains evaluation instances. Each line in the file should represent a single instance, with
+ keys corresponding to user-defined input fields in the <code>metric_prompt_template</code>
+ (for model-based metrics) or required input parameters (for computation-based metrics).
+ You can only specify one JSONL file. The following example is a line for a pointwise evaluation instance:</li>
+</ul>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span><span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="s2">&quot;The Roman Senate was filled with exuberance due to Pompey&#39;s defeat in Asia.&quot;</span><span class="p">}</span>
+</span></code></pre></div>
+- METRIC_SPEC: One or more
+ <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/evaluation">metric specs</a> you are using for
+ evaluation. You can use the following metric specs when running evaluations at scale:
+ <code>"pointwise_metric_spec"</code>, <code>"pairwise_metric_spec"</code>, <code>"exact_match_spec"</code>,
+ <code>"bleu_spec"</code>, and <code>"rouge_spec"</code>.
+- METRIC_SPEC_FIELD_NAME: The required
+ fields for your chosen metric spec. For example, <code>"metric_prompt_template"</code>
+- METRIC_SPEC_FIELD_CONTENT: The field
+ content for your chosen metric spec. For example, you can use the following field content for a
+ pointwise evaluation: <code>"Evaluate the fluency of this sentence: {response}. Give score from 0 to
+ 1. 0 - not fluent at all. 1 - very fluent."</code>
+- OUTPUT_BUCKET: The name of the
+ Cloud Storage bucket where you want to store evaluation results.</p>
+<p>HTTP method and URL:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">POST</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">us</span><span class="o">-</span><span class="n">central1</span><span class="o">-</span><span class="n">aiplatform</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">v1beta1</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">PROJECT_NUMBER</span><span class="o">/</span><span class="n">locations</span><span class="o">/</span><span class="n">us</span><span class="o">-</span><span class="n">central1</span><span class="o">/</span><span class="n">evaluateDataset</span>
+</span></code></pre></div>
+<p>Request JSON body:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a> <span class="s2">&quot;dataset&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a> <span class="s2">&quot;gcs_source&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a> <span class="s2">&quot;uris&quot;</span><span class="p">:</span> <span class="s2">&quot;DATASET_URI&quot;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a> <span class="p">}</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a> <span class="p">},</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a> <span class="s2">&quot;metrics&quot;</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a> <span class="p">{</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a> <span class="n">METRIC_SPEC</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a> <span class="n">METRIC_SPEC_FIELD_NAME</span><span class="p">:</span> <span class="n">METRIC_SPEC_FIELD_CONTENT</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a> <span class="p">}</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a> <span class="p">}</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a> <span class="p">],</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a> <span class="s2">&quot;output_config&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a> <span class="s2">&quot;gcs_destination&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a> <span class="s2">&quot;output_uri_prefix&quot;</span><span class="p">:</span> <span class="s2">&quot;OUTPUT_BUCKET&quot;</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a> <span class="p">}</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a> <span class="p">}</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>To send your request, choose one of these options:</p>
+<h4 id="curl">curl<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h4>
+<p><strong>Note:</strong>
+The following command assumes that you have logged in to
+the <code>gcloud</code> CLI with your user account by running
+<a href="https://cloud.google.com/sdk/gcloud/reference/init"><code>gcloud init</code></a>
+or
+<a href="https://cloud.google.com/sdk/gcloud/reference/auth/login"><code>gcloud auth login</code></a>
+, or by using <a href="https://cloud.google.com/shell/docs">Cloud Shell</a>,
+which automatically logs you into the <code>gcloud</code> CLI
+.
+You can check the currently active account by running
+<a href="https://cloud.google.com/sdk/gcloud/reference/auth/list"><code>gcloud auth list</code></a>.</p>
+<p>Save the request body in a file named <code>request.json</code>,
+and execute the following command:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> \ 
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Authorization: Bearer $(gcloud auth print-access-token)&quot;</span> \ 
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json; charset=utf-8&quot;</span> \ 
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a> <span class="o">-</span><span class="n">d</span> <span class="nd">@request</span><span class="o">.</span><span class="n">json</span> \ 
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a> <span class="s2">&quot;https://us-central1-aiplatform.googleapis.com/v1beta1/projects/PROJECT_NUMBER/locations/us-central1/evaluateDataset&quot;</span>
+</span></code></pre></div>
+<h4 id="powershell">PowerShell<a class="headerlink" href="#powershell" title="Permanent link">&para;</a></h4>
+<p><strong>Note:</strong>
+The following command assumes that you have logged in to
+the <code>gcloud</code> CLI with your user account by running
+<a href="https://cloud.google.com/sdk/gcloud/reference/init"><code>gcloud init</code></a>
+or
+<a href="https://cloud.google.com/sdk/gcloud/reference/auth/login"><code>gcloud auth login</code></a>
+.
+You can check the currently active account by running
+<a href="https://cloud.google.com/sdk/gcloud/reference/auth/list"><code>gcloud auth list</code></a>.</p>
+<p>Save the request body in a file named <code>request.json</code>,
+and execute the following command:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="err">$</span><span class="n">cred</span> <span class="o">=</span> <span class="n">gcloud</span> <span class="n">auth</span> <span class="nb">print</span><span class="o">-</span><span class="n">access</span><span class="o">-</span><span class="n">token</span> 
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="err">$</span><span class="n">headers</span> <span class="o">=</span> <span class="o">@</span><span class="p">{</span> <span class="s2">&quot;Authorization&quot;</span> <span class="o">=</span> <span class="s2">&quot;Bearer $cred&quot;</span> <span class="p">}</span> 
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="n">Invoke</span><span class="o">-</span><span class="n">WebRequest</span> <span class="err">`</span> 
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a> <span class="o">-</span><span class="n">Method</span> <span class="n">POST</span> <span class="err">`</span> 
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a> <span class="o">-</span><span class="n">Headers</span> <span class="err">$</span><span class="n">headers</span> <span class="err">`</span> 
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a> <span class="o">-</span><span class="n">ContentType</span><span class="p">:</span> <span class="s2">&quot;application/json; charset=utf-8&quot;</span> <span class="err">`</span> 
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a> <span class="o">-</span><span class="n">InFile</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span> <span class="err">`</span> 
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a> <span class="o">-</span><span class="n">Uri</span> <span class="s2">&quot;https://us-central1-aiplatform.googleapis.com/v1beta1/projects/PROJECT_NUMBER/locations/us-central1/evaluateDataset&quot;</span> <span class="o">|</span> <span class="n">Select</span><span class="o">-</span><span class="n">Object</span> <span class="o">-</span><span class="n">Expand</span> <span class="n">Content</span>
+</span></code></pre></div>
+<p>You should receive a JSON response similar to the following.</p>
+<h4 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;projects/PROJECT_NUMBER/locations/us-central1/operations/OPERATION_ID&quot;</span><span class="p">,</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a> <span class="s2">&quot;metadata&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a> <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;type.googleapis.com/google.cloud.aiplatform.v1beta1.EvaluateDatasetOperationMetadata&quot;</span><span class="p">,</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a> <span class="s2">&quot;genericMetadata&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a> <span class="s2">&quot;createTime&quot;</span><span class="p">:</span> <span class="n">CREATE_TIME</span><span class="p">,</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a> <span class="s2">&quot;updateTime&quot;</span><span class="p">:</span> <span class="n">UPDATE_TIME</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a> <span class="p">}</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a> <span class="p">},</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a> <span class="s2">&quot;done&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a> <span class="s2">&quot;response&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a> <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;type.googleapis.com/google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse&quot;</span><span class="p">,</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a> <span class="s2">&quot;outputInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a> <span class="s2">&quot;gcsOutputDirectory&quot;</span><span class="p">:</span> <span class="s2">&quot;gs://OUTPUT_BUCKET/evaluation_GENERATION_TIME&quot;</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a> <span class="p">}</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a> <span class="p">}</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>You can use the OPERATION_ID you receive in the response to request the status of the evaluation:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> \
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Authorization: Bearer &quot;</span><span class="err">$</span><span class="p">(</span><span class="n">gcloud</span> <span class="n">auth</span> <span class="n">application</span><span class="o">-</span><span class="n">default</span> <span class="nb">print</span><span class="o">-</span><span class="n">access</span><span class="o">-</span><span class="n">token</span><span class="p">)</span> \
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json; charset=utf-8&quot;</span> \
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a> <span class="s2">&quot;https://us-central1-aiplatform.googleapis.com/v1beta1/projects/PROJECT_NUMBER/locations/us-central1/operations/OPERATION_ID&quot;</span>
+</span></code></pre></div>
+<h2 id="additional-metric-customization">Additional metric customization<a class="headerlink" href="#additional-metric-customization" title="Permanent link">&para;</a></h2>
+<p>If you need to further customize your metrics, like choosing a different judge model for model-based metrics, or define a new computation-based metric, you can use the <code>CustomMetric</code> class in the Vertex AI SDK. For more details, see the following notebooks:</p>
+<p>To see an example of Bring your own judge model using Custom Metric,
+run the "Bring your own judge model using Custom Metric" Jupyter notebook in one of the following
+environments:</p>
+<p><a href="https://colab.research.google.com/github/GoogleCloudPlatform/generative-ai/blob/main/gemini/evaluation/bring_your_own_autorater_with_custom_metric.ipynb">Open
+in Colab</a>
+|
+<a href="https://console.cloud.google.com/vertex-ai/colab/import/https%3A%2F%2Fraw.githubusercontent.com%2FGoogleCloudPlatform%2Fgenerative-ai%2Fmain%2Fgemini%2Fevaluation%2Fbring_your_own_autorater_with_custom_metric.ipynb">Open
+in Colab Enterprise</a>
+|
+<a href="https://console.cloud.google.com/vertex-ai/workbench/deploy-notebook?download_url=https%3A%2F%2Fraw.githubusercontent.com%2FGoogleCloudPlatform%2Fgenerative-ai%2Fmain%2Fgemini%2Fevaluation%2Fbring_your_own_autorater_with_custom_metric.ipynb">Open
+in Vertex AI Workbench user-managed notebooks</a>
+|
+<a href="https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/evaluation/bring_your_own_autorater_with_custom_metric.ipynb">View on GitHub</a></p>
+<p>To see an example of Bring your own computation-based Custom Metric,
+run the "Bring your own computation-based Custom Metric" Jupyter notebook in one of the following
+environments:</p>
+<p><a href="https://colab.research.google.com/github/GoogleCloudPlatform/generative-ai/blob/main/gemini/evaluation/bring_your_own_computation_based_metric.ipynb">Open
+in Colab</a>
+|
+<a href="https://console.cloud.google.com/vertex-ai/colab/import/https%3A%2F%2Fraw.githubusercontent.com%2FGoogleCloudPlatform%2Fgenerative-ai%2Fmain%2Fgemini%2Fevaluation%2Fbring_your_own_computation_based_metric.ipynb">Open
+in Colab Enterprise</a>
+|
+<a href="https://console.cloud.google.com/vertex-ai/workbench/deploy-notebook?download_url=https%3A%2F%2Fraw.githubusercontent.com%2FGoogleCloudPlatform%2Fgenerative-ai%2Fmain%2Fgemini%2Fevaluation%2Fbring_your_own_computation_based_metric.ipynb">Open
+in Vertex AI Workbench user-managed notebooks</a>
+|
+<a href="https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/evaluation/bring_your_own_computation_based_metric.ipynb">View on GitHub</a></p>
+<h2 id="run-model-based-evaluation-with-increased-rate-limits-and-quota">Run model-based evaluation with increased rate limits and quota<a class="headerlink" href="#run-model-based-evaluation-with-increased-rate-limits-and-quota" title="Permanent link">&para;</a></h2>
+<p>A single evaluation request for a model-based metric results in multiple underlying requests to the Gemini API in Vertex AI and consumes quota for the judge model. You should set a higher evaluation service rate limit in the following use cases:</p>
+<ul>
+<li><strong>Increased data volume:</strong> If you're processing significantly more data using the model-based metrics, you might hit the default requests per minute (RPM) quota. Increasing the quota lets you handle the larger volume without performance degradation or interruptions.</li>
+<li><strong>Faster evaluation:</strong> If your application requires quicker turnaround time for evaluations, you might need a higher RPM quota. This is especially important for time-sensitive applications or those with real-time interactions where delays in evaluation can impact the user experience.</li>
+<li><strong>Complex evaluation tasks:</strong> A higher RPM quota ensures you have enough capacity to handle resource-intensive evaluations for complex tasks or large amounts of text.</li>
+<li><strong>High user concurrency:</strong> If you anticipate a large number of users simultaneously requesting model-based evaluations and model inference within your project, a higher model RPM limit is crucial to prevent bottlenecks and maintain responsiveness.</li>
+</ul>
+<p>If you're using the default judge model of <code>gemini-2.0-flash</code> or newer models, we recommend that you use <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/provisioned-throughput">Provisioned Throughput</a> to manage your quota.</p>
+<p>For models older than <code>gemini-2.0-flash</code>, use the following instructions to increase the <a href="../../quotas/">judge model RPM quota</a>:</p>
+<ol>
+<li>In the Google Cloud console, go to the IAM &amp; Admin <strong>Quotas</strong> page.</li>
+</ol>
+<p><a href="https://console.cloud.google.com/iam-admin/quotas">View Quotas in Console</a>
+2. In the <strong>Filter</strong> field, specify the <strong>Dimension</strong> (model identifier) and the <strong>Metric</strong> (quota identifier for Gemini models): <code>base_model:gemini-2.0-flash</code> and <code>Metric:aiplatform.googleapis.com/generate_content_requests_per_minute_per_project_per_base_model</code>.
+3. For the quota that you want to increase, click the <strong>more actions</strong> menu more_vert button.
+4. In the drop-down menu, click <strong>Edit quota</strong>. The <strong>Quota changes</strong> panel opens.
+5. Under <strong>Edit quota</strong>, enter a new quota value.
+6. Click <strong>Submit request</strong>.
+7. A Quota Increase Request (QIR) is confirmed by email and typically takes two business days to process.</p>
+<p>To run an evaluation using a new quota, set the <code>evaluation_service_qps</code> parameter as follows:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">vertexai.evaluation</span><span class="w"> </span><span class="kn">import</span> <span class="n">EvalTask</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="c1"># GEMINI_RPM is the requests per minute (RPM) quota for gemini-2.0-flash-001 in your region</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Evaluation Service QPS limit is equal to (gemini-2.0-flash-001 RPM / 60 sec / default number of samples)</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="n">CUSTOM_EVAL_SERVICE_QPS_LIMIT</span> <span class="o">=</span> <span class="n">GEMINI_RPM</span> <span class="o">/</span> <span class="mi">60</span> <span class="o">/</span> <span class="mi">4</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="n">eval_task</span> <span class="o">=</span> <span class="n">EvalTask</span><span class="p">(</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a> <span class="n">dataset</span><span class="o">=</span><span class="n">DATASET</span><span class="p">,</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="n">METRIC_1</span><span class="p">,</span> <span class="n">METRIC_2</span><span class="p">,</span> <span class="n">METRIC_3</span><span class="p">],</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="p">)</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="n">eval_result</span> <span class="o">=</span> <span class="n">eval_task</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a> <span class="n">evaluation_service_qps</span><span class="o">=</span><span class="n">CUSTOM_EVAL_SERVICE_QPS_LIMIT</span><span class="p">,</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a> <span class="c1"># Specify a retry_timeout limit for a more responsive evaluation run</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a> <span class="c1"># the default value is 600 (in seconds, or 10 minutes)</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a> <span class="n">retry_timeout</span><span class="o">=</span><span class="n">RETRY_TIMEOUT</span><span class="p">,</span>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>For more information about quotas and limits, see <a href="../../quotas/">Gen AI evaluation service quotas</a>, and <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/evaluation">Gen AI evaluation service API</a>.</p>
+<h2 id="whats-next">What's next<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/view-evaluation">View your evaluation results</a>.</li>
+<li>Find a <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/metrics-templates">model-based metrics template</a>.</li>
+<li>Try an
+ <a href="../evaluation-overview/">evaluation example notebook</a>.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.action.edit", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.top", "navigation.tracking", "toc.follow", "navigation.tabs", "navigation.sections", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../js/chat-widget/gemini-client.js"></script>
+      
+        <script src="../../js/chat-widget/init.js"></script>
+      
+        <script src="../../js/chat-widget/setup-key.js"></script>
+      
+        <script src="../../js/chat-widget-helper.js"></script>
+      
+    
+  </body>
+</html>
