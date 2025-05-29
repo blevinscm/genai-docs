@@ -3,12 +3,12 @@ date_scraped: 2025-05-12
 title: Deploy Generative AI Models
 ---
 
-# Deploy generative AI models 
+# Deploy generative AI models
 
-Some generative AI models, such as [Gemini](../code/code-models-overview.md), have managed APIs and are ready to process prompts without deployment. For a list of models with managed APIs, see [Foundational model APIs](../learn/models.md).
+Some generative AI models, such as [Gemini](../code/code-models-overview.md), have managed APIs and can process prompts without deployment. For a list of models with managed APIs, see [Foundational model APIs](../learn/models.md).
 
 Other generative AI models must be deployed to an endpoint before
-they can begin serving inference requests. There are two types of generative models that
+they can serve inference requests. There are two types of generative models that
 must be deployed:
 
 - [Tuned models](#deploy_a_tuned_model), which you create by tuning a
@@ -30,7 +30,7 @@ appear in the Model Garden because they are tuned with your data.
 For more information, see
 [Overview of model tuning](https://cloud.google.com/vertex-ai/generative-ai/docs/models/tune-models).
 
-Once the endpoint is *active*, it is ready to accept prompt requests at its URI.
+Once the endpoint is *active*, it can begin serving inference requests at its URI.
 The format of the API call for a tuned model is the same as the foundation model
 it was tuned from. For example, if your model is tuned on Gemini, then your
 prompt request should follow the [Gemini API](../model-reference/gemini.md).
@@ -80,7 +80,7 @@ Each model card displays one or more of the following deployment options:
  sample code for uploading the model to Model Registry,
  deploying the model to an endpoint, and sending a prompt request.
 
-Once deployment is complete and the endpoint is *active*, it is ready to process
+Once deployment is complete and the endpoint is *active*, it is prepared to handle
 prompt requests at its URI. The format of the API is
 [`predict`](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.endpoints/predict) and the format
 of each [`instance`](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.endpoints/predict#body.request_body.FIELDS.instances)
@@ -163,7 +163,7 @@ Use the following instructions to monitor traffic to your endpoint in the Metric
  You can filter or aggregate your metrics using the following drop-down menus:
 
  - To select and view a subset of your data based on specified criteria, use
- the **Filter** drop-down menu. For example, `endpoint_id = gemini-2p0-flash-001` (decimal points in a model name should be replaced with `p`. For example, `gemini-2.0-flash-001` becomes `gemini-2p0-flash-001`, and a hypothetical `model-3.14-beta` would use `model-3p14-beta` as its filter value).
+ the **Filter** drop-down menu. For example, `gemini-2.0-flash-001` becomes `gemini-2p0-flash-001`, and a hypothetical `model-3.14-beta` would use `model-3p14-beta` (decimal points in a model name should be replaced with `p`).
  - To combine multiple data points into a single value and see a summarized
  view of your metrics, use the **Aggregation** drop-down menu. For example, you can aggregate the **Sum** of `response_code`.
 6. Optionally, you can set up alerts for your endpoint. For more information,
@@ -181,8 +181,7 @@ To view the metrics you add to your project using a dashboard, see
 
 ## Pricing
 
-For tuned models, you are billed per token at the same rate as the foundation
-model your model was tuned from. There is no separate hosting cost for the endpoint itself, as tuned models utilize shared infrastructure. You are billed for the token usage on this endpoint at the same rate as the foundation model it was tuned from. For
+For tuned models, you are billed per token at the same rate as the foundation model it was tuned from. There is no separate hosting cost for the endpoint itself, as tuned models utilize shared infrastructure. You are billed for the token usage on this endpoint at the same rate as the foundation model it was tuned from. For
 more information, see [pricing for Generative AI on Vertex AI](https://cloud.google.com/vertex-ai/generative-ai/pricing).
 
 For models without managed APIs, you are billed for the machine hours that are
