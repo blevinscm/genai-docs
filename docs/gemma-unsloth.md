@@ -72,12 +72,12 @@ model = FastLanguageModel.get_peft_model(
     target_modules = ["q_proj", "k_proj", "v_proj", "o_proj",
                       "gate_proj", "up_proj", "down_proj",], # Modules to apply LoRA to
     lora_alpha = 16,
-    lora_dropout = 0, # Supports any, but = 0 is optimized
-    bias = "none",    # Supports any, but = "none" is optimized
+    lora_dropout = 0, # Supports any value, but 0 is an optimized setting for Unsloth
+    bias = "none",    # Supports any, but using 'none' is an optimized setting for Unsloth
     use_gradient_checkpointing = True,
     random_state = 3407,
-    use_rslora = False,  # We support rank stabilized LoRA
-    loftq_config = None, # And LoftQ
+    use_rslora = False,  # Set to `True` to enable Rank-Stabilized LoRA (Unsloth supports this). `False` is used in this example.
+    loftq_config = None, # Set to a LoftQ configuration object to enable LoftQ initialization (Unsloth supports this). `None` means LoftQ is not used in this example.
 )
 ```
 
@@ -192,14 +192,16 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     load_in_4bit = load_in_4bit,
 )
 
-# Merge LoRA adapters for faster inference
+# Load the LoRA adapters to make them active for inference
 model.load_adapter("gemma_unsloth_tuned_lora")
-# If you didn't save the tokenizer with the adapter, ensure you have it loaded.
+# The tokenizer is already loaded with the base model.
 
-# Optional: Fully merge LoRA weights for standalone model (consumes more VRAM)
-# model.merge_and_unload() 
+# Optional: To potentially improve inference speed (at the cost of higher VRAM and loss of adapter flexibility),
+# you can merge the LoRA weights directly into the base model:
+# model.merge_and_unload()
+# After this, the model behaves like a standard fine-tuned model.
 
-# Example inference
+# Example inference (simple prompt)
 prompt = "What is the capital of France?" # Or use a proper instruction format if needed
 inputs = tokenizer(prompt, return_tensors="pt").to("cuda") # Ensure model and inputs are on the same device
 
@@ -209,28 +211,39 @@ decoded_output = tokenizer.decode(outputs[0], skip_special_tokens=True)
 print(f"Prompt: {prompt}")
 print(f"Generated Response: {decoded_output}")
 ```
-For instruction-tuned models like Gemma-IT, you'll get better results if you format your prompt according to its template. Unsloth's Gemma models use the ChatML format.
+For instruction-tuned models like Gemma-IT, you'll get better results if you format your prompt according to its template. Unsloth's Gemma models often use the ChatML format. The most robust way to apply this format is by using the `tokenizer.apply_chat_template` method, assuming the tokenizer is correctly configured with a ChatML template.
+
+If `apply_chat_template` is not set up or you need to manually format, a ChatML turn for a user query typically looks like:
+`<|im_start|>user
+Your instruction here<|im_end|>
+<|im_start|>assistant
+` (The model will generate the response after `assistant
+`)
 
 ```python
-# For instruction-tuned models, format your prompt:
-alpaca_prompt = """Below is an instruction that describes a task. Write a response that appropriately completes the request.
+# For instruction-tuned models, format your prompt using the tokenizer's chat template:
 
-### Instruction:
-{}
+# Prepare the messages in a list of dictionaries format
+messages = [
+    {"role": "user", "content": "What is the capital of France?"}
+]
 
-### Response:
-{}"""
+# Use the tokenizer's apply_chat_template method
+# This requires the tokenizer to have a chat_template defined (often pre-configured for Unsloth models).
+# If not, you might need to set tokenizer.chat_template manually or ensure you're using a
+# tokenizer version that includes it for your chosen Unsloth model.
+inputs = tokenizer.apply_chat_template(
+    messages,
+    tokenize=True,
+    add_generation_prompt=True, # Ensures the prompt ends with the turn for the assistant to speak
+    return_tensors="pt"
+).to("cuda") # Ensure model and inputs are on the same device
 
-inputs = tokenizer(
-[
-    alpaca_prompt.format(
-        "What is the capital of France?", # instruction
-        "", # output - leave this blank for generation!
-    )
-], return_tensors = "pt").to("cuda") # Ensure model and inputs are on the same device
 
-
-outputs = model.generate(**inputs, max_new_tokens = 64, use_cache = True)
+outputs = model.generate(inputs, max_new_tokens = 64, use_cache = True)
+# Using batch_decode for safety, even with one input.
+# The output will likely contain the full chat, including the prompt.
+# You might need to parse the assistant's response from decoded_output[0].
 decoded_output = tokenizer.batch_decode(outputs)
 print(decoded_output[0])
 ```
