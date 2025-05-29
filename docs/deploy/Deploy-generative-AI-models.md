@@ -5,10 +5,10 @@ title: Deploy Generative AI Models
 
 # Deploy generative AI models 
 
-Some generative AI models, such as [Gemini](../code/code-models-overview.md), have managed APIs and are ready to accept prompts without deployment. For a list of models with managed APIs, see [Foundational model APIs](../learn/models.md).
+Some generative AI models, such as [Gemini](../code/code-models-overview.md), have managed APIs and are ready to process prompts without deployment. For a list of models with managed APIs, see [Foundational model APIs](../learn/models.md).
 
 Other generative AI models must be deployed to an endpoint before
-they're ready to accept prompts. There are two types of generative models that
+they can begin serving inference requests. There are two types of generative models that
 must be deployed:
 
 - [Tuned models](#deploy_a_tuned_model), which you create by tuning a
@@ -73,16 +73,14 @@ Each model card displays one or more of the following deployment options:
  settings to, for example, select a Compute Engine
  [reservation](#reservation).
 
- **Note:** Some models also support deployment to Google Kubernetes Engine which is an
- unmanaged solution that provides you even more control. For more
+ **Note:** Some models also support deployment to Google Kubernetes Engine, which offers greater control over the deployment environment. For more
  information, see [Serve a model with a single GPU in GKE](https://cloud.google.com/kubernetes-engine/docs/tutorials/online-ml-inference).
 - **Open Notebook** button: This option opens a Jupyter notebook. Every model
  card displays this option. The Jupyter notebook includes instructions and
  sample code for uploading the model to Model Registry,
  deploying the model to an endpoint, and sending a prompt request.
 
-Once deployment is complete and the endpoint is *active*, it is ready to accept
-prompt requests at its URI. The format of the API is
+Once deployment is complete and the endpoint is *active*, it is prepared to handle prompt requests at its URI. The format of the API is
 [`predict`](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.endpoints/predict) and the format
 of each [`instance`](https://cloud.google.com/vertex-ai/docs/reference/rest/v1/projects.locations.endpoints/predict#body.request_body.FIELDS.instances)
 in the request body depends on the model. For more information, see the
@@ -164,7 +162,7 @@ Use the following instructions to monitor traffic to your endpoint in the Metric
  You can filter or aggregate your metrics using the following drop-down menus:
 
  - To select and view a subset of your data based on specified criteria, use
- the **Filter** drop-down menu. For example, `endpoint_id = gemini-2p0-flash-001` (decimal points in a model name should be replaced with `p`).
+ the **Filter** drop-down menu. For example, `endpoint_id = gemini-2p0-flash-001`. Decimal points in a model name should be replaced with `p`; for instance, `gemini-2.0-flash-001` becomes `gemini-2p0-flash-001`, and a hypothetical `model-3.14-beta` would become `model-3p14-beta`.
  - To combine multiple data points into a single value and see a summarized
  view of your metrics, use the **Aggregation** drop-down menu. For example, you can aggregate the **Sum** of `response_code`.
 6. Optionally, you can set up alerts for your endpoint. For more information,
@@ -183,8 +181,7 @@ To view the metrics you add to your project using a dashboard, see
 ## Pricing
 
 For tuned models, you are billed per token at the same rate as the foundation
-model your model was tuned from. There is no cost for the endpoint because
-tuning is implemented as a small adapter on top of the foundation model. For
+model your model was tuned from. There is no separate hosting cost for the endpoint itself, as tuned models utilize shared infrastructure. You are billed for the token usage on this endpoint at the same rate as the foundation model it was tuned from. For
 more information, see [pricing for Generative AI on Vertex AI](https://cloud.google.com/vertex-ai/generative-ai/pricing).
 
 For models without managed APIs, you are billed for the machine hours that are
