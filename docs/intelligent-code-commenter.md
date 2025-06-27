@@ -27,7 +27,7 @@ This guide will walk you through installing and using the Intelligent Code Comme
 
 1.  Open **Visual Studio Code**.
 2.  Go to the **Extensions** view (you can use the shortcut `Ctrl+Shift+X` or `Cmd+Shift+X`).
-3.  Search for "**Intelligent Code Commenter**" (or the official product name if different upon release).
+3.  Search for "**Intelligent Code Commenter**".
 4.  Click "**Install**" on the ICC extension.
 5.  Reload VS Code if prompted.
 
@@ -80,7 +80,7 @@ ICC offers several features to streamline your documentation process:
 ### Automatic Comment Generation for Functions
 
 *   **How it works:** ICC analyzes your Python and Java function signatures, body, and logic to automatically generate a concise summary comment.
-*   **Access:** Right-click on a function definition and select "ICC: Generate Comment", or use the command palette.
+*   **Access:** Right-click on a function definition and select "ICC: Generate Comment", or use the command palette (search for "ICC: Generate Comment for Current Function").
 
 ### User Review and Editing Workflow
 
@@ -93,7 +93,7 @@ ICC offers several features to streamline your documentation process:
 *   If a comment is suspected to be outdated, it will be visually flagged in the IDE (e.g., with a gutter icon or a subtle underline).
 *   Hovering over the flag may provide more information.
 
-### Suggest Updates for Outdated Comments (Basic)
+### Suggest Updates for Outdated Comments
 
 *   When an outdated comment is flagged, ICC may offer a suggestion for an updated comment based on the current code.
 *   You can access this via an option like "ICC: Suggest Update for Comment" when an outdated comment is detected.
@@ -118,7 +118,7 @@ You can customize some aspects of ICC's behavior via VS Code Settings:
 
 *   **Enable/Disable ICC:** Globally turn the extension on or off.
 *   **Enable/Disable Outdated Comment Detection:** Toggle this feature.
-*   **Preferred Comment Style (Planned - Basic for v1.0):**
+*   **Preferred Comment Style (Planned for a future release):**
     *   For Java: Default Javadoc-like structure.
     *   For Python: Default reStructuredText/Google style-like structure.
 *   **Telemetry Opt-in/Opt-out:** Control whether anonymized usage data is shared to help improve the product.
@@ -139,5 +139,5 @@ You can customize some aspects of ICC's behavior via VS Code Settings:
 
 ## Support & Feedback
 
-*   **Documentation:** (Link to be added here - e.g., GitHub Wiki, product website)
-*   **Bug Reports & Feature Requests:** (Link to be added here - e.g., GitHub Issues page)
+*   **Documentation:** https://github.com/example/repo/wiki
+*   **Bug Reports & Feature Requests:** https://github.com/example/repo/issues
